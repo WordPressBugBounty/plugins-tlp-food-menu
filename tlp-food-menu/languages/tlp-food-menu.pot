@@ -1,0 +1,1239 @@
+# Copyright (C) 2024 tlp-food-menu
+# This file is distributed under the same license as the tlp-food-menu package.
+msgid ""
+msgstr ""
+"Project-Id-Version: tlp-food-menu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: RadiusTheme <support@radiustheme.com>\n"
+"Last-Translator: RadiusTheme <support@radiustheme.com>\n"
+"POT-Creation-Date: 2024-08-08 06:46+0000\n"
+"Project-Id-Version: undefined\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../app/TLPFoodMenu.php:129, ../app/Controllers/PostTypesController.php:105, ../app/Controllers/PostTypesController.php:106, ../app/Controllers/PostTypesController.php:126, ../app/Controllers/PostTypesController.php:127, ../app/Controllers/PostTypesController.php:128, ../app/Helpers/Options.php:943, ../app/Helpers/Upgrade.php:46, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38
+msgid "Food Menu"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:129
+msgid "All Foods"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131
+msgid "Add Food"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:132
+msgid "Edit Food"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:133
+msgid "New Food"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:134
+msgid "View Food"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:135
+msgid "Search Food"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:136
+msgid "No Food found"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:137
+msgid "No Food in the trash"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:144, ../app/Controllers/PostTypesController.php:162, ../app/Controllers/PostTypesController.php:163, ../app/Controllers/Admin/AdminColumns.php:175
+msgid "Shortcode"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:145
+msgid "Food menu pro shortcode generator"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:161
+msgid "Shortcode Generator"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:164
+msgid "Edit Shortcode"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:165
+msgid "New Shortcode"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:166
+msgid "View Shortcode"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:167
+msgid "Shortcode Locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:168
+msgid "No Shortcode found."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:169
+msgid "No Shortcode found in trash."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:203, ../app/Controllers/PostTypesController.php:205, ../app/Helpers/Options.php:874
+msgid "Categories"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:204
+msgid "Category"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:206
+msgid "Edit Category"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:207
+msgid "Update Category"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:208
+msgid "Add New Category"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:209
+msgid "New Category"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:210
+msgid "Parent Category"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:211
+msgid "Parent Category:"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:212
+msgid "All Categories"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:213
+msgid "Search Categories"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:214
+msgid "Popular Categories"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:215
+msgid "Separate categories with commas"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:216
+msgid "Add or remove categories"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:217
+msgid "Choose from the most used  categories"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:218
+msgid "No categories found."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:239, ../app/Controllers/PostTypesController.php:241
+msgid "Food Locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:240
+msgid "Food Location"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:242
+msgid "Edit Food Location"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:243
+msgid "Update Food Location"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:244
+msgid "Add New Food Location"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:245
+msgid "New Food Location"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:246
+msgid "Parent Food Location"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:247
+msgid "Parent Food Location:"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:248
+msgid "All Food Locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:249
+msgid "Search Food Locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:250
+msgid "Popular Food Locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:251
+msgid "Separate food locations with commas"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:252
+msgid "Add or remove food locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:253
+msgid "Choose from the most used  food locations"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:254
+msgid "No food locations found."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:270, ../app/Controllers/PostTypesController.php:271
+msgid "ShortCode options updated."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:272
+msgid "Custom field deleted."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:273
+msgid "ShortCode updated."
+msgstr ""
+
+#. translators: %s: date and time of the revision
+#: ../app/Controllers/PostTypesController.php:276
+msgid "ShortCode restored to revision from %s"
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:282
+msgid "ShortCode published."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:283
+msgid "ShortCode saved."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:284
+msgid "ShortCode submitted."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:285
+msgid "ShortCode scheduled for."
+msgstr ""
+
+#: ../app/Controllers/PostTypesController.php:286
+msgid "ShortCode draft updated."
+msgstr ""
+
+#: ../app/Helpers/Fns.php:500, ../app/Models/Fields.php:824
+msgid "Normal"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:501
+msgid "Circle"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:512
+msgid "Top"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:513, ../app/Models/Fields.php:817
+msgid "Center"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:514
+msgid "Bottom"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:525, ../app/Helpers/Options.php:827
+msgid "Layout Default"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:526
+msgid "Type 1"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:527
+msgid "Type 2"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:531
+msgid "Type 3"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:532
+msgid "Type 4"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:545
+msgid "Single Page"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:546
+msgid "Pop Up"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:557
+msgid "Same Window"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:558
+msgid "New Window"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:569
+msgid "Zoom In"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:570
+msgid "Zoom Out"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:571
+msgid "None"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:902
+msgid "Default Image"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:1021
+msgid "Buy"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:1022
+msgid "Demo"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:1023, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:125, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:331
+msgid "Documentation"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:1268
+msgid "Select Delivery Location"
+msgstr ""
+
+#: ../app/Helpers/Fns.php:1269
+msgid "No Delivery Location is Set"
+msgstr ""
+
+#: ../app/Helpers/Options.php:25
+msgid "Field Selection"
+msgstr ""
+
+#: ../app/Helpers/Options.php:33
+msgid "Field Selection on Mobile"
+msgstr ""
+
+#: ../app/Helpers/Options.php:44, ../app/Helpers/Options.php:55, ../app/Helpers/Options.php:400
+msgid "Title"
+msgstr ""
+
+#: ../app/Helpers/Options.php:45, ../app/Helpers/Options.php:56, ../app/Helpers/Options.php:261, ../app/Controllers/Admin/AdminColumns.php:130
+msgid "Image"
+msgstr ""
+
+#: ../app/Helpers/Options.php:46, ../app/Helpers/Options.php:57, ../app/Helpers/Options.php:262, ../app/Helpers/Options.php:404, ../app/Helpers/Options.php:922, ../app/Controllers/Admin/AdminColumns.php:131, ../app/Controllers/Admin/Metabox/PostMeta.php:137
+msgid "Price"
+msgstr ""
+
+#: ../app/Helpers/Options.php:47, ../app/Helpers/Options.php:58
+msgid "Excerpt"
+msgstr ""
+
+#: ../app/Helpers/Options.php:67
+msgid "Food menu type"
+msgstr ""
+
+#: ../app/Helpers/Options.php:84
+msgid "Stock status"
+msgstr ""
+
+#: ../app/Helpers/Options.php:89
+msgid "In stock"
+msgstr ""
+
+#: ../app/Helpers/Options.php:90
+msgid "Out of stock"
+msgstr ""
+
+#: ../app/Helpers/Options.php:98
+msgid "Simple Menu"
+msgstr ""
+
+#: ../app/Helpers/Options.php:99
+msgid "Variable Menu"
+msgstr ""
+
+#: ../app/Helpers/Options.php:106
+msgid "Menu order"
+msgstr ""
+
+#: ../app/Helpers/Options.php:111
+msgid "Enable ingredient"
+msgstr ""
+
+#: ../app/Helpers/Options.php:117
+msgid "Enable nutrition"
+msgstr ""
+
+#: ../app/Helpers/Options.php:123
+msgid "Enable reviews"
+msgstr ""
+
+#: ../app/Helpers/Options.php:136
+msgid "Food Menu Type"
+msgstr ""
+
+#: ../app/Helpers/Options.php:145
+msgid "The food menu custom post type can be sourced from the food menu post but it does not include an online ordering system."
+msgstr ""
+
+#: ../app/Helpers/Options.php:146
+msgid "Online ordering functionality is sourced from WooCommerce products, with WooCommerce being mandatory. All online ordering features, such as product addons, tipping, pickup/delivery options, discount specials, and special menu items, are available in the pro version."
+msgstr ""
+
+#: ../app/Helpers/Options.php:150
+msgid "Food Menu (Slug)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:157
+msgid "This option can't be blank, must have a maximum length of 20 characters and cannot contain capital letters or spaces."
+msgstr ""
+
+#: ../app/Helpers/Options.php:158
+msgid "After each change, please re-save your permalinks (Go to Dashboard > Settings > Permalinks. Click save button)."
+msgstr ""
+
+#: ../app/Helpers/Options.php:162
+msgid "Currency"
+msgstr ""
+
+#: ../app/Helpers/Options.php:166, ../app/Helpers/Options.php:174
+msgid "Select one"
+msgstr ""
+
+#: ../app/Helpers/Options.php:170
+msgid "Currency Position"
+msgstr ""
+
+#: ../app/Helpers/Options.php:194
+msgid "Enable Preloader?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:195, ../app/Helpers/Options.php:214, ../app/Helpers/Options.php:525, ../app/Helpers/Options.php:607, ../app/Helpers/Options.php:674, ../app/Helpers/Options.php:684
+msgid "Enable"
+msgstr ""
+
+#: ../app/Helpers/Options.php:196
+msgid "Switch on to enable preloader."
+msgstr ""
+
+#: ../app/Helpers/Options.php:202
+msgid "Allow Food Location ?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:204
+msgid "Implement a front-end location pop-up to capture user location for food delivery."
+msgstr ""
+
+#: ../app/Helpers/Options.php:212
+msgid "Hide Trailing Zeroes"
+msgstr ""
+
+#: ../app/Helpers/Options.php:215
+msgid "Switch on to hide trailing zeroes from the price."
+msgstr ""
+
+#: ../app/Helpers/Options.php:229
+msgid "Hide Options"
+msgstr ""
+
+#: ../app/Helpers/Options.php:239
+msgid "Primary Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:254
+msgid "Food Menu Post ( Custom Post )"
+msgstr ""
+
+#: ../app/Helpers/Options.php:255
+msgid "Online Ordering ( Woocommerce Product )"
+msgstr ""
+
+#: ../app/Helpers/Options.php:315
+msgid "Custom Parent Class"
+msgstr ""
+
+#: ../app/Helpers/Options.php:317
+msgid "Please enter custom parent class for adding custom css."
+msgstr ""
+
+#: ../app/Helpers/Options.php:333
+msgid "Background Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:334, ../app/Helpers/Options.php:343, ../app/Helpers/Options.php:352, ../app/Helpers/Options.php:414
+msgid "<b>Note:</b> You need to choose both colors for gradient background. If you need a single color, please choose only the 1st color."
+msgstr ""
+
+#: ../app/Helpers/Options.php:338
+msgid "Gradient Background (2nd Color)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:342
+msgid "Hover Background Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:347
+msgid "Hover Gradient Background (2nd Color)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:351
+msgid "Active Background Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:356
+msgid "Active Gradient Background (2nd Color)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:372
+msgid "Text color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:376
+msgid "Hover Text Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:380
+msgid "Active Text Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:384
+msgid "Typography"
+msgstr ""
+
+#: ../app/Helpers/Options.php:409
+msgid "Vertical Border Color"
+msgstr ""
+
+#: ../app/Helpers/Options.php:413
+msgid "Category Banner"
+msgstr ""
+
+#: ../app/Helpers/Options.php:430
+msgid "Element / Content Wrapper"
+msgstr ""
+
+#: ../app/Helpers/Options.php:431
+msgid "Please enter the content/element border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
+msgstr ""
+
+#: ../app/Helpers/Options.php:435
+msgid "Full Section Wrapper"
+msgstr ""
+
+#: ../app/Helpers/Options.php:436
+msgid "Please enter the section border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
+msgstr ""
+
+#: ../app/Helpers/Options.php:452
+msgid "Select Layout Type"
+msgstr ""
+
+#: ../app/Helpers/Options.php:459
+msgid "Select Layout"
+msgstr ""
+
+#: ../app/Helpers/Options.php:467
+msgid "Grid Style"
+msgstr ""
+
+#: ../app/Helpers/Options.php:472
+msgid "Please select the grid style."
+msgstr ""
+
+#: ../app/Helpers/Options.php:488
+msgid "Desktop Columns <i>(For devices > 991px)</i>"
+msgstr ""
+
+#: ../app/Helpers/Options.php:496
+msgid "Tab Columns <i>(For devices < 991px)</i>"
+msgstr ""
+
+#: ../app/Helpers/Options.php:504
+msgid "Mobile Columns <i>(For devices < 768px)</i>"
+msgstr ""
+
+#: ../app/Helpers/Options.php:524
+msgid "Enable Pagination?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:526
+msgid "Switch on to enable pagination."
+msgstr ""
+
+#: ../app/Helpers/Options.php:532
+msgid "Pagination type"
+msgstr ""
+
+#: ../app/Helpers/Options.php:539
+msgid "Please choose the pagination type."
+msgstr ""
+
+#: ../app/Helpers/Options.php:540
+msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Load More and Ajax Pagination.</b>"
+msgstr ""
+
+#: ../app/Helpers/Options.php:547
+msgid "Number of Posts Per Page"
+msgstr ""
+
+#: ../app/Helpers/Options.php:548
+msgid "Please enter the number of posts to show per page."
+msgstr ""
+
+#: ../app/Helpers/Options.php:566
+msgid "Image Size"
+msgstr ""
+
+#: ../app/Helpers/Options.php:570
+msgid "Please select the featured image dimension."
+msgstr ""
+
+#: ../app/Helpers/Options.php:571
+msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Custom Image Size.</b>"
+msgstr ""
+
+#: ../app/Helpers/Options.php:579
+msgid "Border Radius"
+msgstr ""
+
+#: ../app/Helpers/Options.php:581
+msgid "Please enter the featured image border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
+msgstr ""
+
+#: ../app/Helpers/Options.php:586
+msgid "Image Position"
+msgstr ""
+
+#: ../app/Helpers/Options.php:590
+msgid "Please select the featured image position."
+msgstr ""
+
+#: ../app/Helpers/Options.php:596
+msgid "Hover Animation"
+msgstr ""
+
+#: ../app/Helpers/Options.php:600
+msgid "Please select the featured image hover animation."
+msgstr ""
+
+#: ../app/Helpers/Options.php:606
+msgid "Enable Hover Icon?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:608
+msgid "Switch on to enable hover icon."
+msgstr ""
+
+#: ../app/Helpers/Options.php:627
+msgid "Category Title Type"
+msgstr ""
+
+#: ../app/Helpers/Options.php:630
+msgid "Please select the category title type."
+msgstr ""
+
+#: ../app/Helpers/Options.php:648
+msgid "Excerpt limit"
+msgstr ""
+
+#: ../app/Helpers/Options.php:649
+msgid "Limits the Excerpt text (letter limit). Leave it blank for full excerpt.<br> <strong>Please note that, HTML tags will not work if excerpt limit is applied.</strong>"
+msgstr ""
+
+#: ../app/Helpers/Options.php:653
+msgid "Custom Text <br>After Excerpt"
+msgstr ""
+
+#: ../app/Helpers/Options.php:656
+msgid "Adds texts after excerpt."
+msgstr ""
+
+#: ../app/Helpers/Options.php:673
+msgid "Link to Detail Page?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:675
+msgid "Switch on to enable linking to detail page."
+msgstr ""
+
+#: ../app/Helpers/Options.php:682
+msgid "Enable Details Page Popup?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:687
+msgid "Switch on to enable details page popup."
+msgstr ""
+
+#: ../app/Helpers/Options.php:692
+msgid "Link Target"
+msgstr ""
+
+#: ../app/Helpers/Options.php:696
+msgid "Please select the detail page link target."
+msgstr ""
+
+#: ../app/Helpers/Options.php:706
+msgid "Soft Crop"
+msgstr ""
+
+#: ../app/Helpers/Options.php:707
+msgid "Hard Crop"
+msgstr ""
+
+#: ../app/Helpers/Options.php:718
+msgid "Layout (Free)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:719
+msgid "Grid By Category (Free)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:733
+msgid "List Layout 1"
+msgstr ""
+
+#: ../app/Helpers/Options.php:739
+msgid "List Layout 2"
+msgstr ""
+
+#: ../app/Helpers/Options.php:745
+msgid "List Layout 3"
+msgstr ""
+
+#: ../app/Helpers/Options.php:751
+msgid "List Layout 4"
+msgstr ""
+
+#: ../app/Helpers/Options.php:757
+msgid "Grid By Category 1"
+msgstr ""
+
+#: ../app/Helpers/Options.php:769
+msgid "Grid By Category 2"
+msgstr ""
+
+#: ../app/Helpers/Options.php:775
+msgid "Grid By Category 3"
+msgstr ""
+
+#: ../app/Helpers/Options.php:781
+msgid "Grid By Category 4"
+msgstr ""
+
+#: ../app/Helpers/Options.php:794
+msgid "List Layouts"
+msgstr ""
+
+#: ../app/Helpers/Options.php:798
+msgid "Grid by Category Layouts"
+msgstr ""
+
+#: ../app/Helpers/Options.php:813
+msgid "Even Grid"
+msgstr ""
+
+#: ../app/Helpers/Options.php:814
+msgid "Masonry Grid"
+msgstr ""
+
+#: ../app/Helpers/Options.php:828
+msgid "1 Columns"
+msgstr ""
+
+#: ../app/Helpers/Options.php:829
+msgid "2 Columns"
+msgstr ""
+
+#: ../app/Helpers/Options.php:830
+msgid "3 Columns"
+msgstr ""
+
+#: ../app/Helpers/Options.php:831
+msgid "4 Columns"
+msgstr ""
+
+#: ../app/Helpers/Options.php:832
+msgid "5 Columns"
+msgstr ""
+
+#: ../app/Helpers/Options.php:833
+msgid "6 Columns"
+msgstr ""
+
+#: ../app/Helpers/Options.php:848
+msgid "Food item data source"
+msgstr ""
+
+#: ../app/Helpers/Options.php:853
+msgid "Please select a food item data source"
+msgstr ""
+
+#: ../app/Helpers/Options.php:856
+msgid "Include Posts"
+msgstr ""
+
+#: ../app/Helpers/Options.php:859
+msgid "List of post IDs to diplay (comma-separated values, for example: 1,2,3). <br>Set empty to show all posts."
+msgstr ""
+
+#: ../app/Helpers/Options.php:862
+msgid "Exclude Posts"
+msgstr ""
+
+#: ../app/Helpers/Options.php:865
+msgid "List of post IDs to exclude (comma-separated values, for example: 1,2,3) <br>Set empty to show all posts."
+msgstr ""
+
+#: ../app/Helpers/Options.php:868
+msgid "Posts Limit"
+msgstr ""
+
+#: ../app/Helpers/Options.php:871
+msgid "The number of posts to show. Set empty to show all posts."
+msgstr ""
+
+#: ../app/Helpers/Options.php:878
+msgid "Select the category you want to filter, Leave it blank for all category."
+msgstr ""
+
+#: ../app/Helpers/Options.php:882
+msgid "Order By"
+msgstr ""
+
+#: ../app/Helpers/Options.php:886, ../app/Helpers/Options.php:893
+msgid "Please choose to reorder posts."
+msgstr ""
+
+#: ../app/Helpers/Options.php:890
+msgid "Order"
+msgstr ""
+
+#: ../app/Helpers/Options.php:904
+msgid "IN — show posts which associate with one or more of selected terms"
+msgstr ""
+
+#: ../app/Helpers/Options.php:905
+msgid "NOT IN — show posts which do not associate with any of selected terms"
+msgstr ""
+
+#: ../app/Helpers/Options.php:906
+msgid "AND — show posts which associate with all of selected terms"
+msgstr ""
+
+#: ../app/Helpers/Options.php:907
+msgid "EXISTS —"
+msgstr ""
+
+#: ../app/Helpers/Options.php:908
+msgid "NOT EXISTS —"
+msgstr ""
+
+#: ../app/Helpers/Options.php:919
+msgid "Menu Order"
+msgstr ""
+
+#: ../app/Helpers/Options.php:920
+msgid "Name"
+msgstr ""
+
+#: ../app/Helpers/Options.php:921
+msgid "Date"
+msgstr ""
+
+#: ../app/Helpers/Options.php:923
+msgid "ID"
+msgstr ""
+
+#: ../app/Helpers/Options.php:936
+msgid "Ascending"
+msgstr ""
+
+#: ../app/Helpers/Options.php:937
+msgid "Descending"
+msgstr ""
+
+#: ../app/Helpers/Options.php:947
+msgid "WooCommerce"
+msgstr ""
+
+#: ../app/Helpers/Options.php:955
+msgid "Left (£99.99)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:956
+msgid "Right (99.99£)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:957
+msgid "Left with space (£ 99.99)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:958
+msgid "Right with space (99.99 £)"
+msgstr ""
+
+#: ../app/Helpers/Options.php:964
+msgid "Display in 2 column"
+msgstr ""
+
+#: ../app/Helpers/Options.php:965
+msgid "Display in 1 column"
+msgstr ""
+
+#: ../app/Helpers/Options.php:2314
+msgid "Numbered Pagination"
+msgstr ""
+
+#: ../app/Helpers/Upgrade.php:45
+msgid "Food Menu Pro"
+msgstr ""
+
+#: ../app/Models/Fields.php:815
+msgid "Left"
+msgstr ""
+
+#: ../app/Models/Fields.php:816
+msgid "Right"
+msgstr ""
+
+#: ../app/Models/Fields.php:818
+msgid "Justify"
+msgstr ""
+
+#: ../app/Models/Fields.php:825
+msgid "Bold"
+msgstr ""
+
+#: ../app/Models/Fields.php:826
+msgid "Bolder"
+msgstr ""
+
+#: ../app/Models/Fields.php:827
+msgid "Lighter"
+msgstr ""
+
+#: ../app/Models/Fields.php:828
+msgid "Inherit"
+msgstr ""
+
+#: ../app/Models/Fields.php:829
+msgid "Initial"
+msgstr ""
+
+#: ../app/Models/Fields.php:830
+msgid "Unset"
+msgstr ""
+
+#: ../app/Models/Fields.php:831
+msgid "100"
+msgstr ""
+
+#: ../app/Models/Fields.php:832
+msgid "200"
+msgstr ""
+
+#: ../app/Models/Fields.php:833
+msgid "300"
+msgstr ""
+
+#: ../app/Models/Fields.php:834
+msgid "400"
+msgstr ""
+
+#: ../app/Models/Fields.php:835
+msgid "500"
+msgstr ""
+
+#: ../app/Models/Fields.php:836
+msgid "600"
+msgstr ""
+
+#: ../app/Models/Fields.php:837
+msgid "700"
+msgstr ""
+
+#: ../app/Models/Fields.php:838
+msgid "800"
+msgstr ""
+
+#: ../app/Models/Fields.php:839
+msgid "900"
+msgstr ""
+
+#: ../app/Widgets/FmWidget.php:29
+msgid "Display Food menu"
+msgstr ""
+
+#: ../app/Widgets/FmWidget.php:68
+msgid "Title:"
+msgstr ""
+
+#: ../app/Widgets/FmWidget.php:77
+msgid "Select Food Menu"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:45, ../resources/settings.php:21
+msgid "Food Menu Settings"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:46
+msgid "Settings"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:57, ../app/Controllers/Admin/Settings.php:58
+msgid "Get Help"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:70, ../app/Controllers/Admin/Settings.php:71
+msgid "Product Addons"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:111
+msgid "Facing issue?"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:112
+msgid "Please open a support ticket."
+msgstr ""
+
+#: ../app/Controllers/Admin/Upgrade.php:93
+msgid "Heads up, Please backup before upgrade to version "
+msgstr ""
+
+#: ../app/Controllers/Frontend/Shortcode.php:224, ../app/Controllers/Admin/Ajax/Preview.php:347
+msgid "No posts found."
+msgstr ""
+
+#: ../app/Controllers/Frontend/Shortcode.php:172, ../app/Controllers/Frontend/Shortcode.php:164, ../app/Controllers/Admin/Ajax/Preview.php:284, ../app/Controllers/Admin/Ajax/Preview.php:276
+msgid "Loading ..."
+msgstr ""
+
+#: ../app/Controllers/Frontend/Shortcode.php:353, ../app/Controllers/Admin/Ajax/Preview.php:1021
+msgid "No categories found"
+msgstr ""
+
+#: ../app/Controllers/Frontend/Shortcode.php:343, ../app/Controllers/Admin/Ajax/Preview.php:268, ../app/Controllers/Admin/Ajax/Preview.php:1011, ../app/Controllers/Admin/Ajax/Preview.php:1239
+msgid "Add to cart"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:103
+msgid "Food Order Location"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:139
+msgid "Save Your Preferred Location"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:140
+msgid "Save"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:313
+msgid "Category:"
+msgid_plural "Categories:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:331
+msgid "Tag:"
+msgid_plural "Tags:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:30
+msgid "Full Size"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:105
+msgid "Add to Cart"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:30
+msgid "Switch on to enable mini cart."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Shortcodes.php:84
+msgid "Select ShortCode"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Shortcodes.php:98
+msgid "Please select a food menu shordcode"
+msgstr ""
+
+#: ../app/Widgets/Vc/VcAddon.php:72, ../app/Widgets/Vc/VcAddon.php:49
+msgid "ShortCode"
+msgstr ""
+
+#: ../app/Widgets/Vc/VcAddon.php:76, ../app/Widgets/Vc/VcAddon.php:53
+msgid "ShortCode list"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Preview.php:356, ../app/Controllers/Admin/Ajax/Settings.php:68
+msgid "Security Error !!"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Preview.php:112
+msgid "Load More"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Preview.php:128, ../app/Controllers/Admin/Ajax/Preview.php:1238
+msgid "Read More"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Preview.php:247
+msgid "Show all"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Settings.php:66
+msgid "Settings successfully updated"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Shortcode.php:65
+msgid "No shortCode found."
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Shortcode.php:52
+msgid "Select Short code"
+msgstr ""
+
+#: ../app/Controllers/Admin/Ajax/Shortcode.php:54
+msgid "Default"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/PostMeta.php:80
+msgid "Food Details"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/PostMeta.php:143
+msgid "Insert the price, leave blank if it is free"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:107
+msgid "Short Code Generator"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:116
+msgid "Layout Preview"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:270
+msgid "Layout"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:271
+msgid "Filtering"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:272
+msgid "Field selection"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:273
+msgid "Styling"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:332
+msgid "Get started by spending some time with the documentation we included step by step process with screenshots with video."
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:379
+msgid "Pro Field Alert!"
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:380
+msgid "Sorry! This is a Pro field. To activate this field, you need to upgrade to the Pro version."
+msgstr ""
+
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:381
+msgid "Get Pro Version"
+msgstr ""
+
+#: ../resources/general-settings.php:20
+msgid "Date & Time Format"
+msgstr ""
+
+#: ../resources/general-settings.php:24
+msgid "Date format for delivery & pickup orders"
+msgstr ""
+
+#: ../resources/general-settings.php:32
+msgid "Selected current timezone is "
+msgstr ""
+
+#: ../resources/general-settings.php:34
+msgid "Universal time is "
+msgstr ""
+
+#: ../resources/general-settings.php:39
+msgid "Update Date & Time Format"
+msgstr ""
+
+#: ../resources/settings.php:24
+msgid "General settings"
+msgstr ""
+
+#: ../resources/settings.php:32
+msgid "General"
+msgstr ""
+
+#: ../resources/settings.php:38
+msgid "Detail page settings"
+msgstr ""
+
+#: ../resources/settings.php:80
+msgid "Save Changes"
+msgstr ""
+
+#: ../resources/metabox/styling.php:18
+msgid "General Styles"
+msgstr ""
+
+#: ../resources/metabox/styling.php:29
+msgid "Content Styles"
+msgstr ""
+
+#: ../resources/metabox/styling.php:40
+msgid "Button Styles"
+msgstr ""
+
+#: ../resources/metabox/styling.php:58
+msgid "Extra Styles"
+msgstr ""
+
+#: ../templates/archive-food-menu-cat.php:75
+msgid "No food found."
+msgstr ""
