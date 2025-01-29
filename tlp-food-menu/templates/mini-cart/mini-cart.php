@@ -20,9 +20,10 @@
 use RT\FoodMenu\Helpers\Fns;
 
 defined( 'ABSPATH' ) || exit;
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 $settings = get_option( TLPFoodMenu()->options['settings'] );
 do_action( 'woocommerce_before_mini_cart' );
-$count_label = WC()->cart->get_cart_contents_count() < 2 ? __( 'Cart Item', 'food-menu-pro' ) : __( 'Shopping Cart', 'food-menu-pro' );
+$count_label = WC()->cart->get_cart_contents_count() < 2 ? __( 'Cart Item', 'tlp-food-menu' ) : __( 'Shopping Cart', 'tlp-food-menu' );
 $style       = $settings['mini_cart_drawer_style'] ?? 'style1';
 
 ?>
@@ -31,12 +32,12 @@ $style       = $settings['mini_cart_drawer_style'] ?? 'style1';
 		<?php if ( 'style2' === $style ) : ?>
 			<svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M15.9368 10.7308V5.42308C15.9368 4.25 15.4694 3.12498 14.6374 2.29549C13.8055 1.466 12.6771 1 11.5005 1C10.324 1 9.19558 1.466 8.36363 2.29549C7.53167 3.12498 7.06428 4.25 7.06428 5.42308V10.7308M20.4984 8.38005L21.9925 22.5339C22.0753 23.3183 21.4602 24 20.6687 24H2.3323C2.14563 24.0002 1.96101 23.9612 1.79042 23.8857C1.61984 23.8101 1.46711 23.6996 1.34216 23.5613C1.2172 23.423 1.12282 23.2601 1.06514 23.0831C1.00745 22.9061 0.987762 22.719 1.00734 22.5339L2.50265 8.38005C2.53714 8.05399 2.69149 7.75221 2.93592 7.53289C3.18036 7.31357 3.49758 7.19225 3.82642 7.19231H19.1746C19.856 7.19231 20.4274 7.70538 20.4984 8.38005ZM7.50791 10.7308C7.50791 10.8481 7.46117 10.9606 7.37797 11.0435C7.29478 11.1265 7.18194 11.1731 7.06428 11.1731C6.94663 11.1731 6.83379 11.1265 6.7506 11.0435C6.6674 10.9606 6.62066 10.8481 6.62066 10.7308C6.62066 10.6135 6.6674 10.501 6.7506 10.418C6.83379 10.3351 6.94663 10.2885 7.06428 10.2885C7.18194 10.2885 7.29478 10.3351 7.37797 10.418C7.46117 10.501 7.50791 10.6135 7.50791 10.7308ZM16.3804 10.7308C16.3804 10.8481 16.3336 10.9606 16.2505 11.0435C16.1673 11.1265 16.0544 11.1731 15.9368 11.1731C15.8191 11.1731 15.7063 11.1265 15.6231 11.0435C15.5399 10.9606 15.4931 10.8481 15.4931 10.7308C15.4931 10.6135 15.5399 10.501 15.6231 10.418C15.7063 10.3351 15.8191 10.2885 15.9368 10.2885C16.0544 10.2885 16.1673 10.3351 16.2505 10.418C16.3336 10.501 16.3804 10.6135 16.3804 10.7308Z"
-					  stroke="#323846" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						stroke="#323846" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		<?php endif; ?>
 		<div class="title"><?php echo esc_html( $count_label ); ?></div>
 		<span class="cart-count"><?php echo absint( WC()->cart->get_cart_contents_count() ); ?></span>
-		<span class="fmp-clear-cart"><?php echo esc_html__( 'Clear All', 'food-menu-pro' ); ?></span>
+		<span class="fmp-clear-cart"><?php echo esc_html__( 'Clear All', 'tlp-food-menu' ); ?></span>
 	</div>
 </h3>
 <?php if ( ! WC()->cart->is_empty() ) : ?>
@@ -86,12 +87,12 @@ $style       = $settings['mini_cart_drawer_style'] ?? 'style1';
 								sprintf(
 									'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">%s<span class="rm-text">%s</span></a>',
 									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-									esc_attr__( 'Remove this item', 'food-menu-pro' ),
+									esc_attr__( 'Remove this item', 'tlp-food-menu' ),
 									esc_attr( $product_id ),
 									esc_attr( $cart_item_key ),
 									esc_attr( $_product->get_sku() ),
 									$remove_icon,
-									esc_html__( 'Remove', 'food-menu-pro' )
+									esc_html__( 'Remove', 'tlp-food-menu' )
 								),
 								$cart_item_key
 							);
@@ -121,7 +122,7 @@ else :
 		}
 		?>
 		<li class="woocommerce-mini-cart__empty-message">
-			<img class="empty-cart" width="100" height="100" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loading...', 'food-menu-pro' ); ?>">
+			<img class="empty-cart" width="100" height="100" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loading...', 'tlp-food-menu' ); ?>">
 			<?php if ( ! empty( $settings['mini_cart_empty_text'] ) ) : ?>
 				<span class="fmp-empty-cart-text"><?php echo esc_html( $settings['mini_cart_empty_text'] ); ?></span>
 			<?php endif; ?>
@@ -130,7 +131,7 @@ else :
 			if ( ! empty( $settings['mini_cart_go_shopping_btn_text'] ) ) {
 				?>
 				<a class="fmp-button"
-				   href="<?php echo esc_url( $shop_page_url ); ?>"><?php echo esc_html( $settings['mini_cart_go_shopping_btn_text'] ); ?></a>
+					href="<?php echo esc_url( $shop_page_url ); ?>"><?php echo esc_html( $settings['mini_cart_go_shopping_btn_text'] ); ?></a>
 				<?php
 			}
 			?>
@@ -148,13 +149,13 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 		<div class="fmp-apply-coupon-toggle">
 			<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M17 0C17.7662 0.00024794 18.5032 0.293638 19.06 0.82C19.6164 1.34277 19.9526 2.05801 20 2.82V4.82C19.9994 5.09089 19.9268 5.35676 19.7898 5.59044C19.6527 5.82411 19.4561 6.01721 19.22 6.15H19.12C18.7938 6.30965 18.5173 6.55509 18.32 6.86C18.1262 7.15889 18.0157 7.50412 18 7.86C17.9915 8.20856 18.0742 8.55328 18.24 8.86C18.4123 9.179 18.6681 9.44515 18.98 9.63L19.12 9.71C19.3684 9.82705 19.5809 10.0084 19.7356 10.2352C19.8904 10.462 19.9816 10.7261 20 11V13C19.9998 13.7662 19.7064 14.5032 19.18 15.06C18.6572 15.6164 17.942 15.9526 17.18 16H3C2.23382 15.9998 1.49676 15.7064 0.94 15.18C0.382197 14.6593 0.0487029 13.9421 0.01 13.18V11.18C0.0116443 10.9105 0.0835289 10.6461 0.21856 10.4129C0.353592 10.1796 0.547103 9.98562 0.78 9.85H0.88C1.20618 9.69035 1.48274 9.44491 1.68 9.14C1.87382 8.84111 1.98429 8.49588 2 8.14C2.00853 7.79145 1.9258 7.44672 1.76 7.14C1.59612 6.78524 1.33191 6.48626 1 6.28L0.88 6.2C0.643879 6.09062 0.439326 5.92319 0.285438 5.71335C0.131551 5.5035 0.0333484 5.25808 0 5L0 3C0.00024794 2.23382 0.293638 1.49676 0.82 0.94C1.34071 0.382197 2.0579 0.0487029 2.82 0.01H17V0ZM17 2H3C2.75432 1.99823 2.51659 2.08695 2.33215 2.24926C2.14771 2.41157 2.02948 2.63609 2 2.88V4.53C2.59771 4.88892 3.09348 5.39501 3.44 6C3.78141 6.57342 3.97392 7.22315 4 7.89C4.0232 8.58533 3.86465 9.27468 3.54 9.89C3.22558 10.4976 2.75647 11.0116 2.18 11.38L2 11.47V13C1.99823 13.2457 2.08695 13.4834 2.24926 13.6679C2.41157 13.8523 2.63609 13.9705 2.88 14H17C17.2457 14.0018 17.4834 13.913 17.6679 13.7507C17.8523 13.5884 17.9705 13.3639 18 13.12V11.47C17.4084 11.125 16.9132 10.6367 16.56 10.05C16.2105 9.46186 16.0177 8.79392 16 8.11C15.9768 7.41467 16.1353 6.72532 16.46 6.11C16.7744 5.50238 17.2435 4.98843 17.82 4.62L18 4.53V3C18.0018 2.75432 17.913 2.51659 17.7507 2.33215C17.5884 2.14771 17.3639 2.02948 17.12 2H17ZM8 5C8.24568 4.99823 8.48341 5.08695 8.66785 5.24926C8.85229 5.41157 8.97052 5.63609 9 5.88V10C9.00167 10.2561 8.90503 10.5031 8.73 10.69C8.55051 10.8695 8.31304 10.9794 8.06 11C7.8059 11.0152 7.55555 10.933 7.36 10.77C7.16097 10.6076 7.03206 10.3749 7 10.12V6C7 5.73478 7.10536 5.48043 7.29289 5.29289C7.48043 5.10536 7.73478 5 8 5Z"
-					  fill="#828282"/>
+						fill="#828282"/>
 			</svg>
 			<?php
 			printf(
 				'<a href="#">%s</a> %s',
-				esc_html__( 'Click Here', 'food-menu-pro' ),
-				esc_html__( 'Apply Coupon', 'food-menu-pro' ),
+				esc_html__( 'Click Here', 'tlp-food-menu' ),
+				esc_html__( 'Apply Coupon', 'tlp-food-menu' ),
 			)
 			?>
 		</div>
@@ -163,7 +164,7 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 	<div class="fmp-mini-coupon-form-main">
 		<form id="fmp-mini-coupon-form">
 			<input type="text" id="coupon-code" name="coupon_code" placeholder="Enter coupon code">
-			<button type="submit"><?php echo esc_html__( 'Apply', 'food-menu-pro' ); ?></button>
+			<button type="submit"><?php echo esc_html__( 'Apply', 'tlp-food-menu' ); ?></button>
 		</form>
 	</div>
 
@@ -175,8 +176,8 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 	<div class="cart_totals <?php echo esc_attr( $cart_total_class ); ?>">
 		<table cellspacing="0" class="shop_table shop_table_responsive">
 			<tr class="cart-subtotal">
-				<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+				<th><?php esc_html_e( 'Subtotal', 'tlp-food-menu' ); ?></th>
+				<td data-title="<?php esc_attr_e( 'Subtotal', 'tlp-food-menu' ); ?>">
 					<?php
 					if ( 'on' === $extra_field_visibility ) {
 						wc_cart_totals_subtotal_html();

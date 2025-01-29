@@ -14,7 +14,7 @@ use RT\FoodMenu\Helpers\Options;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
-
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 /**
  * Model: Fields.
  */
@@ -73,12 +73,10 @@ class Fields {
 
 			if ( ! $this->meta_exist( $post_id, $this->name ) ) {
 				$this->value = $this->default;
-			} else {
-				if ( $this->multiple && ! apply_filters( 'tlp_fmp_has_multiple_meta_issue', false ) ) {
+			} elseif ( $this->multiple && ! apply_filters( 'tlp_fmp_has_multiple_meta_issue', false ) ) {
 					$this->value = get_post_meta( $post_id, $this->name );
-				} else {
-					$this->value = get_post_meta( $post_id, $this->name, true );
-				}
+			} else {
+				$this->value = get_post_meta( $post_id, $this->name, true );
 			}
 		}
 
@@ -801,7 +799,7 @@ class Fields {
 	}
 
 	private function scFontSize() {
-		$num = [];
+		$num = array();
 
 		for ( $i = 10; $i <= 60; $i++ ) {
 			$num[ $i ] = $i . 'px';
@@ -811,16 +809,16 @@ class Fields {
 	}
 
 	private function scAlignment() {
-		return [
+		return array(
 			'left'    => esc_html__( 'Left', 'tlp-food-menu' ),
 			'right'   => esc_html__( 'Right', 'tlp-food-menu' ),
 			'center'  => esc_html__( 'Center', 'tlp-food-menu' ),
 			'justify' => esc_html__( 'Justify', 'tlp-food-menu' ),
-		];
+		);
 	}
 
 	private function scTextWeight() {
-		return [
+		return array(
 			'normal'  => esc_html__( 'Normal', 'tlp-food-menu' ),
 			'bold'    => esc_html__( 'Bold', 'tlp-food-menu' ),
 			'bolder'  => esc_html__( 'Bolder', 'tlp-food-menu' ),
@@ -837,7 +835,7 @@ class Fields {
 			700       => esc_html__( '700', 'tlp-food-menu' ),
 			800       => esc_html__( '800', 'tlp-food-menu' ),
 			900       => esc_html__( '900', 'tlp-food-menu' ),
-		];
+		);
 	}
 
 	private function meta_exist( $post_id = null, $meta_key = null, $type = 'post' ) {

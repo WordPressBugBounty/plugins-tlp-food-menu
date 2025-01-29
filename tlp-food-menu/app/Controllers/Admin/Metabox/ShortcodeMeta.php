@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Admin Shortcode Metabox Class.
  */
 class ShortcodeMeta {
+
 	use \RT\FoodMenu\Traits\SingletonTrait;
 
 	/**
@@ -135,6 +136,7 @@ class ShortcodeMeta {
 	 *
 	 * @param int    $post_id Post ID.
 	 * @param object $post Post object.
+	 *
 	 * @return void
 	 */
 	public function save_meta_boxes( $post_id, $post ) {
@@ -154,8 +156,20 @@ class ShortcodeMeta {
 		$mates = apply_filters( 'rtfm_sc_meta_fields', $mates );
 
 		foreach ( $mates as $metaKey => $field ) {
-			$rValue = ! empty( $_REQUEST[ $metaKey ] ) ? $_REQUEST[ $metaKey ] : null;
-			$value  = Fns::sanitize( $field, $rValue );
+			/**
+			 * Old code before sanitization. should remove later
+			 * $rValue1 = ! empty( $_REQUEST[ $metaKey ] ) ? wp_unslash( $_REQUEST[ $metaKey ] ) : null;
+			 */
+			$rValue = '';
+			if ( ! empty( $_REQUEST[ $metaKey ] ) ) {
+				if ( is_array( $_REQUEST[ $metaKey ] ) ) {
+					$rValue = array_map( 'sanitize_text_field', wp_unslash( $_REQUEST[ $metaKey ] ) );
+				} else {
+					$rValue = sanitize_text_field( wp_unslash( $_REQUEST[ $metaKey ] ) );
+				}
+			}
+
+			$value = Fns::sanitize( $field, $rValue );
 
 			if ( empty( $field['multiple'] ) ) {
 				update_post_meta( $post_id, $metaKey, $value );
@@ -184,6 +198,7 @@ class ShortcodeMeta {
 	 * Text after title.
 	 *
 	 * @param object $post Post Object.
+	 *
 	 * @return string
 	 */
 	public function after_title_text( $post ) {
@@ -255,6 +270,7 @@ class ShortcodeMeta {
 	 * Setting Sections
 	 *
 	 * @param object $post Post object.
+	 *
 	 * @return void
 	 */
 	public function fm_sc_settings_selection( $post ) {
@@ -344,7 +360,6 @@ class ShortcodeMeta {
 
 		Fns::print_html( $html );
 	}
-
 
 	/**
 	 * Preview section

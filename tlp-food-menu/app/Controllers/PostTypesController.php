@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Custom Post Type Register Class.
  */
 class PostTypesController {
+
 	use \RT\FoodMenu\Traits\SingletonTrait;
 
 	/**
@@ -39,6 +40,8 @@ class PostTypesController {
 			->post_types()
 			->taxonomies()
 			->flush();
+
+		add_action( 'admin_head', [ $this, 'add_custom_css_to_product_list_page' ] );
 	}
 
 	/**
@@ -58,10 +61,10 @@ class PostTypesController {
 		}
 
 		foreach ( $post_types as $post_type => $args ) {
-			\register_post_type( $post_type, $args );
+			register_post_type( $post_type, $args );
 		}
 
-		\add_filter( 'post_updated_messages', [ $this, 'post_updated_messages' ] );
+		add_filter( 'post_updated_messages', [ $this, 'post_updated_messages' ] );
 
 		return $this;
 	}
@@ -84,7 +87,7 @@ class PostTypesController {
 			}
 			$object_type = $args['post_type'];
 			unset( $args['post_type'] );
-			\register_taxonomy( TLPFoodMenu()->taxonomies[ $taxonomy ], [ $object_type ], $args );
+			register_taxonomy( TLPFoodMenu()->taxonomies[ $taxonomy ], [ $object_type ], $args );
 		}
 
 		return $this;
@@ -262,6 +265,7 @@ class PostTypesController {
 	 * Post Updated Messeges
 	 *
 	 * @param array $messages Message.
+	 *
 	 * @return array
 	 */
 	public function post_updated_messages( $messages ) {
@@ -277,7 +281,7 @@ class PostTypesController {
 					'ShortCode restored to revision from %s',
 					'tlp-food-menu'
 				),
-				wp_post_revision_title( (int) $_GET['revision'], false ) //phpcs:ignore
+				wp_post_revision_title( (int) $_GET['revision'], FALSE ) //phpcs:ignore
 			) : false,
 			6  => esc_html__( 'ShortCode published.', 'tlp-food-menu' ),
 			7  => esc_html__( 'ShortCode saved.', 'tlp-food-menu' ),
@@ -300,6 +304,18 @@ class PostTypesController {
 		if ( $flush ) {
 			\flush_rewrite_rules();
 			update_option( TLPFoodMenu()->options['flash'], false );
+		}
+	}
+
+	public function add_custom_css_to_product_list_page() {
+		$screen = get_current_screen();
+		// Check if we are on the WooCommerce Products list page.
+		if ( $screen->post_type === 'product' && $screen->base == 'edit' ) {
+			echo '<style>
+            table.wp-list-table .column-name {
+                width: 14%;
+            }
+        </style>';
 		}
 	}
 }

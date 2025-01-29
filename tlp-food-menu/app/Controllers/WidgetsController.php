@@ -7,7 +7,7 @@
 
 namespace RT\FoodMenu\Controllers;
 
-use RT\FoodMenu\Widgets as Widgets;
+use RT\FoodMenu\Widgets;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {

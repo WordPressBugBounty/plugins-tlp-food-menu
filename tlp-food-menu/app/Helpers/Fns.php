@@ -15,18 +15,17 @@ use RT\FoodMenu\Controllers\MiniCart\MiniCartFns;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
-
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 /**
  * Helpers class.
  */
 class Fns {
 
-
-
 	/**
 	 * Classes instatiation.
 	 *
 	 * @param array $classes Classes to init.
+	 *
 	 * @return void
 	 */
 	public static function instances( array $classes ) {
@@ -61,7 +60,7 @@ class Fns {
 	 * @return string|null
 	 */
 	public static function getNonce() {
-        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		return isset( $_REQUEST[ self::nonceID() ] ) ? sanitize_text_field( wp_unslash( $_REQUEST[ self::nonceID() ] ) ) : null;
 	}
 
@@ -89,6 +88,7 @@ class Fns {
 	 * @param string  $template_name View name.
 	 * @param array   $args View args.
 	 * @param boolean $return View return.
+	 *
 	 * @return string|void
 	 */
 	public static function render( $template_name, $args = [], $return = false ) {
@@ -134,6 +134,7 @@ class Fns {
 	 * @param string  $viewName View name.
 	 * @param array   $args View args.
 	 * @param boolean $return View return.
+	 *
 	 * @return string|void
 	 */
 	public static function renderView( $viewName, $args = [], $return = false ) {
@@ -167,6 +168,7 @@ class Fns {
 	 * @param string  $number Number.
 	 * @param boolean $dp DP.
 	 * @param boolean $trim_zeros Trim zero.
+	 *
 	 * @return string
 	 */
 	public static function format_decimal( $number, $dp = false, $trim_zeros = false ) {
@@ -215,6 +217,7 @@ class Fns {
 	 * This function will generate meta or setting field
 	 *
 	 * @param array $fields Fields.
+	 *
 	 * @return null|string
 	 */
 	public static function rtFieldGenerator( $fields = [] ) {
@@ -283,7 +286,6 @@ class Fns {
 		);
 	}
 
-
 	/**
 	 * Sanitize field value
 	 *
@@ -294,7 +296,6 @@ class Fns {
 	 * @internal param $value
 	 */
 	public static function sanitize( $field = [], $value = null ) {
-
 		$newValue = null;
 
 		if ( ! is_array( $field ) ) {
@@ -404,6 +405,7 @@ class Fns {
 	 *
 	 * @param string $color Color.
 	 * @param float  $opacity Opacity.
+	 *
 	 * @return string
 	 */
 	public static function rtHex2rgba( $color, $opacity = .5 ) {
@@ -623,6 +625,7 @@ class Fns {
 	 * Excerpt Max Character Length.
 	 *
 	 * @param int $charLength Character Length.
+	 *
 	 * @return string
 	 */
 	public static function the_excerpt_max_charlength( $charLength ) {
@@ -634,7 +637,7 @@ class Fns {
 		if ( mb_strlen( $excerpt ) > $charLength ) {
 			$subex   = mb_substr( $excerpt, 0, $charLength - 5 );
 			$exwords = explode( ' ', $subex );
-			$excut   = -( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+			$excut   = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
 
 			if ( $excut < 0 ) {
 				$html .= mb_substr( $subex, 0, $excut );
@@ -648,12 +651,12 @@ class Fns {
 		return $html;
 	}
 
-
 	/**
 	 * Word Limit.
 	 *
 	 * @param string $string Word.
 	 * @param int    $word_limit Limit.
+	 *
 	 * @return string
 	 */
 	public static function string_limit_words( $string, $word_limit ) {
@@ -666,6 +669,7 @@ class Fns {
 	 * Get Price
 	 *
 	 * @param int $id Post ID.
+	 *
 	 * @return string
 	 */
 	public static function getPrice( $id = null ) {
@@ -710,6 +714,7 @@ class Fns {
 	public static function getCurrencySymbol() {
 		$currency = self::getCurrency();
 		$cList    = Options::currency_list();
+
 		return $cList[ $currency ]['symbol'];
 	}
 
@@ -800,6 +805,7 @@ class Fns {
 	 */
 	public static function rtImageReSize( $url, $width = null, $height = null, $crop = null, $single = true, $upscale = false ) {
 		$rtResize = new ReSizer();
+
 		return $rtResize->process( $url, $width, $height, $crop, $single, $upscale );
 	}
 
@@ -860,7 +866,7 @@ class Fns {
 
 				if ( ! empty( $image ) ) {
 					if ( $lazy ) {
-						list($src, $width, $height) = $image;
+						[ $src, $width, $height ] = $image;
 
 						$hwstring         = image_hwstring( $width, $height );
 						$attachment       = get_post( $attachment_id );
@@ -875,7 +881,7 @@ class Fns {
 
 						$imgHtml .= ' />';
 					} else {
-						list($src, $width, $height) = $image;
+						[ $src, $width, $height ] = $image;
 
 						$hwstring    = image_hwstring( $width, $height );
 						$attachment  = get_post( $attachment_id );
@@ -972,7 +978,7 @@ class Fns {
 				'order_by'       => 'title',
 				'order'          => 'ASC',
 				'post_status'    => 'publish',
-				'posts_per_page' => -1,
+				'posts_per_page' => - 1,
 			]
 		);
 
@@ -989,6 +995,7 @@ class Fns {
 	 * Promotion Product
 	 *
 	 * @param array $products Products.
+	 *
 	 * @return string
 	 */
 	public static function get_product_list_html( $products = [] ) {
@@ -1034,7 +1041,6 @@ class Fns {
 							) : null,
 							$info_html
 						);
-
 					}
 
 					$html .= sprintf( '<div class="rt-product-list">%s</div>', $htmlProducts );
@@ -1244,10 +1250,10 @@ class Fns {
 	 * @param array  $group options.
 	 * @param string $option_key option key.
 	 * @param string $default_value option default value.
+	 *
 	 * @return mixed|string
 	 */
 	public static function get_options_by_default_val( $group, $option_key, $default_value = '' ) {
-
 		if ( ! $option_key || ! isset( $group[ $option_key ] ) ) {
 			return $default_value;
 		}
@@ -1262,6 +1268,7 @@ class Fns {
 	 * @param string  $no_options .
 	 * @param string  $value_type .
 	 * @param boolean $number .
+	 *
 	 * @return array
 	 */
 	public static function get_location_data( $default_options = '', $no_options = '', $value_type = 'key', $number = false ) {
@@ -1295,6 +1302,7 @@ class Fns {
 	 * Render Html.
 	 *
 	 * @param string $content .
+	 *
 	 * @return mixed|string
 	 */
 	public static function fmp_render( $content ) {
@@ -1309,11 +1317,28 @@ class Fns {
 	 * Get settings Options.
 	 *
 	 * @param string $key .
+	 *
 	 * @return array
 	 */
 	public static function get_settings_option( $key = null ) {
 		$options = TLPFoodMenu()->options;
 		$key     = ( null === $key && isset( $options['settings'] ) ) ? $options['settings'] : $key;
+
 		return get_option( $key );
+	}
+
+	/**
+	 * Sanitize Recursive Array
+	 *
+	 * @param $input
+	 *
+	 * @return array|mixed|string
+	 */
+	public static function sanitize_recursive_array( $input ) {
+		if ( is_array( $input ) ) {
+			return array_map( [ __CLASS__, 'sanitize_recursive_array' ], $input );
+		} else {
+			return sanitize_text_field( wp_unslash( $input ) );
+		}
 	}
 }

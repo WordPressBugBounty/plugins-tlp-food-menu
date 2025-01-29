@@ -22,6 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Preview Ajax Class.
  */
 class Preview {
+
 	use \RT\FoodMenu\Traits\SingletonTrait;
 
 	/**
@@ -42,8 +43,11 @@ class Preview {
 		$msg   = $data = null;
 		$error = true;
 
-		if ( wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error();
+		}
 
+		if ( wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			$error = false;
 			$scID  = isset( $_REQUEST['sc_id'] ) ? absint( $_REQUEST['sc_id'] ) : null;
 
@@ -86,7 +90,7 @@ class Preview {
 				'postIn'             => ! empty( $_REQUEST['fmp_post__in'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_post__in'] ) ) : null,
 				'postNotIn'          => ! empty( $_REQUEST['fmp_post__not_in'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_post__not_in'] ) ) : null,
 				'limit'              => ( ( empty( $_REQUEST['fmp_limit'] ) || $_REQUEST['fmp_limit'] === '-1' ) ? 10000000 : absint( $_REQUEST['fmp_limit'] ) ),
-				'source'             => ! empty( $_REQUEST['fmp_source'] ) ? $_REQUEST['fmp_source'] : TLPFoodMenu()->post_type,
+				'source'             => ! empty( $_REQUEST['fmp_source'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_source'] ) ) : TLPFoodMenu()->post_type,
 
 				// Categories.
 				'cats'               => ( isset( $_REQUEST['fmp_categories'] ) ? array_filter( array_map( 'absint', $_REQUEST['fmp_categories'] ) ) : [] ),
@@ -97,13 +101,13 @@ class Preview {
 				'order'              => isset( $_REQUEST['fmp_order'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_order'] ) ) : null,
 
 				// Pagination.
-				'pagination'         => ! empty( $_REQUEST['fmp_pagination'] ) ? true : false,
+				'pagination'         => ! empty( $_REQUEST['fmp_pagination'] ),
 				'posts_loading_type' => ! empty( $_REQUEST['fmp_pagination_type'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_pagination_type'] ) ) : 'pagination',
 				'postsPerPage'       => isset( $_REQUEST['fmp_posts_per_page'] ) ? absint( $_REQUEST['fmp_posts_per_page'] ) : '',
 
 				// Visibility.
-				'items'              => ! empty( $_REQUEST['fmp_item_fields'] ) ? array_map( 'sanitize_text_field', $_REQUEST['fmp_item_fields'] ) : [],
-				'mobileItems'        => ! empty( $_REQUEST['fmp_mobile_item_fields'] ) ? array_map( 'sanitize_text_field', $_REQUEST['fmp_mobile_item_fields'] ) : [],
+				'items'              => ! empty( $_REQUEST['fmp_item_fields'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_item_fields'] ) ) : [],
+				'mobileItems'        => ! empty( $_REQUEST['fmp_mobile_item_fields'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_mobile_item_fields'] ) ) : [],
 
 				// Wrapper Class.
 				'parentClass'        => ! empty( $_REQUEST['fmp_parent_class'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_parent_class'] ) ) : null,
@@ -127,11 +131,10 @@ class Preview {
 				'margin'             => ! empty( $_REQUEST['fmp_margin'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_margin'] ) ) : 'default',
 				'read_more'          => ! empty( $_REQUEST['fmp_read_more_button_text'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_read_more_button_text'] ) ) : esc_html__( 'Read More', 'tlp-food-menu' ),
 
-				'action' => ! empty( $_REQUEST['action'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) : '',
-
+				'action'             => ! empty( $_REQUEST['action'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) : '',
 			];
 
-			$cOpt = ! empty( $_REQUEST['fmp_carousel_options'] ) ? array_map( 'sanitize_text_field', $_REQUEST['fmp_carousel_options'] ) : [];
+			$cOpt = ! empty( $_REQUEST['fmp_carousel_options'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_carousel_options'] ) ) : [];
 
 			$arg = $this->argBuilder( $scID, $metas, $cOpt );
 
@@ -192,7 +195,7 @@ class Preview {
 				$preLoaderHtml = '<div class="fmp-loading-overlay full-op"></div><div class="fmp-loading fmp-ball-clip-rotate"><div></div></div>';
 			}
 
-			$containerClass = 'fmp-container-fluid fmp-wrapper fmp';
+			$containerClass  = 'fmp-container-fluid fmp-wrapper fmp';
 			$containerClass .= ! empty( $animation ) ? ' fmp-hover-' . $animation : ' fmp-hover-zoom_in';
 			$containerClass .= ! empty( $imagePosition ) ? ' fmp-image-' . $imagePosition : ' fmp-image-top';
 			$containerClass .= ! empty( $imageShape ) ? ' fmp-image-' . $imageShape : ' fmp-img-normal';
@@ -252,9 +255,8 @@ class Preview {
 				'fmp_carousel_speed'               => isset( $_REQUEST['fmp_carousel_speed'] ) ? absint( $_REQUEST['fmp_carousel_speed'] ) : 1000,
 				'fmp_carousel_autoplay_timeout'    => isset( $_REQUEST['fmp_carousel_autoplay_timeout'] ) ? absint( $_REQUEST['fmp_carousel_autoplay_timeout'] ) : 5000,
 				'fmp_carousel_options'             => isset( $_REQUEST['fmp_carousel_options'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_carousel_options'] ) ) : [],
-				'fmp_isotope_cat_hide_empty'       => ! empty( $_REQUEST['fmp_isotope_cat_hide_empty'] )
+				'fmp_isotope_cat_hide_empty'       => ! empty( $_REQUEST['fmp_isotope_cat_hide_empty'] ),
 			];
-
 
 			$afterLoop = [
 				'fmp_layout'           => $layout,
@@ -370,13 +372,13 @@ class Preview {
 	/**
 	 * Layout Style
 	 *
-	 * @param int $ID ID.
+	 * @param int   $ID ID.
 	 * @param array $scMeta SCMeta.
 	 *
 	 * @return string
 	 */
 	private function layoutStyle( $ID, $scMeta ) {
-		$css = null;
+		$css  = null;
 		$css .= "<style type='text/css' media='all'>";
 
 		// Title.
@@ -838,14 +840,14 @@ class Preview {
 			$sDesc_size      = ( ! empty( $sDesc['size'] ) ? absint( $sDesc['size'] ) : null );
 			$sDesc_weight    = ( ! empty( $sDesc['weight'] ) ? $sDesc['weight'] : null );
 			$sDesc_alignment = ( ! empty( $sDesc['align'] ) ? $sDesc['align'] : null );
-			$css             .= "#{$ID} .fmp-box .fmp-title p,";
-			$css             .= "#{$ID} .fmp-content-wrap > p,";
-			$css             .= "#{$ID} .fmp-media-body > p,";
-			$css             .= "#{$ID} .fmp-box li > p,";
-			$css             .= "#{$ID} .fmp-body > p,";
-			$css             .= "#{$ID} .fmp-content > p,";
-			$css             .= "#{$ID} [class*=fmp-layout-free] .fmp-food-item .fmp-body p,";
-			$css             .= "#{$ID} .fmp-media-body .info-part > p {";
+			$css            .= "#{$ID} .fmp-box .fmp-title p,";
+			$css            .= "#{$ID} .fmp-content-wrap > p,";
+			$css            .= "#{$ID} .fmp-media-body > p,";
+			$css            .= "#{$ID} .fmp-box li > p,";
+			$css            .= "#{$ID} .fmp-body > p,";
+			$css            .= "#{$ID} .fmp-content > p,";
+			$css            .= "#{$ID} [class*=fmp-layout-free] .fmp-food-item .fmp-body p,";
+			$css            .= "#{$ID} .fmp-media-body .info-part > p {";
 
 			if ( $sDesc_color ) {
 				$css .= 'color:' . $sDesc_color . ';';
@@ -1048,7 +1050,7 @@ class Preview {
 			$dCol = $tCol = $mCol = 12;
 		}
 
-		$arg['grid']  = 'fmp-col-lg-' . $dCol . ' fmp-col-md-' . $dCol . ' fmp-col-sm-' . $tCol . ' fmp-col-xs-' . $mCol . ' ';
+		$arg['grid']   = 'fmp-col-lg-' . $dCol . ' fmp-col-md-' . $dCol . ' fmp-col-sm-' . $tCol . ' fmp-col-xs-' . $mCol . ' ';
 		$arg['class'] .= ' ' . $metas['gridType'] . '-grid-item ';
 
 		$arg['class'] .= 'fmp-grid-item';
@@ -1097,7 +1099,7 @@ class Preview {
 			$cOpt = ! empty( $scMeta['fmp_carousel_options'] ) ? $scMeta['fmp_carousel_options'] : [];
 			$cOpt = ! empty( $scMeta['fmp_carousel_options'] ) ? $scMeta['fmp_carousel_options'] : [];
 
-			$arg['class']    .= ' fmp-carousel-item';
+			$arg['class']   .= ' fmp-carousel-item';
 			$arg['lazyLoad'] = ( in_array( 'lazy_load', $carouselOpts, true ) ? true : false );
 		}
 

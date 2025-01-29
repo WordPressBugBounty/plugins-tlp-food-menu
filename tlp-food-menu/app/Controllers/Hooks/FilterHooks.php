@@ -19,11 +19,11 @@ class FilterHooks {
 	use \RT\FoodMenu\Traits\SingletonTrait;
 
 	protected function init() {
-		\add_filter( 'fmp_image_size', [ $this, 'get_image_sizes' ] );
-		\add_filter( 'wp_kses_allowed_html', [ $this, 'custom_post_tags' ], 10, 2 );
-		\add_filter( 'rtfm_add_to_cart_btn', [ $this, 'cartBtn' ], 10, 7 );
-		\add_filter( 'body_class', [ $this,'add_custom_body_class' ] );
-		\add_filter( 'rtfm_add_stock_btn', [ $this, 'stockBtn' ], 10, 2 );
+		add_filter( 'fmp_image_size', [ $this, 'get_image_sizes' ] );
+		add_filter( 'wp_kses_allowed_html', [ $this, 'custom_post_tags' ], 10, 2 );
+		add_filter( 'rtfm_add_to_cart_btn', [ $this, 'cartBtn' ], 10, 7 );
+		add_filter( 'body_class', [ $this,'add_custom_body_class' ] );
+		add_filter( 'rtfm_add_stock_btn', [ $this, 'stockBtn' ], 10, 2 );
 	}
 
 	public function get_image_sizes( $imgSize ) {
@@ -91,7 +91,7 @@ class FilterHooks {
 		$stockHtml = null;
 
 		if ( 'outofstock' === $stock ) {
-			$stockHtml = '<div class="fmp-outofstock">' . esc_html__( 'Out of stock', 'food-menu' ) . '</div>';
+			$stockHtml = '<div class="fmp-outofstock">' . esc_html__( 'Out of stock', 'tlp-food-menu' ) . '</div>';
 		}
 
 		return $stockHtml;

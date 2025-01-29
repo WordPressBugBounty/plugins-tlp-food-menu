@@ -62,7 +62,9 @@ class Review {
 	 * @return void
 	 */
 	public static function spare_me() {
-		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'rtfm_notice_nonce' ) ) {
+		$nonce = ! empty( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) : null;
+
+		if ( ! wp_verify_nonce( $nonce, 'rtfm_notice_nonce' ) ) {
 			return;
 		}
 

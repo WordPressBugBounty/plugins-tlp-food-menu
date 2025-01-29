@@ -3,8 +3,9 @@ Contributors: techlabpro1
 Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 5.1.4
+Tested up to: 6.7
+Stable tag: 5.2.0
+Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -153,6 +154,13 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 11. General Settings
 
 == Changelog ==
+
+= 5.2.0 ( Jan 29, 2025 ) =
+* Security Updated: Sanitize all inputs, and added nonce and user permission for admin ajax
+* Fixed: initFMP is not defined
+* Modify: Settings Modify
+* Fixed: Image ration fixed for a few list layouts
+* Fixed: Error occurred when food details image was disabled
 
 = 5.1.4 ( Aug 8, 2024 ) =
 * Fixed: A few layout image not showing

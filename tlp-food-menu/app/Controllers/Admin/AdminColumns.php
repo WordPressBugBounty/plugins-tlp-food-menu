@@ -13,6 +13,7 @@ use RT\FoodMenu\Helpers\Fns;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 
 /**
  * Admin Columns Class.
@@ -161,7 +162,7 @@ class AdminColumns {
 			return;
 		}
 		foreach ( TLPFoodMenu()->taxonomies as $tax_slug ) {
-			Fns::print_html( $this->build_taxonomy_filter( $tax_slug ), true );
+			$this->build_taxonomy_filter( $tax_slug );
 		}
 	}
 
@@ -213,7 +214,20 @@ class AdminColumns {
 		$filter          .= $this->build_term_options( $terms, $current_tax_slug );
 		$filter          .= '</select>';
 
-		return $filter;
+		$allowed_html = [
+			'select' => [
+				'name'  => [],
+				'id'    => [],
+				'class' => [],
+			],
+			'option' => [
+				'value' => [],
+			],
+			'amp'    => [],
+		];
+
+		echo wp_kses( $filter, $allowed_html );
+//		return $filter;
 	}
 
 	/**

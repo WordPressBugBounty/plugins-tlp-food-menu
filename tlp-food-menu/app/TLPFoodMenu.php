@@ -5,8 +5,9 @@
  * @package RT_FoodMenu
  */
 
-use RT\FoodMenu\Helpers as Helpers;
-use RT\FoodMenu\Controllers as Controllers;
+use RT\FoodMenu\Helpers;
+use RT\FoodMenu\Controllers;
+use RT\FoodMenu\Helpers\Upgrade;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -87,16 +88,22 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		 * @return void
 		 */
 		private function check_pro() {
-			if ( in_array(
-				'food-menu-pro/food-menu-pro.php',
-				apply_filters( 'active_plugins', get_option( 'active_plugins' ) ),
-				true
-			) && false === \RT\FoodMenu\Helpers\Upgrade::check_plugin_version() ) {
-				\add_action( 'admin_init', [ \RT\FoodMenu\Helpers\Upgrade::class, 'deactivate' ] );
+			$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+
+			if ( ! in_array( 'food-menu-pro/food-menu-pro.php', $active_plugins, true ) ) {
+				return;
+			}
+
+			if ( false === Upgrade::check_plugin_version() ) {
+				add_action( 'admin_init', [ Upgrade::class, 'deactivate' ] );
 
 				return;
 			}
 
+			add_action( 'admin_init', [ __CLASS__, 'admin_init_notice' ] );
+		}
+
+		public static function admin_init_notice() {
 			if ( ! function_exists( 'get_plugin_data' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
@@ -109,7 +116,8 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 				if ( isset( $plugin_path['Version'] ) ) {
 
 					if ( version_compare( $plugin_path['Version'], '3', '<' ) ) {
-						\add_action( 'admin_init', [ \RT\FoodMenu\Helpers\Upgrade::class, 'notice' ] );
+						// add_action( 'admin_init', [ Upgrade::class, 'notice' ] );
+						Upgrade::notice();
 					}
 				}
 			}
@@ -126,7 +134,7 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 			$this->options     = [
 				'settings'          => 'tpl_food_menu_settings',
 				'version'           => TLP_FOOD_MENU_VERSION,
-				'title'             => esc_html__( 'Food Menu', 'tlp-food-menu' ),
+				'title'             => esc_html( 'Food Menu' ),
 				'installed_version' => 'tlp-food-menu-installed-version',
 				'slug'              => 'tlp-food-menu',
 				'flash'             => 'tlp-fm-flash',
@@ -144,7 +152,7 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		 * @return void
 		 */
 		private function init_hooks() {
-			\add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ], -1 );
+			\add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ], - 1 );
 			\add_action( 'init', [ $this, 'initialize' ], 0 );
 		}
 
@@ -276,6 +284,7 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		 */
 		public function isFoodMenuType() {
 			$settings = Helpers\Fns::get_settings_option();
+
 			return $settings['fm_food_menu_type'] ?? 'food_menu_post';
 		}
 

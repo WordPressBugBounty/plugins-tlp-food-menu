@@ -8,18 +8,21 @@
 namespace RT\FoodMenu\Controllers\Hooks;
 
 use RT\FoodMenu\Helpers\Fns;
+use RT\FoodMenu\Traits\SingletonTrait;
 use RT\FoodMenuPro\Helpers\FnsPro;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 
 /**
  * Action Hook Class.
  */
 class ActionHooks {
-	use \RT\FoodMenu\Traits\SingletonTrait;
+
+	use SingletonTrait;
 
 	/**
 	 * Class.
@@ -52,9 +55,9 @@ class ActionHooks {
 		$enable_food_location = $this->settings['fmp_food_location_popup'] ?? '';
 		if ( TLPFoodMenu()->isWcActive() && ! empty( $enable_food_location ) ) {
 			// footer load location popup.
-			add_action( 'wp_footer', [ $this,'render_food_location_popup' ] );
+			add_action( 'wp_footer', [ $this, 'render_food_location_popup' ] );
 			// add new checkout page and save meta date.
-			add_action( 'woocommerce_checkout_before_customer_details', [ $this,'render_location_form' ] );
+			add_action( 'woocommerce_checkout_before_customer_details', [ $this, 'render_location_form' ] );
 			add_action( 'woocommerce_checkout_create_order', [ $this, 'location_update_meta' ] );
 			add_action( 'woocommerce_order_details_after_order_table_items', [ $this, 'order_details' ] );
 		}
@@ -64,6 +67,7 @@ class ActionHooks {
 	 * Order details meta data
 	 *
 	 * @param object $order .
+	 *
 	 * @return void
 	 */
 	public function order_details( $order ) {
@@ -71,7 +75,7 @@ class ActionHooks {
 		if ( $food_location ) :
 			?>
 			<tr>
-				<th scope="row"><?php echo esc_html__( 'Food Location:', 'food-menu-pro' ); ?></th>
+				<th scope="row"><?php echo esc_html__( 'Food Location:', 'tlp-food-menu' ); ?></th>
 				<td><?php echo esc_html( $food_location ); ?></td>
 			</tr>
 			<?php
@@ -82,10 +86,11 @@ class ActionHooks {
 	 * Update location form data.
 	 *
 	 * @param object $order .
+	 *
 	 * @return void
 	 */
 	public function location_update_meta( $order ) {
-		$nonce_value = $_REQUEST['woocommerce-process-checkout-nonce'] ?? '';
+		$nonce_value = ! empty( $_REQUEST['woocommerce-process-checkout-nonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['woocommerce-process-checkout-nonce'] ) ) : '';
 		if ( ! wp_verify_nonce( $nonce_value, 'woocommerce-process_checkout' ) ) {
 			return;
 		}
@@ -102,10 +107,10 @@ class ActionHooks {
 	public function render_location_form() {
 		$order_location = apply_filters( 'fm_order_location_checkout_title', __( 'Food Order Location', 'tlp-food-menu' ) );
 		?>
-		 <div id="fmp-location-field">
+		<div id="fmp-location-field">
 			<div class="fmp-location-title"><?php echo esc_html( $order_location ); ?></div>
 			<div class="fmp-location-name"></div>
-			<input type="hidden" name="fmp_location_name" class="fmp-location-name" />
+			<input type="hidden" name="fmp_location_name" class="fmp-location-name"/>
 		</div>
 		<?php
 	}
@@ -117,13 +122,13 @@ class ActionHooks {
 	 */
 	public function render_food_location_popup() {
 		?>
-			<div class="fmp-location-box-wrap"></div>
-			<script type="text/javascript">
-				const locationData = localStorage.getItem('fmp_location');
+		<div class="fmp-location-box-wrap"></div>
+		<script type="text/javascript">
+			const locationData = localStorage.getItem('fmp_location')
 
-				if ( ( null === locationData ) ){
-					jQuery(document).ready(function () {
-							jQuery(".fmp-location-box-wrap").html(`
+			if ((null === locationData)) {
+				jQuery(document).ready(function () {
+					jQuery('.fmp-location-box-wrap').html(`
 								<div id="fmp-location-modal" class="fmp-popup-modal">
 									<div class="modal-content">
 										<select name="fmp-location" class="fmp-location">
@@ -141,11 +146,11 @@ class ActionHooks {
 										<button class="fmp-close fmp-btn"> X </button>
 									</div>
 								</div>
-							`);
-					});
-				}
-			</script>
-			<?php
+							`)
+				})
+			}
+		</script>
+		<?php
 	}
 
 	/**
@@ -225,9 +230,9 @@ class ActionHooks {
 			}
 			$html .= '</div>'; // #images
 			$html .= '</div>';
-		}
 
-		Fns::print_html( $html );
+			Fns::print_html( $html );
+		}
 	}
 
 	public function fmp_before_summery() {
@@ -276,7 +281,12 @@ class ActionHooks {
 				global $post;
 
 				if ( in_array( $post->post_type, [ TLPFoodMenu()->post_type, 'product' ] ) ) {
-					the_content();
+
+					if ( ! in_array( 'description', $hiddenOptions ) ) {
+						the_excerpt();
+					} else {
+						the_content();
+					}
 				} else {
 					if ( ! in_array( 'summery', $hiddenOptions ) ) {
 						the_excerpt();
@@ -292,6 +302,11 @@ class ActionHooks {
 		}
 	}
 
+	/**
+	 * Summery meta.
+	 *
+	 * @return void
+	 */
 	public function fmp_summery_meta() {
 		$settings      = get_option( TLPFoodMenu()->options['settings'] );
 		$hiddenOptions = ! empty( $settings['hide_options'] ) ? $settings['hide_options'] : [];
@@ -300,7 +315,7 @@ class ActionHooks {
 			global $post;
 
 			$cat       = get_the_terms( $post->ID, TLPFoodMenu()->taxonomies['category'] );
-			$cat_count = is_array( $cat ) ? sizeof( $cat ) : 0;
+			$cat_count = is_array( $cat ) ? count( $cat ) : 0;
 			?>
 			<div class="fmp-meta">
 				<?php
@@ -322,7 +337,7 @@ class ActionHooks {
 
 				if ( TLPFoodMenu()->has_pro() ) {
 					$tag       = get_the_terms( $post->ID, TLPFoodMenu()->taxonomies['tag'] );
-					$tag_count = is_array( $tag ) ? sizeof( $cat ) : 0;
+					$tag_count = is_array( $tag ) ? count( $cat ) : 0;
 
 					Fns::print_html(
 						FnsPro::get_tags(

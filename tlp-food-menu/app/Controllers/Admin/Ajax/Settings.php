@@ -40,6 +40,16 @@ class Settings {
 	 */
 	public function response() {
 		$error = true;
+		if ( ! current_user_can( 'manage_options' ) ) {
+			$response = [
+				'error' => true,
+				'msg'   => 'You are not allowed to modify settings',
+			];
+
+			wp_send_json( $response );
+
+			die();
+		}
 
 		if ( wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			unset( $_REQUEST['fmp_nonce'] );
@@ -49,8 +59,17 @@ class Settings {
 			$data  = [];
 			$matas = Fns::fmpAllSettingsFields();
 
+			//phpcs:disable
 			foreach ( $matas as $key => $field ) {
-				$rValue       = ! empty( $_REQUEST[ $key ] ) ? $_REQUEST[ $key ] : null;
+				/**
+				 * Old code before sanitization. Should remove later if everything is fine
+				 * $rValue = ! empty( $_REQUEST[ $key ] ) ? $_REQUEST[ $key ] : null;
+				 */
+
+				$rValue = '';
+				if ( ! empty( $_REQUEST[ $key ] ) ) {
+					$rValue = Fns::sanitize_recursive_array( wp_unslash( $_REQUEST[ $key ] ) );
+				}
 				$value        = Fns::sanitize( $field, $rValue );
 				$data[ $key ] = $value;
 			}
@@ -58,12 +77,13 @@ class Settings {
 			$settings = get_option( TLPFoodMenu()->options['settings'] );
 
 			if ( ! empty( $settings['slug'] ) && $_REQUEST['slug'] && $settings['slug'] !== $_REQUEST['slug'] ) {
-				update_option( TLPFoodMenu()->options['flash'], true );
+				update_option( TLPFoodMenu()->options['flash'], TRUE );
 			}
 			update_option( TLPFoodMenu()->options['settings'], $data );
 
-			$error = false;
+			$error = FALSE;
 			$msg   = esc_html__( 'Settings successfully updated', 'tlp-food-menu' );
+			//phpcs:enable
 		} else {
 			$msg = esc_html__( 'Security Error !!', 'tlp-food-menu' );
 		}
@@ -84,7 +104,6 @@ class Settings {
 	 * @param array $form_setting .
 	 */
 	public function fmp_sanitize( $form_setting ) {
-
 		foreach ( $form_setting as $key => $value ) {
 			$this->form_setting[ $key ] = $value;
 		}
@@ -97,24 +116,28 @@ class Settings {
 	 */
 	public function select2_ajax_posts_filter_autocomplete() {
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error();
+		}
+
 		if ( ! wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			wp_send_json_error();
 		}
 
-		$query_per_page = $_GET['per_page'] ?? 5;
+		$query_per_page = ! empty( $_GET['per_page'] ) ? absint( $_GET['per_page'] ) : 5;
 		$post_type      = 'post';
 		$source_name    = 'post_type';
-		$paged          = $_GET['page'] ?? 1;
+		$paged          = ! empty( $_GET['page'] ) ? absint( $_GET['page'] ) : 1;
 
 		if ( ! empty( $_GET['post_type'] ) ) {
-			$post_type = sanitize_text_field( $_GET['post_type'] );
+			$post_type = sanitize_text_field( wp_unslash( $_GET['post_type'] ) );
 		}
 
 		if ( ! empty( $_GET['source_name'] ) ) {
-			$source_name = sanitize_text_field( $_GET['source_name'] );
+			$source_name = sanitize_text_field( wp_unslash( $_GET['source_name'] ) );
 		}
 
-		$search  = ! empty( $_GET['search'] ) ? sanitize_text_field( $_GET['search'] ) : '';
+		$search  = ! empty( $_GET['search'] ) ? sanitize_text_field( wp_unslash( $_GET['search'] ) ) : '';
 		$results = $post_list = [];
 		switch ( $source_name ) {
 			case 'taxonomy':
@@ -182,7 +205,7 @@ class Settings {
 		$where = '';
 		$data  = [];
 
-		if ( -1 == $limit ) {
+		if ( - 1 == $limit ) {
 			$limit = '';
 		} elseif ( 0 == $limit ) {
 			$limit = 'limit 0,1';

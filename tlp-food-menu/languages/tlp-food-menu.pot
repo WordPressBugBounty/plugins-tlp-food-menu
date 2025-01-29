@@ -1,4 +1,4 @@
-# Copyright (C) 2024 tlp-food-menu
+# Copyright (C) 2025 tlp-food-menu
 # This file is distributed under the same license as the tlp-food-menu package.
 msgid ""
 msgstr ""
@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
-"POT-Creation-Date: 2024-08-08 06:46+0000\n"
+"POT-Creation-Date: 2025-01-29 06:33+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -17,324 +17,324 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../app/TLPFoodMenu.php:129, ../app/Controllers/PostTypesController.php:105, ../app/Controllers/PostTypesController.php:106, ../app/Controllers/PostTypesController.php:126, ../app/Controllers/PostTypesController.php:127, ../app/Controllers/PostTypesController.php:128, ../app/Helpers/Options.php:943, ../app/Helpers/Upgrade.php:46, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38
+#: ../app/Controllers/PostTypesController.php:108, ../app/Controllers/PostTypesController.php:109, ../app/Controllers/PostTypesController.php:129, ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131, ../app/Helpers/Options.php:952, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38
 msgid "Food Menu"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:129
+#: ../app/Controllers/PostTypesController.php:132
 msgid "All Foods"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131
+#: ../app/Controllers/PostTypesController.php:133, ../app/Controllers/PostTypesController.php:134
 msgid "Add Food"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:132
+#: ../app/Controllers/PostTypesController.php:135
 msgid "Edit Food"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:133
+#: ../app/Controllers/PostTypesController.php:136
 msgid "New Food"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:134
+#: ../app/Controllers/PostTypesController.php:137
 msgid "View Food"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:135
+#: ../app/Controllers/PostTypesController.php:138
 msgid "Search Food"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:136
+#: ../app/Controllers/PostTypesController.php:139
 msgid "No Food found"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:137
+#: ../app/Controllers/PostTypesController.php:140
 msgid "No Food in the trash"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:144, ../app/Controllers/PostTypesController.php:162, ../app/Controllers/PostTypesController.php:163, ../app/Controllers/Admin/AdminColumns.php:175
+#: ../app/Controllers/PostTypesController.php:147, ../app/Controllers/PostTypesController.php:165, ../app/Controllers/PostTypesController.php:166, ../app/Controllers/Admin/AdminColumns.php:176
 msgid "Shortcode"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:145
+#: ../app/Controllers/PostTypesController.php:148
 msgid "Food menu pro shortcode generator"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:161
+#: ../app/Controllers/PostTypesController.php:164
 msgid "Shortcode Generator"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:164
+#: ../app/Controllers/PostTypesController.php:167
 msgid "Edit Shortcode"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:165
+#: ../app/Controllers/PostTypesController.php:168
 msgid "New Shortcode"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:166
+#: ../app/Controllers/PostTypesController.php:169
 msgid "View Shortcode"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:167
+#: ../app/Controllers/PostTypesController.php:170
 msgid "Shortcode Locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:168
+#: ../app/Controllers/PostTypesController.php:171
 msgid "No Shortcode found."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:169
+#: ../app/Controllers/PostTypesController.php:172
 msgid "No Shortcode found in trash."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:203, ../app/Controllers/PostTypesController.php:205, ../app/Helpers/Options.php:874
+#: ../app/Controllers/PostTypesController.php:206, ../app/Controllers/PostTypesController.php:208, ../app/Helpers/Options.php:883
 msgid "Categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:204
+#: ../app/Controllers/PostTypesController.php:207
 msgid "Category"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:206
+#: ../app/Controllers/PostTypesController.php:209
 msgid "Edit Category"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:207
+#: ../app/Controllers/PostTypesController.php:210
 msgid "Update Category"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:208
+#: ../app/Controllers/PostTypesController.php:211
 msgid "Add New Category"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:209
+#: ../app/Controllers/PostTypesController.php:212
 msgid "New Category"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:210
+#: ../app/Controllers/PostTypesController.php:213
 msgid "Parent Category"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:211
+#: ../app/Controllers/PostTypesController.php:214
 msgid "Parent Category:"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:212
+#: ../app/Controllers/PostTypesController.php:215
 msgid "All Categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:213
+#: ../app/Controllers/PostTypesController.php:216
 msgid "Search Categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:214
+#: ../app/Controllers/PostTypesController.php:217
 msgid "Popular Categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:215
+#: ../app/Controllers/PostTypesController.php:218
 msgid "Separate categories with commas"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:216
+#: ../app/Controllers/PostTypesController.php:219
 msgid "Add or remove categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:217
+#: ../app/Controllers/PostTypesController.php:220
 msgid "Choose from the most used  categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:218
+#: ../app/Controllers/PostTypesController.php:221
 msgid "No categories found."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:239, ../app/Controllers/PostTypesController.php:241
+#: ../app/Controllers/PostTypesController.php:242, ../app/Controllers/PostTypesController.php:244
 msgid "Food Locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:240
+#: ../app/Controllers/PostTypesController.php:243
 msgid "Food Location"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:242
+#: ../app/Controllers/PostTypesController.php:245
 msgid "Edit Food Location"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:243
+#: ../app/Controllers/PostTypesController.php:246
 msgid "Update Food Location"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:244
+#: ../app/Controllers/PostTypesController.php:247
 msgid "Add New Food Location"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:245
+#: ../app/Controllers/PostTypesController.php:248
 msgid "New Food Location"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:246
+#: ../app/Controllers/PostTypesController.php:249
 msgid "Parent Food Location"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:247
+#: ../app/Controllers/PostTypesController.php:250
 msgid "Parent Food Location:"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:248
+#: ../app/Controllers/PostTypesController.php:251
 msgid "All Food Locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:249
+#: ../app/Controllers/PostTypesController.php:252
 msgid "Search Food Locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:250
+#: ../app/Controllers/PostTypesController.php:253
 msgid "Popular Food Locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:251
+#: ../app/Controllers/PostTypesController.php:254
 msgid "Separate food locations with commas"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:252
+#: ../app/Controllers/PostTypesController.php:255
 msgid "Add or remove food locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:253
+#: ../app/Controllers/PostTypesController.php:256
 msgid "Choose from the most used  food locations"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:254
+#: ../app/Controllers/PostTypesController.php:257
 msgid "No food locations found."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:270, ../app/Controllers/PostTypesController.php:271
+#: ../app/Controllers/PostTypesController.php:274, ../app/Controllers/PostTypesController.php:275
 msgid "ShortCode options updated."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:272
+#: ../app/Controllers/PostTypesController.php:276
 msgid "Custom field deleted."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:273
+#: ../app/Controllers/PostTypesController.php:277
 msgid "ShortCode updated."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: ../app/Controllers/PostTypesController.php:276
+#: ../app/Controllers/PostTypesController.php:280
 msgid "ShortCode restored to revision from %s"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:282
+#: ../app/Controllers/PostTypesController.php:286
 msgid "ShortCode published."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:283
+#: ../app/Controllers/PostTypesController.php:287
 msgid "ShortCode saved."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:284
+#: ../app/Controllers/PostTypesController.php:288
 msgid "ShortCode submitted."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:285
+#: ../app/Controllers/PostTypesController.php:289
 msgid "ShortCode scheduled for."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:286
+#: ../app/Controllers/PostTypesController.php:290
 msgid "ShortCode draft updated."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:500, ../app/Models/Fields.php:824
+#: ../app/Helpers/Fns.php:502, ../app/Models/Fields.php:822
 msgid "Normal"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:501
+#: ../app/Helpers/Fns.php:503
 msgid "Circle"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:512
+#: ../app/Helpers/Fns.php:514
 msgid "Top"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:513, ../app/Models/Fields.php:817
+#: ../app/Helpers/Fns.php:515, ../app/Models/Fields.php:815
 msgid "Center"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:514
+#: ../app/Helpers/Fns.php:516
 msgid "Bottom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:525, ../app/Helpers/Options.php:827
+#: ../app/Helpers/Fns.php:527, ../app/Helpers/Options.php:836
 msgid "Layout Default"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:526
+#: ../app/Helpers/Fns.php:528
 msgid "Type 1"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:527
+#: ../app/Helpers/Fns.php:529
 msgid "Type 2"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:531
+#: ../app/Helpers/Fns.php:533
 msgid "Type 3"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:532
+#: ../app/Helpers/Fns.php:534
 msgid "Type 4"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:545
+#: ../app/Helpers/Fns.php:547
 msgid "Single Page"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:546
+#: ../app/Helpers/Fns.php:548
 msgid "Pop Up"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:557
+#: ../app/Helpers/Fns.php:559
 msgid "Same Window"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:558
+#: ../app/Helpers/Fns.php:560
 msgid "New Window"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:569
+#: ../app/Helpers/Fns.php:571
 msgid "Zoom In"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:570
+#: ../app/Helpers/Fns.php:572
 msgid "Zoom Out"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:571
+#: ../app/Helpers/Fns.php:573
 msgid "None"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:902
+#: ../app/Helpers/Fns.php:908
 msgid "Default Image"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1021
+#: ../app/Helpers/Fns.php:1028
 msgid "Buy"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1022
+#: ../app/Helpers/Fns.php:1029
 msgid "Demo"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1023, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:125, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:331
+#: ../app/Helpers/Fns.php:1030, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:126, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:347
 msgid "Documentation"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1268
+#: ../app/Helpers/Fns.php:1275
 msgid "Select Delivery Location"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1269
+#: ../app/Helpers/Fns.php:1276
 msgid "No Delivery Location is Set"
 msgstr ""
 
@@ -346,15 +346,15 @@ msgstr ""
 msgid "Field Selection on Mobile"
 msgstr ""
 
-#: ../app/Helpers/Options.php:44, ../app/Helpers/Options.php:55, ../app/Helpers/Options.php:400
+#: ../app/Helpers/Options.php:44, ../app/Helpers/Options.php:55, ../app/Helpers/Options.php:409
 msgid "Title"
 msgstr ""
 
-#: ../app/Helpers/Options.php:45, ../app/Helpers/Options.php:56, ../app/Helpers/Options.php:261, ../app/Controllers/Admin/AdminColumns.php:130
+#: ../app/Helpers/Options.php:45, ../app/Helpers/Options.php:56, ../app/Helpers/Options.php:270, ../app/Controllers/Admin/AdminColumns.php:131
 msgid "Image"
 msgstr ""
 
-#: ../app/Helpers/Options.php:46, ../app/Helpers/Options.php:57, ../app/Helpers/Options.php:262, ../app/Helpers/Options.php:404, ../app/Helpers/Options.php:922, ../app/Controllers/Admin/AdminColumns.php:131, ../app/Controllers/Admin/Metabox/PostMeta.php:137
+#: ../app/Helpers/Options.php:46, ../app/Helpers/Options.php:57, ../app/Helpers/Options.php:271, ../app/Helpers/Options.php:413, ../app/Helpers/Options.php:931, ../app/Controllers/Admin/AdminColumns.php:132, ../app/Controllers/Admin/Metabox/PostMeta.php:138
 msgid "Price"
 msgstr ""
 
@@ -374,7 +374,7 @@ msgstr ""
 msgid "In stock"
 msgstr ""
 
-#: ../app/Helpers/Options.php:90
+#: ../app/Helpers/Options.php:90, ../app/Controllers/Hooks/FilterHooks.php:94
 msgid "Out of stock"
 msgstr ""
 
@@ -438,559 +438,567 @@ msgstr ""
 msgid "Currency Position"
 msgstr ""
 
-#: ../app/Helpers/Options.php:194
-msgid "Enable Preloader?"
+#: ../app/Helpers/Options.php:195
+msgid "Enable Reservation ? (beta)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:195, ../app/Helpers/Options.php:214, ../app/Helpers/Options.php:525, ../app/Helpers/Options.php:607, ../app/Helpers/Options.php:674, ../app/Helpers/Options.php:684
-msgid "Enable"
-msgstr ""
-
-#: ../app/Helpers/Options.php:196
-msgid "Switch on to enable preloader."
-msgstr ""
-
-#: ../app/Helpers/Options.php:202
-msgid "Allow Food Location ?"
+#: ../app/Helpers/Options.php:197
+msgid "Enable Reservation. Please refresh the page after saving the changes to apply the reservation."
 msgstr ""
 
 #: ../app/Helpers/Options.php:204
-msgid "Implement a front-end location pop-up to capture user location for food delivery."
+msgid "Enable Preloader?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:205, ../app/Helpers/Options.php:222, ../app/Helpers/Options.php:534, ../app/Helpers/Options.php:616, ../app/Helpers/Options.php:683, ../app/Helpers/Options.php:693
+msgid "Enable"
+msgstr ""
+
+#: ../app/Helpers/Options.php:206
+msgid "Switch on to enable preloader."
 msgstr ""
 
 #: ../app/Helpers/Options.php:212
+msgid "Allow Food Location ?"
+msgstr ""
+
+#: ../app/Helpers/Options.php:214
+msgid "Implement a front-end location pop-up to capture user location for food delivery."
+msgstr ""
+
+#: ../app/Helpers/Options.php:220
 msgid "Hide Trailing Zeroes"
 msgstr ""
 
-#: ../app/Helpers/Options.php:215
+#: ../app/Helpers/Options.php:223
 msgid "Switch on to hide trailing zeroes from the price."
 msgstr ""
 
-#: ../app/Helpers/Options.php:229
+#: ../app/Helpers/Options.php:237
 msgid "Hide Options"
 msgstr ""
 
-#: ../app/Helpers/Options.php:239
+#: ../app/Helpers/Options.php:238
+msgid "When the description is disabled, the short description will automatically display the complete content of the description to ensure no information is lost."
+msgstr ""
+
+#: ../app/Helpers/Options.php:248
 msgid "Primary Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:254
+#: ../app/Helpers/Options.php:263
 msgid "Food Menu Post ( Custom Post )"
 msgstr ""
 
-#: ../app/Helpers/Options.php:255
+#: ../app/Helpers/Options.php:264
 msgid "Online Ordering ( Woocommerce Product )"
 msgstr ""
 
-#: ../app/Helpers/Options.php:315
+#: ../app/Helpers/Options.php:324
 msgid "Custom Parent Class"
 msgstr ""
 
-#: ../app/Helpers/Options.php:317
+#: ../app/Helpers/Options.php:326
 msgid "Please enter custom parent class for adding custom css."
 msgstr ""
 
-#: ../app/Helpers/Options.php:333
+#: ../app/Helpers/Options.php:342
 msgid "Background Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:334, ../app/Helpers/Options.php:343, ../app/Helpers/Options.php:352, ../app/Helpers/Options.php:414
+#: ../app/Helpers/Options.php:343, ../app/Helpers/Options.php:352, ../app/Helpers/Options.php:361, ../app/Helpers/Options.php:423
 msgid "<b>Note:</b> You need to choose both colors for gradient background. If you need a single color, please choose only the 1st color."
 msgstr ""
 
-#: ../app/Helpers/Options.php:338
+#: ../app/Helpers/Options.php:347
 msgid "Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:342
+#: ../app/Helpers/Options.php:351
 msgid "Hover Background Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:347
+#: ../app/Helpers/Options.php:356
 msgid "Hover Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:351
+#: ../app/Helpers/Options.php:360
 msgid "Active Background Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:356
+#: ../app/Helpers/Options.php:365
 msgid "Active Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:372
+#: ../app/Helpers/Options.php:381
 msgid "Text color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:376
+#: ../app/Helpers/Options.php:385
 msgid "Hover Text Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:380
+#: ../app/Helpers/Options.php:389
 msgid "Active Text Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:384
+#: ../app/Helpers/Options.php:393
 msgid "Typography"
 msgstr ""
 
-#: ../app/Helpers/Options.php:409
+#: ../app/Helpers/Options.php:418
 msgid "Vertical Border Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:413
+#: ../app/Helpers/Options.php:422
 msgid "Category Banner"
 msgstr ""
 
-#: ../app/Helpers/Options.php:430
+#: ../app/Helpers/Options.php:439
 msgid "Element / Content Wrapper"
 msgstr ""
 
-#: ../app/Helpers/Options.php:431
+#: ../app/Helpers/Options.php:440
 msgid "Please enter the content/element border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: ../app/Helpers/Options.php:435
+#: ../app/Helpers/Options.php:444
 msgid "Full Section Wrapper"
 msgstr ""
 
-#: ../app/Helpers/Options.php:436
+#: ../app/Helpers/Options.php:445
 msgid "Please enter the section border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: ../app/Helpers/Options.php:452
+#: ../app/Helpers/Options.php:461
 msgid "Select Layout Type"
 msgstr ""
 
-#: ../app/Helpers/Options.php:459
+#: ../app/Helpers/Options.php:468
 msgid "Select Layout"
 msgstr ""
 
-#: ../app/Helpers/Options.php:467
+#: ../app/Helpers/Options.php:476
 msgid "Grid Style"
 msgstr ""
 
-#: ../app/Helpers/Options.php:472
+#: ../app/Helpers/Options.php:481
 msgid "Please select the grid style."
 msgstr ""
 
-#: ../app/Helpers/Options.php:488
+#: ../app/Helpers/Options.php:497
 msgid "Desktop Columns <i>(For devices > 991px)</i>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:496
+#: ../app/Helpers/Options.php:505
 msgid "Tab Columns <i>(For devices < 991px)</i>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:504
+#: ../app/Helpers/Options.php:513
 msgid "Mobile Columns <i>(For devices < 768px)</i>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:524
+#: ../app/Helpers/Options.php:533
 msgid "Enable Pagination?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:526
+#: ../app/Helpers/Options.php:535
 msgid "Switch on to enable pagination."
 msgstr ""
 
-#: ../app/Helpers/Options.php:532
+#: ../app/Helpers/Options.php:541
 msgid "Pagination type"
 msgstr ""
 
-#: ../app/Helpers/Options.php:539
+#: ../app/Helpers/Options.php:548
 msgid "Please choose the pagination type."
 msgstr ""
 
-#: ../app/Helpers/Options.php:540
+#: ../app/Helpers/Options.php:549
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Load More and Ajax Pagination.</b>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:547
+#: ../app/Helpers/Options.php:556
 msgid "Number of Posts Per Page"
 msgstr ""
 
-#: ../app/Helpers/Options.php:548
+#: ../app/Helpers/Options.php:557
 msgid "Please enter the number of posts to show per page."
 msgstr ""
 
-#: ../app/Helpers/Options.php:566
+#: ../app/Helpers/Options.php:575
 msgid "Image Size"
 msgstr ""
 
-#: ../app/Helpers/Options.php:570
+#: ../app/Helpers/Options.php:579
 msgid "Please select the featured image dimension."
 msgstr ""
 
-#: ../app/Helpers/Options.php:571
+#: ../app/Helpers/Options.php:580
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Custom Image Size.</b>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:579
+#: ../app/Helpers/Options.php:588, ../app/Controllers/MiniCart/MiniCartFns.php:206
 msgid "Border Radius"
 msgstr ""
 
-#: ../app/Helpers/Options.php:581
+#: ../app/Helpers/Options.php:590
 msgid "Please enter the featured image border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: ../app/Helpers/Options.php:586
+#: ../app/Helpers/Options.php:595
 msgid "Image Position"
 msgstr ""
 
-#: ../app/Helpers/Options.php:590
+#: ../app/Helpers/Options.php:599
 msgid "Please select the featured image position."
 msgstr ""
 
-#: ../app/Helpers/Options.php:596
+#: ../app/Helpers/Options.php:605
 msgid "Hover Animation"
 msgstr ""
 
-#: ../app/Helpers/Options.php:600
+#: ../app/Helpers/Options.php:609
 msgid "Please select the featured image hover animation."
 msgstr ""
 
-#: ../app/Helpers/Options.php:606
+#: ../app/Helpers/Options.php:615
 msgid "Enable Hover Icon?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:608
+#: ../app/Helpers/Options.php:617
 msgid "Switch on to enable hover icon."
 msgstr ""
 
-#: ../app/Helpers/Options.php:627
+#: ../app/Helpers/Options.php:636
 msgid "Category Title Type"
 msgstr ""
 
-#: ../app/Helpers/Options.php:630
+#: ../app/Helpers/Options.php:639
 msgid "Please select the category title type."
 msgstr ""
 
-#: ../app/Helpers/Options.php:648
+#: ../app/Helpers/Options.php:657
 msgid "Excerpt limit"
 msgstr ""
 
-#: ../app/Helpers/Options.php:649
+#: ../app/Helpers/Options.php:658
 msgid "Limits the Excerpt text (letter limit). Leave it blank for full excerpt.<br> <strong>Please note that, HTML tags will not work if excerpt limit is applied.</strong>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:653
+#: ../app/Helpers/Options.php:662
 msgid "Custom Text <br>After Excerpt"
 msgstr ""
 
-#: ../app/Helpers/Options.php:656
+#: ../app/Helpers/Options.php:665
 msgid "Adds texts after excerpt."
 msgstr ""
 
-#: ../app/Helpers/Options.php:673
+#: ../app/Helpers/Options.php:682
 msgid "Link to Detail Page?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:675
+#: ../app/Helpers/Options.php:684
 msgid "Switch on to enable linking to detail page."
 msgstr ""
 
-#: ../app/Helpers/Options.php:682
+#: ../app/Helpers/Options.php:691
 msgid "Enable Details Page Popup?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:687
+#: ../app/Helpers/Options.php:696
 msgid "Switch on to enable details page popup."
 msgstr ""
 
-#: ../app/Helpers/Options.php:692
+#: ../app/Helpers/Options.php:701
 msgid "Link Target"
 msgstr ""
 
-#: ../app/Helpers/Options.php:696
+#: ../app/Helpers/Options.php:705
 msgid "Please select the detail page link target."
 msgstr ""
 
-#: ../app/Helpers/Options.php:706
+#: ../app/Helpers/Options.php:715
 msgid "Soft Crop"
 msgstr ""
 
-#: ../app/Helpers/Options.php:707
+#: ../app/Helpers/Options.php:716
 msgid "Hard Crop"
 msgstr ""
 
-#: ../app/Helpers/Options.php:718
+#: ../app/Helpers/Options.php:727
 msgid "Layout (Free)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:719
+#: ../app/Helpers/Options.php:728
 msgid "Grid By Category (Free)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:733
+#: ../app/Helpers/Options.php:742
 msgid "List Layout 1"
 msgstr ""
 
-#: ../app/Helpers/Options.php:739
+#: ../app/Helpers/Options.php:748
 msgid "List Layout 2"
 msgstr ""
 
-#: ../app/Helpers/Options.php:745
+#: ../app/Helpers/Options.php:754
 msgid "List Layout 3"
 msgstr ""
 
-#: ../app/Helpers/Options.php:751
+#: ../app/Helpers/Options.php:760
 msgid "List Layout 4"
 msgstr ""
 
-#: ../app/Helpers/Options.php:757
+#: ../app/Helpers/Options.php:766
 msgid "Grid By Category 1"
 msgstr ""
 
-#: ../app/Helpers/Options.php:769
+#: ../app/Helpers/Options.php:778
 msgid "Grid By Category 2"
 msgstr ""
 
-#: ../app/Helpers/Options.php:775
+#: ../app/Helpers/Options.php:784
 msgid "Grid By Category 3"
 msgstr ""
 
-#: ../app/Helpers/Options.php:781
+#: ../app/Helpers/Options.php:790
 msgid "Grid By Category 4"
 msgstr ""
 
-#: ../app/Helpers/Options.php:794
+#: ../app/Helpers/Options.php:803
 msgid "List Layouts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:798
+#: ../app/Helpers/Options.php:807
 msgid "Grid by Category Layouts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:813
+#: ../app/Helpers/Options.php:822
 msgid "Even Grid"
 msgstr ""
 
-#: ../app/Helpers/Options.php:814
+#: ../app/Helpers/Options.php:823
 msgid "Masonry Grid"
 msgstr ""
 
-#: ../app/Helpers/Options.php:828
+#: ../app/Helpers/Options.php:837
 msgid "1 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:829
+#: ../app/Helpers/Options.php:838
 msgid "2 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:830
+#: ../app/Helpers/Options.php:839
 msgid "3 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:831
+#: ../app/Helpers/Options.php:840
 msgid "4 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:832
+#: ../app/Helpers/Options.php:841
 msgid "5 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:833
+#: ../app/Helpers/Options.php:842
 msgid "6 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:848
+#: ../app/Helpers/Options.php:857
 msgid "Food item data source"
 msgstr ""
 
-#: ../app/Helpers/Options.php:853
+#: ../app/Helpers/Options.php:862
 msgid "Please select a food item data source"
 msgstr ""
 
-#: ../app/Helpers/Options.php:856
+#: ../app/Helpers/Options.php:865
 msgid "Include Posts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:859
+#: ../app/Helpers/Options.php:868
 msgid "List of post IDs to diplay (comma-separated values, for example: 1,2,3). <br>Set empty to show all posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:862
+#: ../app/Helpers/Options.php:871
 msgid "Exclude Posts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:865
+#: ../app/Helpers/Options.php:874
 msgid "List of post IDs to exclude (comma-separated values, for example: 1,2,3) <br>Set empty to show all posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:868
+#: ../app/Helpers/Options.php:877
 msgid "Posts Limit"
 msgstr ""
 
-#: ../app/Helpers/Options.php:871
+#: ../app/Helpers/Options.php:880
 msgid "The number of posts to show. Set empty to show all posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:878
+#: ../app/Helpers/Options.php:887
 msgid "Select the category you want to filter, Leave it blank for all category."
 msgstr ""
 
-#: ../app/Helpers/Options.php:882
+#: ../app/Helpers/Options.php:891
 msgid "Order By"
 msgstr ""
 
-#: ../app/Helpers/Options.php:886, ../app/Helpers/Options.php:893
+#: ../app/Helpers/Options.php:895, ../app/Helpers/Options.php:902
 msgid "Please choose to reorder posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:890
+#: ../app/Helpers/Options.php:899
 msgid "Order"
 msgstr ""
 
-#: ../app/Helpers/Options.php:904
+#: ../app/Helpers/Options.php:913
 msgid "IN — show posts which associate with one or more of selected terms"
 msgstr ""
 
-#: ../app/Helpers/Options.php:905
+#: ../app/Helpers/Options.php:914
 msgid "NOT IN — show posts which do not associate with any of selected terms"
 msgstr ""
 
-#: ../app/Helpers/Options.php:906
+#: ../app/Helpers/Options.php:915
 msgid "AND — show posts which associate with all of selected terms"
 msgstr ""
 
-#: ../app/Helpers/Options.php:907
+#: ../app/Helpers/Options.php:916
 msgid "EXISTS —"
 msgstr ""
 
-#: ../app/Helpers/Options.php:908
+#: ../app/Helpers/Options.php:917
 msgid "NOT EXISTS —"
 msgstr ""
 
-#: ../app/Helpers/Options.php:919
+#: ../app/Helpers/Options.php:928
 msgid "Menu Order"
 msgstr ""
 
-#: ../app/Helpers/Options.php:920
+#: ../app/Helpers/Options.php:929
 msgid "Name"
 msgstr ""
 
-#: ../app/Helpers/Options.php:921
+#: ../app/Helpers/Options.php:930
 msgid "Date"
 msgstr ""
 
-#: ../app/Helpers/Options.php:923
+#: ../app/Helpers/Options.php:932
 msgid "ID"
 msgstr ""
 
-#: ../app/Helpers/Options.php:936
+#: ../app/Helpers/Options.php:945
 msgid "Ascending"
 msgstr ""
 
-#: ../app/Helpers/Options.php:937
+#: ../app/Helpers/Options.php:946
 msgid "Descending"
 msgstr ""
 
-#: ../app/Helpers/Options.php:947
+#: ../app/Helpers/Options.php:956
 msgid "WooCommerce"
 msgstr ""
 
-#: ../app/Helpers/Options.php:955
+#: ../app/Helpers/Options.php:964
 msgid "Left (£99.99)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:956
+#: ../app/Helpers/Options.php:965
 msgid "Right (99.99£)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:957
+#: ../app/Helpers/Options.php:966
 msgid "Left with space (£ 99.99)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:958
+#: ../app/Helpers/Options.php:967
 msgid "Right with space (99.99 £)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:964
+#: ../app/Helpers/Options.php:973
 msgid "Display in 2 column"
 msgstr ""
 
-#: ../app/Helpers/Options.php:965
+#: ../app/Helpers/Options.php:974
 msgid "Display in 1 column"
 msgstr ""
 
-#: ../app/Helpers/Options.php:2314
+#: ../app/Helpers/Options.php:2323
 msgid "Numbered Pagination"
 msgstr ""
 
-#: ../app/Helpers/Upgrade.php:45
-msgid "Food Menu Pro"
-msgstr ""
-
-#: ../app/Models/Fields.php:815
+#: ../app/Models/Fields.php:813
 msgid "Left"
 msgstr ""
 
-#: ../app/Models/Fields.php:816
+#: ../app/Models/Fields.php:814
 msgid "Right"
 msgstr ""
 
-#: ../app/Models/Fields.php:818
+#: ../app/Models/Fields.php:816
 msgid "Justify"
 msgstr ""
 
-#: ../app/Models/Fields.php:825
+#: ../app/Models/Fields.php:823
 msgid "Bold"
 msgstr ""
 
-#: ../app/Models/Fields.php:826
+#: ../app/Models/Fields.php:824
 msgid "Bolder"
 msgstr ""
 
-#: ../app/Models/Fields.php:827
+#: ../app/Models/Fields.php:825
 msgid "Lighter"
 msgstr ""
 
-#: ../app/Models/Fields.php:828
+#: ../app/Models/Fields.php:826
 msgid "Inherit"
 msgstr ""
 
-#: ../app/Models/Fields.php:829
+#: ../app/Models/Fields.php:827
 msgid "Initial"
 msgstr ""
 
-#: ../app/Models/Fields.php:830
+#: ../app/Models/Fields.php:828
 msgid "Unset"
 msgstr ""
 
-#: ../app/Models/Fields.php:831
+#: ../app/Models/Fields.php:829
 msgid "100"
 msgstr ""
 
-#: ../app/Models/Fields.php:832
+#: ../app/Models/Fields.php:830
 msgid "200"
 msgstr ""
 
-#: ../app/Models/Fields.php:833
+#: ../app/Models/Fields.php:831
 msgid "300"
 msgstr ""
 
-#: ../app/Models/Fields.php:834
+#: ../app/Models/Fields.php:832
 msgid "400"
 msgstr ""
 
-#: ../app/Models/Fields.php:835
+#: ../app/Models/Fields.php:833
 msgid "500"
 msgstr ""
 
-#: ../app/Models/Fields.php:836
+#: ../app/Models/Fields.php:834
 msgid "600"
 msgstr ""
 
-#: ../app/Models/Fields.php:837
+#: ../app/Models/Fields.php:835
 msgid "700"
 msgstr ""
 
-#: ../app/Models/Fields.php:838
+#: ../app/Models/Fields.php:836
 msgid "800"
 msgstr ""
 
-#: ../app/Models/Fields.php:839
+#: ../app/Models/Fields.php:837
 msgid "900"
 msgstr ""
 
@@ -1006,69 +1014,77 @@ msgstr ""
 msgid "Select Food Menu"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:45, ../resources/settings.php:21
+#: ../app/Controllers/Admin/Settings.php:46, ../resources/settings.php:21
 msgid "Food Menu Settings"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:46
+#: ../app/Controllers/Admin/Settings.php:47
 msgid "Settings"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:57, ../app/Controllers/Admin/Settings.php:58
+#: ../app/Controllers/Admin/Settings.php:58, ../app/Controllers/Admin/Settings.php:59
 msgid "Get Help"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:70, ../app/Controllers/Admin/Settings.php:71
+#: ../app/Controllers/Admin/Settings.php:71, ../app/Controllers/Admin/Settings.php:72
 msgid "Product Addons"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:111
+#: ../app/Controllers/Admin/Settings.php:84, ../app/Controllers/Admin/Settings.php:85
+msgid "Table Layout"
+msgstr ""
+
+#: ../app/Controllers/Admin/Settings.php:126
 msgid "Facing issue?"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:112
+#: ../app/Controllers/Admin/Settings.php:127
 msgid "Please open a support ticket."
 msgstr ""
 
-#: ../app/Controllers/Admin/Upgrade.php:93
+#: ../app/Controllers/Admin/Upgrade.php:94
 msgid "Heads up, Please backup before upgrade to version "
 msgstr ""
 
-#: ../app/Controllers/Frontend/Shortcode.php:224, ../app/Controllers/Admin/Ajax/Preview.php:347
+#: ../app/Controllers/Frontend/Shortcode.php:224, ../app/Controllers/Admin/Ajax/Preview.php:349
 msgid "No posts found."
 msgstr ""
 
-#: ../app/Controllers/Frontend/Shortcode.php:172, ../app/Controllers/Frontend/Shortcode.php:164, ../app/Controllers/Admin/Ajax/Preview.php:284, ../app/Controllers/Admin/Ajax/Preview.php:276
+#: ../app/Controllers/Frontend/Shortcode.php:172, ../app/Controllers/Frontend/Shortcode.php:164, ../app/Controllers/Admin/Ajax/Preview.php:286, ../app/Controllers/Admin/Ajax/Preview.php:278
 msgid "Loading ..."
 msgstr ""
 
-#: ../app/Controllers/Frontend/Shortcode.php:353, ../app/Controllers/Admin/Ajax/Preview.php:1021
+#: ../app/Controllers/Frontend/Shortcode.php:353, ../app/Controllers/Admin/Ajax/Preview.php:1023
 msgid "No categories found"
 msgstr ""
 
-#: ../app/Controllers/Frontend/Shortcode.php:343, ../app/Controllers/Admin/Ajax/Preview.php:268, ../app/Controllers/Admin/Ajax/Preview.php:1011, ../app/Controllers/Admin/Ajax/Preview.php:1239
+#: ../app/Controllers/Frontend/Shortcode.php:343, ../app/Controllers/Admin/Ajax/Preview.php:270, ../app/Controllers/Admin/Ajax/Preview.php:1013, ../app/Controllers/Admin/Ajax/Preview.php:1241
 msgid "Add to cart"
 msgstr ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:103
+#: ../app/Controllers/Hooks/ActionHooks.php:78
+msgid "Food Location:"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:108
 msgid "Food Order Location"
 msgstr ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:139
+#: ../app/Controllers/Hooks/ActionHooks.php:144
 msgid "Save Your Preferred Location"
 msgstr ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:140
+#: ../app/Controllers/Hooks/ActionHooks.php:145
 msgid "Save"
 msgstr ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:313
+#: ../app/Controllers/Hooks/ActionHooks.php:328
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:331
+#: ../app/Controllers/Hooks/ActionHooks.php:346
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
@@ -1082,8 +1098,225 @@ msgstr ""
 msgid "Add to Cart"
 msgstr ""
 
+#: ../app/Controllers/MiniCart/MiniCart.php:109, ../app/Controllers/MiniCart/MiniCartHooks.php:128
+msgid "Item"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCart.php:109, ../app/Controllers/MiniCart/MiniCartHooks.php:128
+msgid "Items"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCart.php:152
+msgid "Loadding..."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:28
+msgid "Enable Mini Cart?"
+msgstr ""
+
 #: ../app/Controllers/MiniCart/MiniCartFns.php:30
 msgid "Switch on to enable mini cart."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:35
+msgid "Cart Drawer Settings"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:44
+msgid "Drawer Style"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:46
+msgid "Style - 01"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:47
+msgid "Style - 02"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:48
+msgid "Style - 03"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:57
+msgid "Drawer Opening Behavior"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:59
+msgid "Open each time after add to the cart"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:60
+msgid "Open when floating button is clicked"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:68
+msgid "Mini Cart Position "
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:69
+msgid "You can manage mini_cart position."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:71
+msgid "left Center"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:72
+msgid "left Bottom"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:73
+msgid "Right Center"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:74
+msgid "Right Bottom"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:81
+msgid "Price extra field Visibility"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:82
+msgid "Enable to showing all cost (Shipping, Tax etc) in price table. Otherwise only Subtotal will show."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:89
+msgid "Coupon Form Visibility"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:90
+msgid "You may show / hide coupon input box on the mini-cart footer area"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:97
+msgid "Empty Cart Message"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:98
+msgid "Enter empty cart message. E.g: No products in the cart"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:99
+msgid "No products in the cart."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:105
+msgid "Shop Button Text"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:106
+msgid "Change Go Shopping Button text"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:107
+msgid "Go Shopping"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:113
+msgid "Float Button Settings"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:121
+msgid "Float Button Style"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:123
+msgid "Style # 01"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:124
+msgid "Style # 02"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:125
+msgid "Style # 03"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:126
+msgid "Style # 04"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:133
+msgid "Others Settings"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:138
+msgid "Overlay Visibility"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:139
+msgid "Enable this option to show the overlay"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:146
+msgid "Show On Mobile"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:147
+msgid "Enable this option to Show On Mobile."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:154
+msgid "Custom Class to Open Mini Cart"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:155
+msgid "If you would like to open the mini-cart by custom button on click just add the class name with comma separator. E.g: .icon-area-content a, span.cart-btn"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:159
+msgid "Mini Cart Style"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:164
+msgid "Drawer Primary Color"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:171
+msgid "Drawer Secondary Color"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:176
+msgid "Floating Button Style"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:181
+msgid "Button Background"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:188
+msgid "Button Background - Hover"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:197
+msgid "If you need you can enter float button width"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:198
+msgid "Float Button Min Width"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:207
+msgid "Enter Border Radius. Ex. 10px | 5px 5px 5px 5px | 0 5px 5px 0"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:246
+msgid "Product quantity"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:326, ../app/Controllers/MiniCart/MiniCartHooks.php:327
+msgid "Shipping"
+msgstr ""
+
+#. translators: %s location.
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:345
+msgid "(estimated for %s)"
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:369, ../app/Controllers/MiniCart/MiniCartHooks.php:370
+msgid "Total"
 msgstr ""
 
 #: ../app/Widgets/Elementor/Shortcodes.php:84
@@ -1102,83 +1335,83 @@ msgstr ""
 msgid "ShortCode list"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Preview.php:356, ../app/Controllers/Admin/Ajax/Settings.php:68
+#: ../app/Controllers/Admin/Ajax/Preview.php:358, ../app/Controllers/Admin/Ajax/Settings.php:88
 msgid "Security Error !!"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Preview.php:112
+#: ../app/Controllers/Admin/Ajax/Preview.php:116
 msgid "Load More"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Preview.php:128, ../app/Controllers/Admin/Ajax/Preview.php:1238
+#: ../app/Controllers/Admin/Ajax/Preview.php:132, ../app/Controllers/Admin/Ajax/Preview.php:1240
 msgid "Read More"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Preview.php:247
+#: ../app/Controllers/Admin/Ajax/Preview.php:250
 msgid "Show all"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Settings.php:66
+#: ../app/Controllers/Admin/Ajax/Settings.php:85
 msgid "Settings successfully updated"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Shortcode.php:65
+#: ../app/Controllers/Admin/Ajax/Shortcode.php:69
 msgid "No shortCode found."
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Shortcode.php:52
+#: ../app/Controllers/Admin/Ajax/Shortcode.php:56
 msgid "Select Short code"
 msgstr ""
 
-#: ../app/Controllers/Admin/Ajax/Shortcode.php:54
+#: ../app/Controllers/Admin/Ajax/Shortcode.php:58
 msgid "Default"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/PostMeta.php:80
+#: ../app/Controllers/Admin/Metabox/PostMeta.php:81
 msgid "Food Details"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/PostMeta.php:143
+#: ../app/Controllers/Admin/Metabox/PostMeta.php:144
 msgid "Insert the price, leave blank if it is free"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:107
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:108
 msgid "Short Code Generator"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:116
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:117
 msgid "Layout Preview"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:270
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:286
 msgid "Layout"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:271
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:287
 msgid "Filtering"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:272
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:288
 msgid "Field selection"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:273
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:289
 msgid "Styling"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:332
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:348
 msgid "Get started by spending some time with the documentation we included step by step process with screenshots with video."
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:379
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:394
 msgid "Pro Field Alert!"
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:380
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:395
 msgid "Sorry! This is a Pro field. To activate this field, you need to upgrade to the Pro version."
 msgstr ""
 
-#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:381
+#: ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:396
 msgid "Get Pro Version"
 msgstr ""
 
@@ -1214,6 +1447,10 @@ msgstr ""
 msgid "Detail page settings"
 msgstr ""
 
+#: ../resources/settings.php:44
+msgid "Mini Cart"
+msgstr ""
+
 #: ../resources/settings.php:80
 msgid "Save Changes"
 msgstr ""
@@ -1236,4 +1473,44 @@ msgstr ""
 
 #: ../templates/archive-food-menu-cat.php:75
 msgid "No food found."
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:26
+msgid "Cart Item"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:26
+msgid "Shopping Cart"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:40
+msgid "Clear All"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:125
+msgid "Loading..."
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:90
+msgid "Remove this item"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:95
+msgid "Remove"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:157
+msgid "Click Here"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:158
+msgid "Apply Coupon"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:167
+msgid "Apply"
+msgstr ""
+
+#: ../templates/mini-cart/mini-cart.php:179, ../templates/mini-cart/mini-cart.php:180
+msgid "Subtotal"
 msgstr ""

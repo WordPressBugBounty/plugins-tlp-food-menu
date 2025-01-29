@@ -11,7 +11,7 @@ use RT\FoodMenu\Helpers\Fns;
 use RT\FoodMenu\Traits\SingletonTrait;
 
 defined( 'ABSPATH' ) || exit();
-
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 /**
  * Main FilterHooks class.
  */
@@ -106,7 +106,7 @@ class MiniCart {
 
 		$opt = $this->options;
 
-		$count_label          = WC()->cart->get_cart_contents_count() < 2 ? __( 'Item', 'food-menu-pro' ) : __( 'Items', 'food-menu-pro' );
+		$count_label          = WC()->cart->get_cart_contents_count() < 2 ? __( 'Item', 'tlp-food-menu' ) : __( 'Items', 'tlp-food-menu' );
 		$cart_drawer_classes  = ' ' . ( $opt['mini_cart_drawer_style'] ?? 'style1' );
 		$cart_drawer_classes .= ' ' . ( $opt['mini_cart_open_style'] ?? 'open-always' );
 
@@ -149,7 +149,7 @@ class MiniCart {
 		<div class="fmp-drawer-container fmp-minicart-drawer <?php echo esc_attr( $cart_drawer_classes ); ?>">
 			<span class="close"></span>
 			<div id="fmp-side-content-area-id">
-				<img class="loading-cart" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loadding...', 'food-menu-pro' ); ?>">
+				<img class="loading-cart" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loadding...', 'tlp-food-menu' ); ?>">
 			</div>
 		</div>
 

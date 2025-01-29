@@ -12,7 +12,7 @@ use RT\FoodMenu\Helpers\RenderHelpers;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
-
+//phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
 get_header();
 ?>
 <div class="fmp-container-fluid fmp-wrapper fmp-archive fmp fmp-hover-zoom_in fmp-image-top has-mobile-title has-mobile-image has-mobile-excerpt has-mobile-price" data-desktop-col="2" data-tab-col="1" data-mobile-col="1">

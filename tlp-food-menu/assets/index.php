@@ -1,3 +1,3 @@
 <?php
 
-	echo "Keep Silent";
+	echo 'Keep Silent';

@@ -42,8 +42,8 @@ class Upgrade {
 			'admin_notices',
 			function () {
 				$class     = 'notice notice-error';
-				$text      = esc_html__( 'Food Menu Pro', 'tlp-food-menu' );
-				$text_free = esc_html__( 'Food Menu', 'tlp-food-menu' );
+				$text      = 'Food Menu Pro';
+				$text_free = 'Food Menu';
 				$link      = add_query_arg(
 					[
 						'tab'       => 'plugin-information',

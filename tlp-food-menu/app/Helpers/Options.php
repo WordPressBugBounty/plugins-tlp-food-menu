@@ -188,37 +188,45 @@ class Options {
 	public static function generalSettings2() {
 		$settings = get_option( TLPFoodMenu()->options['settings'] );
 
-		$general = [
-			'fmp_preloader'           => [
-				'type'        => 'checkbox',
-				'label'       => esc_html__( 'Enable Preloader?', 'tlp-food-menu' ),
-				'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
-				'description' => esc_html__( 'Switch on to enable preloader.', 'tlp-food-menu' ),
-				'default'     => 1,
-				'option'      => 1,
-			],
+		$food_menu_type = $settings['fm_food_menu_type'] ?? 'food_menu_post';
 
-			'fmp_food_location_popup' => [
+		if ( 'online_ordering' === $food_menu_type ) {
+			$general['fmp_food_reservation_status'] = [
+				'label'       => esc_html__( 'Enable Reservation ? (beta)', 'tlp-food-menu' ),
+				'type'        => 'switch',
+				'description' => esc_html__( 'Enable Reservation. Please refresh the page after saving the changes to apply the reservation.', 'tlp-food-menu' ),
+				'value'       => $settings['fmp_food_reservation_status'] ?? '',
+			];
+		}
+
+		$general['fmp_preloader'] = [
+			'type'        => 'checkbox',
+			'label'       => esc_html__( 'Enable Preloader?', 'tlp-food-menu' ),
+			'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
+			'description' => esc_html__( 'Switch on to enable preloader.', 'tlp-food-menu' ),
+			'default'     => 1,
+			'option'      => 1,
+		];
+
+			$general['fmp_food_location_popup'] = [
 				'label'       => esc_html__( 'Allow Food Location ?', 'tlp-food-menu' ),
 				'type'        => 'switch',
 				'description' => esc_html__( 'Implement a front-end location pop-up to capture user location for food delivery.', 'tlp-food-menu' ),
 				'value'       => $settings['fmp_food_location_popup'] ?? '',
-			],
-
-		];
-
-		if ( ! TLPFoodMenu()->has_pro() ) {
-			$general['trailing_zeroes'] = [
-				'label'       => esc_html__( 'Hide Trailing Zeroes', 'tlp-food-menu' ),
-				'type'        => 'checkbox',
-				'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
-				'description' => esc_html__( 'Switch on to hide trailing zeroes from the price.', 'tlp-food-menu' ),
-				'default'     => 0,
-				'option'      => 1,
-				'value'       => ! empty( $settings['trailing_zeroes'] ) ? $settings['trailing_zeroes'] : 0,
 			];
-		}
-		return apply_filters( 'fmp_general_settings2', $general, $settings );
+
+			if ( ! TLPFoodMenu()->has_pro() ) {
+				$general['trailing_zeroes'] = [
+					'label'       => esc_html__( 'Hide Trailing Zeroes', 'tlp-food-menu' ),
+					'type'        => 'checkbox',
+					'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
+					'description' => esc_html__( 'Switch on to hide trailing zeroes from the price.', 'tlp-food-menu' ),
+					'default'     => 0,
+					'option'      => 1,
+					'value'       => ! empty( $settings['trailing_zeroes'] ) ? $settings['trailing_zeroes'] : 0,
+				];
+			}
+			return apply_filters( 'fmp_general_settings2', $general, $settings );
 	}
 
 	public static function detailPageSettings() {
@@ -226,12 +234,13 @@ class Options {
 
 		$detailPageSettings = [
 			'hide_options'             => [
-				'label'     => esc_html__( 'Hide Options', 'tlp-food-menu' ),
-				'type'      => 'checkbox',
-				'multiple'  => true,
-				'alignment' => 'vertical',
-				'options'   => self::detailsPageHiddenOptions(),
-				'value'     => ! empty( $settings['hide_options'] ) ? $settings['hide_options'] : [],
+				'label'       => esc_html__( 'Hide Options', 'tlp-food-menu' ),
+				'description' => esc_html__( 'When the description is disabled, the short description will automatically display the complete content of the description to ensure no information is lost.', 'tlp-food-menu' ),
+				'type'        => 'checkbox',
+				'multiple'    => true,
+				'alignment'   => 'vertical',
+				'options'     => self::detailsPageHiddenOptions(),
+				'value'       => ! empty( $settings['hide_options'] ) ? $settings['hide_options'] : [],
 			],
 
 			'fmp_single_primary_color' => [

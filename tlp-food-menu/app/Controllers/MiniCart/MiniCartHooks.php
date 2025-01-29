@@ -65,7 +65,7 @@ class MiniCartHooks {
 
 		if ( wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) && isset( $_POST['coupon_code'] ) ) {
 
-			$couponCode = sanitize_text_field( $_POST['coupon_code'] );
+			$couponCode = sanitize_text_field( wp_unslash( $_POST['coupon_code'] ) );
 
 			// Apply the coupon.
 			$result = WC()->cart->apply_coupon( $couponCode );
@@ -125,7 +125,7 @@ class MiniCartHooks {
 	 */
 	public static function cart_count_update( $fragments ) {
 		// Determine the label based on the number of items in the cart.
-		$count_label = WC()->cart->get_cart_contents_count() < 2 ? __( 'Item', 'food-menu-pro' ) : __( 'Items', 'food-menu-pro' );
+		$count_label = WC()->cart->get_cart_contents_count() < 2 ? __( 'Item', 'tlp-food-menu' ) : __( 'Items', 'tlp-food-menu' );
 
 		// Generate the number of items element.
 		$number = '<span class="fmp-cart-icon-num">' . WC()->cart->get_cart_contents_count() . ' <span class="items">' . $count_label . '</span></span>';
@@ -168,7 +168,7 @@ class MiniCartHooks {
 		if ( ! wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			wp_send_json_error();
 		}
-		$param = $_POST['param'] ?? [];
+		$param = ! empty( $_POST['param'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['param'] ) ) : [];
 
 		if ( isset( $param['cartItemKey'] ) && isset( $param['quantity'] ) ) {
 			WC()->cart->set_quantity( $param['cartItemKey'], $param['quantity'] );
@@ -182,7 +182,6 @@ class MiniCartHooks {
 				'data'   => $htmlData,
 			]
 		);
-		// wp_die();
 	}
 
 
@@ -244,7 +243,7 @@ class MiniCartHooks {
 					class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
 					name="<?php echo esc_attr( $input_name ); ?>"
 					value="<?php echo esc_attr( $input_value ); ?>"
-					aria-label="<?php esc_attr_e( 'Product quantity', 'woocommerce' ); ?>"
+					aria-label="<?php esc_attr_e( 'Product quantity', 'tlp-food-menu' ); ?>"
 					size="4"
 					min="<?php echo esc_attr( $min_value ); ?>"
 					max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
@@ -324,8 +323,8 @@ class MiniCartHooks {
 
 		<?php if ( WC()->cart->get_shipping_total() && 0 != WC()->cart->get_shipping_total() ) : ?>
 			<tr class="order-total">
-				<th><?php esc_html_e( 'Shipping', 'woocommerce' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php echo wc_price( WC()->cart->get_shipping_total() ); //phpcs:ignore ?></td>
+				<th><?php esc_html_e( 'Shipping', 'tlp-food-menu' ); ?></th>
+				<td data-title="<?php esc_attr_e( 'Shipping', 'tlp-food-menu' ); ?>"><?php echo wc_price( WC()->cart->get_shipping_total() ); //phpcs:ignore ?></td>
 			</tr>
 		<?php endif; ?>
 
@@ -343,7 +342,7 @@ class MiniCartHooks {
 
 			if ( WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping() ) {
 				/* translators: %s location. */
-				$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'woocommerce' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
+				$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'tlp-food-menu' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
 			}
 
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
@@ -367,8 +366,8 @@ class MiniCartHooks {
 		?>
 
 		<tr class="order-total">
-			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
+			<th><?php esc_html_e( 'Total', 'tlp-food-menu' ); ?></th>
+			<td data-title="<?php esc_attr_e( 'Total', 'tlp-food-menu' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 		<?php
 	}

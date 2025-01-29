@@ -117,7 +117,7 @@ class Shortcodes extends \Elementor\Widget_Base {
 				wc_cart_url: '<?php echo TLPFoodMenu()->isWcActive() ? wc_get_cart_url() : ''; //phpcs:ignore ?>'
 			};
 
-			initFMP();
+            initFoodMenu();
 
 			var isIsotope     = jQuery('.fmp-isotope-item');
 			var isGridIsotope = jQuery('.fmp-wrapper[data-layout*="layout"] .masonry-grid-item');

@@ -8,6 +8,7 @@
 namespace RT\FoodMenu\Controllers\Admin\Metabox;
 
 use RT\FoodMenu\Helpers\Fns;
+use RT\FoodMenu\Traits\SingletonTrait;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,10 +16,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Admin Post Metabox Class.
+ * Admin Post PostMeta Class.
  */
 class PostMeta {
-	use \RT\FoodMenu\Traits\SingletonTrait;
+	use SingletonTrait;
 
 	/**
 	 * Class Init.
@@ -31,7 +32,7 @@ class PostMeta {
 		}
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxs' ] );
+		add_action( 'add_meta_boxes', [ $this, 'add_meta_boxes' ] );
 		add_action( 'save_post', [ $this, 'save_meta_boxes' ], 10, 3 );
 		add_action( 'edit_form_after_title', [ $this, 'after_title_text' ] );
 	}
@@ -74,7 +75,7 @@ class PostMeta {
 	 *
 	 * @return void
 	 */
-	public function add_meta_boxs() {
+	public function add_meta_boxes() {
 		add_meta_box(
 			'tlp_food_menu_meta_details',
 			esc_html__( 'Food Details', 'tlp-food-menu' ),

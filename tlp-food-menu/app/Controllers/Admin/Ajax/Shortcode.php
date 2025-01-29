@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Shortcode List Ajax Class.
  */
 class Shortcode {
+
 	use \RT\FoodMenu\Traits\SingletonTrait;
 
 	/**
@@ -35,6 +36,9 @@ class Shortcode {
 	 * @return void
 	 */
 	public function response() {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			die();
+		}
 		$html = null;
 		$scQ  = new \WP_Query(
 			[
@@ -42,7 +46,7 @@ class Shortcode {
 				'order_by'       => 'title',
 				'order'          => 'DESC',
 				'post_status'    => 'publish',
-				'posts_per_page' => -1,
+				'posts_per_page' => - 1,
 			]
 		);
 

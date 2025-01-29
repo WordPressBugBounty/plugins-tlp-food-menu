@@ -41,7 +41,7 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 					],
 					'minicart'   => [
 						'id'      => 'mini-cart',
-						'title'   => esc_html__( 'Mini Cart', 'food-menu-pro' ),
+						'title'   => esc_html__( 'Mini Cart', 'tlp-food-menu' ),
 						'icon'    => 'dashicons-cart',
 						'content' => Fns::rtFieldGenerator( MiniCartFns::settings_field() ),
 					],

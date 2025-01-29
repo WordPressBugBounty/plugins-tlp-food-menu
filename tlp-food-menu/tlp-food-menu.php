@@ -4,10 +4,12 @@
  * Plugin URI: http://demo.radiustheme.com/wordpress/plugins/food-menu/
  * Description: A Simple Food & Restaurant Menu Display Plugin for Restaurant, Cafes, Fast Food, Coffee House with WooCommerce Online Ordering.
  * Author: RadiusTheme
- * Version: 5.1.4
+ * Version: 5.2.0
  * Text Domain: tlp-food-menu
  * Domain Path: /languages
  * Author URI: https://radiustheme.com/
+ * License: GPLv3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @package RT_FoodMenu
  */
@@ -17,10 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-define( 'TLP_FOOD_MENU_VERSION', '5.1.4' );
+define( 'TLP_FOOD_MENU_VERSION', '5.2.0' );
 define( 'TLP_FOOD_MENU_AUTHOR', 'RadiusTheme' );
 define( 'TLP_FOOD_MENU_PLUGIN_PATH', __FILE__ );
-define( 'FOOD_MENU_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__ ) );
+define( 'FOOD_MENU_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'TLP_FOOD_MENU_PLUGIN_ACTIVE_FILE_NAME', plugin_basename( __FILE__ ) );
 define( 'TLP_FOOD_MENU_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 define( 'TLP_FOOD_MENU_LANGUAGE_PATH', dirname( plugin_basename( __FILE__ ) ) . '/languages' );
@@ -30,7 +32,7 @@ define( 'TLP_FOOD_MENU_DEFAULT_TIME_FORMAT', 'H:i:s' );
 /**
  * Autoload.
  */
-if ( file_exists( FOOD_MENU_PLUGIN_DIR_PATH. '/vendor/autoload.php' ) ) {
+if ( file_exists( FOOD_MENU_PLUGIN_DIR_PATH . '/vendor/autoload.php' ) ) {
 	require_once FOOD_MENU_PLUGIN_DIR_PATH . '/vendor/autoload.php';
 }
 

@@ -7,7 +7,7 @@
 
 namespace RT\FoodMenu\Controllers;
 
-use RT\FoodMenu\Controllers\Admin as Admin;
+use RT\FoodMenu\Controllers\Admin;
 use RT\FoodMenu\Abstracts\Controller;
 
 // Do not allow directly accessing this file.
@@ -48,8 +48,8 @@ class AdminController extends Controller {
 	 * @return object
 	 */
 	private function notices() {
-		//$this->admin[] = Admin\Notices\Review::class;
-		if ( !TLPFoodMenu()->has_pro() ){
+		// $this->admin[] = Admin\Notices\Review::class;
+		if ( ! TLPFoodMenu()->has_pro() ) {
 			$this->admin[] = Admin\Notices\BlackFriday::class;
 		}
 

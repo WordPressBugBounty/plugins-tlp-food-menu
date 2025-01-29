@@ -8,6 +8,7 @@
 namespace RT\FoodMenu\Controllers\Admin;
 
 use RT\FoodMenu\Helpers\Fns;
+use RT\FoodMenuPro\Helpers\FnsPro;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,7 +45,7 @@ class Settings {
 			'edit.php?post_type=' . TLPFoodMenu()->post_type,
 			esc_html__( 'Food Menu Settings', 'tlp-food-menu' ),
 			esc_html__( 'Settings', 'tlp-food-menu' ),
-			'administrator',
+			'manage_options',
 			'food_menu_settings',
 			[
 				$this,
@@ -56,7 +57,7 @@ class Settings {
 			'edit.php?post_type=' . TLPFoodMenu()->post_type,
 			esc_html__( 'Get Help', 'tlp-food-menu' ),
 			esc_html__( 'Get Help', 'tlp-food-menu' ),
-			'administrator',
+			'manage_options',
 			'rtfm_get_help',
 			[
 				$this,
@@ -69,10 +70,23 @@ class Settings {
 				'edit.php?post_type=' . TLPFoodMenu()->post_type,
 				esc_html__( 'Product Addons', 'tlp-food-menu' ),
 				esc_html__( 'Product Addons', 'tlp-food-menu' ),
-				'administrator',
+				'manage_options',
 				'product_addons',
 				[ $this, 'render_product_addons' ],
 				8
+			);
+		}
+
+
+		if ( TLPFoodMenu()->has_pro() && FnsPro::enable_reservation() ) {
+			add_submenu_page(
+				'edit.php?post_type=' . TLPFoodMenu()->post_type,
+				esc_html__( 'Table Layout', 'tlp-food-menu' ),
+				esc_html__( 'Table Layout', 'tlp-food-menu' ),
+				'manage_options',
+				'table_layout',
+				[ $this, 'render_table_layout' ],
+				9
 			);
 		}
 	}
@@ -99,7 +113,8 @@ class Settings {
 	 * Plugin links row.
 	 *
 	 * @param array  $links Links.
-	 * @param string $file File.
+	 * @param string $file  File.
+	 *
 	 * @return array
 	 */
 	public function plugin_row_meta( $links, $file ) {
@@ -122,6 +137,7 @@ class Settings {
 	 * Action link.
 	 *
 	 * @param array $links Links.
+	 *
 	 * @return array
 	 */
 	public function marketing( $links ) {
@@ -129,7 +145,8 @@ class Settings {
 		$links[] = '<a target="_blank" href="' . esc_url( 'https://www.radiustheme.com/docs/food-menu/getting-started/installations/' ) . '">Documentation</a>';
 
 		if ( ! TLPFoodMenu()->has_pro() ) {
-			$links[] = '<a target="_blank" style="color: #39b54a;font-weight: 700;"  href="' . esc_url( 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/' ) . '">Get Pro</a>';
+			$links[] = '<a target="_blank" style="color: #39b54a;font-weight: 700;"  href="'
+			           . esc_url( 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/' ) . '">Get Pro</a>';
 		}
 
 		return $links;

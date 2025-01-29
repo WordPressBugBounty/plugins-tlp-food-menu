@@ -37,6 +37,10 @@ class ShortcodeSource {
 	 */
 	public function response() {
 
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error();
+		}
+
 		if ( ! wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			wp_send_json_error();
 		}

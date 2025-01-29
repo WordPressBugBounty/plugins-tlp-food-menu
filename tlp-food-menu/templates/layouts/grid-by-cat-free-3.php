@@ -108,7 +108,7 @@ while ( $gridQuery->have_posts() ) {
 	if ( 'product' === $source ) {
 		$html .= '<div class="fmp-add-to-cart rt-pos-r rt-d-flex">';
 
-		if ( in_array( 'add_to_cart', $items, true ) || ! TLPFoodMenu()->has_pro() ) {
+		if ( $add_to_cart && in_array( 'add_to_cart', $items, true ) || ! TLPFoodMenu()->has_pro() ) {
 			$html .= stripslashes_deep( $add_to_cart );
 		}
 
