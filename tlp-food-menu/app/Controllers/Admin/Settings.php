@@ -78,7 +78,7 @@ class Settings {
 		}
 
 
-		if ( TLPFoodMenu()->has_pro() && FnsPro::enable_reservation() ) {
+		if ( TLPFoodMenu()->has_pro() && method_exists('RT\FoodMenuPro\Helpers\FnsPro', 'enable_reservation') && FnsPro::enable_reservation() ) {
 			add_submenu_page(
 				'edit.php?post_type=' . TLPFoodMenu()->post_type,
 				esc_html__( 'Table Layout', 'tlp-food-menu' ),

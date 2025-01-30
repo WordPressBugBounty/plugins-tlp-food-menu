@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 5.2.0
+Stable tag: 5.2.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -154,6 +154,9 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 11. General Settings
 
 == Changelog ==
+
+= 5.2.1 ( Jan 30, 2025 ) =
+* Fixed: Call to undefined method RT\FoodMenuPro\Helpers\FnsPro::enable_reservation()
 
 = 5.2.0 ( Jan 29, 2025 ) =
 * Security Updated: Sanitize all inputs, and added nonce and user permission for admin ajax

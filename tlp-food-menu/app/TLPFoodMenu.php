@@ -163,7 +163,9 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		 */
 		public function initialize() {
 			\do_action( 'rtfm_init' );
-
+			if ( isset( $_GET['rtcl-debug-on'] ) ) {
+				return;
+			}
 			$this->load_text_domain();
 			Helpers\Fns::instances( $this->controllers() );
 		}
