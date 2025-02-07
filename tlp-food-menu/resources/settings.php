@@ -18,13 +18,13 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 ?>
 
 <div class="wrap">
-	<h2><?php esc_html_e( 'Food Menu Settings', 'tlp-food-menu' ); ?></h2>
-	<div class="rt-settings-container">
-		<div class="rt-setting-title">
-			<h3><?php esc_html_e( 'General settings', 'tlp-food-menu' ); ?></h3>
-		</div>
-		<div class="rt-setting-content">
-			<form id="fmp-settings-form">
+    <h2><?php esc_html_e( 'Food Menu Settings', 'tlp-food-menu' ); ?></h2>
+    <div class="rt-settings-container">
+        <div class="rt-setting-title">
+            <h3><?php esc_html_e( 'General settings', 'tlp-food-menu' ); ?></h3>
+        </div>
+        <div class="rt-setting-content">
+            <form id="fmp-settings-form">
 				<?php
 				$tabs = [
 					'general'    => [
@@ -59,14 +59,14 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 				$tabContent = '';
 
 				foreach ( $tabs as $tab ) {
-					$tabList .= '<li><a href="#' . $tab['id'] . '"><i class="dashicons ' . $tab['icon'] . '"></i>' . $tab['title'] . '</a></li>';
+					$tabList .= '<li class="tab-' . $tab['id'] . '"><a href="#' . $tab['id'] . '"><i class="dashicons ' . $tab['icon'] . '"></i>' . $tab['title'] . '</a></li>';
 
-					$tabContent     .= '<div id="' . $tab['id'] . '" class="rt-tab-content"><div class="tab-content">';
-						$tabContent .= $tab['content'];
-					$tabContent     .= '</div></div>';
+					$tabContent .= '<div id="' . $tab['id'] . '" class="rt-tab-content"><div class="tab-content">';
+					$tabContent .= $tab['content'];
+					$tabContent .= '</div></div>';
 				}
 
-				$html  = null;
+				$html = null;
 				$html .= '<div id="settings-tabs" class="rt-tabs rt-tab-container">';
 
 				$html .= '<div class="rt-tab-nav-area">';
@@ -85,8 +85,8 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 				?>
 
 				<?php wp_nonce_field( Fns::nonceText(), Fns::nonceId() ); ?>
-			</form>
-			<div class="rt-response"></div>
-		</div>
-	</div>
+            </form>
+            <div class="rt-response"></div>
+        </div>
+    </div>
 </div>

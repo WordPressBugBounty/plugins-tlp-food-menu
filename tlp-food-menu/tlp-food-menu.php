@@ -4,7 +4,7 @@
  * Plugin URI: http://demo.radiustheme.com/wordpress/plugins/food-menu/
  * Description: A Simple Food & Restaurant Menu Display Plugin for Restaurant, Cafes, Fast Food, Coffee House with WooCommerce Online Ordering.
  * Author: RadiusTheme
- * Version: 5.2.1
+ * Version: 5.2.2
  * Text Domain: tlp-food-menu
  * Domain Path: /languages
  * Author URI: https://radiustheme.com/
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-define( 'TLP_FOOD_MENU_VERSION', '5.2.1' );
+define( 'TLP_FOOD_MENU_VERSION', '5.2.2' );
 define( 'TLP_FOOD_MENU_AUTHOR', 'RadiusTheme' );
 define( 'TLP_FOOD_MENU_PLUGIN_PATH', __FILE__ );
 define( 'FOOD_MENU_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
