@@ -197,6 +197,10 @@ class Fields {
 			case 'switch':
 				$html .= $this->switchField();
 				break;
+
+			case 'html':
+				$html .= $this->html();
+				break;
 		}
 
 		if ( $this->description ) {
@@ -230,6 +234,18 @@ class Fields {
 				placeholder="' . esc_attr( $this->placeholder ) . '"
 				' . Fns::htmlKses( $this->attr, 'basic' ) . '
 				/>';
+
+		return $h;
+	}
+
+	/**
+	 * Generate text field
+	 *
+	 * @return null|string
+	 */
+	private function html() {
+		$h  = null;
+		$h .= '<span class="has-html-info"></span>';
 
 		return $h;
 	}

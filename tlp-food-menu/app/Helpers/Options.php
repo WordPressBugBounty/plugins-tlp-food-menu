@@ -192,7 +192,7 @@ class Options {
 
 		if ( 'online_ordering' === $food_menu_type ) {
 			$general['fmp_food_reservation_status'] = [
-				'label'       => esc_html__( 'Enable Reservation ? (beta)', 'tlp-food-menu' ),
+				'label'       => esc_html__( 'Enable Reservation ?', 'tlp-food-menu' ),
 				'type'        => 'switch',
 				'description' => esc_html__( 'Enable Reservation. Please refresh the page after saving the changes to apply the reservation.', 'tlp-food-menu' ),
 				'value'       => $settings['fmp_food_reservation_status'] ?? '',

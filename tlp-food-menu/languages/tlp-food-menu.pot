@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
-"POT-Creation-Date: 2025-02-07 05:37+0000\n"
+"POT-Creation-Date: 2025-04-15 04:11+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -246,7 +246,7 @@ msgstr ""
 msgid "ShortCode draft updated."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:502, ../app/Models/Fields.php:822
+#: ../app/Helpers/Fns.php:502, ../app/Models/Fields.php:838
 msgid "Normal"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:515, ../app/Models/Fields.php:815
+#: ../app/Helpers/Fns.php:515, ../app/Models/Fields.php:831
 msgid "Center"
 msgstr ""
 
@@ -439,7 +439,7 @@ msgid "Currency Position"
 msgstr ""
 
 #: ../app/Helpers/Options.php:195
-msgid "Enable Reservation ? (beta)"
+msgid "Enable Reservation ?"
 msgstr ""
 
 #: ../app/Helpers/Options.php:197
@@ -930,75 +930,75 @@ msgstr ""
 msgid "Numbered Pagination"
 msgstr ""
 
-#: ../app/Models/Fields.php:813
+#: ../app/Models/Fields.php:829
 msgid "Left"
 msgstr ""
 
-#: ../app/Models/Fields.php:814
+#: ../app/Models/Fields.php:830
 msgid "Right"
 msgstr ""
 
-#: ../app/Models/Fields.php:816
+#: ../app/Models/Fields.php:832
 msgid "Justify"
 msgstr ""
 
-#: ../app/Models/Fields.php:823
+#: ../app/Models/Fields.php:839
 msgid "Bold"
 msgstr ""
 
-#: ../app/Models/Fields.php:824
+#: ../app/Models/Fields.php:840
 msgid "Bolder"
 msgstr ""
 
-#: ../app/Models/Fields.php:825
+#: ../app/Models/Fields.php:841
 msgid "Lighter"
 msgstr ""
 
-#: ../app/Models/Fields.php:826
+#: ../app/Models/Fields.php:842
 msgid "Inherit"
 msgstr ""
 
-#: ../app/Models/Fields.php:827
+#: ../app/Models/Fields.php:843
 msgid "Initial"
 msgstr ""
 
-#: ../app/Models/Fields.php:828
+#: ../app/Models/Fields.php:844
 msgid "Unset"
 msgstr ""
 
-#: ../app/Models/Fields.php:829
+#: ../app/Models/Fields.php:845
 msgid "100"
 msgstr ""
 
-#: ../app/Models/Fields.php:830
+#: ../app/Models/Fields.php:846
 msgid "200"
 msgstr ""
 
-#: ../app/Models/Fields.php:831
+#: ../app/Models/Fields.php:847
 msgid "300"
 msgstr ""
 
-#: ../app/Models/Fields.php:832
+#: ../app/Models/Fields.php:848
 msgid "400"
 msgstr ""
 
-#: ../app/Models/Fields.php:833
+#: ../app/Models/Fields.php:849
 msgid "500"
 msgstr ""
 
-#: ../app/Models/Fields.php:834
+#: ../app/Models/Fields.php:850
 msgid "600"
 msgstr ""
 
-#: ../app/Models/Fields.php:835
+#: ../app/Models/Fields.php:851
 msgid "700"
 msgstr ""
 
-#: ../app/Models/Fields.php:836
+#: ../app/Models/Fields.php:852
 msgid "800"
 msgstr ""
 
-#: ../app/Models/Fields.php:837
+#: ../app/Models/Fields.php:853
 msgid "900"
 msgstr ""
 
@@ -1451,7 +1451,7 @@ msgstr ""
 msgid "Mini Cart"
 msgstr ""
 
-#: ../resources/settings.php:80
+#: ../resources/settings.php:82
 msgid "Save Changes"
 msgstr ""
 

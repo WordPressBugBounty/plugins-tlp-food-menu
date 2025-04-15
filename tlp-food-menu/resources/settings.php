@@ -75,6 +75,8 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 				$html .= '</ul>';
 				$html .= '</div>';
 
+                //Tab Content Settings Area
+
 				$html .= '<div class="rt-tab-content-area">';
 				$html .= $tabContent;
 				$html .= '<p class="submit"><input type="submit" name="submit" id="fmp-saveButton" class="rt-admin-btn button button-primary" value="' . esc_attr__( 'Save Changes', 'tlp-food-menu' ) . '"></p>';

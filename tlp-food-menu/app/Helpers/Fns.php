@@ -138,7 +138,7 @@ class Fns {
 	 * @return string|void
 	 */
 	public static function renderView( $viewName, $args = [], $return = false ) {
-		$viewName = str_replace( '.', '/', $viewName );
+		$viewName = str_replace( '.', '/', sanitize_file_name( $viewName ) );
 
 		if ( ! empty( $args ) && is_array( $args ) ) {
 			extract( $args );
