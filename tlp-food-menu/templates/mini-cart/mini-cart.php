@@ -179,11 +179,13 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 				<th><?php esc_html_e( 'Subtotal', 'tlp-food-menu' ); ?></th>
 				<td data-title="<?php esc_attr_e( 'Subtotal', 'tlp-food-menu' ); ?>">
 					<?php
-					if ( 'on' === $extra_field_visibility ) {
+					wc_cart_totals_subtotal_html(); //Just print total no need extra calculation like VAT
+
+					/*if ( 'on' === $extra_field_visibility ) {
 						wc_cart_totals_subtotal_html();
 					} else {
 						Fns::print_html( wc_price( WC()->cart->get_cart_contents_total() ), true );
-					}
+					}*/
 					?>
 				</td>
 			</tr>

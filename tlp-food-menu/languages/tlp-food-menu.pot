@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
-"POT-Creation-Date: 2025-04-15 04:11+0000\n"
+"POT-Creation-Date: 2025-07-10 11:03+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../app/Controllers/PostTypesController.php:108, ../app/Controllers/PostTypesController.php:109, ../app/Controllers/PostTypesController.php:129, ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131, ../app/Helpers/Options.php:952, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38
+#: ../app/Controllers/PostTypesController.php:108, ../app/Controllers/PostTypesController.php:109, ../app/Controllers/PostTypesController.php:129, ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131, ../app/Helpers/Options.php:952, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/GridLayout.php:43, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38
 msgid "Food Menu"
 msgstr ""
 
@@ -638,7 +638,7 @@ msgstr ""
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Custom Image Size.</b>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:588, ../app/Controllers/MiniCart/MiniCartFns.php:206
+#: ../app/Helpers/Options.php:588, ../app/Controllers/MiniCart/MiniCartFns.php:210
 msgid "Border Radius"
 msgstr ""
 
@@ -1078,13 +1078,13 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:328
+#: ../app/Controllers/Hooks/ActionHooks.php:335
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../app/Controllers/Hooks/ActionHooks.php:346
+#: ../app/Controllers/Hooks/ActionHooks.php:353
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
@@ -1098,228 +1098,236 @@ msgstr ""
 msgid "Add to Cart"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCart.php:109, ../app/Controllers/MiniCart/MiniCartHooks.php:128
+#: ../app/Controllers/MiniCart/MiniCart.php:113, ../app/Controllers/MiniCart/MiniCartHooks.php:124
 msgid "Item"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCart.php:109, ../app/Controllers/MiniCart/MiniCartHooks.php:128
+#: ../app/Controllers/MiniCart/MiniCart.php:113, ../app/Controllers/MiniCart/MiniCartHooks.php:124
 msgid "Items"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCart.php:152
+#: ../app/Controllers/MiniCart/MiniCart.php:156
 msgid "Loadding..."
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:28
+#: ../app/Controllers/MiniCart/MiniCartFns.php:29
+msgid "The mini-cart is intentionally hidden on the cart and checkout pages."
+msgstr ""
+
+#: ../app/Controllers/MiniCart/MiniCartFns.php:32
 msgid "Enable Mini Cart?"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:30
+#: ../app/Controllers/MiniCart/MiniCartFns.php:34
 msgid "Switch on to enable mini cart."
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:35
+#: ../app/Controllers/MiniCart/MiniCartFns.php:39
 msgid "Cart Drawer Settings"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:44
+#: ../app/Controllers/MiniCart/MiniCartFns.php:48
 msgid "Drawer Style"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:46
+#: ../app/Controllers/MiniCart/MiniCartFns.php:50
 msgid "Style - 01"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:47
+#: ../app/Controllers/MiniCart/MiniCartFns.php:51
 msgid "Style - 02"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:48
+#: ../app/Controllers/MiniCart/MiniCartFns.php:52
 msgid "Style - 03"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:57
+#: ../app/Controllers/MiniCart/MiniCartFns.php:61
 msgid "Drawer Opening Behavior"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:59
+#: ../app/Controllers/MiniCart/MiniCartFns.php:63
 msgid "Open each time after add to the cart"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:60
+#: ../app/Controllers/MiniCart/MiniCartFns.php:64
 msgid "Open when floating button is clicked"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:68
+#: ../app/Controllers/MiniCart/MiniCartFns.php:72
 msgid "Mini Cart Position "
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:69
+#: ../app/Controllers/MiniCart/MiniCartFns.php:73
 msgid "You can manage mini_cart position."
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:71
+#: ../app/Controllers/MiniCart/MiniCartFns.php:75
 msgid "left Center"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:72
+#: ../app/Controllers/MiniCart/MiniCartFns.php:76
 msgid "left Bottom"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:73
+#: ../app/Controllers/MiniCart/MiniCartFns.php:77
 msgid "Right Center"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:74
+#: ../app/Controllers/MiniCart/MiniCartFns.php:78
 msgid "Right Bottom"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:81
+#: ../app/Controllers/MiniCart/MiniCartFns.php:85
 msgid "Price extra field Visibility"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:82
+#: ../app/Controllers/MiniCart/MiniCartFns.php:86
 msgid "Enable to showing all cost (Shipping, Tax etc) in price table. Otherwise only Subtotal will show."
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:89
+#: ../app/Controllers/MiniCart/MiniCartFns.php:93
 msgid "Coupon Form Visibility"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:90
+#: ../app/Controllers/MiniCart/MiniCartFns.php:94
 msgid "You may show / hide coupon input box on the mini-cart footer area"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:97
+#: ../app/Controllers/MiniCart/MiniCartFns.php:101
 msgid "Empty Cart Message"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:98
+#: ../app/Controllers/MiniCart/MiniCartFns.php:102
 msgid "Enter empty cart message. E.g: No products in the cart"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:99
+#: ../app/Controllers/MiniCart/MiniCartFns.php:103
 msgid "No products in the cart."
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:105
+#: ../app/Controllers/MiniCart/MiniCartFns.php:109
 msgid "Shop Button Text"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:106
+#: ../app/Controllers/MiniCart/MiniCartFns.php:110
 msgid "Change Go Shopping Button text"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:107
+#: ../app/Controllers/MiniCart/MiniCartFns.php:111
 msgid "Go Shopping"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:113
+#: ../app/Controllers/MiniCart/MiniCartFns.php:117
 msgid "Float Button Settings"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:121
+#: ../app/Controllers/MiniCart/MiniCartFns.php:125
 msgid "Float Button Style"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:123
+#: ../app/Controllers/MiniCart/MiniCartFns.php:127
 msgid "Style # 01"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:124
+#: ../app/Controllers/MiniCart/MiniCartFns.php:128
 msgid "Style # 02"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:125
+#: ../app/Controllers/MiniCart/MiniCartFns.php:129
 msgid "Style # 03"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:126
+#: ../app/Controllers/MiniCart/MiniCartFns.php:130
 msgid "Style # 04"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:133
+#: ../app/Controllers/MiniCart/MiniCartFns.php:137
 msgid "Others Settings"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:138
+#: ../app/Controllers/MiniCart/MiniCartFns.php:142
 msgid "Overlay Visibility"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:139
+#: ../app/Controllers/MiniCart/MiniCartFns.php:143
 msgid "Enable this option to show the overlay"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:146
+#: ../app/Controllers/MiniCart/MiniCartFns.php:150
 msgid "Show On Mobile"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:147
+#: ../app/Controllers/MiniCart/MiniCartFns.php:151
 msgid "Enable this option to Show On Mobile."
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:154
+#: ../app/Controllers/MiniCart/MiniCartFns.php:158
 msgid "Custom Class to Open Mini Cart"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:155
+#: ../app/Controllers/MiniCart/MiniCartFns.php:159
 msgid "If you would like to open the mini-cart by custom button on click just add the class name with comma separator. E.g: .icon-area-content a, span.cart-btn"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:159
+#: ../app/Controllers/MiniCart/MiniCartFns.php:163
 msgid "Mini Cart Style"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:164
+#: ../app/Controllers/MiniCart/MiniCartFns.php:168
 msgid "Drawer Primary Color"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:171
+#: ../app/Controllers/MiniCart/MiniCartFns.php:175
 msgid "Drawer Secondary Color"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:176
+#: ../app/Controllers/MiniCart/MiniCartFns.php:180
 msgid "Floating Button Style"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:181
+#: ../app/Controllers/MiniCart/MiniCartFns.php:185
 msgid "Button Background"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:188
+#: ../app/Controllers/MiniCart/MiniCartFns.php:192
 msgid "Button Background - Hover"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:197
+#: ../app/Controllers/MiniCart/MiniCartFns.php:201
 msgid "If you need you can enter float button width"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:198
+#: ../app/Controllers/MiniCart/MiniCartFns.php:202
 msgid "Float Button Min Width"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartFns.php:207
+#: ../app/Controllers/MiniCart/MiniCartFns.php:211
 msgid "Enter Border Radius. Ex. 10px | 5px 5px 5px 5px | 0 5px 5px 0"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartHooks.php:246
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:241
 msgid "Product quantity"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartHooks.php:326, ../app/Controllers/MiniCart/MiniCartHooks.php:327
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:321, ../app/Controllers/MiniCart/MiniCartHooks.php:322
 msgid "Shipping"
 msgstr ""
 
 #. translators: %s location.
-#: ../app/Controllers/MiniCart/MiniCartHooks.php:345
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:340
 msgid "(estimated for %s)"
 msgstr ""
 
-#: ../app/Controllers/MiniCart/MiniCartHooks.php:369, ../app/Controllers/MiniCart/MiniCartHooks.php:370
+#: ../app/Controllers/MiniCart/MiniCartHooks.php:364, ../app/Controllers/MiniCart/MiniCartHooks.php:365
 msgid "Total"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Shortcodes.php:84
+#: ../app/Widgets/Elementor/GridLayout.php:28
+msgid "Food Menu Grid"
+msgstr ""
+
+#: ../app/Widgets/Elementor/GridLayout.php:53, ../app/Widgets/Elementor/Shortcodes.php:84
 msgid "Select ShortCode"
 msgstr ""
 

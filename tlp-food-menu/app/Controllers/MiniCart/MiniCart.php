@@ -12,10 +12,12 @@ use RT\FoodMenu\Traits\SingletonTrait;
 
 defined( 'ABSPATH' ) || exit();
 //phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
+
 /**
  * Main FilterHooks class.
  */
 class MiniCart {
+
 	/**
 	 * Singleton Trait.
 	 */
@@ -38,7 +40,6 @@ class MiniCart {
 			add_action( 'wp_footer', [ $this, 'render' ] );
 		}
 	}
-
 
 	/**
 	 * Public CSS
@@ -95,7 +96,6 @@ class MiniCart {
 		}
 	}
 
-
 	/**
 	 * Mini cart markup
 	 *
@@ -104,15 +104,19 @@ class MiniCart {
 	public function render() {
 		add_filter( 'woocommerce_widget_cart_is_hidden', '__return_true' );
 
+		if ( is_cart() || is_checkout() ) {
+			return;
+		}
+
 		$opt = $this->options;
 
-		$count_label          = WC()->cart->get_cart_contents_count() < 2 ? __( 'Item', 'tlp-food-menu' ) : __( 'Items', 'tlp-food-menu' );
-		$cart_drawer_classes  = ' ' . ( $opt['mini_cart_drawer_style'] ?? 'style1' );
+		$count_label         = WC()->cart->get_cart_contents_count() < 2 ? __( 'Item', 'tlp-food-menu' ) : __( 'Items', 'tlp-food-menu' );
+		$cart_drawer_classes = ' ' . ( $opt['mini_cart_drawer_style'] ?? 'style1' );
 		$cart_drawer_classes .= ' ' . ( $opt['mini_cart_open_style'] ?? 'open-always' );
 
-		$fmp_float_classes  = ' ' . ( $opt['mini_cart_position'] ?? 'left_center' );
+		$fmp_float_classes = ' ' . ( $opt['mini_cart_position'] ?? 'left_center' );
 		$fmp_float_classes .= ' ' . ( $opt['mini_cart_float_btn_style'] ?? 'style1' );
-		$show_on_mobile     = $opt['mini_cart_show_on_mobile'] ?? 'on';
+		$show_on_mobile    = $opt['mini_cart_show_on_mobile'] ?? 'on';
 		if ( empty( $show_on_mobile ) && 'on' !== $show_on_mobile ) {
 			$fmp_float_classes   .= ' fmp-hide-mobile';
 			$cart_drawer_classes .= ' fmp-hide-mobile';
@@ -128,8 +132,8 @@ class MiniCart {
 
 		$has_ovelay = Fns::get_options_by_default_val( $opt, 'mini_cart_overlay_visibility', 'on' );
 		?>
-		<div id="fmp-cart-float-menu" class="fmp-cart-float-menu <?php echo esc_attr( $fmp_float_classes ); ?>">
-			<div class="fmp-cart-float-inner">
+        <div id="fmp-cart-float-menu" class="fmp-cart-float-menu <?php echo esc_attr( $fmp_float_classes ); ?>">
+            <div class="fmp-cart-float-inner">
 				<span class="cart-icon">
 					<span class="cart-icon-svg"></span>
 					<span class="cart-number-wrapper">
@@ -139,23 +143,24 @@ class MiniCart {
 						<span class="item-label"><?php echo esc_html( $count_label ); ?></span>
 					</span>
 				</span>
-				<span class="fmp-cart-icon-total">
+                <span class="fmp-cart-icon-total">
 					<?php echo wc_price( WC()->cart->get_cart_contents_total() ); //phpcs:ignore ?>
 				</span>
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<!-- Minicart Drawer -->
-		<div class="fmp-drawer-container fmp-minicart-drawer <?php echo esc_attr( $cart_drawer_classes ); ?>">
-			<span class="close"></span>
-			<div id="fmp-side-content-area-id">
-				<img class="loading-cart" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loadding...', 'tlp-food-menu' ); ?>">
-			</div>
-		</div>
+        <!-- Minicart Drawer -->
+        <div class="fmp-drawer-container fmp-minicart-drawer <?php echo esc_attr( $cart_drawer_classes ); ?>">
+            <span class="close"></span>
+            <div id="fmp-side-content-area-id">
+                <img class="loading-cart" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loadding...', 'tlp-food-menu' ); ?>">
+            </div>
+        </div>
 
 		<?php if ( 'on' === $has_ovelay ) : ?>
-			<div class="drawer-overlay"></div>
-			<?php
+            <div class="drawer-overlay"></div>
+		<?php
 		endif;
 	}
+
 }

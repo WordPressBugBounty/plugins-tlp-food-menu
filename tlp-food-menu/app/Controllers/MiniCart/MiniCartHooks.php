@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit();
  * Main FilterHooks class.
  */
 class MiniCartHooks {
+
 	/**
 	 * Singleton Trait.
 	 */
@@ -30,7 +31,6 @@ class MiniCartHooks {
 	 * Class constructor
 	 */
 	private function __construct() {
-
 		self::$options = get_option( TLPFoodMenu()->options['settings'] );
 
 		add_filter( 'woocommerce_loop_add_to_cart_args', [ __CLASS__, 'woocommerce_loop_add_to_cart_args' ] );
@@ -62,9 +62,7 @@ class MiniCartHooks {
 	 * @return void
 	 */
 	public static function fmp_apply_coupon_ajax_handler() {
-
 		if ( wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) && isset( $_POST['coupon_code'] ) ) {
-
 			$couponCode = sanitize_text_field( wp_unslash( $_POST['coupon_code'] ) );
 
 			// Apply the coupon.
@@ -80,7 +78,6 @@ class MiniCartHooks {
 		}
 	}
 
-
 	/**
 	 * Added new class in Add to cart button for mini-cart
 	 *
@@ -90,6 +87,7 @@ class MiniCartHooks {
 	 */
 	public static function woocommerce_loop_add_to_cart_args( $args ) {
 		$args['class'] .= ' fmp-mini-cart';
+
 		return $args;
 	}
 
@@ -101,7 +99,6 @@ class MiniCartHooks {
 	 * @return array
 	 */
 	public static function body_classes( $classes ) {
-
 		$opt = self::$options;
 
 		if ( ! empty( $opt['mini_cart_open_style'] ) && 'open-always' == $opt['mini_cart_open_style'] ) {
@@ -114,7 +111,6 @@ class MiniCartHooks {
 
 		return $classes;
 	}
-
 
 	/**
 	 * Cart fragments update
@@ -132,9 +128,10 @@ class MiniCartHooks {
 
 		// Get currency position from WooCommerce settings.
 		$currency_position = get_option( 'woocommerce_currency_pos', 'left' );
-		$cart_total        = WC()->cart->get_cart_contents_total();
-		$currency_symbol   = get_woocommerce_currency_symbol();
-		$total             = '';
+		//$cart_total        = WC()->cart->get_cart_contents_total();
+		$cart_total      = WC()->cart->get_total( 'edit' );
+		$currency_symbol = get_woocommerce_currency_symbol();
+		$total           = '';
 		// Generate the total amount element based on the currency position using switch statement.
 		switch ( $currency_position ) {
 			case 'left':
@@ -164,7 +161,6 @@ class MiniCartHooks {
 	 * @return void
 	 */
 	public static function fmp_mini_cart_template() {
-
 		if ( ! wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			wp_send_json_error();
 		}
@@ -183,7 +179,6 @@ class MiniCartHooks {
 			]
 		);
 	}
-
 
 	/**
 	 * Mini-cart quantity markup
@@ -235,26 +230,26 @@ class MiniCartHooks {
 		extract( $args )
 		?>
 
-		<div class="quantity">
-			<input
-					type="<?php echo esc_attr( $type ); ?>"
+        <div class="quantity">
+            <input
+                type="<?php echo esc_attr( $type ); ?>"
 				<?php echo $readonly ? 'readonly="readonly"' : ''; ?>
-					id="<?php echo esc_attr( $input_id ); ?>"
-					class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
-					name="<?php echo esc_attr( $input_name ); ?>"
-					value="<?php echo esc_attr( $input_value ); ?>"
-					aria-label="<?php esc_attr_e( 'Product quantity', 'tlp-food-menu' ); ?>"
-					size="4"
-					min="<?php echo esc_attr( $min_value ); ?>"
-					max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
+                id="<?php echo esc_attr( $input_id ); ?>"
+                class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
+                name="<?php echo esc_attr( $input_name ); ?>"
+                value="<?php echo esc_attr( $input_value ); ?>"
+                aria-label="<?php esc_attr_e( 'Product quantity', 'tlp-food-menu' ); ?>"
+                size="4"
+                min="<?php echo esc_attr( $min_value ); ?>"
+                max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
 				<?php if ( ! $readonly ) : ?>
-					step="<?php echo esc_attr( $step ); ?>"
-					placeholder="<?php echo esc_attr( $placeholder ); ?>"
-					inputmode="<?php echo esc_attr( $inputmode ); ?>"
-					autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
+                    step="<?php echo esc_attr( $step ); ?>"
+                    placeholder="<?php echo esc_attr( $placeholder ); ?>"
+                    inputmode="<?php echo esc_attr( $inputmode ); ?>"
+                    autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
 				<?php endif; ?>
-			/>
-		</div>
+            />
+        </div>
 
 		<?php
 		if ( $echo ) {
@@ -287,21 +282,21 @@ class MiniCartHooks {
 		);
 
 		?>
-		<button type="button" class="button decrement">
-			<svg width="8" height="2" viewBox="0 0 8 2" fill="none"
-				 xmlns="http://www.w3.org/2000/svg">
-				<rect width="8" height="2" rx="1" fill="#323846"/>
-			</svg>
-		</button>
+        <button type="button" class="button decrement">
+            <svg width="8" height="2" viewBox="0 0 8 2" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <rect width="8" height="2" rx="1" fill="#323846"/>
+            </svg>
+        </button>
 		<?php echo apply_filters( 'fmp_woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); //phpcs:ignore ?>
-		<button type="button" class="button increment">
-			<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
-				 xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd" clip-rule="evenodd"
-					  d="M4 0C4.21217 0 4.41566 0.0842856 4.56569 0.234315C4.71571 0.384344 4.8 0.587827 4.8 0.8V3.2H7.2C7.41217 3.2 7.61566 3.28429 7.76569 3.43431C7.91571 3.58434 8 3.78783 8 4C8 4.21217 7.91571 4.41566 7.76569 4.56569C7.61566 4.71571 7.41217 4.8 7.2 4.8H4.8V7.2C4.8 7.41217 4.71571 7.61566 4.56569 7.76569C4.41566 7.91571 4.21217 8 4 8C3.78783 8 3.58434 7.91571 3.43431 7.76569C3.28429 7.61566 3.2 7.41217 3.2 7.2V4.8H0.8C0.587827 4.8 0.384344 4.71571 0.234315 4.56569C0.0842856 4.41566 0 4.21217 0 4C0 3.78783 0.0842856 3.58434 0.234315 3.43431C0.384344 3.28429 0.587827 3.2 0.8 3.2H3.2V0.8C3.2 0.587827 3.28429 0.384344 3.43431 0.234315C3.58434 0.0842856 3.78783 0 4 0Z"
-					  fill="#323846"/>
-			</svg>
-		</button>
+        <button type="button" class="button increment">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4 0C4.21217 0 4.41566 0.0842856 4.56569 0.234315C4.71571 0.384344 4.8 0.587827 4.8 0.8V3.2H7.2C7.41217 3.2 7.61566 3.28429 7.76569 3.43431C7.91571 3.58434 8 3.78783 8 4C8 4.21217 7.91571 4.41566 7.76569 4.56569C7.61566 4.71571 7.41217 4.8 7.2 4.8H4.8V7.2C4.8 7.41217 4.71571 7.61566 4.56569 7.76569C4.41566 7.91571 4.21217 8 4 8C3.78783 8 3.58434 7.91571 3.43431 7.76569C3.28429 7.61566 3.2 7.41217 3.2 7.2V4.8H0.8C0.587827 4.8 0.384344 4.71571 0.234315 4.56569C0.0842856 4.41566 0 4.21217 0 4C0 3.78783 0.0842856 3.58434 0.234315 3.43431C0.384344 3.28429 0.587827 3.2 0.8 3.2H3.2V0.8C3.2 0.587827 3.28429 0.384344 3.43431 0.234315C3.58434 0.0842856 3.78783 0 4 0Z"
+                      fill="#323846"/>
+            </svg>
+        </button>
 		<?php
 	}
 
@@ -315,24 +310,24 @@ class MiniCartHooks {
 	public static function fmp_minicart_extra_fields() {
 		foreach ( WC()->cart->get_coupons() as $code => $coupon ) :
 			?>
-			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-				<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
-				<td data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
-			</tr>
+            <tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+                <th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
+                <td data-title="<?php echo esc_attr( wc_cart_totals_coupon_label( $coupon, false ) ); ?>"><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
+            </tr>
 		<?php endforeach; ?>
 
 		<?php if ( WC()->cart->get_shipping_total() && 0 != WC()->cart->get_shipping_total() ) : ?>
-			<tr class="order-total">
-				<th><?php esc_html_e( 'Shipping', 'tlp-food-menu' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Shipping', 'tlp-food-menu' ); ?>"><?php echo wc_price( WC()->cart->get_shipping_total() ); //phpcs:ignore ?></td>
-			</tr>
+            <tr class="order-total">
+                <th><?php esc_html_e( 'Shipping', 'tlp-food-menu' ); ?></th>
+                <td data-title="<?php esc_attr_e( 'Shipping', 'tlp-food-menu' ); ?>"><?php echo wc_price( WC()->cart->get_shipping_total() ); //phpcs:ignore ?></td>
+            </tr>
 		<?php endif; ?>
 
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
-			<tr class="fee">
-				<th><?php echo esc_html( $fee->name ); ?></th>
-				<td data-title="<?php echo esc_attr( $fee->name ); ?>"><?php wc_cart_totals_fee_html( $fee ); ?></td>
-			</tr>
+            <tr class="fee">
+                <th><?php echo esc_html( $fee->name ); ?></th>
+                <td data-title="<?php echo esc_attr( $fee->name ); ?>"><?php wc_cart_totals_fee_html( $fee ); ?></td>
+            </tr>
 		<?php endforeach; ?>
 
 		<?php
@@ -348,27 +343,27 @@ class MiniCartHooks {
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
 				foreach ( WC()->cart->get_tax_totals() as $code => $tax ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 					?>
-					<tr class="tax-rate tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-						<th><?php echo esc_html( $tax->label ) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></th>
-						<td data-title="<?php echo esc_attr( $tax->label ); ?>"><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
-					</tr>
+                    <tr class="tax-rate tax-rate-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+                        <th><?php echo esc_html( $tax->label ) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></th>
+                        <td data-title="<?php echo esc_attr( $tax->label ); ?>"><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
+                    </tr>
 					<?php
 				}
 			} else {
 				?>
-				<tr class="tax-total">
-					<th><?php echo esc_html( WC()->countries->tax_or_vat() ) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></th>
-					<td data-title="<?php echo esc_attr( WC()->countries->tax_or_vat() ); ?>"><?php wc_cart_totals_taxes_total_html(); ?></td>
-				</tr>
+                <tr class="tax-total">
+                    <th><?php echo esc_html( WC()->countries->tax_or_vat() ) . $estimated_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></th>
+                    <td data-title="<?php echo esc_attr( WC()->countries->tax_or_vat() ); ?>"><?php wc_cart_totals_taxes_total_html(); ?></td>
+                </tr>
 				<?php
 			}
 		}
 		?>
 
-		<tr class="order-total">
-			<th><?php esc_html_e( 'Total', 'tlp-food-menu' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Total', 'tlp-food-menu' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
-		</tr>
+        <tr class="order-total">
+            <th><?php esc_html_e( 'Total', 'tlp-food-menu' ); ?></th>
+            <td data-title="<?php esc_attr_e( 'Total', 'tlp-food-menu' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
+        </tr>
 		<?php
 	}
 
@@ -378,7 +373,6 @@ class MiniCartHooks {
 	 * @return void
 	 */
 	public function fmp_clear_cart_items() {
-
 		if ( ! Fns::verifyNonce() ) {
 			wp_send_json_error();
 		}
@@ -386,6 +380,7 @@ class MiniCartHooks {
 		WC()->cart->empty_cart();
 		wp_die();
 	}
+
 }
 
 

@@ -114,7 +114,6 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 				$plugin_path = get_plugin_data( $fm_pro_path );
 
 				if ( isset( $plugin_path['Version'] ) ) {
-
 					if ( version_compare( $plugin_path['Version'], '3', '<' ) ) {
 						// add_action( 'admin_init', [ Upgrade::class, 'notice' ] );
 						Upgrade::notice();
@@ -203,6 +202,10 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 			$controllers[] = Controllers\FrontendController::class;
 			$controllers[] = Controllers\GutenbergController::class;
 			$controllers[] = Controllers\MiniCart\MiniCart::class;
+
+			if ( did_action( 'elementor/loaded' ) ) {
+				$controllers[] = Controllers\ElementorController::class;
+			}
 
 			return $controllers;
 		}
@@ -325,6 +328,7 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		public function assets_url() {
 			return esc_url( TLP_FOOD_MENU_PLUGIN_URL . '/assets/' );
 		}
+
 	}
 
 	/**

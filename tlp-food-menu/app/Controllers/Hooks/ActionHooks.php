@@ -74,11 +74,11 @@ class ActionHooks {
 		$food_location = $order->get_meta( 'fmp_location_name' );
 		if ( $food_location ) :
 			?>
-			<tr>
-				<th scope="row"><?php echo esc_html__( 'Food Location:', 'tlp-food-menu' ); ?></th>
-				<td><?php echo esc_html( $food_location ); ?></td>
-			</tr>
-			<?php
+            <tr>
+                <th scope="row"><?php echo esc_html__( 'Food Location:', 'tlp-food-menu' ); ?></th>
+                <td><?php echo esc_html( $food_location ); ?></td>
+            </tr>
+		<?php
 		endif;
 	}
 
@@ -107,11 +107,11 @@ class ActionHooks {
 	public function render_location_form() {
 		$order_location = apply_filters( 'fm_order_location_checkout_title', __( 'Food Order Location', 'tlp-food-menu' ) );
 		?>
-		<div id="fmp-location-field">
-			<div class="fmp-location-title"><?php echo esc_html( $order_location ); ?></div>
-			<div class="fmp-location-name"></div>
-			<input type="hidden" name="fmp_location_name" class="fmp-location-name"/>
-		</div>
+        <div id="fmp-location-field">
+            <div class="fmp-location-title"><?php echo esc_html( $order_location ); ?></div>
+            <div class="fmp-location-name"></div>
+            <input type="hidden" name="fmp_location_name" class="fmp-location-name"/>
+        </div>
 		<?php
 	}
 
@@ -122,23 +122,23 @@ class ActionHooks {
 	 */
 	public function render_food_location_popup() {
 		?>
-		<div class="fmp-location-box-wrap"></div>
-		<script type="text/javascript">
-			const locationData = localStorage.getItem('fmp_location')
+        <div class="fmp-location-box-wrap"></div>
+        <script type="text/javascript">
+            const locationData = localStorage.getItem('fmp_location')
 
-			if ((null === locationData)) {
-				jQuery(document).ready(function () {
-					jQuery('.fmp-location-box-wrap').html(`
+            if ((null === locationData)) {
+                jQuery(document).ready(function () {
+                    jQuery('.fmp-location-box-wrap').html(`
 								<div id="fmp-location-modal" class="fmp-popup-modal">
 									<div class="modal-content">
 										<select name="fmp-location" class="fmp-location">
 											<?php
-											$fmp_locations = Fns::get_location_data( '', '', 'id' );
-											foreach ( $fmp_locations as $key => $value ) {
-												$selected = count( $fmp_locations ) <= 2 ? 'selected=selected' : '';
-												echo "<option value='" . esc_html( $key ) . "'" . esc_attr( $selected ) . '>' . esc_html( $value ) . '</option>';
-											}
-											?>
+                                                $fmp_locations = Fns::get_location_data( '', '', 'id' );
+                                                foreach ( $fmp_locations as $key => $value ) {
+                                                    $selected = count( $fmp_locations ) <= 2 ? 'selected=selected' : '';
+                                                    echo "<option value='" . esc_html( $key ) . "'" . esc_attr( $selected ) . '>' . esc_html( $value ) . '</option>';
+                                                }
+                                            ?>
 										</select>
 
 										<div class="confirm-msg fmp-hidden"><?php echo esc_html__( 'Save Your Preferred Location', 'tlp-food-menu' ); ?></div>
@@ -147,9 +147,9 @@ class ActionHooks {
 									</div>
 								</div>
 							`)
-				})
-			}
-		</script>
+                })
+            }
+        </script>
 		<?php
 	}
 
@@ -158,10 +158,11 @@ class ActionHooks {
 	 *
 	 * @return void
 	 */
-	public function fmp_single_images() {
+	public function fmp_single_images( $sid ) {
 		$settings      = get_option( TLPFoodMenu()->options['settings'] );
 		$hiddenOptions = ! empty( $settings['hide_options'] ) ? $settings['hide_options'] : [];
 		$thumbClass    = has_post_thumbnail() ? 'has-thumbnail' : 'no-thumbnail';
+		$fmp_source    = get_post_meta( $sid, 'fmp_source', true );
 
 		global $post;
 
@@ -172,7 +173,13 @@ class ActionHooks {
 			$html .= '<div class="fmp-images ' . esc_attr( $thumbClass ) . '" id="fmp-images">';
 
 			if ( TLPFoodMenu()->has_pro() ) {
-				$attachments = get_post_meta( $post->ID, '_fmp_image_gallery', true );
+				if ( 'product' === $fmp_source && class_exists( 'WooCommerce' ) ) {
+					$product_id  = $post->ID;
+					$product     = new \WC_product( $product_id );
+					$attachments = $product->get_gallery_image_ids();
+				} else {
+					$attachments = get_post_meta( $post->ID, '_fmp_image_gallery', true );
+				}
 
 				$attachments = is_array( $attachments ) ? $attachments : [];
 
@@ -190,7 +197,7 @@ class ActionHooks {
 							$thumbnails .= "<div class='swiper-slide'>" . Fns::getAttachedImage( $attachment, 'thumbnail' ) . '</div>';
 						}
 
-						$slider  = null;
+						$slider = null;
 						$slider .= "<div id='fmp-slide-wrapper' class='fmp-single-slider fmp-pre-loader'>";
 						$slider .= "<div id='fmp-slider-main' class='rtfm-carousel-main swiper slider-loading'>
 										<div class='swiper-wrapper'>{$slides}</div>
@@ -217,9 +224,9 @@ class ActionHooks {
 					}
 				} else {
 					$imgSrc = Fns::placeholder_img_src();
-					$html  .= "<div class='fmp-single-food-img-wrapper'>";
-					$html  .= '<img class="fmp-single-food-img" alt="Place holder image" src="' . esc_url( $imgSrc ) . '" />';
-					$html  .= '</div>';
+					$html   .= "<div class='fmp-single-food-img-wrapper'>";
+					$html   .= '<img class="fmp-single-food-img" alt="Place holder image" src="' . esc_url( $imgSrc ) . '" />';
+					$html   .= '</div>';
 				}
 			} else {
 				if ( has_post_thumbnail() ) {
@@ -252,7 +259,7 @@ class ActionHooks {
 
 	public function fmp_summery_title() {
 		?>
-		<h2 class><?php the_title(); ?></h2>
+        <h2 class><?php the_title(); ?></h2>
 		<?php
 	}
 
@@ -276,7 +283,7 @@ class ActionHooks {
 
 		if ( ! in_array( 'summery', $hiddenOptions ) || ( wp_doing_ajax() && ! in_array( 'description', $hiddenOptions ) ) ) {
 			?>
-			<div class="fmp-short-description summery entry-summery ">
+            <div class="fmp-short-description summery entry-summery ">
 				<?php
 				global $post;
 
@@ -297,7 +304,7 @@ class ActionHooks {
 					}
 				}
 				?>
-			</div>
+            </div>
 			<?php
 		}
 	}
@@ -317,7 +324,7 @@ class ActionHooks {
 			$cat       = get_the_terms( $post->ID, TLPFoodMenu()->taxonomies['category'] );
 			$cat_count = is_array( $cat ) ? count( $cat ) : 0;
 			?>
-			<div class="fmp-meta">
+            <div class="fmp-meta">
 				<?php
 				do_action( 'fmp_meta_start' );
 
@@ -351,7 +358,7 @@ class ActionHooks {
 
 				do_action( 'fmp_meta_end' );
 				?>
-			</div>
+            </div>
 			<?php
 		}
 	}

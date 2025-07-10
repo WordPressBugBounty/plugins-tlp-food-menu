@@ -24,6 +24,10 @@ class MiniCartFns {
 		return apply_filters(
 			'fmp/minicart_settings/fields',
 			[
+				'mini_desc' => [
+					'type'        => 'html',
+					'description' => esc_html__("The mini-cart is intentionally hidden on the cart and checkout pages.", "tlp-food-menu"),
+				],
 				'enable_mini_cart'                 => [
 					'label'       => esc_html__( 'Enable Mini Cart?', 'tlp-food-menu' ),
 					'type'        => 'switch',

@@ -1512,7 +1512,7 @@ class Options {
 				],
 				'INR' => [
 					'code'         => 'INR',
-					'symbol'       => 'Rs',
+					'symbol'       => '₹', //RS
 					'name'         => 'Indian Rupee',
 					'numeric_code' => '356',
 					'minor_unit'   => 'Paisa',
