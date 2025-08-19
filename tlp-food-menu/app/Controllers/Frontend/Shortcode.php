@@ -263,7 +263,9 @@ class Shortcode {
 		$html   = null;
 
 		$source           = get_post_meta( $this->scId, 'fmp_source', true );
+
 		$post_type        = ( $source && in_array( $source, array_keys( Options::scProductSource() ), true ) ) ? $source : TLPFoodMenu()->post_type;
+
 		$categoryTaxonomy = ( 'product' === $post_type ) ? 'product_cat' : TLPFoodMenu()->taxonomies['category'];
 
 		if ( ! empty( $cats ) && apply_filters( 'tlp_fmp_has_multiple_meta_issue', false ) ) {

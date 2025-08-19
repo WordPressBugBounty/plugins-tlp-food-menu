@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $add_to_cart = null;
 
+
 if ( $source == 'product' && $wc == true ) {
 	global $product;
 
@@ -24,23 +25,22 @@ if ( $source == 'product' && $wc == true ) {
 	if ( $_product->is_purchasable() ) {
 		if ( $_product->is_in_stock() ) {
 			ob_start();
-
 			woocommerce_template_loop_add_to_cart();
 			$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $pID, $pType, $add_to_cart_text, $items );
-
 			ob_end_clean();
 		}
 	}
 } else {
 	$price = Fns::getPriceWithLabel( $pID );
-
 	if ( TLPFoodMenu()->has_pro() ) {
 		$price = \RT\FoodMenuPro\Helpers\FnsPro::fmpHtmlPrice( $pID );
 	}
 }
 
 $class   .= ' fmp-item-' . $pID;
+
 $wooClass = 'product' === $source ? ' woo-template' : null;
+
 ?>
 <div class="<?php echo esc_attr( $grid . ' ' . $class ); ?>">
 	<div class='fmp-food-item <?php echo esc_attr( $source ); ?>'>
@@ -104,6 +104,7 @@ $wooClass = 'product' === $source ? ' woo-template' : null;
 			$html .= '<div class="fmp-add-to-cart rt-pos-r rt-d-flex">';
 
 			if ( $add_to_cart && in_array( 'add_to_cart', $items, true ) || ! TLPFoodMenu()->has_pro() ) {
+
 				$html .= stripslashes_deep( $add_to_cart );
 			}
 
@@ -113,7 +114,7 @@ $wooClass = 'product' === $source ? ' woo-template' : null;
 		$html .= '</div>';
 		$html .= '</div>';
 
-		Fns::print_html( $html );
+		Fns::print_html( $html, true );
 		?>
 	</div>
 </div>

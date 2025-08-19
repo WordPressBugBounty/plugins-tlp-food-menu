@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Get Help
  */
 
-$iframe  = 'https://www.youtube.com/embed/l4xLIPvj-ic';
+$iframe  = 'https://www.youtube.com/embed/4jyoaEtwCKE';
 $pro     = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
 $doc     = 'https://www.radiustheme.com/docs/food-menu/getting-started/installations/';
 $contact = 'https://www.radiustheme.com/contact/';
@@ -68,11 +68,22 @@ $review  = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5
 			width: 100%;
 			font-size: 14px;
 		}
+		.rtfm-feature-list ul li span{
+            font-weight: 700
+		}
 		.rtfm-feature-list ul li:last-child {
 			padding-bottom: 0;
 		}
 		.rtfm-feature-list ul li i {
-			color: #4C6FFF;
+            width: 20px;
+            height: 20px;
+            background: rgba(230, 0, 0, 0.1098039216);
+            color: #e60000;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            margin-right: 8px;
 		}
 		.rtfm-pro-feature-content {
 			display: flex;
@@ -271,7 +282,7 @@ $review  = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5
 					<li><i class="dashicons dashicons-saved"></i> Search field on Isotope filter.</li>
 					<li><i class="dashicons dashicons-saved"></i> Custom number of menu per page.</li>
 					<li><i class="dashicons dashicons-saved"></i> Order by Name, Id, Date, Random, Menu order & Price.</li>
-					<li><i class="dashicons dashicons-saved"></i> Responsive Display Control.</li>
+					<li><i class="dashicons dashicons-saved"></i> <span>Visual table reservation system</span></li>
 					<li><i class="dashicons dashicons-saved"></i> Online Ordering System Using WooCommerce.</li>
 					<li><i class="dashicons dashicons-saved"></i> Deliver & Pickup Set Weekly Schedule Date by Time.</li>
 					<li><i class="dashicons dashicons-saved"></i> Product Global Addon & Individual Product Addon.</li>

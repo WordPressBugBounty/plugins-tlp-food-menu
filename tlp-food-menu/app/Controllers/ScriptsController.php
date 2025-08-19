@@ -74,6 +74,7 @@ class ScriptsController {
 			'fmParams',
 			$this->fm_data_obj()
 		);
+
 	}
 
 	/**

@@ -24,10 +24,8 @@ if ( $source == 'product' && $wc == true ) {
 	if ( $_product->is_purchasable() ) {
 		if ( $_product->is_in_stock() ) {
 			ob_start();
-
 			woocommerce_template_loop_add_to_cart();
 			$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $pID, $pType, $add_to_cart_text, $items );
-
 			ob_end_clean();
 		}
 	}

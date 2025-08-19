@@ -92,19 +92,24 @@ class QueryArgs {
 		$limit       = $this->meta['limit'];
 
 		if ( $post_in ) {
-			$post_in                = explode( ',', $post_in );
+			if ( is_string( $post_in ) ) {
+				$post_in = explode( ',', $post_in );
+			}
 			$this->args['post__in'] = $post_in;
 		}
 
 		if ( $post_not_in ) {
-			$post_not_in                = explode( ',', $post_not_in );
-			$this->args['post__not_in'] = $post_not_in; //phpcs:ignore
+			if ( is_string( $post_not_in ) ) {
+				$post_not_in = explode( ',', $post_not_in );
+			}
+			$this->args['post__not_in'] = $post_not_in; // phpcs:ignore
 		}
 
 		$this->args['posts_per_page'] = $limit;
 
 		return $this;
 	}
+
 
 	/**
 	 * Order & Orderby parameters.

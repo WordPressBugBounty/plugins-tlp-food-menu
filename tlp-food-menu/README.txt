@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 5.2.4
+Stable tag: 5.3.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -193,6 +193,9 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 11. General Settings
 
 == Changelog ==
+
+= 5.3.0 ( August 12, 2025 ) =
+Add: Add Elementor Widgets List Layouts, Grid by Category
 
 = 5.2.4 ( Jul 10, 2025 ) =
 Add: Add Indian Rupee symbol

@@ -277,8 +277,23 @@ class Options {
 	public static function promotionsFields() {
 		$products = [
 			'themes'  => [
+				'foody-mat' => [
+					'title'     => 'Foodymat – Restaurant WordPress Theme',
+					'image_url' => TLPFoodMenu()->assets_url() . 'images/foodymat.png',
+					'url'       => 'https://1.envato.market/o4JqWO',
+					'demo_url'  => 'https://www.radiustheme.com/demo/wordpress/themes/foodymat/',
+					'buy_url'   => 'https://1.envato.market/o4JqWO',
+					'doc_url'   => 'https://www.radiustheme.com/demo/wordpress/themes/foodymat/docs/',
+				],
+				'panpie' => [
+					'title'     => 'Panpie - Restaurant WordPress Theme',
+					'image_url' => TLPFoodMenu()->assets_url() . 'images/panpie.jpg',
+					'url'       => 'https://1.envato.market/3PenAX',
+					'demo_url'  => 'https://radiustheme.com/demo/wordpress/themes/panpie/',
+					'buy_url'   => 'https://1.envato.market/3PenAX',
+					'doc_url'   => 'https://radiustheme.com/demo/wordpress/themes/panpie/docs/',
+				],
 				'food-cart' => [
-					'price'     => 39,
 					'title'     => 'FoodCart – Restaurant WordPress Theme',
 					'image_url' => TLPFoodMenu()->assets_url() . 'images/food-cart.png',
 					'url'       => 'https://www.radiustheme.com/downloads/foodcart-restaurant-wordpress-theme/',
@@ -287,18 +302,16 @@ class Options {
 					'doc_url'   => 'https://radiustheme.com/demo/wordpress/themes/foodcart/docs/',
 				],
 				'red-chili' => [
-					'price'     => 39,
 					'title'     => 'RedChili - Restaurant WordPress Theme',
 					'image_url' => TLPFoodMenu()->assets_url() . 'images/red-chili.png',
-					'url'       => 'https://themeforest.net/item/red-chili-restaurant-wordpress-theme/20166175',
+					'url'       => 'https://1.envato.market/VvGjA',
 					'demo_url'  => 'https://radiustheme.com/demo/wordpress/redchili/',
-					'buy_url'   => 'https://themeforest.net/item/red-chili-restaurant-wordpress-theme/20166175',
+					'buy_url'   => 'https://1.envato.market/VvGjA',
 					'doc_url'   => 'https://radiustheme.com/demo/wordpress/redchili/docs/',
 				],
 			],
 			'plugins' => [
 				'food-menu-pro' => [
-					'price'     => 19,
 					'title'     => 'Food Menu PRO Plugin for WordPress',
 					'image_url' => TLPFoodMenu()->assets_url() . 'images/food-menu-pro.png',
 					'url'       => 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/',
@@ -797,6 +810,30 @@ class Options {
 		return apply_filters( 'fmp_sc_layouts', $layouts );
 	}
 
+    public static function elListLayouts() {
+        return apply_filters(
+            'rtfm_elementor_list_layouts',
+            [
+                'layout1'  => [
+                    'title' => esc_html__( 'Layout 1', 'tlp-food-menu' ),
+                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-1.png',
+                ],
+                'layout2' => [
+                    'title' => esc_html__( 'Layout 2', 'tlp-food-menu' ),
+                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-2.png',
+                ],
+                'layout3'  => [
+                    'title' => esc_html__( 'Layout 3', 'tlp-food-menu' ),
+                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-3.png',
+                ],
+                'layout4'  => [
+                    'title' => esc_html__( 'Layout 4', 'tlp-food-menu' ),
+                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-4.png',
+                ],
+            ]
+        );
+    }
+
 	public static function scLayoutTypes() {
 		$types = [
 			'list'        => [
@@ -923,7 +960,7 @@ class Options {
 	 *
 	 * @return array
 	 */
-	private static function scOrderBy() {
+	public static function scOrderBy() {
 		$order_by = [
 			'menu_order' => esc_html__( 'Menu Order', 'tlp-food-menu' ),
 			'title'      => esc_html__( 'Name', 'tlp-food-menu' ),
@@ -940,7 +977,7 @@ class Options {
 	 *
 	 * @return array
 	 */
-	private static function scOrder() {
+	public static function scOrder() {
 		return [
 			'ASC'  => esc_html__( 'Ascending', 'tlp-food-menu' ),
 			'DESC' => esc_html__( 'Descending', 'tlp-food-menu' ),

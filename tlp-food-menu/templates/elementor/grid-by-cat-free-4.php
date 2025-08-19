@@ -1,6 +1,6 @@
 <?php
 /**
- * Template: Grid by Category Free (4).
+ * Template: Layout 1 (Free).
  *
  * @package RT_FoodMenu
  */
@@ -13,122 +13,114 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
 }
 
-extract( $arg );
+$add_to_cart = null;
 
-$gridQuery = new WP_Query( $args );
-
-$html  = '<div class="fmp-grids-wrapper">';
-$html .= "<div class='fmp-category-title-wrapper $catsTitleType'><h2 class='fmp-category-title'><span>{$term->name}</span></h2></div>";
-$html .= '<div class="fmp-col-xs-12">';
-$html .= '<div class="fmp-row' . $gridType . '">';
-
-while ( $gridQuery->have_posts() ) {
-	$gridQuery->the_post();
-	$id          = get_the_ID();
-	$image       = Fns::getFeatureImage( $id, $imgSize );
-	$excerpt     = RenderHelpers::getExcerpt( get_the_excerpt(), $excerpt_limit, $after_short_desc );
-	$add_to_cart = null;
-
+if ( $source == 'product' && $wc == true ) {
+	global $product;
+	$product = $_product = wc_get_product( $pID );
+	$price   = $_product->get_price_html();
+	$pType   = $_product->get_type();
+	$pLink   = $_product->get_permalink();
+	$add_to_cart_text = $_product->add_to_cart_text();
+	$add_to_cart_text = $_product->add_to_cart_text();
+	if ( $_product->is_purchasable() ) {
+		if ( $_product->is_in_stock() ) {
+			ob_start();
+			woocommerce_template_loop_add_to_cart();
+			$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $pID, $pType, $add_to_cart_text, $items, $addtocart, $quantity, $add_stock );
+			ob_end_clean();
+		}
+	}
+} else {
+	$price = Fns::getPriceWithLabel( $pID );
 	if ( TLPFoodMenu()->has_pro() ) {
-		$image = Fns::getFeatureImage( $id, $imgSize, $defaultImgId, $customImgSize );
+		$price = \RT\FoodMenuPro\Helpers\FnsPro::fmpHtmlPrice( $pID );
 	}
-
-	if ( $source == 'product' && $wc == true ) {
-		$_product = wc_get_product( $id );
-		$price    = $_product->get_price_html();
-		$product  = $_product = wc_get_product( $id );
-		$pType    = $_product->get_type();
-
-		if ( $_product->is_purchasable() ) {
-			if ( $_product->is_in_stock() ) {
-				ob_start();
-
-				woocommerce_template_loop_add_to_cart();
-				$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $id, $pType, $add_to_cart_text, $items, $anchorClass );
-
-				ob_end_clean();
-			}
-		}
-	} else {
-		$price = Fns::getPriceWithLabel( $id );
-
-		if ( TLPFoodMenu()->has_pro() ) {
-			$price = \RT\FoodMenuPro\Helpers\FnsPro::fmpHtmlPrice( $id );
-		}
-	}
-
-	$wooClass  = 'product' === $source ? ' woo-template' : null;
-	$wooClass .= in_array( 'read_more', $items, true ) ? ' woo-template' : null;
-
-	$html .= "<div class='{$grid} {$class}'>";
-	$html .= "<div class='fmp-food-item {$source}'>";
-
-	if ( in_array( 'image', $items, true ) ) {
-		$html .= '<div class="fmp-image-wrap">';
-		if ( ! $link ) {
-			$html .= $image;
-		} else {
-			$html .= '<a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $id ) . '" href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">' . $image . '</a>';
-		}
-		$html .= '</div>';
-	}
-
-	$html .= '<div class="fmp-content-wrap">';
-	$html .= '<div class="fmp-title' . $wooClass . '">';
-
-	if ( in_array( 'title', $items, true ) ) {
-		if ( ! $link ) {
-			$html .= '<h3 class="no-link">' . get_the_title() . '</h3>';
-		} else {
-			$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $id ) . '" href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
-		}
-	}
-
-	if ( in_array( 'price', $items, true ) ) {
-		$html .= '<span class="price">' . wp_kses_post( $price ) . '</span>';
-	}
-
-	$html .= '</div>';
-	$html .= '<div class="fmp-body">';
-
-	if ( in_array( 'excerpt', $items, true ) ) {
-		$html .= '<p>' . $excerpt . '</p>';
-	}
-	$html .= '</div>';
-
-	// stock status.
-	if ( in_array( 'add_stock', $items, true ) && TLPFoodMenu()->has_pro() ) {
-		$html .= apply_filters( 'rtfm_add_stock_btn', $id );
-	}
-
-	$html .= '<div class="fmp-footer' . $wooClass . '">';
-
-	if ( in_array( 'read_more', $items, true ) && $link ) {
-		$html .= '<div class="fmp-add-to-cart rt-pos-r rt-d-flex">';
-		$html .= '<a href="' . get_permalink() . '" data-id="' . esc_attr( $id ) . '" class="' . esc_attr( $anchorClass ) . ' fmp-btn-read-more type-1">' . esc_html( $read_more ) . '</a>';
-		$html .= '</div>';
-	}
-
-	if ( 'product' === $source ) {
-		$html .= '<div class="fmp-add-to-cart rt-pos-r rt-d-flex">';
-
-		if ( $add_to_cart && in_array( 'add_to_cart', $items, true ) || ! TLPFoodMenu()->has_pro() ) {
-			$html .= stripslashes_deep( $add_to_cart );
-		}
-
-		$html .= '</div>';
-	}
-
-	$html .= '</div>';
-	$html .= '</div>';
-	$html .= '</div>';
-	$html .= '</div>';
 }
 
-wp_reset_postdata();
+//$class   .= ' fmp-item-' . $pID;
+$wooClass = 'product' === $source ? ' woo-template' : null;
 
-$html .= '</div>';
-$html .= '</div>';
-$html .= '</div>';
+$fmp_col = !empty( $dCols ) ? $dCols : 4;
+$fmp_tCol = !empty( $tCols ) ? $tCols : 6;
+$fmp_mCol = !empty( $mCols ) ? $mCols : 12;
 
-Fns::print_html( $html );
+$excerpt_text = '';
+if ( !empty( $excerpt ) ) {
+	$content = $excerpt_limit ? wp_trim_words( $excerpt, $excerpt_limit, '.' ) : $excerpt;
+	$excerpt_text = '<p>' . esc_html( $content ) . '</p>';
+}
+$icon = ( $hovericon === 'yes' ) ? 'fmp-icon-enable' : 'fmp-icon-disable';
+$masonry = ( $grid_style === 'masonry' ) ? 'masonry-grid-item' : '';
+$target = $detail_link == 'target' ? ' target="_blank"' : '';
+$popup = $fmp_el_popup == 'yes' ? 'fmp-popup' : 'fmp-link';
+?>
+<div class="fmp-col-md-<?php echo esc_attr( $fmp_col );?>  fmp-col-sm-<?php echo esc_attr( $fmp_tCol );?> fmp-col-xs-<?php echo esc_attr( $fmp_mCol );?> <?php echo esc_attr( $icon ) ;?>  <?php echo esc_attr( $masonry )?> fmp-grid-item fmp-ready-animation fmp-item-142">
+	<div class='fmp-food-item <?php echo esc_attr( $source ); ?>'>
+		<?php
+		$html = '';
+
+        if( $featureImg == 'yes' ){
+            $image_size = isset( $imgSize ) ? $imgSize : 'full';
+            $image = Fns::getFeatureImage( $pID, $image_size );
+            if ( !empty( $image ) ) {
+
+                $html .= '<div class="fmp-image-wrap">';
+
+                if( !$detail_link ){
+                    $html .= $image;
+                } else{
+                    $html .= '<a data-id="' . esc_attr( $pID ) . '" class="'.esc_attr( $popup ).'" href="' . get_permalink() . '" target="' . esc_attr( $target ) . '">'.$image.'</a>';
+                }
+                $html .= '</div>';
+            }
+        }
+
+		$html .= '<div class="fmp-content-wrap">';
+		$html .= '<div class="fmp-title' . $wooClass . '">';
+
+		if ( !empty( $title ) &&  $titleswitch == 'yes'  ) {
+			if ( ! $detail_link ) {
+				$html .= '<h3>' . esc_html( $title ) . '</h3>';
+			} else {
+				$html .= '<h3><a data-id="' . esc_attr( $pID ) . '" class="'.esc_attr( $popup ).'" href="' . get_permalink() . '"  target="' . esc_attr( $target ) . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
+			}
+		}
+
+		if ( !empty($meta['price']) && $priceswitch == 'yes' ) {
+			$html .= '<span class="price">' . wp_kses_post( $price ) . '</span>';
+		}
+
+		$html .= '</div>';
+		$html .= '<div class="fmp-body">';
+
+		if ( !empty( $content )  && $contentswitch == 'yes' ) {
+			$html .= $excerpt_text;
+		}
+
+		$html .= '</div>';
+
+		// stock status.
+        if ( (TLPFoodMenu()->has_pro() && $readmore_switch == 'yes' ) || ( 'product' === $source && 'yes' === $addtocart ) ) : ?>
+        <div class="fmp-footer woo-template">
+			<?php
+			if ( TLPFoodMenu()->has_pro() && $readmore_switch == 'yes' ) {
+				$html .= '<a data-id="' . esc_attr( $pID ) . '" href="' . esc_url( get_permalink() ) . '"  target="' . esc_attr( $target ) . '"  class="fmp-btn-read-more '.esc_attr( $popup ).'">' . esc_html( $readmore_text ) . '</a>';
+			}
+			if ( 'product' === $source && 'yes' === $addtocart ) {
+				$html .= '<div class="fmp-wc-add-to-cart-wrap">';
+				if ( ! TLPFoodMenu()->has_pro() || $addtocart === 'yes' ) {
+					$html .= stripslashes_deep( $add_to_cart );
+				}
+				$html .= '</div>';
+			}
+			?>
+        </div>
+		<?php endif;
+
+		$html .= '</div>';
+		    Fns::print_html( $html );
+        ?>
+	</div>
+</div>
+

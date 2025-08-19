@@ -92,6 +92,7 @@ class Fns {
 	 * @return string|void
 	 */
 	public static function render( $template_name, $args = [], $return = false ) {
+
 		if ( ! empty( $args ) && is_array( $args ) ) {
 			extract( $args );
 		}
@@ -114,7 +115,6 @@ class Fns {
 
 		if ( ! file_exists( $template_file ) ) {
 			_doing_it_wrong( __FUNCTION__, sprintf( '<code>%s</code> does not exist.', esc_html( $template_file ) ), '1.7.0' );
-
 			return;
 		}
 
@@ -461,7 +461,6 @@ class Fns {
 		if ( $post ) {
 			$source = get_post_meta( $post->ID, 'fmp_source', true );
 			$source = ( $source && in_array( $source, array_keys( Options::scProductSource() ) ) ) ? $source : TLPFoodMenu()->post_type;
-
 			if ( $source == 'product' && TLPFoodMenu()->isWcActive() ) {
 				$taxonomy = 'product_cat';
 			}
@@ -479,9 +478,138 @@ class Fns {
 				$terms[ $term->term_id ] = $term->name;
 			}
 		}
-
 		return $terms;
 	}
+
+	/**
+	 *  Get all Category list for food-menu ( elementor )
+	 *
+	 * @return array
+	 */
+	public static function getElAllFmpCategoryList( $settings = [] ) {
+		$taxonomy = TLPFoodMenu()->taxonomies['category'];
+		$terms = [];
+		$termList = get_terms([
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => 0,
+		]);
+		if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
+			foreach ( $termList as $term ) {
+				$terms[ $term->term_id ] = $term->name;
+			}
+		}
+		return $terms;
+	}
+
+	/**
+	 *  Get all Category list for food-menu ( elementor )
+	 *
+	 * @return array
+	 */
+
+	public static function el_cat_maping( $terms ) {
+		$final_trerms = [];
+		foreach ($terms as $tId){
+			$term_info = get_term( $tId );
+			$final_trerms[$term_info->term_id] = $term_info->name;
+		}
+		return $final_trerms;
+	}
+
+
+	/**
+	 *  Get all Category list for food-menu ( elementor )
+	 *
+	 * @return array
+	 */
+	public static function getElProductAllFmpCategoryList( $settings = [] ) {
+		$taxonomy = 'product_cat';
+		$terms = [];
+		$termList = get_terms([
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => 0,
+		]);
+		if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
+			foreach ( $termList as $term ) {
+				$terms[ $term->term_id ] = $term->name;
+			}
+		}
+		return $terms;
+	}
+
+	/**
+	 *  Get all Category list for food-menu ( elementor Isotope )
+	 *
+	 * @return array
+	 */
+	public static function getElAllFmpCategoryListIsotope( $settings = [] ) {
+		$taxonomy = TLPFoodMenu()->taxonomies['category'];
+		$terms = [];
+		$terms['all'] =  'Show All';
+		$termList = get_terms([
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => 0,
+		]);
+		if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
+			foreach ( $termList as $term ) {
+				$terms[ $term->term_id ] = $term->name;
+			}
+		}
+		return $terms;
+	}
+
+	/**
+	 *  Get all Category list for food-menu ( elementor Isotope )
+	 *
+	 * @return array
+	 */
+	public static function getElProductAllFmpCategoryListIsotope( $settings = [] ) {
+		$taxonomy = 'product_cat';
+		$terms = [];
+		$terms['all'] =  'Show All';
+		$termList = get_terms([
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => 0,
+		]);
+		if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
+			foreach ( $termList as $term ) {
+				$terms[ $term->term_id ] = $term->name;
+			}
+		}
+		return $terms;
+	}
+
+	/**
+	 * @param $data
+	 * @param $total_pages
+	 * @param $animation
+	 * @param $template
+	 *
+	 * @return array
+	 */
+	public static function get_render_data_set( $data, $total_pages, $animation, $template ) {
+		$data_set = [
+			'fmp_source'                 => $data[ 'fmp_source' ] ?? 'food-menu',
+			'dCols'                      => $data[ 'fmp_desktop_column' ] ?? '0',
+			'hovericon'                  => ( $data['fmp_hover_icon'] === 'yes' ) ? 'yes' : '',
+			'grid_style'                 => $data[ 'tlp_el_grid_style_promo' ],
+			'layout'                     => $data[ 'fmp_layout' ],
+			'imgSize'                    => $data[ 'fmp_image_size' ],
+			'total_pages'                => $total_pages,
+			'template'                   => $template,
+			'featureImg'                 => $data['fmp_feature_switch'],
+			'titleswitch'                => $data['fmp_title_switch'],
+			'priceswitch'                => $data['fmp_price_switch'],
+			'contentswitch'              => $data['fmp_content_switch'],
+			'fmp_pagination_type'        => $data['fmp_pagination_type'],
+			'tlp_el_grid_style_promo'    => $data['tlp_el_grid_style_promo'],
+			'fmp_excerpt_limit'          => $data['fmp_excerpt_limit'],
+			'detail_link'                => $data['fmp_detail_page_link'],
+			'tlp_el_image_animation'     => $data['tlp_el_image_animation'],
+		];
+		return $data_set;
+	}
+
 
 	/**
 	 * Placeholder Image.
@@ -762,7 +890,6 @@ class Fns {
 					break;
 			}
 		}
-
 		return apply_filters( 'rtfm_food_price_modifier', $price, get_the_ID() );
 	}
 
@@ -987,8 +1114,65 @@ class Fns {
 				$scList[ $sc->ID ] = $sc->post_title;
 			}
 		}
-
 		return $scList;
+	}
+
+    /**
+     * Get a list of all published Food Menu posts.
+     *
+     * Retrieves all posts of the custom post type defined by TLPFoodMenu()->post_type,
+     * ordered by title in ascending order, and returns them as an associative array
+     * with post IDs as keys and post titles as values.
+     *
+     * @return array Associative array of menu items [post_id => post_title].
+     */
+
+    public static function getMenuList() {
+        $lists = [];
+        $listQ = get_posts(
+            [
+                'post_type'      => TLPFoodMenu()->post_type,
+                'post_status'    => 'publish',
+                'posts_per_page' => -1,
+                'orderby'        => 'title',
+                'order'          => 'ASC',
+            ]
+        );
+        if ( ! empty( $listQ ) && is_array( $listQ ) ) {
+            foreach ( $listQ as $list ) {
+                $lists[ $list->ID ] = $list->post_title;
+            }
+        }
+        return $lists;
+    }
+
+	/**
+	 * Get a list of all published Food Menu posts.
+	 *
+	 * Retrieves all posts of the custom post type defined by TLPFoodMenu()->post_type,
+	 * ordered by title in ascending order, and returns them as an associative array
+	 * with post IDs as keys and post titles as values.
+	 *
+	 * @return array Associative array of menu items [post_id => post_title].
+	 */
+
+	public static function getMenuListEl() {
+		$lists = [];
+		$listQ = get_posts(
+			[
+				'post_type'      => 'product',
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
+				'orderby'        => 'title',
+				'order'          => 'ASC',
+			]
+		);
+		if ( ! empty( $listQ ) && is_array( $listQ ) ) {
+			foreach ( $listQ as $list ) {
+				$lists[ $list->ID ] = $list->post_title;
+			}
+		}
+		return $lists;
 	}
 
 	/**
@@ -1341,4 +1525,138 @@ class Fns {
 			return sanitize_text_field( wp_unslash( $input ) );
 		}
 	}
+
+
+
+    /**
+     * Register Elementor widget controls.
+     *
+     * Adds different control fields into the widget settings.
+     *
+     * @param array  $fields Control fields to add.
+     * @param object $obj Object in which controls are adding.
+     *
+     * @return void
+     *
+     * @access public
+     */
+    public static function addElControls( $fields, $obj ) {
+        foreach ( $fields as $field ) {
+            if ( ! empty( $field['type'] ) ) {
+                $field['type'] = self::elFields( $field['type'] );
+            }
+            if ( isset( $field['mode'] ) && 'section_start' === $field['mode'] ) {
+                $id = $field['id'];
+                unset( $field['id'] );
+                unset( $field['mode'] );
+                $obj->start_controls_section( $id, $field );
+            } elseif ( isset( $field['mode'] ) && 'section_end' === $field['mode'] ) {
+                $obj->end_controls_section();
+            } elseif ( isset( $field['mode'] ) && 'tabs_start' === $field['mode'] ) {
+                $id = $field['id'];
+                unset( $field['id'] );
+                unset( $field['mode'] );
+                $obj->start_controls_tabs( $id );
+            } elseif ( isset( $field['mode'] ) && 'tabs_end' === $field['mode'] ) {
+                $obj->end_controls_tabs();
+            } elseif ( isset( $field['mode'] ) && 'tab_start' === $field['mode'] ) {
+                $id = $field['id'];
+                unset( $field['id'] );
+                unset( $field['mode'] );
+                $obj->start_controls_tab( $id, $field );
+            } elseif ( isset( $field['mode'] ) && 'tab_end' === $field['mode'] ) {
+                $obj->end_controls_tab();
+            } elseif ( isset( $field['mode'] ) && 'group' === $field['mode'] ) {
+                $type          = $field['type'];
+                $field['name'] = $field['id'];
+                unset( $field['mode'] );
+                unset( $field['type'] );
+                unset( $field['id'] );
+                $obj->add_group_control( $type, $field );
+            } elseif ( isset( $field['mode'] ) && 'responsive' === $field['mode'] ) {
+                $id = $field['id'];
+                unset( $field['id'] );
+                unset( $field['mode'] );
+                $obj->add_responsive_control( $id, $field );
+            } else {
+                $id = $field['id'];
+                unset( $field['id'] );
+                $obj->add_control( $id, $field );
+            }
+        }
+    }
+
+    /**
+     * Elementor Fields.
+     *
+     * @param string $type Control type.
+     *
+     * @return object
+     */
+    private static function elFields( $type ) {
+        $controls = \Elementor\Controls_Manager::class;
+
+        switch ( $type ) {
+            case 'text':
+                $type = $controls::TEXT;
+                break;
+
+            case 'html':
+                $type = $controls::RAW_HTML;
+                break;
+
+            case 'select':
+                $type = $controls::SELECT;
+                break;
+
+            case 'select2':
+                $type = $controls::SELECT2;
+                break;
+
+            case 'number':
+                $type = $controls::NUMBER;
+                break;
+
+            case 'image-dimensions':
+                $type = $controls::IMAGE_DIMENSIONS;
+                break;
+
+            case 'dimensions':
+                $type = $controls::DIMENSIONS;
+                break;
+
+            case 'media':
+                $type = $controls::MEDIA;
+                break;
+
+            case 'switch':
+                $type = $controls::SWITCHER;
+                break;
+
+            case 'color':
+                $type = $controls::COLOR;
+                break;
+
+            case 'choose':
+                $type = $controls::CHOOSE;
+                break;
+
+            case 'slider':
+                $type = $controls::SLIDER;
+                break;
+
+            case 'typography':
+                $type = \Elementor\Group_Control_Typography::get_type();
+                break;
+
+            case 'border':
+                $type = \Elementor\Group_Control_Border::get_type();
+                break;
+
+            case 'shadow':
+                $type = \Elementor\Group_Control_Box_Shadow::get_type();
+                break;
+        }
+        return $type;
+    }
 }

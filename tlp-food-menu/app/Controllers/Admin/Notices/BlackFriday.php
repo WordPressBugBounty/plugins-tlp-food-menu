@@ -24,6 +24,7 @@ class BlackFriday {
 	 * @return void
 	 */
 	protected function init() {
+		$this->remove_admin_notice();
 		$current      = time();
 		$black_friday = mktime( 0, 0, 0, 11, 20, 2023 ) <= $current && $current <= mktime( 0, 0, 0, 1, 15, 2024 );
 
@@ -32,6 +33,47 @@ class BlackFriday {
 		}
 
 		add_action( 'admin_init', [ $this, 'bf_notice' ] );
+	}
+
+	/**
+	 * Removes all admin notices on the Food Menu settings page.
+	 *
+	 * This method hooks into the `in_admin_header` action to detect when the current
+	 * admin screen is the TLP Food Menu settings page (post type screen with base
+	 * `food-menu_page_food_menu_settings`). On that screen, it removes all actions
+	 * hooked to `admin_notices` and `all_admin_notices` to prevent any core or
+	 * plugin notices from displaying.
+	 *
+	 * ⚠ Note: `remove_all_actions()` is aggressive and will also remove WordPress
+	 * core notices (updates, errors, warnings). Use carefully if you only want a
+	 * clean UI on this specific settings page.
+	 *
+	 * @return void
+	 */
+
+	public function remove_admin_notice() {
+		add_action(
+			'in_admin_header',
+			function () {
+				$screen = get_current_screen();
+				if (
+					! empty( $screen->post_type )
+					&& in_array( $screen->post_type, [ TLPFoodMenu()->post_type ], true )
+					&& in_array(
+						$screen->base,
+						[
+							'food-menu_page_food_menu_settings',
+							'food-menu_page_rtfm_get_help',
+						],
+						true
+					)
+				) {
+					remove_all_actions( 'admin_notices' );
+					remove_all_actions( 'all_admin_notices' );
+				}
+			},
+			1000
+		);
 	}
 
 	/**

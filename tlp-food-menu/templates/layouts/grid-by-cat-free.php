@@ -15,7 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 extract( $arg );
 
+
+
+
 $gridQuery = new WP_Query( $args );
+
+
 
 $html  = '<div class="fmp-grids-wrapper">';
 $html .= "<div class='fmp-category-title-wrapper $catsTitleType'><h2 class='fmp-category-title'><span>{$term->name}</span></h2></div>";
@@ -23,6 +28,7 @@ $html .= '<div class="fmp-col-xs-12 fmp-grids-wrapper">';
 $html .= '<div class="fmp-row' . $gridType . '">';
 
 while ( $gridQuery->have_posts() ) {
+
 	$gridQuery->the_post();
 	$id          = get_the_ID();
 	$pLink       = get_the_permalink();
@@ -46,7 +52,6 @@ while ( $gridQuery->have_posts() ) {
 
 				woocommerce_template_loop_add_to_cart();
 				$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $id, $pType, $add_to_cart_text, $items, $anchorClass );
-
 				ob_end_clean();
 			}
 		}

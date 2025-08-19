@@ -70,9 +70,36 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 				$html .= '<div id="settings-tabs" class="rt-tabs rt-tab-container">';
 
 				$html .= '<div class="rt-tab-nav-area">';
+
 				$html .= '<ul class="tab-nav rt-tab-nav">';
 				$html .= $tabList;
 				$html .= '</ul>';
+
+				// Feature List
+				if ( ! TLPFoodMenu()->has_pro() ) {
+					$html .= '<div class="rt-sidebar-image-area">';
+					$html .= '<div class="rt-sidebar-content">';
+					$html .= '<h3>' . esc_html__( 'Pro Features', 'tlp-food-menu' ) . '</h3>';
+
+					$html .= '<ul class="rt-feature-list">';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Online Ordering', 'tlp-food-menu' ) . '</li>';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Food Extra', 'tlp-food-menu' ) . '</li>';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Pickup & Delivery', 'tlp-food-menu' ) . '</li>';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Table Reservation', 'tlp-food-menu' ) . '</li>';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( '20+ Menu Layouts', 'tlp-food-menu' ) . '</li>';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Special Menu', 'tlp-food-menu' ) . '</li>';
+					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'More Features...', 'tlp-food-menu' ) . '</li>';
+					$html .= '</ul>';
+
+					// Button
+					$html .= '<div class="rt-sidebar-btn">';
+					$html .= '<a class="rt-admin-btn button-primary" href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/" target="_blank">' . esc_html__( 'Get Pro', 'tlp-food-menu' ) . '</a>';
+					$html .= '</div>';
+
+					$html .= '</div>';
+					$html .= '</div>';
+				}
+
 				$html .= '</div>';
 
                 //Tab Content Settings Area

@@ -23,6 +23,7 @@ class RenderHelpers {
 	 * Registers required scripts.
 	 *
 	 * @param array $scripts Scripts to register.
+	 *
 	 * @return void
 	 */
 	public static function registerScripts( $scripts ) {
@@ -36,27 +37,28 @@ class RenderHelpers {
 
 		array_push( $script, 'jquery' );
 
-		foreach ( $scripts as $sc => $value ) {
-			if ( ! empty( $sc ) ) {
-				if ( 'isIsotope' === $sc ) {
-					$iso = $value;
-				}
+//		foreach ( $scripts as $sc => $value ) {
+//			if ( ! empty( $sc ) ) {
+//				if ( 'isIsotope' === $sc ) {
+//					$iso = $value;
+//				}
+//
+//				if ( 'isCarousel' === $sc ) {
+//					$caro = $value;
+//				}
+//
+//				if ( 'hasPagination' === $sc ) {
+//					$pagi = $value;
+//				}
+//
+//				if ( 'hasModal' === $sc ) {
+//					$scroll = $value;
+//				}
+//			}
+//		}
 
-				if ( 'isCarousel' === $sc ) {
-					$caro = $value;
-				}
+		//if ( count( $scripts ) ) {
 
-				if ( 'hasPagination' === $sc ) {
-					$pagi = $value;
-				}
-
-				if ( 'hasModal' === $sc ) {
-					$scroll = $value;
-				}
-			}
-		}
-
-		if ( count( $scripts ) ) {
 			$style  = apply_filters( 'rtfm_styles_list', $style );
 			$script = apply_filters( 'rtfm_scripts_list', $script );
 
@@ -93,7 +95,8 @@ class RenderHelpers {
 					'wc_cart_url' => TLPFoodMenu()->isWcActive() ? wc_get_cart_url() : '',
 				]
 			);
-		}
+
+		//}
 
 	}
 
@@ -198,6 +201,7 @@ class RenderHelpers {
 	 * Builds an array with field values (for shortcode).
 	 *
 	 * @param array $meta Field values.
+	 *
 	 * @return array
 	 */
 	public static function metaScBuilder( $meta ) {
@@ -256,11 +260,134 @@ class RenderHelpers {
 		return apply_filters( 'rtfm_meta_sc_builder', $metas, $meta );
 	}
 
+	public static function metaScBuilderEl( $meta ) {
+		$metas = [
+			'layout'             => ! empty( $meta['fmp_layout'] ) ? esc_attr( $meta['fmp_layout'] ) : 'layout1',
+
+			'dCols'              => ! empty( $meta['fmp_desktop_column'] ) ? absint( $meta['fmp_desktop_column'] ) : 0,
+			'tCols'              => ! empty( $meta['fmp_desktop_column_tablet'] ) ? absint( $meta['fmp_desktop_column_tablet'] ) : 0,
+			'mCols'              => ! empty( $meta['fmp_desktop_column_mobile'] ) ? absint( $meta['fmp_desktop_column_mobile'] ) : 0,
+
+			'imgSize'            => isset( $meta['fmp_image_size'] ) ? $meta['fmp_image_size'] : 'medium',
+			'excerpt_limit'      => isset( $meta['fmp_excerpt_limit'] ) ? absint( $meta['fmp_excerpt_limit'] ) : 0,
+			'detail_link'        => ! empty( $meta['fmp_detail_link'] ) ? esc_attr( $meta['fmp_detail_link'] ) : null,
+			'featureImg'         => ! empty( $meta['fmp_feature_switch'] ) ? $meta['fmp_feature_switch'] : 1,
+			'hovericon'          => ! empty( $meta['fmp_hover_icon'] ) ? $meta['fmp_hover_icon'] : 0,
+			'grid_style'         => ! empty( $meta['tlp_el_grid_style_promo'] ) ? esc_attr( $meta['tlp_el_grid_style_promo'] ) : ' ',
+
+			'readmore_text'        => ! empty( $meta['fmp_readmore_text'] ) ? $meta['fmp_readmore_text'] : '',
+			//Switcher
+			'titleswitch'        => ! empty( $meta['fmp_title_switch'] ) ? $meta['fmp_title_switch'] : 1,
+			'priceswitch'        => ! empty( $meta['fmp_price_switch'] ) ? $meta['fmp_price_switch'] : 1,
+			'contentswitch'      => ! empty( $meta['fmp_content_switch'] ) ? $meta['fmp_content_switch'] : 1,
+			'fmp_el_popup'      => ! empty( $meta['fmp_detail_page_popup'] ) ? $meta['fmp_detail_page_popup'] : 1,
+
+
+			'readmore_switch'      => ! empty( $meta['fmp_readmore_switch'] ) ? $meta['fmp_readmore_switch'] : 1,
+
+			'add_stock'      => ! empty( $meta['fmp_stock_status_switch'] ) ? $meta['fmp_stock_status_switch'] : 0,
+			'addtocart'      => ! empty( $meta['fmp_addtocart_switch'] ) ? $meta['fmp_addtocart_switch'] : 0,
+			'quantity'      => ! empty( $meta['fmp_quantity_switch'] ) ? $meta['fmp_quantity_switch'] : 0,
+
+			// Filters.
+			'limit'              => ( ( empty( $meta['fmp_limit'] ) || $meta['fmp_limit'] === '-1' ) ? 10000000 : absint( $meta['fmp_limit'] ) ),
+			'source'             => ! empty( $meta['fmp_source'] ) ? $meta['fmp_source'] : TLPFoodMenu()->post_type,
+
+			'cats_title_type'    => ! empty( $meta['fmp_category_title_type'] ) ? esc_attr( $meta['fmp_category_title_type'] ) : 'default',
+
+			// Sorting.
+			'order_by'           => isset( $meta['fmp_order_by'] ) ? $meta['fmp_order_by'] : null,
+			'order'              => isset( $meta['fmp_order'] ) ? $meta['fmp_order'] : null,
+
+			// Pagination.
+			'pagination'         => ! empty( $meta['fmp_pagination'] ) ? true : false,
+			'posts_loading_type' => ! empty( $meta['fmp_pagination_type'] ) ? $meta['fmp_pagination_type'] : 'pagination',
+			'postsPerPage'       => isset( $meta['fmp_posts_per_page'] ) ? absint( $meta['fmp_posts_per_page'] ) : '',
+
+			// Visibility.
+			'items'              => ! empty( $meta['fmp_item_fields'] ) ? $meta['fmp_item_fields'] : [],
+
+			// Wrapper Class.
+			'parentClass'        => ! empty( $meta['fmp_parent_class'] ) ? trim( $meta['fmp_parent_class'] ) : null,
+			'wc'                 => class_exists( 'WooCommerce' ) ? true : false,
+		];
+
+		$metas['postIn'] = ( $metas['source'] === 'product' )	? ( isset( $meta['fmp_wc_post__in'] ) ? array_filter( (array) $meta['fmp_wc_post__in'] ) : [] ) : ( isset( $meta['fmp_post__in'] ) ? array_filter( (array) $meta['fmp_post__in'] ) : [] );
+		$metas['postNotIn'] = ( $metas['source'] === 'product' )	? ( isset( $meta['fmp_wc_post__not_in'] ) ? array_filter( (array) $meta['fmp_wc_post__not_in'] ) : [] ) : ( isset( $meta['fmp_post__not_in'] ) ? array_filter( (array) $meta['fmp_post__not_in'] ) : [] );
+
+		$metas['cats'] = ( $metas['source'] === 'product' )	? ( isset( $meta['fmp_wc_categories'] ) ? array_filter( (array) $meta['fmp_wc_categories'] ) : [] ) : ( isset( $meta['fmp_categories'] ) ? array_filter( (array) $meta['fmp_categories'] ) : [] );
+
+		return apply_filters( 'rtfm_meta_sc_builder', $metas, $meta );
+	}
+
+
+	public static function sliderMetaBuilderEl( array $meta ) {
+		$meta = [
+			'dCols'            => ! empty( $meta['fmp_desktop_column'] ) ? absint( $meta['fmp_desktop_column'] ) : 3,
+			'tCols'            => ! empty( $meta['fmp_desktop_column_tablet'] ) ? absint( $meta['fmp_desktop_column_tablet'] ) : 2,
+			'mCols'            => ! empty( $meta['fmp_desktop_column_mobile'] ) ? absint( $meta['fmp_desktop_column_mobile'] ) : 1,
+			'dGroup'           => ! empty( $meta['fmp_slide_groups'] ) ? absint( $meta['fmp_slide_groups'] ) : 1,
+			'tGroup'           => ! empty( $meta['fmp_slide_groups_tablet'] ) ? absint( $meta['fmp_slide_groups_tablet'] ) : 1,
+			'mGroup'           => ! empty( $meta['fmp_slide_groups_mobile'] ) ? absint( $meta['fmp_slide_groups_mobile'] ) : 1,
+			'autoPlay'         => ! empty( $meta['fmp_slide_autoplay'] ),
+			'stopOnHover'      => ! empty( $meta['fmp_pause_hover'] ),
+			'nav'              => ! empty( $meta['fmp_slider_nav'] ),
+			'dots'             => ! empty( $meta['fmp_slider_pagi'] ),
+			'loop'             => ! empty( $meta['fmp_slider_loop'] ),
+			'lazyLoad'         => ! empty( $meta['fmp_slider_lazy_load'] ),
+			'autoHeight'       => ! empty( $meta['fmp_slider_auto_height'] ),
+			'speed'            => isset( $meta['fmp_slide_speed'] ) ? absint( $meta['fmp_slide_speed'] ) : 2000,
+			'spaceBetween'     => isset( $meta['fmp_space_between_slides']['size'] ) && strlen( $meta['fmp_space_between_slides']['size'] ) ? absint( $meta['fmp_space_between_slides']['size'] ) : 30,
+			'autoPlayTimeOut'  => isset( $meta['fmp_autoplay_timeout'] ) ? absint( $meta['fmp_autoplay_timeout'] ) : 5000,
+			'navPosition'      => ! empty( $meta['fmp_slider_nav_position'] ) ? esc_attr( $meta['fmp_slider_nav_position'] ) : 'top',
+		];
+
+		$meta['options'] = [
+			'slidesPerView'  => $meta['dCols'],
+			'slidesPerGroup' => $meta['dGroup'],
+			'spaceBetween'   => $meta['spaceBetween'],
+			'speed'          => $meta['speed'],
+			'loop'           => $meta['loop'],
+			'autoHeight'     => $meta['autoHeight'],
+			'preloadImages'  => ! $meta['lazyLoad'],
+			'lazy'           => $meta['lazyLoad'],
+			'breakpoints'    => [
+				0 => [
+					'slidesPerView'  => $meta['mCols'],
+					'slidesPerGroup' => $meta['mGroup'],
+					'pagination'     => [ 'dynamicBullets' => true ],
+				],
+				767 => [
+					'slidesPerView'  => $meta['tCols'],
+					'slidesPerGroup' => $meta['tGroup'],
+					'pagination'     => [ 'dynamicBullets' => false ],
+				],
+				991 => [
+					'slidesPerGroup' => $meta['dGroup'],
+				],
+			],
+		];
+		if ( $meta['autoPlay'] ) {
+			$meta['options']['autoplay'] = [
+				'delay'                => $meta['autoPlayTimeOut'],
+				'pauseOnMouseEnter'    => $meta['stopOnHover'],
+				'disableOnInteraction' => false,
+			];
+		}
+		$dotsClass = $meta['dots'] ? ' has-dots' : ' no-dots';
+		$navClass  = $meta['nav'] ? ' has-nav' : ' no-nav';
+		$meta['class'] = 'swiper rtfm-carousel-slider rt-pos-s ' . $meta['navPosition'] . '-nav' . $dotsClass . $navClass;
+		$meta['data']  = wp_json_encode( $meta['options'] );
+		unset( $meta['options'] );
+		return apply_filters( 'rtfm_slider_meta_builder', $meta );
+	}
+
 
 	/**
 	 * Builds an array with field values.
 	 *
 	 * @param array $meta Field values.
+	 *
 	 * @return array
 	 */
 	public static function metaBuilder( $meta ) {
@@ -321,8 +448,9 @@ class RenderHelpers {
 	 * Builds an array with field values.
 	 *
 	 * @param string $iD SC ID.
-	 * @param array  $metas Field values.
-	 * @param array  $scMeta SC Field values.
+	 * @param array $metas Field values.
+	 * @param array $scMeta SC Field values.
+	 *
 	 * @return array
 	 */
 	public static function argBuilder( $iD, $metas, $scMeta ) {
@@ -353,7 +481,7 @@ class RenderHelpers {
 			$dCol = $tCol = $mCol = 12;
 		}
 
-		$arg['grid']   = 'fmp-col-lg-' . $dCol . ' fmp-col-md-' . $dCol . ' fmp-col-sm-' . $tCol . ' fmp-col-xs-' . $mCol . ' ';
+		$arg['grid']  = 'fmp-col-lg-' . $dCol . ' fmp-col-md-' . $dCol . ' fmp-col-sm-' . $tCol . ' fmp-col-xs-' . $mCol . ' ';
 		$arg['class'] .= ' ' . $metas['gridType'] . '-grid-item ';
 
 		$arg['class'] .= 'fmp-grid-item';
@@ -400,8 +528,9 @@ class RenderHelpers {
 	 *
 	 * @param array $arg Arg values.
 	 * @param array $meta Meta values.
-	 * @param int   $postID Post ID.
-	 * @param bool  $lazyLoad Image lazy load.
+	 * @param int $postID Post ID.
+	 * @param bool $lazyLoad Image lazy load.
+	 *
 	 * @return array
 	 */
 	public static function loopArgBuilder( array $arg, array $meta, array $scMeta, int $postID, bool $lazyLoad = false ) {
@@ -449,8 +578,9 @@ class RenderHelpers {
 	 * Gets the excerpt
 	 *
 	 * @param string $excerpt Excerpt.
-	 * @param int    $characterLimit Character Limit.
+	 * @param int $characterLimit Character Limit.
 	 * @param string $afterText Text after excerpt.
+	 *
 	 * @return string
 	 */
 	public static function getExcerpt( $excerpt, $characterLimit, $afterText ) {
@@ -458,7 +588,7 @@ class RenderHelpers {
 			return $excerpt;
 		}
 
-		$characterLimit++;
+		$characterLimit ++;
 
 		$text = '';
 
@@ -485,11 +615,12 @@ class RenderHelpers {
 	 * Layout CSS
 	 *
 	 * @param string $ID Layout ID.
-	 * @param array  $scMeta Shortcode Meta.
+	 * @param array $scMeta Shortcode Meta.
+	 *
 	 * @return string
 	 */
 	public static function layoutStyle( $ID, $scMeta ) {
-		$css  = null;
+		$css = null;
 		$css .= "<style type='text/css' media='all'>";
 
 		// Title
@@ -945,9 +1076,10 @@ class RenderHelpers {
 	 * Renders pagination
 	 *
 	 * @param object $wpQuery WP_Query object.
-	 * @param array  $meta Meta values.
-	 * @param int    $limit Post limit.
-	 * @param int    $perPage Posts per page.
+	 * @param array $meta Meta values.
+	 * @param int $limit Post limit.
+	 * @param int $perPage Posts per page.
+	 *
 	 * @return string
 	 */
 	public static function renderPagination( $wpQuery, $meta, $limit, $perPage, $scID, $type ) {
@@ -990,7 +1122,19 @@ class RenderHelpers {
 		return $html;
 	}
 
+	/**
+	 * Renders pagination
+	 *
+	 * @param object $wpQuery WP_Query object.
+	 * @param array $meta Meta values.
+	 * @param int $limit Post limit.
+	 * @param int $perPage Posts per page.
+	 *
+	 * @return string
+	 */
+
 	public static function pagination( $pages = '', $range = 4, $ajax = false, $scID = '' ) {
+
 		$html      = null;
 		$showitems = ( $range * 2 ) + 1;
 
@@ -1032,7 +1176,7 @@ class RenderHelpers {
 			}
 
 			if ( $paged > 1 && $showitems < $pages ) {
-				$p     = $paged - 1;
+				$p    = $paged - 1;
 				$html .= "<li><a data-paged='{$p}' href='" . get_pagenum_link( $p ) . "' aria-label='Previous'>&lsaquo;</a></li>";
 			}
 
@@ -1043,7 +1187,7 @@ class RenderHelpers {
 			}
 
 			if ( $paged < $pages && $showitems < $pages ) {
-				$p     = $paged + 1;
+				$p    = $paged + 1;
 				$html .= "<li><a data-paged='{$p}' href=\"" . get_pagenum_link( $paged + 1 ) . "\"  aria-label='Next'>&rsaquo;</a></li>";
 			}
 
@@ -1057,4 +1201,128 @@ class RenderHelpers {
 
 		return $html;
 	}
+
+
+	/**
+	 * Renders pagination elementor
+	 *
+	 * @param object $wpQuery WP_Query object.
+	 * @param array $meta Meta values.
+	 * @param int $limit Post limit.
+	 * @param int $perPage Posts per page.
+	 *
+	 * @return string
+	 */
+	public static function renderElPagination( $wpQuery, $meta, $limit ) {
+
+		$htmlUtility_el = null;
+		$html        = null;
+		$ajax        = false;
+		$postPp      = $wpQuery->query_vars['posts_per_page'];
+		$page        = $wpQuery->query_vars['paged'];
+		$foundPosts  = $wpQuery->found_posts;
+		$morePosts   = $foundPosts - ( $postPp * $page );
+		$totalPage   = $wpQuery->max_num_pages;
+		$foundPost   = $wpQuery->found_posts;
+
+		if ( $limit && empty( $wpQuery->query['tax_query'] ) && $foundPosts > $limit ) {
+			$foundPosts = $limit;
+			$totalPage  = ceil( $foundPosts / $postPp );
+		}
+
+		$morePosts  = $foundPost - ( $postPp * $page );
+		$foundPosts = $foundPost;
+		$totalPage  = absint( $totalPage );
+		$morePosts  = absint( $morePosts );
+
+
+		$ajax = $meta['posts_loading_type'];
+		$ajax_type = $meta['posts_loading_type'];
+
+
+		if( $ajax === 'ajax-number-pagination' ){
+			$ajax_type = 'pagination_ajax';
+		}
+
+		$htmlUtility_el .= self::paginationEl( $totalPage, $postPp, $ajax );
+		if ( $htmlUtility_el ) {
+			$html .= '<div class="rt-pagination-wrap" data-total-pages="' . $totalPage . '" data-posts-per-page="' . $postPp . '" data-type="' . $ajax_type . '">' . $htmlUtility_el . '</div>';
+		}
+		return $html;
+	}
+
+	/**
+	 * Renders pagination
+	 *
+	 * @param object $wpQuery WP_Query object.
+	 * @param array $meta Meta values.
+	 * @param int $limit Post limit.
+	 * @param int $perPage Posts per page.
+	 *
+	 * @return string
+	 */
+
+	public static function paginationEl( $pages = '', $range = 4, $ajax = false, $scID = '',  $page_num = null ) {
+
+
+		$html      = null;
+		$showitems = ( $range * 2 ) + 1;
+		global $paged;
+		if ( is_front_page() ) {
+			$paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
+		} else {
+			$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		}
+		if ( empty( $paged ) ) {
+			$paged = 1;
+		}
+
+		if ( $pages == '' ) {
+			global $wp_query;
+			$pages = $wp_query->max_num_pages;
+			if ( ! $pages ) {
+				$pages = 1;
+			}
+		}
+
+		$ajaxClass = null;
+
+		if ( $ajax === 'ajax-number-pagination' ) {
+			$ajaxClass = ' fmp-ajax';
+		}
+
+		if ( 1 != $pages ) {
+
+			$html .= '<div class="fmp-pagination'.$ajaxClass.'" data-sc-id="216"><ul class="pagination-list">';
+
+			if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
+				$html .= "<li class='page-num'><a href='" . get_pagenum_link( 1 ) . "' aria-label='First'>&laquo;</a></li>";
+			}
+
+			if ( $paged > 1 && $showitems < $pages ) {
+				$html .= "<li class='page-num'><a href='" . get_pagenum_link( $paged - 1 ) . "' aria-label='Previous'>&lsaquo;</a></li>";
+			}
+
+			for ( $i = 1; $i <= $pages; $i ++ ) {
+				if ( 1 != $pages && ( ! ( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
+					$html .= ( $paged == $i ) ? '<li class="page-num active"><span>' . $i . '</span></li>' : "<li><a href='" . get_pagenum_link( $i ) . "'>" . $i . '</a></li>';
+				}
+			}
+
+			if ( $paged < $pages && $showitems < $pages ) {
+				$html .= '<li class="page-num"><a href="' . get_pagenum_link( $paged + 1 ) . "\"  aria-label='Next'>&rsaquo;</a></li>";
+			}
+
+			if ( $paged < $pages - 1 && $paged + $range - 1 < $pages && $showitems < $pages ) {
+				$html .= "<li class='page-num'><a href='" . get_pagenum_link( $pages ) . "' aria-label='Last'>&raquo;</a></li>";
+			}
+
+			$html .= '</ul>';
+			$html .= '</div>';
+		}
+
+		return $html;
+	}
+
+
 }

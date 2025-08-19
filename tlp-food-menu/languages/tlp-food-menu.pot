@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
-"POT-Creation-Date: 2025-07-10 11:03+0000\n"
+"POT-Creation-Date: 2025-08-19 09:55+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -17,8 +17,32 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../app/Controllers/PostTypesController.php:108, ../app/Controllers/PostTypesController.php:109, ../app/Controllers/PostTypesController.php:129, ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131, ../app/Helpers/Options.php:952, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/GridLayout.php:43, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38
+#: ../app/Controllers/ElementorController.php:74, ../app/Controllers/PostTypesController.php:108, ../app/Controllers/PostTypesController.php:109, ../app/Controllers/PostTypesController.php:129, ../app/Controllers/PostTypesController.php:130, ../app/Controllers/PostTypesController.php:131, ../app/Helpers/Options.php:989, ../app/Widgets/FmWidget.php:32, ../app/Widgets/FmWidget.php:59, ../app/Widgets/Elementor/Shortcodes.php:28, ../app/Widgets/Elementor/Shortcodes.php:74, ../app/Widgets/Vc/VcAddon.php:61, ../app/Widgets/Vc/VcAddon.php:38, ../app/Widgets/Elementor/Sections/Layout.php:50, ../app/Widgets/Elementor/Sections/Layout.php:329, ../app/Widgets/Elementor/Sections/Layout.php:491
 msgid "Food Menu"
+msgstr ""
+
+#: ../app/Controllers/ElementorController.php:116
+msgid "Filter By Categories"
+msgstr ""
+
+#: ../app/Controllers/ElementorController.php:118
+msgid "Select the departments you want to filter, Leave it blank for all departments."
+msgstr ""
+
+#: ../app/Controllers/ElementorController.php:153
+msgid "Grid Layouts"
+msgstr ""
+
+#: ../app/Controllers/ElementorController.php:154, ../app/Controllers/ElementorController.php:161, ../app/Controllers/ElementorController.php:168
+msgid "Available in Pro version: Advanced food menu layout"
+msgstr ""
+
+#: ../app/Controllers/ElementorController.php:160
+msgid "Slider Layouts"
+msgstr ""
+
+#: ../app/Controllers/ElementorController.php:167
+msgid "Isotope Filters Layouts"
 msgstr ""
 
 #: ../app/Controllers/PostTypesController.php:132
@@ -89,11 +113,11 @@ msgstr ""
 msgid "No Shortcode found in trash."
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:206, ../app/Controllers/PostTypesController.php:208, ../app/Helpers/Options.php:883
+#: ../app/Controllers/PostTypesController.php:206, ../app/Controllers/PostTypesController.php:208, ../app/Helpers/Options.php:920, ../app/Widgets/Elementor/Sections/Layout.php:399
 msgid "Categories"
 msgstr ""
 
-#: ../app/Controllers/PostTypesController.php:207
+#: ../app/Controllers/PostTypesController.php:207, ../app/Widgets/Elementor/Sections/Style.php:501
 msgid "Category"
 msgstr ""
 
@@ -246,95 +270,95 @@ msgstr ""
 msgid "ShortCode draft updated."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:502, ../app/Models/Fields.php:838
+#: ../app/Helpers/Fns.php:630, ../app/Models/Fields.php:838, ../app/Widgets/Elementor/Sections/Style.php:135, ../app/Widgets/Elementor/Sections/Style.php:802, ../app/Widgets/Elementor/Sections/Style.php:1117, ../app/Widgets/Elementor/Sections/Style.php:1265, ../app/Widgets/Elementor/Sections/Style.php:1371
 msgid "Normal"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:503
+#: ../app/Helpers/Fns.php:631
 msgid "Circle"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:514
+#: ../app/Helpers/Fns.php:642, ../app/Widgets/Elementor/Sections/Settings.php:72
 msgid "Top"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:515, ../app/Models/Fields.php:831
+#: ../app/Helpers/Fns.php:643, ../app/Models/Fields.php:831, ../app/Widgets/Elementor/Sections/Style.php:118, ../app/Widgets/Elementor/Sections/Style.php:786
 msgid "Center"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:516
+#: ../app/Helpers/Fns.php:644, ../app/Widgets/Elementor/Sections/Settings.php:74
 msgid "Bottom"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:527, ../app/Helpers/Options.php:836
+#: ../app/Helpers/Fns.php:655, ../app/Helpers/Options.php:873
 msgid "Layout Default"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:528
+#: ../app/Helpers/Fns.php:656, ../app/Widgets/Elementor/Sections/Settings.php:212, ../app/Widgets/Elementor/Sections/Settings.php:381
 msgid "Type 1"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:529
+#: ../app/Helpers/Fns.php:657, ../app/Widgets/Elementor/Sections/Settings.php:213, ../app/Widgets/Elementor/Sections/Settings.php:382
 msgid "Type 2"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:533
+#: ../app/Helpers/Fns.php:661, ../app/Widgets/Elementor/Sections/Settings.php:214, ../app/Widgets/Elementor/Sections/Settings.php:383
 msgid "Type 3"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:534
+#: ../app/Helpers/Fns.php:662, ../app/Widgets/Elementor/Sections/Settings.php:384
 msgid "Type 4"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:547
+#: ../app/Helpers/Fns.php:675
 msgid "Single Page"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:548
+#: ../app/Helpers/Fns.php:676
 msgid "Pop Up"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:559
+#: ../app/Helpers/Fns.php:687, ../app/Widgets/Elementor/Sections/Settings.php:298
 msgid "Same Window"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:560
+#: ../app/Helpers/Fns.php:688, ../app/Widgets/Elementor/Sections/Settings.php:299
 msgid "New Window"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:571
+#: ../app/Helpers/Fns.php:699, ../app/Controllers/Hooks/FilterHooks.php:326
 msgid "Zoom In"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:572
+#: ../app/Helpers/Fns.php:700, ../app/Controllers/Hooks/FilterHooks.php:327
 msgid "Zoom Out"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:573
+#: ../app/Helpers/Fns.php:701, ../app/Controllers/Hooks/FilterHooks.php:325
 msgid "None"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:908
+#: ../app/Helpers/Fns.php:1035
 msgid "Default Image"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1028
+#: ../app/Helpers/Fns.php:1212
 msgid "Buy"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1029
+#: ../app/Helpers/Fns.php:1213
 msgid "Demo"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1030, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:126, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:347
+#: ../app/Helpers/Fns.php:1214, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:126, ../app/Controllers/Admin/Metabox/ShortcodeMeta.php:347
 msgid "Documentation"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1275
+#: ../app/Helpers/Fns.php:1459
 msgid "Select Delivery Location"
 msgstr ""
 
-#: ../app/Helpers/Fns.php:1276
+#: ../app/Helpers/Fns.php:1460
 msgid "No Delivery Location is Set"
 msgstr ""
 
@@ -346,19 +370,19 @@ msgstr ""
 msgid "Field Selection on Mobile"
 msgstr ""
 
-#: ../app/Helpers/Options.php:44, ../app/Helpers/Options.php:55, ../app/Helpers/Options.php:409
+#: ../app/Helpers/Options.php:44, ../app/Helpers/Options.php:55, ../app/Helpers/Options.php:422, ../app/Widgets/Elementor/Sections/Style.php:40
 msgid "Title"
 msgstr ""
 
-#: ../app/Helpers/Options.php:45, ../app/Helpers/Options.php:56, ../app/Helpers/Options.php:270, ../app/Controllers/Admin/AdminColumns.php:131
+#: ../app/Helpers/Options.php:45, ../app/Helpers/Options.php:56, ../app/Helpers/Options.php:270, ../app/Controllers/Admin/AdminColumns.php:131, ../app/Widgets/Elementor/Sections/Layout.php:662, ../app/Widgets/Elementor/Sections/Style.php:478
 msgid "Image"
 msgstr ""
 
-#: ../app/Helpers/Options.php:46, ../app/Helpers/Options.php:57, ../app/Helpers/Options.php:271, ../app/Helpers/Options.php:413, ../app/Helpers/Options.php:931, ../app/Controllers/Admin/AdminColumns.php:132, ../app/Controllers/Admin/Metabox/PostMeta.php:138
+#: ../app/Helpers/Options.php:46, ../app/Helpers/Options.php:57, ../app/Helpers/Options.php:271, ../app/Helpers/Options.php:426, ../app/Helpers/Options.php:968, ../app/Controllers/Admin/AdminColumns.php:132, ../app/Controllers/Admin/Metabox/PostMeta.php:138, ../app/Widgets/Elementor/Sections/Style.php:356
 msgid "Price"
 msgstr ""
 
-#: ../app/Helpers/Options.php:47, ../app/Helpers/Options.php:58
+#: ../app/Helpers/Options.php:47, ../app/Helpers/Options.php:58, ../app/Widgets/Elementor/Sections/Style.php:447
 msgid "Excerpt"
 msgstr ""
 
@@ -374,7 +398,7 @@ msgstr ""
 msgid "In stock"
 msgstr ""
 
-#: ../app/Helpers/Options.php:90, ../app/Controllers/Hooks/FilterHooks.php:94
+#: ../app/Helpers/Options.php:90, ../app/Controllers/Hooks/FilterHooks.php:114
 msgid "Out of stock"
 msgstr ""
 
@@ -450,7 +474,7 @@ msgstr ""
 msgid "Enable Preloader?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:205, ../app/Helpers/Options.php:222, ../app/Helpers/Options.php:534, ../app/Helpers/Options.php:616, ../app/Helpers/Options.php:683, ../app/Helpers/Options.php:693
+#: ../app/Helpers/Options.php:205, ../app/Helpers/Options.php:222, ../app/Helpers/Options.php:547, ../app/Helpers/Options.php:629, ../app/Helpers/Options.php:696, ../app/Helpers/Options.php:706
 msgid "Enable"
 msgstr ""
 
@@ -494,447 +518,463 @@ msgstr ""
 msgid "Online Ordering ( Woocommerce Product )"
 msgstr ""
 
-#: ../app/Helpers/Options.php:324
+#: ../app/Helpers/Options.php:337
 msgid "Custom Parent Class"
 msgstr ""
 
-#: ../app/Helpers/Options.php:326
+#: ../app/Helpers/Options.php:339
 msgid "Please enter custom parent class for adding custom css."
 msgstr ""
 
-#: ../app/Helpers/Options.php:342
+#: ../app/Helpers/Options.php:355, ../app/Widgets/Elementor/Sections/Style.php:377, ../app/Widgets/Elementor/Sections/Style.php:522, ../app/Widgets/Elementor/Sections/Style.php:594, ../app/Widgets/Elementor/Sections/Style.php:606, ../app/Widgets/Elementor/Sections/Style.php:816, ../app/Widgets/Elementor/Sections/Style.php:1132
 msgid "Background Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:343, ../app/Helpers/Options.php:352, ../app/Helpers/Options.php:361, ../app/Helpers/Options.php:423
+#: ../app/Helpers/Options.php:356, ../app/Helpers/Options.php:365, ../app/Helpers/Options.php:374, ../app/Helpers/Options.php:436
 msgid "<b>Note:</b> You need to choose both colors for gradient background. If you need a single color, please choose only the 1st color."
 msgstr ""
 
-#: ../app/Helpers/Options.php:347
+#: ../app/Helpers/Options.php:360
 msgid "Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:351
+#: ../app/Helpers/Options.php:364, ../app/Widgets/Elementor/Sections/Style.php:170, ../app/Widgets/Elementor/Sections/Style.php:838, ../app/Widgets/Elementor/Sections/Style.php:1161, ../app/Widgets/Elementor/Sections/Style.php:1300, ../app/Widgets/Elementor/Sections/Style.php:1412
 msgid "Hover Background Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:356
+#: ../app/Helpers/Options.php:369
 msgid "Hover Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:360
+#: ../app/Helpers/Options.php:373, ../app/Widgets/Elementor/Sections/Style.php:192, ../app/Widgets/Elementor/Sections/Style.php:863, ../app/Widgets/Elementor/Sections/Style.php:1182
 msgid "Active Background Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:365
+#: ../app/Helpers/Options.php:378
 msgid "Active Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:381
+#: ../app/Helpers/Options.php:394
 msgid "Text color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:385
+#: ../app/Helpers/Options.php:398
 msgid "Hover Text Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:389
+#: ../app/Helpers/Options.php:402
 msgid "Active Text Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:393
+#: ../app/Helpers/Options.php:406
 msgid "Typography"
 msgstr ""
 
-#: ../app/Helpers/Options.php:418
+#: ../app/Helpers/Options.php:431
 msgid "Vertical Border Color"
 msgstr ""
 
-#: ../app/Helpers/Options.php:422
+#: ../app/Helpers/Options.php:435
 msgid "Category Banner"
 msgstr ""
 
-#: ../app/Helpers/Options.php:439
+#: ../app/Helpers/Options.php:452
 msgid "Element / Content Wrapper"
 msgstr ""
 
-#: ../app/Helpers/Options.php:440
+#: ../app/Helpers/Options.php:453
 msgid "Please enter the content/element border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: ../app/Helpers/Options.php:444
+#: ../app/Helpers/Options.php:457
 msgid "Full Section Wrapper"
 msgstr ""
 
-#: ../app/Helpers/Options.php:445
+#: ../app/Helpers/Options.php:458
 msgid "Please enter the section border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: ../app/Helpers/Options.php:461
+#: ../app/Helpers/Options.php:474
 msgid "Select Layout Type"
 msgstr ""
 
-#: ../app/Helpers/Options.php:468
+#: ../app/Helpers/Options.php:481
 msgid "Select Layout"
 msgstr ""
 
-#: ../app/Helpers/Options.php:476
+#: ../app/Helpers/Options.php:489
 msgid "Grid Style"
 msgstr ""
 
-#: ../app/Helpers/Options.php:481
+#: ../app/Helpers/Options.php:494, ../app/Controllers/Hooks/FilterHooks.php:170
 msgid "Please select the grid style."
 msgstr ""
 
-#: ../app/Helpers/Options.php:497
+#: ../app/Helpers/Options.php:510
 msgid "Desktop Columns <i>(For devices > 991px)</i>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:505
+#: ../app/Helpers/Options.php:518
 msgid "Tab Columns <i>(For devices < 991px)</i>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:513
+#: ../app/Helpers/Options.php:526
 msgid "Mobile Columns <i>(For devices < 768px)</i>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:533
+#: ../app/Helpers/Options.php:546, ../app/Widgets/Elementor/Sections/Layout.php:602
 msgid "Enable Pagination?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:535
+#: ../app/Helpers/Options.php:548, ../app/Widgets/Elementor/Sections/Layout.php:603
 msgid "Switch on to enable pagination."
 msgstr ""
 
-#: ../app/Helpers/Options.php:541
+#: ../app/Helpers/Options.php:554, ../app/Widgets/Elementor/Sections/Layout.php:611
 msgid "Pagination type"
 msgstr ""
 
-#: ../app/Helpers/Options.php:548
+#: ../app/Helpers/Options.php:561
 msgid "Please choose the pagination type."
 msgstr ""
 
-#: ../app/Helpers/Options.php:549
+#: ../app/Helpers/Options.php:562
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Load More and Ajax Pagination.</b>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:556
+#: ../app/Helpers/Options.php:569, ../app/Widgets/Elementor/Sections/Layout.php:626
 msgid "Number of Posts Per Page"
 msgstr ""
 
-#: ../app/Helpers/Options.php:557
+#: ../app/Helpers/Options.php:570
 msgid "Please enter the number of posts to show per page."
 msgstr ""
 
-#: ../app/Helpers/Options.php:575
+#: ../app/Helpers/Options.php:588
 msgid "Image Size"
 msgstr ""
 
-#: ../app/Helpers/Options.php:579
+#: ../app/Helpers/Options.php:592
 msgid "Please select the featured image dimension."
 msgstr ""
 
-#: ../app/Helpers/Options.php:580
+#: ../app/Helpers/Options.php:593
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Custom Image Size.</b>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:588, ../app/Controllers/MiniCart/MiniCartFns.php:210
+#: ../app/Helpers/Options.php:601, ../app/Controllers/MiniCart/MiniCartFns.php:210, ../app/Widgets/Elementor/Sections/Style.php:236, ../app/Widgets/Elementor/Sections/Style.php:483, ../app/Widgets/Elementor/Sections/Style.php:654, ../app/Widgets/Elementor/Sections/Style.php:668, ../app/Widgets/Elementor/Sections/Style.php:908, ../app/Widgets/Elementor/Sections/Style.php:1332, ../app/Widgets/Elementor/Sections/Style.php:1448
 msgid "Border Radius"
 msgstr ""
 
-#: ../app/Helpers/Options.php:590
+#: ../app/Helpers/Options.php:603
 msgid "Please enter the featured image border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: ../app/Helpers/Options.php:595
+#: ../app/Helpers/Options.php:608
 msgid "Image Position"
 msgstr ""
 
-#: ../app/Helpers/Options.php:599
+#: ../app/Helpers/Options.php:612
 msgid "Please select the featured image position."
 msgstr ""
 
-#: ../app/Helpers/Options.php:605
+#: ../app/Helpers/Options.php:618
 msgid "Hover Animation"
 msgstr ""
 
-#: ../app/Helpers/Options.php:609
+#: ../app/Helpers/Options.php:622
 msgid "Please select the featured image hover animation."
 msgstr ""
 
-#: ../app/Helpers/Options.php:615
+#: ../app/Helpers/Options.php:628, ../app/Widgets/Elementor/Sections/Layout.php:677
 msgid "Enable Hover Icon?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:617
+#: ../app/Helpers/Options.php:630, ../app/Widgets/Elementor/Sections/Layout.php:678
 msgid "Switch on to enable hover icon."
 msgstr ""
 
-#: ../app/Helpers/Options.php:636
+#: ../app/Helpers/Options.php:649
 msgid "Category Title Type"
 msgstr ""
 
-#: ../app/Helpers/Options.php:639
+#: ../app/Helpers/Options.php:652
 msgid "Please select the category title type."
 msgstr ""
 
-#: ../app/Helpers/Options.php:657
+#: ../app/Helpers/Options.php:670
 msgid "Excerpt limit"
 msgstr ""
 
-#: ../app/Helpers/Options.php:658
+#: ../app/Helpers/Options.php:671
 msgid "Limits the Excerpt text (letter limit). Leave it blank for full excerpt.<br> <strong>Please note that, HTML tags will not work if excerpt limit is applied.</strong>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:662
+#: ../app/Helpers/Options.php:675
 msgid "Custom Text <br>After Excerpt"
 msgstr ""
 
-#: ../app/Helpers/Options.php:665
+#: ../app/Helpers/Options.php:678
 msgid "Adds texts after excerpt."
 msgstr ""
 
-#: ../app/Helpers/Options.php:682
+#: ../app/Helpers/Options.php:695, ../app/Widgets/Elementor/Sections/Settings.php:286
 msgid "Link to Detail Page?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:684
+#: ../app/Helpers/Options.php:697, ../app/Widgets/Elementor/Sections/Settings.php:287
 msgid "Switch on to enable linking to detail page."
 msgstr ""
 
-#: ../app/Helpers/Options.php:691
+#: ../app/Helpers/Options.php:704
 msgid "Enable Details Page Popup?"
 msgstr ""
 
-#: ../app/Helpers/Options.php:696
+#: ../app/Helpers/Options.php:709
 msgid "Switch on to enable details page popup."
 msgstr ""
 
-#: ../app/Helpers/Options.php:701
+#: ../app/Helpers/Options.php:714
 msgid "Link Target"
 msgstr ""
 
-#: ../app/Helpers/Options.php:705
+#: ../app/Helpers/Options.php:718
 msgid "Please select the detail page link target."
 msgstr ""
 
-#: ../app/Helpers/Options.php:715
+#: ../app/Helpers/Options.php:728
 msgid "Soft Crop"
 msgstr ""
 
-#: ../app/Helpers/Options.php:716
+#: ../app/Helpers/Options.php:729
 msgid "Hard Crop"
 msgstr ""
 
-#: ../app/Helpers/Options.php:727
+#: ../app/Helpers/Options.php:740
 msgid "Layout (Free)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:728
+#: ../app/Helpers/Options.php:741
 msgid "Grid By Category (Free)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:742
+#: ../app/Helpers/Options.php:755
 msgid "List Layout 1"
 msgstr ""
 
-#: ../app/Helpers/Options.php:748
+#: ../app/Helpers/Options.php:761
 msgid "List Layout 2"
 msgstr ""
 
-#: ../app/Helpers/Options.php:754
+#: ../app/Helpers/Options.php:767
 msgid "List Layout 3"
 msgstr ""
 
-#: ../app/Helpers/Options.php:760
+#: ../app/Helpers/Options.php:773
 msgid "List Layout 4"
 msgstr ""
 
-#: ../app/Helpers/Options.php:766
+#: ../app/Helpers/Options.php:779
 msgid "Grid By Category 1"
 msgstr ""
 
-#: ../app/Helpers/Options.php:778
+#: ../app/Helpers/Options.php:791
 msgid "Grid By Category 2"
 msgstr ""
 
-#: ../app/Helpers/Options.php:784
+#: ../app/Helpers/Options.php:797
 msgid "Grid By Category 3"
 msgstr ""
 
-#: ../app/Helpers/Options.php:790
+#: ../app/Helpers/Options.php:803
 msgid "Grid By Category 4"
 msgstr ""
 
-#: ../app/Helpers/Options.php:803
+#: ../app/Helpers/Options.php:818, ../app/Widgets/Elementor/Sections/Layout.php:174, ../app/Widgets/Elementor/Sections/Layout.php:155, ../app/Widgets/Elementor/Sections/Layout.php:136, ../app/Widgets/Elementor/Sections/Layout.php:113, ../app/Widgets/Elementor/Sections/Layout.php:79
+msgid "Layout 1"
+msgstr ""
+
+#: ../app/Helpers/Options.php:822, ../app/Widgets/Elementor/Sections/Layout.php:178, ../app/Widgets/Elementor/Sections/Layout.php:159, ../app/Widgets/Elementor/Sections/Layout.php:140, ../app/Widgets/Elementor/Sections/Layout.php:117, ../app/Widgets/Elementor/Sections/Layout.php:83
+msgid "Layout 2"
+msgstr ""
+
+#: ../app/Helpers/Options.php:826, ../app/Widgets/Elementor/Sections/Layout.php:182, ../app/Widgets/Elementor/Sections/Layout.php:163, ../app/Widgets/Elementor/Sections/Layout.php:144, ../app/Widgets/Elementor/Sections/Layout.php:121, ../app/Widgets/Elementor/Sections/Layout.php:87
+msgid "Layout 3"
+msgstr ""
+
+#: ../app/Helpers/Options.php:830, ../app/Widgets/Elementor/Sections/Layout.php:186, ../app/Widgets/Elementor/Sections/Layout.php:167, ../app/Widgets/Elementor/Sections/Layout.php:148, ../app/Widgets/Elementor/Sections/Layout.php:125, ../app/Widgets/Elementor/Sections/Layout.php:91
+msgid "Layout 4"
+msgstr ""
+
+#: ../app/Helpers/Options.php:840, ../app/Widgets/Elementor/Elements/ListLayout.php:32
 msgid "List Layouts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:807
+#: ../app/Helpers/Options.php:844, ../app/Widgets/Elementor/Elements/GridCatLayout.php:31
 msgid "Grid by Category Layouts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:822
+#: ../app/Helpers/Options.php:859
 msgid "Even Grid"
 msgstr ""
 
-#: ../app/Helpers/Options.php:823
+#: ../app/Helpers/Options.php:860
 msgid "Masonry Grid"
 msgstr ""
 
-#: ../app/Helpers/Options.php:837
+#: ../app/Helpers/Options.php:874, ../app/Widgets/Elementor/Sections/Layout.php:260, ../app/Widgets/Elementor/Sections/Layout.php:293
 msgid "1 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:838
+#: ../app/Helpers/Options.php:875, ../app/Widgets/Elementor/Sections/Layout.php:261, ../app/Widgets/Elementor/Sections/Layout.php:294
 msgid "2 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:839
+#: ../app/Helpers/Options.php:876, ../app/Widgets/Elementor/Sections/Layout.php:262, ../app/Widgets/Elementor/Sections/Layout.php:295
 msgid "3 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:840
+#: ../app/Helpers/Options.php:877, ../app/Widgets/Elementor/Sections/Layout.php:263, ../app/Widgets/Elementor/Sections/Layout.php:296
 msgid "4 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:841
+#: ../app/Helpers/Options.php:878, ../app/Widgets/Elementor/Sections/Layout.php:297
 msgid "5 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:842
+#: ../app/Helpers/Options.php:879, ../app/Widgets/Elementor/Sections/Layout.php:264, ../app/Widgets/Elementor/Sections/Layout.php:298
 msgid "6 Columns"
 msgstr ""
 
-#: ../app/Helpers/Options.php:857
+#: ../app/Helpers/Options.php:894
 msgid "Food item data source"
 msgstr ""
 
-#: ../app/Helpers/Options.php:862
+#: ../app/Helpers/Options.php:899
 msgid "Please select a food item data source"
 msgstr ""
 
-#: ../app/Helpers/Options.php:865
+#: ../app/Helpers/Options.php:902
 msgid "Include Posts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:868
+#: ../app/Helpers/Options.php:905
 msgid "List of post IDs to diplay (comma-separated values, for example: 1,2,3). <br>Set empty to show all posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:871
+#: ../app/Helpers/Options.php:908
 msgid "Exclude Posts"
 msgstr ""
 
-#: ../app/Helpers/Options.php:874
+#: ../app/Helpers/Options.php:911
 msgid "List of post IDs to exclude (comma-separated values, for example: 1,2,3) <br>Set empty to show all posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:877
+#: ../app/Helpers/Options.php:914
 msgid "Posts Limit"
 msgstr ""
 
-#: ../app/Helpers/Options.php:880
+#: ../app/Helpers/Options.php:917, ../app/Widgets/Elementor/Sections/Layout.php:396, ../app/Widgets/Elementor/Sections/Layout.php:505
 msgid "The number of posts to show. Set empty to show all posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:887
+#: ../app/Helpers/Options.php:924
 msgid "Select the category you want to filter, Leave it blank for all category."
 msgstr ""
 
-#: ../app/Helpers/Options.php:891
+#: ../app/Helpers/Options.php:928, ../app/Widgets/Elementor/Sections/Layout.php:431, ../app/Widgets/Elementor/Sections/Layout.php:559
 msgid "Order By"
 msgstr ""
 
-#: ../app/Helpers/Options.php:895, ../app/Helpers/Options.php:902
+#: ../app/Helpers/Options.php:932, ../app/Helpers/Options.php:939
 msgid "Please choose to reorder posts."
 msgstr ""
 
-#: ../app/Helpers/Options.php:899
+#: ../app/Helpers/Options.php:936, ../app/Widgets/Elementor/Sections/Layout.php:440, ../app/Widgets/Elementor/Sections/Layout.php:568
 msgid "Order"
 msgstr ""
 
-#: ../app/Helpers/Options.php:913
+#: ../app/Helpers/Options.php:950
 msgid "IN — show posts which associate with one or more of selected terms"
 msgstr ""
 
-#: ../app/Helpers/Options.php:914
+#: ../app/Helpers/Options.php:951
 msgid "NOT IN — show posts which do not associate with any of selected terms"
 msgstr ""
 
-#: ../app/Helpers/Options.php:915
+#: ../app/Helpers/Options.php:952
 msgid "AND — show posts which associate with all of selected terms"
 msgstr ""
 
-#: ../app/Helpers/Options.php:916
+#: ../app/Helpers/Options.php:953
 msgid "EXISTS —"
 msgstr ""
 
-#: ../app/Helpers/Options.php:917
+#: ../app/Helpers/Options.php:954
 msgid "NOT EXISTS —"
 msgstr ""
 
-#: ../app/Helpers/Options.php:928
+#: ../app/Helpers/Options.php:965
 msgid "Menu Order"
 msgstr ""
 
-#: ../app/Helpers/Options.php:929
+#: ../app/Helpers/Options.php:966
 msgid "Name"
 msgstr ""
 
-#: ../app/Helpers/Options.php:930
+#: ../app/Helpers/Options.php:967
 msgid "Date"
 msgstr ""
 
-#: ../app/Helpers/Options.php:932
+#: ../app/Helpers/Options.php:969
 msgid "ID"
 msgstr ""
 
-#: ../app/Helpers/Options.php:945
+#: ../app/Helpers/Options.php:982
 msgid "Ascending"
 msgstr ""
 
-#: ../app/Helpers/Options.php:946
+#: ../app/Helpers/Options.php:983
 msgid "Descending"
 msgstr ""
 
-#: ../app/Helpers/Options.php:956
+#: ../app/Helpers/Options.php:993
 msgid "WooCommerce"
 msgstr ""
 
-#: ../app/Helpers/Options.php:964
+#: ../app/Helpers/Options.php:1001
 msgid "Left (£99.99)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:965
+#: ../app/Helpers/Options.php:1002
 msgid "Right (99.99£)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:966
+#: ../app/Helpers/Options.php:1003
 msgid "Left with space (£ 99.99)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:967
+#: ../app/Helpers/Options.php:1004
 msgid "Right with space (99.99 £)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:973
+#: ../app/Helpers/Options.php:1010
 msgid "Display in 2 column"
 msgstr ""
 
-#: ../app/Helpers/Options.php:974
+#: ../app/Helpers/Options.php:1011
 msgid "Display in 1 column"
 msgstr ""
 
-#: ../app/Helpers/Options.php:2323
+#: ../app/Helpers/Options.php:2360, ../app/Widgets/Elementor/Sections/Layout.php:614
 msgid "Numbered Pagination"
 msgstr ""
 
-#: ../app/Models/Fields.php:829
+#: ../app/Models/Fields.php:829, ../app/Widgets/Elementor/Sections/Style.php:114, ../app/Widgets/Elementor/Sections/Style.php:782
 msgid "Left"
 msgstr ""
 
-#: ../app/Models/Fields.php:830
+#: ../app/Models/Fields.php:830, ../app/Widgets/Elementor/Sections/Style.php:122, ../app/Widgets/Elementor/Sections/Style.php:790
 msgid "Right"
 msgstr ""
 
@@ -1054,11 +1094,11 @@ msgstr ""
 msgid "Loading ..."
 msgstr ""
 
-#: ../app/Controllers/Frontend/Shortcode.php:353, ../app/Controllers/Admin/Ajax/Preview.php:1023
+#: ../app/Controllers/Frontend/Shortcode.php:355, ../app/Controllers/Admin/Ajax/Preview.php:1023
 msgid "No categories found"
 msgstr ""
 
-#: ../app/Controllers/Frontend/Shortcode.php:343, ../app/Controllers/Admin/Ajax/Preview.php:270, ../app/Controllers/Admin/Ajax/Preview.php:1013, ../app/Controllers/Admin/Ajax/Preview.php:1241
+#: ../app/Controllers/Frontend/Shortcode.php:345, ../app/Controllers/Admin/Ajax/Preview.php:270, ../app/Controllers/Admin/Ajax/Preview.php:1013, ../app/Controllers/Admin/Ajax/Preview.php:1241
 msgid "Add to cart"
 msgstr ""
 
@@ -1090,12 +1130,92 @@ msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../app/Controllers/Hooks/FilterHooks.php:30
+#: ../app/Controllers/Hooks/FilterHooks.php:50
 msgid "Full Size"
 msgstr ""
 
-#: ../app/Controllers/Hooks/FilterHooks.php:105
+#: ../app/Controllers/Hooks/FilterHooks.php:124
 msgid "Add to Cart"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:164
+msgid "Masonry Style"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:166
+msgid "Even"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:167
+msgid "Masonry"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:188
+msgid "Read More ?"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:189
+msgid "Switch on to show read more button."
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:190, ../app/Controllers/Hooks/FilterHooks.php:211, ../app/Controllers/Hooks/FilterHooks.php:224, ../app/Controllers/Hooks/FilterHooks.php:236, ../app/Controllers/Hooks/FilterHooks.php:263, ../app/Widgets/Elementor/Sections/Layout.php:604, ../app/Widgets/Elementor/Sections/Layout.php:668, ../app/Widgets/Elementor/Sections/Layout.php:679, ../app/Widgets/Elementor/Sections/Settings.php:48, ../app/Widgets/Elementor/Sections/Settings.php:57, ../app/Widgets/Elementor/Sections/Settings.php:84, ../app/Widgets/Elementor/Sections/Settings.php:94, ../app/Widgets/Elementor/Sections/Settings.php:103, ../app/Widgets/Elementor/Sections/Settings.php:123, ../app/Widgets/Elementor/Sections/Settings.php:133, ../app/Widgets/Elementor/Sections/Settings.php:201, ../app/Widgets/Elementor/Sections/Settings.php:225, ../app/Widgets/Elementor/Sections/Settings.php:245, ../app/Widgets/Elementor/Sections/Settings.php:288, ../app/Widgets/Elementor/Sections/Settings.php:333, ../app/Widgets/Elementor/Sections/Settings.php:343, ../app/Widgets/Elementor/Sections/Settings.php:353
+msgid "On"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:191, ../app/Controllers/Hooks/FilterHooks.php:212, ../app/Controllers/Hooks/FilterHooks.php:225, ../app/Controllers/Hooks/FilterHooks.php:237, ../app/Controllers/Hooks/FilterHooks.php:264, ../app/Widgets/Elementor/Sections/Layout.php:605, ../app/Widgets/Elementor/Sections/Layout.php:669, ../app/Widgets/Elementor/Sections/Layout.php:680, ../app/Widgets/Elementor/Sections/Settings.php:49, ../app/Widgets/Elementor/Sections/Settings.php:58, ../app/Widgets/Elementor/Sections/Settings.php:85, ../app/Widgets/Elementor/Sections/Settings.php:95, ../app/Widgets/Elementor/Sections/Settings.php:104, ../app/Widgets/Elementor/Sections/Settings.php:124, ../app/Widgets/Elementor/Sections/Settings.php:134, ../app/Widgets/Elementor/Sections/Settings.php:202, ../app/Widgets/Elementor/Sections/Settings.php:226, ../app/Widgets/Elementor/Sections/Settings.php:246, ../app/Widgets/Elementor/Sections/Settings.php:289, ../app/Widgets/Elementor/Sections/Settings.php:334, ../app/Widgets/Elementor/Sections/Settings.php:344, ../app/Widgets/Elementor/Sections/Settings.php:354
+msgid "Off"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:200
+msgid "Change Readmore buttontext"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:202
+msgid "Please change \"Read MOore\" text"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:209
+msgid "Stock Status ?"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:210
+msgid "Switch on to show stock status."
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:222
+msgid "Add To cart ?"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:223
+msgid "Switch on to show Add to cart ( wooCommerce )."
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:234
+msgid "Quantity ?"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:235
+msgid "Switch on to show quantity ( wooCommerce )."
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:261
+msgid "Enable Details Page Popup ?"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:262
+msgid "Switch on to enable popup to detail page."
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:286
+msgid "Image Alignment"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:323
+msgid "Image Animation"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:330
+msgid "Please select thme"
 msgstr ""
 
 #: ../app/Controllers/MiniCart/MiniCart.php:113, ../app/Controllers/MiniCart/MiniCartHooks.php:124
@@ -1323,11 +1443,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: ../app/Widgets/Elementor/GridLayout.php:28
-msgid "Food Menu Grid"
-msgstr ""
-
-#: ../app/Widgets/Elementor/GridLayout.php:53, ../app/Widgets/Elementor/Shortcodes.php:84
+#: ../app/Widgets/Elementor/Shortcodes.php:84
 msgid "Select ShortCode"
 msgstr ""
 
@@ -1423,6 +1539,506 @@ msgstr ""
 msgid "Get Pro Version"
 msgstr ""
 
+#: ../app/Widgets/Elementor/Sections/Layout.php:54
+msgid "Select Shortcode"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:73
+msgid "%s Layouts"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:190, ../app/Widgets/Elementor/Sections/Layout.php:129, ../app/Widgets/Elementor/Sections/Layout.php:95
+msgid "Layout 5"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:195, ../app/Widgets/Elementor/Sections/Layout.php:100
+msgid "Layout 6"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:200, ../app/Widgets/Elementor/Sections/Layout.php:105
+msgid "Layout 7"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:227
+msgid "Layouts"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:251, ../app/Widgets/Elementor/Sections/Layout.php:285
+msgid "Columns"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:257, ../app/Widgets/Elementor/Sections/Layout.php:290
+msgid "Number of Columns"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:258, ../app/Widgets/Elementor/Sections/Layout.php:291
+msgid "Please select the number of columns to show per row."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:322, ../app/Widgets/Elementor/Sections/Layout.php:484
+msgid "Query"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:327, ../app/Widgets/Elementor/Sections/Layout.php:344, ../app/Widgets/Elementor/Sections/Layout.php:489
+msgid "Include Food Menu"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:330, ../app/Widgets/Elementor/Sections/Layout.php:492
+msgid "Product ( WooCommerce )"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:333, ../app/Widgets/Elementor/Sections/Layout.php:346, ../app/Widgets/Elementor/Sections/Layout.php:357, ../app/Widgets/Elementor/Sections/Layout.php:495
+msgid "Please select the food menu to show. Leave it blank to include all posts."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:339
+msgid "Include"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:355
+msgid "Include Products"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:364
+msgid "Exclude"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:369, ../app/Widgets/Elementor/Sections/Layout.php:380
+msgid "Exclude Food Menu"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:371, ../app/Widgets/Elementor/Sections/Layout.php:382
+msgid "Please select the food menu to exclude. Leave it blank to exclude none."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:394, ../app/Widgets/Elementor/Sections/Layout.php:503
+msgid "Post Limit"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:404, ../app/Widgets/Elementor/Sections/Layout.php:415, ../app/Widgets/Elementor/Sections/Layout.php:511, ../app/Widgets/Elementor/Sections/Layout.php:522
+msgid "Include Categories"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:406, ../app/Widgets/Elementor/Sections/Layout.php:417, ../app/Widgets/Elementor/Sections/Layout.php:513, ../app/Widgets/Elementor/Sections/Layout.php:524
+msgid "Please select the food menu category to show. Leave it blank to include all."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:426, ../app/Widgets/Elementor/Sections/Layout.php:554
+msgid "Sorting"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:432, ../app/Widgets/Elementor/Sections/Layout.php:441, ../app/Widgets/Elementor/Sections/Layout.php:560, ../app/Widgets/Elementor/Sections/Layout.php:569, ../app/Widgets/Elementor/Sections/Layout.php:612
+msgid "Please choose to reorder food menu."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:530
+msgid "Categories Select Menu"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:536, ../app/Widgets/Elementor/Sections/Layout.php:547
+msgid "Isotope Filter (Default Selected Item)"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:538, ../app/Widgets/Elementor/Sections/Layout.php:549
+msgid "Please select the default selected filter term (Selected item)."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:595, ../app/Widgets/Elementor/Sections/Layout.php:645
+msgid "Pagination"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:615
+msgid "Ajax Numbered Pagination"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:616
+msgid "Ajax Load More Button"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:617
+msgid "Ajax Load More on Scroll"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:628
+msgid "Please enter the number of food menu per page to show."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:666
+msgid "Display Featured Image?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:667
+msgid "Switch on to display featured image."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Layout.php:694, ../app/Widgets/Elementor/Sections/Settings.php:296
+msgid "Select Image Size"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:41
+msgid "Slider Settings"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:42
+msgid "Controls"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:47
+msgid "Infinite Loop"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:50
+msgid "Switch on to enable slider infinite loop."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:56, ../app/Widgets/Elementor/Sections/Settings.php:68
+msgid "Navigation Arrows"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:59
+msgid "Switch on to enable slider navigation arrows."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:69
+msgid "Position"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:73
+msgid "Middle"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:76
+msgid "Please select the slider arrows position."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:83
+msgid "Dot Pagination"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:86
+msgid "Switch on to enable slider dot pagination."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:93
+msgid "Auto Height"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:96
+msgid "Switch on to enable slider dynamic height."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:102
+msgid "Image Lazy Load"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:105
+msgid "Switch on to enable slider image lazy load."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:111
+msgid "Slide Speed (in ms)"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:112
+msgid "Please enter the duration of transition between slides (in ms)."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:117
+msgid "Autoplay"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:122
+msgid "Enable Autoplay?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:125
+msgid "Switch on to enable slider autoplay."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:132
+msgid "Pause on Mouse Hover?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:135
+msgid "Switch on to enable slider autoplay pause on mouse hover."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:142
+msgid "Autoplay Delay (in ms)"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:145
+msgid "Please select autoplay interval delay (in ms)."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:195
+msgid "Isotope Filter"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:199
+msgid "Enable Isotope Filter Button ?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:200
+msgid "Switch on to display show isotope filter button."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:209
+msgid "Isotope Filter Style Type"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:210
+msgid "Please select the isotope filter style type."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:223
+msgid "Display \"Show All Button\" ?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:224
+msgid "Switch on to display show all button."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:233
+msgid "Change Button Text"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:236
+msgid "Please change \"All Button\" text"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:243
+msgid "Display Filer Search Button ?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:244
+msgid "Switch on to display show display search button."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:261
+msgid "Content Limit"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:265
+msgid "Content limit"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:266
+msgid "Limits the short content text (word limit). Leave it blank for full text."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:281
+msgid "Details Page"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:326
+msgid "Content Visibility"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:331
+msgid "Show Title?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:332
+msgid "Switch on to show food menu title."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:341
+msgid "Show Price?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:342
+msgid "Switch on to show food menu price."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:351
+msgid "Show Excerpt?"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:352
+msgid "Switch on to show food menu excerpt."
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:374
+msgid "Category Settings"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Settings.php:379
+msgid "Select Category Title Type"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:52, ../app/Widgets/Elementor/Sections/Style.php:368, ../app/Widgets/Elementor/Sections/Style.php:459, ../app/Widgets/Elementor/Sections/Style.php:513, ../app/Widgets/Elementor/Sections/Style.php:807, ../app/Widgets/Elementor/Sections/Style.php:1122
+msgid "Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:61
+msgid "Hover color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:70
+msgid "Border color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:82, ../app/Widgets/Elementor/Sections/Style.php:202, ../app/Widgets/Elementor/Sections/Style.php:338, ../app/Widgets/Elementor/Sections/Style.php:631, ../app/Widgets/Elementor/Sections/Style.php:642, ../app/Widgets/Elementor/Sections/Style.php:873, ../app/Widgets/Elementor/Sections/Style.php:1309, ../app/Widgets/Elementor/Sections/Style.php:1424
+msgid "Border"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:99
+msgid "Filter Button"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:111, ../app/Widgets/Elementor/Sections/Style.php:779
+msgid "Alignment"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:131, ../app/Widgets/Elementor/Sections/Style.php:799, ../app/Widgets/Elementor/Sections/Style.php:1114, ../app/Widgets/Elementor/Sections/Style.php:1261, ../app/Widgets/Elementor/Sections/Style.php:1368
+msgid "Colors"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:140, ../app/Widgets/Elementor/Sections/Style.php:1270, ../app/Widgets/Elementor/Sections/Style.php:1376
+msgid "Button Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:149, ../app/Widgets/Elementor/Sections/Style.php:1279, ../app/Widgets/Elementor/Sections/Style.php:1387
+msgid "Button Background Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:156, ../app/Widgets/Elementor/Sections/Style.php:824, ../app/Widgets/Elementor/Sections/Style.php:1146, ../app/Widgets/Elementor/Sections/Style.php:1286, ../app/Widgets/Elementor/Sections/Style.php:1396
+msgid "Hover"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:161, ../app/Widgets/Elementor/Sections/Style.php:829, ../app/Widgets/Elementor/Sections/Style.php:1151, ../app/Widgets/Elementor/Sections/Style.php:1291, ../app/Widgets/Elementor/Sections/Style.php:1401
+msgid "Hover Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:178, ../app/Widgets/Elementor/Sections/Style.php:848, ../app/Widgets/Elementor/Sections/Style.php:1177
+msgid "Active"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:183, ../app/Widgets/Elementor/Sections/Style.php:853
+msgid "Active Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:214, ../app/Widgets/Elementor/Sections/Style.php:885, ../app/Widgets/Elementor/Sections/Style.php:1170, ../app/Widgets/Elementor/Sections/Style.php:1321, ../app/Widgets/Elementor/Sections/Style.php:1436
+msgid "Hover Border Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:224, ../app/Widgets/Elementor/Sections/Style.php:895, ../app/Widgets/Elementor/Sections/Style.php:1191
+msgid "Active Border Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:247, ../app/Widgets/Elementor/Sections/Style.php:919, ../app/Widgets/Elementor/Sections/Style.php:1200
+msgid "Spacing"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:253
+msgid "Wrapper Padding"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:264, ../app/Widgets/Elementor/Sections/Style.php:682, ../app/Widgets/Elementor/Sections/Style.php:710, ../app/Widgets/Elementor/Sections/Style.php:1217
+msgid "Padding"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:275, ../app/Widgets/Elementor/Sections/Style.php:696, ../app/Widgets/Elementor/Sections/Style.php:724, ../app/Widgets/Elementor/Sections/Style.php:937, ../app/Widgets/Elementor/Sections/Style.php:1228
+msgid "Margin"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:297
+msgid "Search Button"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:311
+msgid "Placeholder Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:320
+msgid "Text Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:329
+msgid "BG Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:389
+msgid "BG Color (Only Grid Layout 1) "
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:404
+msgid "BG Color (Only Grid Layout 4) "
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:416
+msgid "BG Color (Only Grid Layout 5) "
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:427
+msgid "Border (Only Grid Layout 5)"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:536
+msgid "Only Image Change"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:548
+msgid "Background Image"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:567, ../app/Widgets/Elementor/Sections/Style.php:619
+msgid "Border Color"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:589
+msgid "Global Style"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:737
+msgid "Box Shadow"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:765
+msgid "Pagination Style"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:925, ../app/Widgets/Elementor/Sections/Style.php:1206
+msgid "Wrapper Margin"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:979
+msgid "Slider Style"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:980, ../app/Widgets/Elementor/Sections/Style.php:986
+msgid "Arrow Size"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1008
+msgid "Arrow Width"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1040
+msgid "Arrow Height"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1058
+msgid "Dot Size"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1064
+msgid "Dot Width"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1096
+msgid "Dot Height"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1252
+msgid "Read More Button"
+msgstr ""
+
+#: ../app/Widgets/Elementor/Sections/Style.php:1359
+msgid "Add to Cart Button"
+msgstr ""
+
 #: ../resources/general-settings.php:20
 msgid "Date & Time Format"
 msgstr ""
@@ -1460,6 +2076,42 @@ msgid "Mini Cart"
 msgstr ""
 
 #: ../resources/settings.php:82
+msgid "Pro Features"
+msgstr ""
+
+#: ../resources/settings.php:85
+msgid "Online Ordering"
+msgstr ""
+
+#: ../resources/settings.php:86
+msgid "Food Extra"
+msgstr ""
+
+#: ../resources/settings.php:87
+msgid "Pickup & Delivery"
+msgstr ""
+
+#: ../resources/settings.php:88
+msgid "Table Reservation"
+msgstr ""
+
+#: ../resources/settings.php:89
+msgid "20+ Menu Layouts"
+msgstr ""
+
+#: ../resources/settings.php:90
+msgid "Special Menu"
+msgstr ""
+
+#: ../resources/settings.php:91
+msgid "More Features..."
+msgstr ""
+
+#: ../resources/settings.php:96
+msgid "Get Pro"
+msgstr ""
+
+#: ../resources/settings.php:109
 msgid "Save Changes"
 msgstr ""
 
