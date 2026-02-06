@@ -1254,7 +1254,7 @@ class Style {
 			'mode'     => 'group',
 			'type'     => 'typography',
 			'id'       => 'fmp_readmore_buttons_typography',
-			'selector' => '{{WRAPPER}} .fmp-footer .fmp-btn-read-more',
+			'selector' => '{{WRAPPER}} .fmp-footer .fmp-btn-read-more, {{WRAPPER}} .fmp-body .fmp-btn-read-more',
 		];
 
 
@@ -1270,6 +1270,7 @@ class Style {
 			'label'     => esc_html__( 'Button Color', 'tlp-food-menu' ),
 			'selectors' => [
 				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .fmp-body .fmp-btn-read-more' => 'color: {{VALUE}}',
 			],
 		];
 
@@ -1279,6 +1280,7 @@ class Style {
 			'label'     => esc_html__( 'Button Background Color', 'tlp-food-menu' ),
 			'selectors' => [
 				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:before' => 'background: {{VALUE}}',
+				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:before' => 'background: {{VALUE}}',
 			],
 		];
 
@@ -1291,6 +1293,7 @@ class Style {
 			'label'     => esc_html__( 'Hover Color', 'tlp-food-menu' ),
 			'selectors' => [
 				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:hover' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:hover' => 'color: {{VALUE}}',
 			],
 		];
 
@@ -1300,6 +1303,7 @@ class Style {
 			'label'     => esc_html__( 'Hover Background Color', 'tlp-food-menu' ),
 			'selectors' => [
 				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:after' => 'background: {{VALUE}}',
+				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:after' => 'background: {{VALUE}}',
 			],
 		];
 
@@ -1312,7 +1316,7 @@ class Style {
 			'mode'     => 'group',
 			'type'     => 'border',
 			'id'       => 'fmp_readmore_button_border',
-			'selector' => '{{WRAPPER}} .fmp-footer .fmp-btn-read-more',
+			'selector' => '{{WRAPPER}} .fmp-footer .fmp-btn-read-more, {{WRAPPER}} .fmp-body .fmp-btn-read-more',
 		];
 
 		$obj->elControls[] = [
@@ -1322,6 +1326,7 @@ class Style {
 			'condition' => [ 'fmp_readmore_button_border_border!' => [ '' ] ],
 			'selectors' => [
 				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:hover' => 'border-color: {{VALUE}}',
+				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:hover' => 'border-color: {{VALUE}}',
 			],
 		];
 
@@ -1336,7 +1341,7 @@ class Style {
 				'isLinked' => true,
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:before, {{WRAPPER}} .fmp-footer .fmp-btn-read-more:after, {{WRAPPER}} .fmp-footer .fmp-btn-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
+				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:before, {{WRAPPER}} .fmp-body .fmp-btn-read-more:before, {{WRAPPER}} .fmp-footer .fmp-btn-read-more:after, {{WRAPPER}} .fmp-body .fmp-btn-read-more:after, {{WRAPPER}} .fmp-footer .fmp-btn-read-more, {{WRAPPER}} .fmp-body .fmp-btn-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
 			],
 		];
 

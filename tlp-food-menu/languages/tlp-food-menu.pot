@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
-"POT-Creation-Date: 2025-08-19 09:55+0000\n"
+"POT-Creation-Date: 2025-12-30 06:57+0000\n"
 "Project-Id-Version: undefined\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -270,7 +270,7 @@ msgstr ""
 msgid "ShortCode draft updated."
 msgstr ""
 
-#: ../app/Helpers/Fns.php:630, ../app/Models/Fields.php:838, ../app/Widgets/Elementor/Sections/Style.php:135, ../app/Widgets/Elementor/Sections/Style.php:802, ../app/Widgets/Elementor/Sections/Style.php:1117, ../app/Widgets/Elementor/Sections/Style.php:1265, ../app/Widgets/Elementor/Sections/Style.php:1371
+#: ../app/Helpers/Fns.php:630, ../app/Models/Fields.php:838, ../app/Widgets/Elementor/Sections/Style.php:135, ../app/Widgets/Elementor/Sections/Style.php:802, ../app/Widgets/Elementor/Sections/Style.php:1117, ../app/Widgets/Elementor/Sections/Style.php:1265, ../app/Widgets/Elementor/Sections/Style.php:1376
 msgid "Normal"
 msgstr ""
 
@@ -538,7 +538,7 @@ msgstr ""
 msgid "Gradient Background (2nd Color)"
 msgstr ""
 
-#: ../app/Helpers/Options.php:364, ../app/Widgets/Elementor/Sections/Style.php:170, ../app/Widgets/Elementor/Sections/Style.php:838, ../app/Widgets/Elementor/Sections/Style.php:1161, ../app/Widgets/Elementor/Sections/Style.php:1300, ../app/Widgets/Elementor/Sections/Style.php:1412
+#: ../app/Helpers/Options.php:364, ../app/Widgets/Elementor/Sections/Style.php:170, ../app/Widgets/Elementor/Sections/Style.php:838, ../app/Widgets/Elementor/Sections/Style.php:1161, ../app/Widgets/Elementor/Sections/Style.php:1303, ../app/Widgets/Elementor/Sections/Style.php:1417
 msgid "Hover Background Color"
 msgstr ""
 
@@ -662,7 +662,7 @@ msgstr ""
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: #de0000\">Upgrade to PRO</a> to unlock Custom Image Size.</b>"
 msgstr ""
 
-#: ../app/Helpers/Options.php:601, ../app/Controllers/MiniCart/MiniCartFns.php:210, ../app/Widgets/Elementor/Sections/Style.php:236, ../app/Widgets/Elementor/Sections/Style.php:483, ../app/Widgets/Elementor/Sections/Style.php:654, ../app/Widgets/Elementor/Sections/Style.php:668, ../app/Widgets/Elementor/Sections/Style.php:908, ../app/Widgets/Elementor/Sections/Style.php:1332, ../app/Widgets/Elementor/Sections/Style.php:1448
+#: ../app/Helpers/Options.php:601, ../app/Controllers/MiniCart/MiniCartFns.php:210, ../app/Widgets/Elementor/Sections/Style.php:236, ../app/Widgets/Elementor/Sections/Style.php:483, ../app/Widgets/Elementor/Sections/Style.php:654, ../app/Widgets/Elementor/Sections/Style.php:668, ../app/Widgets/Elementor/Sections/Style.php:908, ../app/Widgets/Elementor/Sections/Style.php:1337, ../app/Widgets/Elementor/Sections/Style.php:1453
 msgid "Border Radius"
 msgstr ""
 
@@ -1054,7 +1054,7 @@ msgstr ""
 msgid "Select Food Menu"
 msgstr ""
 
-#: ../app/Controllers/Admin/Settings.php:46, ../resources/settings.php:21
+#: ../app/Controllers/Admin/Settings.php:46, ../resources/settings.php:23
 msgid "Food Menu Settings"
 msgstr ""
 
@@ -1879,7 +1879,7 @@ msgstr ""
 msgid "Border color"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:82, ../app/Widgets/Elementor/Sections/Style.php:202, ../app/Widgets/Elementor/Sections/Style.php:338, ../app/Widgets/Elementor/Sections/Style.php:631, ../app/Widgets/Elementor/Sections/Style.php:642, ../app/Widgets/Elementor/Sections/Style.php:873, ../app/Widgets/Elementor/Sections/Style.php:1309, ../app/Widgets/Elementor/Sections/Style.php:1424
+#: ../app/Widgets/Elementor/Sections/Style.php:82, ../app/Widgets/Elementor/Sections/Style.php:202, ../app/Widgets/Elementor/Sections/Style.php:338, ../app/Widgets/Elementor/Sections/Style.php:631, ../app/Widgets/Elementor/Sections/Style.php:642, ../app/Widgets/Elementor/Sections/Style.php:873, ../app/Widgets/Elementor/Sections/Style.php:1313, ../app/Widgets/Elementor/Sections/Style.php:1429
 msgid "Border"
 msgstr ""
 
@@ -1891,23 +1891,23 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:131, ../app/Widgets/Elementor/Sections/Style.php:799, ../app/Widgets/Elementor/Sections/Style.php:1114, ../app/Widgets/Elementor/Sections/Style.php:1261, ../app/Widgets/Elementor/Sections/Style.php:1368
+#: ../app/Widgets/Elementor/Sections/Style.php:131, ../app/Widgets/Elementor/Sections/Style.php:799, ../app/Widgets/Elementor/Sections/Style.php:1114, ../app/Widgets/Elementor/Sections/Style.php:1261, ../app/Widgets/Elementor/Sections/Style.php:1373
 msgid "Colors"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:140, ../app/Widgets/Elementor/Sections/Style.php:1270, ../app/Widgets/Elementor/Sections/Style.php:1376
+#: ../app/Widgets/Elementor/Sections/Style.php:140, ../app/Widgets/Elementor/Sections/Style.php:1270, ../app/Widgets/Elementor/Sections/Style.php:1381
 msgid "Button Color"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:149, ../app/Widgets/Elementor/Sections/Style.php:1279, ../app/Widgets/Elementor/Sections/Style.php:1387
+#: ../app/Widgets/Elementor/Sections/Style.php:149, ../app/Widgets/Elementor/Sections/Style.php:1280, ../app/Widgets/Elementor/Sections/Style.php:1392
 msgid "Button Background Color"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:156, ../app/Widgets/Elementor/Sections/Style.php:824, ../app/Widgets/Elementor/Sections/Style.php:1146, ../app/Widgets/Elementor/Sections/Style.php:1286, ../app/Widgets/Elementor/Sections/Style.php:1396
+#: ../app/Widgets/Elementor/Sections/Style.php:156, ../app/Widgets/Elementor/Sections/Style.php:824, ../app/Widgets/Elementor/Sections/Style.php:1146, ../app/Widgets/Elementor/Sections/Style.php:1288, ../app/Widgets/Elementor/Sections/Style.php:1401
 msgid "Hover"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:161, ../app/Widgets/Elementor/Sections/Style.php:829, ../app/Widgets/Elementor/Sections/Style.php:1151, ../app/Widgets/Elementor/Sections/Style.php:1291, ../app/Widgets/Elementor/Sections/Style.php:1401
+#: ../app/Widgets/Elementor/Sections/Style.php:161, ../app/Widgets/Elementor/Sections/Style.php:829, ../app/Widgets/Elementor/Sections/Style.php:1151, ../app/Widgets/Elementor/Sections/Style.php:1293, ../app/Widgets/Elementor/Sections/Style.php:1406
 msgid "Hover Color"
 msgstr ""
 
@@ -1919,7 +1919,7 @@ msgstr ""
 msgid "Active Color"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:214, ../app/Widgets/Elementor/Sections/Style.php:885, ../app/Widgets/Elementor/Sections/Style.php:1170, ../app/Widgets/Elementor/Sections/Style.php:1321, ../app/Widgets/Elementor/Sections/Style.php:1436
+#: ../app/Widgets/Elementor/Sections/Style.php:214, ../app/Widgets/Elementor/Sections/Style.php:885, ../app/Widgets/Elementor/Sections/Style.php:1170, ../app/Widgets/Elementor/Sections/Style.php:1325, ../app/Widgets/Elementor/Sections/Style.php:1441
 msgid "Hover Border Color"
 msgstr ""
 
@@ -2035,7 +2035,7 @@ msgstr ""
 msgid "Read More Button"
 msgstr ""
 
-#: ../app/Widgets/Elementor/Sections/Style.php:1359
+#: ../app/Widgets/Elementor/Sections/Style.php:1364
 msgid "Add to Cart Button"
 msgstr ""
 
@@ -2059,60 +2059,56 @@ msgstr ""
 msgid "Update Date & Time Format"
 msgstr ""
 
-#: ../resources/settings.php:24
-msgid "General settings"
-msgstr ""
-
-#: ../resources/settings.php:32
+#: ../resources/settings.php:31
 msgid "General"
 msgstr ""
 
-#: ../resources/settings.php:38
+#: ../resources/settings.php:37
 msgid "Detail page settings"
 msgstr ""
 
-#: ../resources/settings.php:44
+#: ../resources/settings.php:43
 msgid "Mini Cart"
 msgstr ""
 
-#: ../resources/settings.php:82
+#: ../resources/settings.php:85
+msgid "Save Changes"
+msgstr ""
+
+#: ../resources/settings.php:98
 msgid "Pro Features"
 msgstr ""
 
-#: ../resources/settings.php:85
+#: ../resources/settings.php:100
 msgid "Online Ordering"
 msgstr ""
 
-#: ../resources/settings.php:86
-msgid "Food Extra"
+#: ../resources/settings.php:101
+msgid "Product Addon"
 msgstr ""
 
-#: ../resources/settings.php:87
+#: ../resources/settings.php:102
 msgid "Pickup & Delivery"
 msgstr ""
 
-#: ../resources/settings.php:88
+#: ../resources/settings.php:103
 msgid "Table Reservation"
 msgstr ""
 
-#: ../resources/settings.php:89
+#: ../resources/settings.php:104
 msgid "20+ Menu Layouts"
 msgstr ""
 
-#: ../resources/settings.php:90
+#: ../resources/settings.php:105
 msgid "Special Menu"
 msgstr ""
 
-#: ../resources/settings.php:91
+#: ../resources/settings.php:106
 msgid "More Features..."
 msgstr ""
 
-#: ../resources/settings.php:96
-msgid "Get Pro"
-msgstr ""
-
-#: ../resources/settings.php:109
-msgid "Save Changes"
+#: ../resources/settings.php:117
+msgid "Get The Deal!"
 msgstr ""
 
 #: ../resources/metabox/styling.php:18

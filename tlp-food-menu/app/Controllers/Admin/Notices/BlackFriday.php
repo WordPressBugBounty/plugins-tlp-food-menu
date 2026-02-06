@@ -24,9 +24,9 @@ class BlackFriday {
 	 * @return void
 	 */
 	protected function init() {
-		$this->remove_admin_notice();
+//		$this->remove_admin_notice();
 		$current      = time();
-		$black_friday = mktime( 0, 0, 0, 11, 20, 2023 ) <= $current && $current <= mktime( 0, 0, 0, 1, 15, 2024 );
+		$black_friday = mktime( 0, 0, 0, 11, 13, 2025 ) <= $current && $current <= mktime( 0, 0, 0, 1, 15, 2026 );
 
 		if ( ! $black_friday ) {
 			return;
@@ -82,9 +82,9 @@ class BlackFriday {
 	 * @return void|string
 	 */
 	public function bf_notice() {
-		if ( get_option( 'rtfm_ny_2023' ) != '1' ) {
-			if ( ! isset( $GLOBALS['rt_ny_2023_notice'] ) ) {
-				$GLOBALS['rt_ny_2023_notice'] = 'rtfm_ny_2023';
+		if ( get_option( 'rtfm_ny_2025' ) != '1' ) {
+			if ( ! isset( $GLOBALS['rt_ny_2025_notice'] ) ) {
+				$GLOBALS['rt_ny_2025_notice'] = 'rtfm_ny_2025';
 				self::notice();
 			}
 		}
@@ -108,19 +108,22 @@ class BlackFriday {
 			'admin_notices',
 			function () {
 				$plugin_name   = 'Food Menu Pro';
-				$download_link = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
+				$discount      = '40%';
+				$download_link = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/?utm_source=Food_menu_dashboard&utm_medium=side_banner&utm_campaign=free';
 				?>
-			<div class="notice notice-info is-dismissible" data-rtfmdismissable="rtfm_ny_2023" style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
-				<img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TLPFoodMenu()->assets_url() ) . 'images/icon-128x128.png'; ?>" width="74px" height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
-				<h3 style="margin:0;"><?php echo sprintf( '%s Black Friday Sale 2023!!', esc_html( $plugin_name ) ); ?></h3>
-				<p style="margin:0 0 2px;"><?php echo sprintf( '🚀 Exciting News: %s Black Friday sale is now live!', esc_html( $plugin_name ) ); ?>
-					Get the plugin today and enjoy discounts up to <b> 50%.</b>
-				</p>
-				<p style="margin:0;">
-					<a class="button button-primary" href="<?php echo esc_url( $download_link ); ?>" target="_blank">Buy Now</a>
-					<a class="button button-dismiss" href="#">Dismiss</a>
-				</p>
-			</div>
+
+                <div class="notice notice-info is-dismissible" data-rtfmdismissable="rtfm_ny_2023" style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
+                    <img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TLPFoodMenu()->assets_url() ) . 'images/foodmenu.png'; ?>" width="74px" height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
+                    <h3 style="margin:0;"><?php echo sprintf( '%s Black Friday - Up to <span style="color:#e60000;font-weight: 700;" class="red-color">%s</span> Sale 2025!!', esc_html( $plugin_name ), $discount ); ?></h3>
+                    <p style="margin:0 0 2px;"><?php echo sprintf( '🚀 Exciting News: %s Black Friday sale is now live!', esc_html( $plugin_name ) ); ?>
+                        Get the plugin today and enjoy discounts up to <b> 40%.</b>
+                    </p>
+                    <p style="margin:0;">
+                        <a class="button button-primary" href="<?php echo esc_url( $download_link ); ?>" target="_blank">Buy Now</a>
+                        <a class="button button-dismiss" href="#">Dismiss</a>
+                    </p>
+                </div>
+
 				<?php
 			}
 		);
@@ -155,7 +158,7 @@ class BlackFriday {
 			function () {
 				check_ajax_referer( 'rtfm-dismissible-notice', 'nonce' );
 
-				update_option( 'rtfm_ny_2023', '1' );
+				update_option( 'rtfm_ny_2025', '1' );
 				wp_die();
 			}
 		);

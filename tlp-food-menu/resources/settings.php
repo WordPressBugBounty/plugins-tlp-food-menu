@@ -18,10 +18,9 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 ?>
 
 <div class="wrap">
-    <h2><?php esc_html_e( 'Food Menu Settings', 'tlp-food-menu' ); ?></h2>
-    <div class="rt-settings-container">
+    <div class="rt-settings-container settings-container">
         <div class="rt-setting-title">
-            <h3><?php esc_html_e( 'General settings', 'tlp-food-menu' ); ?></h3>
+            <h3><?php esc_html_e( 'Food Menu Settings', 'tlp-food-menu' ); ?></h3>
         </div>
         <div class="rt-setting-content">
             <form id="fmp-settings-form">
@@ -75,30 +74,7 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 				$html .= $tabList;
 				$html .= '</ul>';
 
-				// Feature List
-				if ( ! TLPFoodMenu()->has_pro() ) {
-					$html .= '<div class="rt-sidebar-image-area">';
-					$html .= '<div class="rt-sidebar-content">';
-					$html .= '<h3>' . esc_html__( 'Pro Features', 'tlp-food-menu' ) . '</h3>';
 
-					$html .= '<ul class="rt-feature-list">';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Online Ordering', 'tlp-food-menu' ) . '</li>';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Food Extra', 'tlp-food-menu' ) . '</li>';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Pickup & Delivery', 'tlp-food-menu' ) . '</li>';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Table Reservation', 'tlp-food-menu' ) . '</li>';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( '20+ Menu Layouts', 'tlp-food-menu' ) . '</li>';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Special Menu', 'tlp-food-menu' ) . '</li>';
-					$html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'More Features...', 'tlp-food-menu' ) . '</li>';
-					$html .= '</ul>';
-
-					// Button
-					$html .= '<div class="rt-sidebar-btn">';
-					$html .= '<a class="rt-admin-btn button-primary" href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/" target="_blank">' . esc_html__( 'Get Pro', 'tlp-food-menu' ) . '</a>';
-					$html .= '</div>';
-
-					$html .= '</div>';
-					$html .= '</div>';
-				}
 
 				$html .= '</div>';
 
@@ -108,7 +84,41 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 				$html .= $tabContent;
 				$html .= '<p class="submit"><input type="submit" name="submit" id="fmp-saveButton" class="rt-admin-btn button button-primary" value="' . esc_attr__( 'Save Changes', 'tlp-food-menu' ) . '"></p>';
 				$html .= '</div>';
-				$html .= '</div>';
+
+
+
+				// Feature List
+
+                $html .= '<div class="rt-promo-area">';
+                $html .= '<div class="rt-sidebar-image-area">';
+                $html .= '<div class="rt_sidebar_image">';
+                    $html .= '<img style="width:100%" src="' . esc_url( TLPFoodMenu()->assets_url() ) . 'images/setting-sidebar.png" alt="The food menu">';
+                $html .= '</div>';
+                $html .= '<div class="rt-sidebar-content">';
+                $html .= '<h3>' . esc_html__( 'Pro Features', 'tlp-food-menu' ) . '</h3>';
+                $html .= '<ul class="rt-feature-list">';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Online Ordering', 'tlp-food-menu' ) . '</li>';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Product Addon', 'tlp-food-menu' ) . '</li>';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Pickup & Delivery', 'tlp-food-menu' ) . '</li>';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Table Reservation', 'tlp-food-menu' ) . '</li>';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( '20+ Menu Layouts', 'tlp-food-menu' ) . '</li>';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'Special Menu', 'tlp-food-menu' ) . '</li>';
+                $html .= '<li><i class="dashicons dashicons-saved"></i> ' . esc_html__( 'More Features...', 'tlp-food-menu' ) . '</li>';
+                $html .= '</ul>';
+                if ( Fns::is_black_friday_active() ) {
+                    $html .= '<div class="offer black-friday-offer">';
+                    $html .= '<a href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/?utm_source=Food_menu_dashboard&utm_medium=side_banner&utm_campaign=free" target="_blank">';
+                    $html .= '<img src="' . esc_url( TLPFoodMenu()->assets_url() ) . 'images/black-friday-ribbon.svg" alt="The food menu">';
+                    $html .= '</a>';
+                    $html .= '</div>';
+                }
+                // Button
+                $html .= '<div class="rt-sidebar-btn">';
+                $html .= '<a class="rt-admin-btn button-primary" href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/?utm_source=Food_menu_dashboard&utm_medium=side_banner&utm_campaign=free" target="_blank">' . esc_html__( 'Get The Deal!', 'tlp-food-menu' ) . '</a>';
+                $html .= '</div>';
+                $html .= '</div>';
+                $html .= '</div>';
+                $html .= '</div>';
 
 				Fns::print_html( $html, true );
 				?>

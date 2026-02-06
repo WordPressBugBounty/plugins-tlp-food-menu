@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 5.3.0
+Stable tag: 5.3.3
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -193,6 +193,15 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 11. General Settings
 
 == Changelog ==
+
+5.3.3 ( December 30, 2025 )
+Updated: mini-cart css modify, ShortCode Tab Design Issue.
+
+5.3.2 ( November 18, 2025 )
+Fixed: Settings page ui Design Issue.
+
+5.3.1 ( November 14, 2025 )
+Updated: Settings page ui improvements.
 
 = 5.3.0 ( August 12, 2025 ) =
 Add: Add Elementor Widgets List Layouts, Grid by Category

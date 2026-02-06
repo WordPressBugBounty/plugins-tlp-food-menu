@@ -1659,4 +1659,20 @@ class Fns {
         }
         return $type;
     }
+
+	public static function is_black_friday_active() {
+		// Black Friday valid between November 10 – Jan 5
+		$currentYear = date( 'Y' );
+		$now         = current_time( 'timestamp', true );
+		$start       = strtotime( "{$currentYear}-11-10" );
+		$end         = strtotime( ( $currentYear + 1 ) . '-01-06' );
+
+		$is_active = $now >= $start && $now <= $end;
+
+		// If dismissed manually, consider inactive
+		if ( get_option( 'rtfm_ny_2025' ) == '1' ) {
+			$is_active = false;
+		}
+		return $is_active;
+	}
 }
