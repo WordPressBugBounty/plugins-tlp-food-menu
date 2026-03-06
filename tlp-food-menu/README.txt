@@ -1,9 +1,9 @@
 === Food Menu - Restaurant Menu & Online Ordering for WooCommerce ===
-Contributors: techlabpro1
+Contributors: techlabpro1, mamunnu
 Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.9
 Stable tag: 5.3.3
 Requires PHP: 7.4
 License: GPLv3
@@ -13,7 +13,11 @@ A Simple Food & Restaurant Menu Display Plugin for Restaurant, Cafes, Fast Food,
 
 == Description ==
 
-Food Menu is a simple WordPress restaurant menu plugin that can use to display food menu of a restaurant or can use for online order using Woocommerce. The WooCommerce food ordering plugin can use as a shortcode. With this WordPress food menu plugin, you get to display all food items, single categories, or multiple categories at a time. With Woocommerce ordering you can enable pickup and delivery time.
+Food Menu is a powerful WordPress restaurant menu plugin that helps you create beautiful food menus and enable online ordering through WooCommerce integration. Perfect for restaurants, cafés, cloud kitchens, and catering services.
+
+Food Menu is the complete WordPress restaurant menu plugin designed for food businesses that want to showcase their offerings beautifully and accept online orders seamlessly. Whether you run a fine dining restaurant, a busy café, a cloud kitchen, or a catering service, this food menu plugin gives you everything needed to create stunning menus and boost your online sales.
+
+Built for both simplicity and power, Food Menu works as a standalone solution or integrates fully with WooCommerce for complete online ordering functionality. Display your dishes in eye-catching layouts, manage delivery and pickup schedules, and let customers reserve tables directly from your website.
 
 👉 [Demo](https://www.radiustheme.com/demo/plugins/food-menu/) | [Documentation](https://www.radiustheme.com/docs/food-menu/) | [Get Pro Version](https://www.radiustheme.com/downloads/food-menu-pro-wordpress/) 👈
 
@@ -27,7 +31,25 @@ Thus, enhance your restaurant’s operations and level up your food menu present
 
 [youtube https://www.youtube.com/watch?v=iishPSaYpCU]
 
-== 🔥 Multiple Data Source 🔥  ==
+== 🌟 Why Choose Food Menu for Your Restaurant Website? ==
+
+Running a successful food business online requires more than just listing menu items. You need a system that makes ordering effortless for customers while giving you complete control over operations. Food Menu delivers exactly that with its intuitive interface and comprehensive feature set.
+
+The plugin supports two distinct modes to match your business needs. Use the Food Menu Post Type for a clean, visual menu display with images, descriptions, and pricing. Or activate WooCommerce integration to transform your menu into a fully functional online ordering system with cart management, checkout, and payment processing.
+
+⭐⭐⭐⭐⭐
+**An excellent plugin backed by responsive and dedicated support!**
+I purchased this plugin and needed some help customizing the CSS. I opened a support ticket and received a quick, detailed response. Thank you for the excellent support!
+— ***muhabas***
+
+⭐⭐⭐⭐⭐
+**The best of the best**
+I had my website 10 years now. I used may different plugins. This is the best one. My conversion rate increased and customers use it easily. Their support is fantastic too. Highly recomended
+— ***efe84***
+	
+👉 [Check out our great reviews!](https://wordpress.org/plugins/tlp-food-menu/#reviews)
+
+== 🌟 Multiple Data Source  ==
 
 This WordPress plugin for restaurant menu supports multiple data sources to power your restaurant menu.
 
@@ -36,66 +58,82 @@ This WordPress plugin for restaurant menu supports multiple data sources to powe
 **WooCommerce:** Select this feature when you want to integrate your food menu with WooCommerce to enable online food ordering. Set pricing, manage inventory, handle food delivery and pickup, allow tipping, and offer special menu items and discounts with ease!
 
 
-== 🔥🔥 Online Ordering Using Woocommerce PRO features 🔥🔥 ==
+== 🌟 Online Ordering Using Woocommerce PRO features  ==
 
 If you want to have online ordering functions on your website, all you need to do is use the WooCommerce data source then in the layout options. The "Add to Cart" button will be automatically enabled, and your users can place orders on your menu items using WooCommerce functionalities.
 
 [youtube https://www.youtube.com/watch?v=zpuJC9ivrr4]
 
 
-== 🔥 Various Layout Variations 🔥 ==
-This WordPress restaurant menu plugin offers diverse layout options. It lets you display your restaurant menu in a captivating way to draw customer attention.
+== 🌟 Flexible Layout Options for Every Restaurant Style ==
 
-**Grid:** It allows you to showcase food menu items with images and related details in a grid format. This layout is ideal for displaying food menu items smartly.
+Present your food menu in ways that capture attention and drive orders. This WordPress restaurant menu plugin provides multiple professionally designed layout styles that adapt to your restaurant's brand and your customers' browsing preferences.
 
-**List:** This layout enables you to present a food menu in a classic list view format. It’s ideal for customers who want a clean and clutter-free menu.
+- **Grid Layout:** Showcase menu items with appetizing images and essential details in an organized grid format. This layout works exceptionally well for visual menus where food photography takes center stage.
 
-**Slider:** Keep your visitors engaged with a dynamic slider layout. It displays your food menu items in a rotating carousel. Utilize it for exhibiting special dishes.
+- **List Layout:** Offer a traditional, clean menu presentation that customers find familiar and easy to scan. The list view puts focus on item names, descriptions, and prices without visual clutter.
 
-**Isotope Filter:** The  Isotope layout lets you present an interactive food menu to customers and let them filter menu items by category. Use it to enhance the user experience of your WordPress restaurant site.
+- **Slider Layout:** Create dynamic, engaging presentations with rotating menu carousels. Highlight daily specials, seasonal items, or featured dishes with this attention-grabbing display option.
+
+- **Isotope Filter Layout:** Empower customers to browse your menu interactively. Visitors can filter items by category, making it simple to find exactly what they want from extensive menus.
 
 
-== 🔥 Food Menu Restaurant Management Solution 🔥 ==
+== 🌟 Food Menu Restaurant Management Solution ==
 
 This WordPress Food menu plugin is more than just a menu plugin—it’s a complete restaurant management solution. Let’s glance at what it allows you to do.
 
-**Easy Menu Management:** Easily create, update, and organize your restaurant menu and ensure your food menu remains always up-to-date and eye-catching.
+- **Easy Menu Management:** Easily create, update, and organize your restaurant menu and ensure your food menu remains always up-to-date and eye-catching.
 
-**Smooth Food Ordering:** This best menu plugin for WordPress connects with WooCommerce and allows you to upload food menu items as products to sell online.
+- **Smooth Food Ordering:** This best menu plugin for WordPress connects with WooCommerce and allows you to upload food menu items as products to sell online.
 
-**Food Delivery & Pickup Options:** It helps you easily manage food delivery and pickup orders with customizable settings!
+- **Food Delivery & Pickup Options:** It helps you easily manage food delivery and pickup orders with customizable settings!
 
-**Restaurant Reservations:** This plugin lets you simplify the restaurant reservations process while allowing customers to reserve tables directly from your restaurant website.
+- **Restaurant Reservations:** This plugin lets you simplify the restaurant reservations process while allowing customers to reserve tables directly from your restaurant website.
 
-**Flexible Customization:** Display your food menu with various layout options (Grid, List, Slider, Isotope) to align with your restaurant site and increase dwell time.
+- **Flexible Customization:** Display your food menu with various layout options (Grid, List, Slider, Isotope) to align with your restaurant site and increase dwell time.
 
-**Multiple Pagination:** The free version of Food Menu only supports number pagination by default. However, the Pro version supports more pagination styles, including AJAX number, Load More, and AJAX auto-scroll pagination.
+- **Multiple Pagination:** The free version of Food Menu only supports number pagination by default. However, the Pro version supports more pagination styles, including AJAX number, Load More, and AJAX auto-scroll pagination.
 
-**Page Builder Support:** This restaurant menu plugin WordPress works with several page builders, including Gutenberg, Elementor, and WPBakery using shortcode. Thus, use them to easily create the best restaurant menus.
+- **Page Builder Support:** This restaurant menu plugin WordPress works with several page builders, including Gutenberg, Elementor, and WPBakery using shortcode. Thus, use them to easily create the best restaurant menus.
 
-**Translation Support:** You can translate your menu content using the Loco Translate or WPML plugin to your own language.
+- **Translation Support:** You can translate your menu content using the Loco Translate or WPML plugin to your own language.
 
 
-== How to use Food Menu Plugin? ==
+== 🎯 Who Benefits from Food Menu? ==
+
+**✅ Restaurants of All Sizes:** From neighborhood eateries to multi-location chains, Food Menu scales to accommodate any menu size with categorization and filtering.
+
+**✅ Cafés and Coffee Shops:** Present beverages, pastries, and light meals with layouts designed for frequent menu updates and seasonal offerings.
+
+**✅ Cloud Kitchens and Virtual Restaurants:** Delivery-focused operations benefit from streamlined online ordering without needing physical menus.
+
+**✅ Fast Food and Quick Service:** High-volume operations use the efficient ordering interface to process more customers without confusion.
+
+**✅ Catering Companies:** Showcase package options, pricing tiers, and specialty menus for events and corporate functions.
+
+
+== ⚙️ How to use Food Menu Plugin? ==
 
 You can generate Unlimited shortcodes by following 4 simple steps. Then call the shortcode in the page or post where you want to showcase your Food Menu
 
-First, go to **WordPress Admin Panel > Food Menu > Shortcode Generator**. Then, click “Add Post” button. Now, you’ll be under the ‘Layout’ tab.
+👉 First, go to **WordPress Admin Panel > Food Menu > Shortcode Generator**. Then, click “Add Post” button. Now, you’ll be under the ‘Layout’ tab.
 
 Here, you need to choose your desired layout type and its style. Plus, work on other options, including pagination settings, image settings, and more.
 
-After that, press the ‘Filtering’ tab and select “Food item data source,” - choose “Food Menu” to display a simple food menu and select ‘WooCommerce’ to integrate the online ordering system.
+👉 After that, press the ‘Filtering’ tab and select “Food item data source,” - choose “Food Menu” to display a simple food menu and select ‘WooCommerce’ to integrate the online ordering system.
 
-Next, jump on the “Field Selection” tab and choose which fields you want to activate for display in the menu list view page.
+👉 Next, jump on the “Field Selection” tab and choose which fields you want to activate for display in the menu list view page.
 
-Now, click the ‘Styling’ tab to stylize your food menu. You can select colors for the menu title, item price, etc.
+👉 Now, click the ‘Styling’ tab to stylize your food menu. You can select colors for the menu title, item price, etc.
 
 Finally, publish the post, copy the shortcode, and embed it into your selected page. Read the documentation to understand the shortcode generator better.
 
 [Documentation](https://www.radiustheme.com/docs/food-menu/shortcode-generator/).
 
 
-== Addition Pro Features: ==
+== 💎 Addition Pro Features: ==
+
+Upgrade to Food Menu Pro for enhanced capabilities that growing food businesses demand.
 
 👉 **Additional Layouts:** The Food Menu Pro version offers 20+ additional layouts for your menus that include variations of grid, Slider, and Filter. You can display them by categories and different WooCommerce layouts.
 
@@ -111,7 +149,8 @@ Finally, publish the post, copy the shortcode, and embed it into your selected p
 
 👉 **Review & Rating:** You may want your users to review and rate your menu items. You can enable the review and rating functions with the Food Menu premium plugin.
 
-== Online Ordering Using Woocommerce PRO features ==
+
+== 💎 Online Ordering Using Woocommerce PRO features ==
 
 👉 **Mini Cart (Free):** Include an attention-grabbing mini cart into your restaurant site, allowing customers to view their chosen food items, quantities, and total price at a glance.
 
@@ -139,29 +178,62 @@ Finally, publish the post, copy the shortcode, and embed it into your selected p
 
 == Installation ==
 
-1. Add plugin to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Create food menu.
-4. Add shortCode to display the food item.
+1. Upload the plugin files to `/wp-content/plugins/tlp-food-menu/` or install through the WordPress Plugins screen
+2. Activate the plugin through the Plugins menu in WordPress
+3. Go to Food Menu and add your food items
+4. Use the Shortcode Generator to create and customize your menu display
+5. Embed the generated shortcode in any page or post
 
 = Requirements =
 
-* **WordPress version:** >= 4
-* **PHP version:** >= 5.2.4
+* **WordPress version:** >= 5.0
+* **PHP version:** >= 7.4
 
 == Frequently Asked Questions ==
 
-= How to Use Food menu =
+= How do I display a food menu on my website? =
 
-* Go to `Food menu > Add Food`
-* Go to page or post editor insert shortcode.
+* After adding food items under Food Menu, use the Shortcode Generator to create a display shortcode. Configure your preferred layout (grid, list, slider, or isotope), select categories to display, and customize the styling. Copy the generated shortcode and paste it into any page or post where you want your menu to appear.
 
-== Need Any Help? ==
-* For any bug, support or suggestion please submit your ticket [here](https://www.radiustheme.com/ticket-support/).
+= Can I use Food Menu without WooCommerce? =
 
-== Liked RadiusTheme ==
-* Join our [Facebook Group](https://www.facebook.com/groups/radiustheme).
-* Learn from our tutorials on [YouTube Channel](https://www.youtube.com/@RadiusTheme).
+* Yes. Food Menu works as a standalone menu display solution using its built-in Food Menu Post Type. This option creates visually appealing menus with item names, images, descriptions, and prices without any ecommerce functionality. WooCommerce integration is optional and only needed when you want to accept online orders.
+
+= How do I enable online ordering for my restaurant? =
+
+* Switch your data source to WooCommerce in the Shortcode Generator settings. This activates Add to Cart buttons on menu items and connects the ordering process to WooCommerce checkout. Configure your WooCommerce payment gateways and shipping settings to complete the online ordering setup.
+
+= Does the plugin support delivery and pickup options? =
+
+* Yes. The Pro version includes dedicated delivery and pickup management. Set available order types per location, configure weekly schedules, and define holidays. Customers select their preferred fulfillment method during checkout.
+
+= Can customers reserve tables through my website? =
+
+* Table reservation functionality is available in Food Menu Pro. Customers can submit booking requests with their preferred date, time, party size, and special requests. The visual table reservation feature provides an interactive floor plan for selecting specific seating.
+
+= Is Food Menu compatible with page builders? =
+
+* Food Menu works with Gutenberg, Elementor, and WPBakery through shortcode integration. The plugin also provides a dedicated Gutenberg block for even simpler embedding within the block editor.
+
+= Can I translate the menu into multiple languages? =
+
+* Yes. Food Menu is fully translation-ready with POT files included. Use Loco Translate for basic translations or WPML for comprehensive multilingual site management.
+
+= What layout options are available? =
+
+* The free version includes Grid, List, Slider, and Isotope Filter layouts. Food Menu Pro adds 20+ additional layouts with category-based designs and specialized WooCommerce display styles.
+
+
+== 🛠 Support and Documentation ==
+
+Need help? Access comprehensive resources:
+
+- [Complete Documentation](https://www.radiustheme.com/docs/the-post-grid/)
+- [Video Tutorials](https://www.youtube.com/@RadiusTheme)
+- [Support Forum](https://wordpress.org/support/plugin/the-post-grid/)
+- [Submit a Ticket](https://www.radiustheme.com/ticket-support/)
+
+Join our [Facebook Community](https://www.facebook.com/groups/radiustheme) to connect with other users and get tips.
 
 == 🔥 WHAT’S NEXT ==
 
@@ -175,7 +247,7 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 
 * [Variation Gallery](https://wordpress.org/plugins/woo-product-variation-gallery/) - Woocommerce Variation Gallery plugin allows to add UNLIMITED additional images for each variation of product.
 
-* [ShopBuilder](https://wordpress.org/plugins/shopbuilder/) - Elementor WooCommerce Builder Addons with 84+ widgets and 10+ modules.
+* [ShopBuilder](https://wordpress.org/plugins/shopbuilder/) - Elementor WooCommerce Builder Addons with 120+ widgets and 25+ modules.
 
 
 == Screenshots ==
