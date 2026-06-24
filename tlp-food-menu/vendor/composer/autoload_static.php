@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit58155d54804feb90ec7e53e49d8c3e39
 {
     public static $prefixLengthsPsr4 = array (
-        'R' => 
+        'R' =>
         array (
             'RT\\FoodMenu\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'RT\\FoodMenu\\' => 
+        'RT\\FoodMenu\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
@@ -39,6 +39,7 @@ class ComposerStaticInit58155d54804feb90ec7e53e49d8c3e39
         'RT\\FoodMenu\\Controllers\\Admin\\ShortcodeButton' => __DIR__ . '/../..' . '/app/Controllers/Admin/ShortcodeButton.php',
         'RT\\FoodMenu\\Controllers\\Admin\\Upgrade' => __DIR__ . '/../..' . '/app/Controllers/Admin/Upgrade.php',
         'RT\\FoodMenu\\Controllers\\AjaxController' => __DIR__ . '/../..' . '/app/Controllers/AjaxController.php',
+        'RT\\FoodMenu\\Controllers\\Api\\DashboardApi' => __DIR__ . '/../..' . '/app/Controllers/Api/DashboardApi.php',
         'RT\\FoodMenu\\Controllers\\ElementorController' => __DIR__ . '/../..' . '/app/Controllers/ElementorController.php',
         'RT\\FoodMenu\\Controllers\\FrontendController' => __DIR__ . '/../..' . '/app/Controllers/FrontendController.php',
         'RT\\FoodMenu\\Controllers\\Frontend\\ElementorAddons' => __DIR__ . '/../..' . '/app/Controllers/Frontend/ElementorAddons.php',
@@ -47,6 +48,7 @@ class ComposerStaticInit58155d54804feb90ec7e53e49d8c3e39
         'RT\\FoodMenu\\Controllers\\Frontend\\Template' => __DIR__ . '/../..' . '/app/Controllers/Frontend/Template.php',
         'RT\\FoodMenu\\Controllers\\GutenbergController' => __DIR__ . '/../..' . '/app/Controllers/GutenbergController.php',
         'RT\\FoodMenu\\Controllers\\Hooks\\ActionHooks' => __DIR__ . '/../..' . '/app/Controllers/Hooks/ActionHooks.php',
+        'RT\\FoodMenu\\Controllers\\Hooks\\DashboardHooks' => __DIR__ . '/../..' . '/app/Controllers/Hooks/DashboardHooks.php',
         'RT\\FoodMenu\\Controllers\\Hooks\\FilterHooks' => __DIR__ . '/../..' . '/app/Controllers/Hooks/FilterHooks.php',
         'RT\\FoodMenu\\Controllers\\MiniCart\\MiniCart' => __DIR__ . '/../..' . '/app/Controllers/MiniCart/MiniCart.php',
         'RT\\FoodMenu\\Controllers\\MiniCart\\MiniCartFns' => __DIR__ . '/../..' . '/app/Controllers/MiniCart/MiniCartFns.php',
@@ -63,7 +65,8 @@ class ComposerStaticInit58155d54804feb90ec7e53e49d8c3e39
         'RT\\FoodMenu\\Models\\QueryArgs' => __DIR__ . '/../..' . '/app/Models/QueryArgs.php',
         'RT\\FoodMenu\\Models\\ReSizer' => __DIR__ . '/../..' . '/app/Models/ReSizer.php',
         'RT\\FoodMenu\\Traits\\SingletonTrait' => __DIR__ . '/../..' . '/app/Traits/SingletonTrait.php',
-        'RT\\FoodMenu\\Widgets\\Elementor\\Elements\\GridLayout' => __DIR__ . '/../..' . '/app/Widgets/Elementor/Elements/GridLayout.php',
+        'RT\\FoodMenu\\Widgets\\Elementor\\Controls\\ImageSelector' => __DIR__ . '/../..' . '/app/Widgets/Elementor/Controls/ImageSelector.php',
+        'RT\\FoodMenu\\Widgets\\Elementor\\Elements\\GridCatLayout' => __DIR__ . '/../..' . '/app/Widgets/Elementor/Elements/GridCatLayout.php',
         'RT\\FoodMenu\\Widgets\\Elementor\\Elements\\ListLayout' => __DIR__ . '/../..' . '/app/Widgets/Elementor/Elements/ListLayout.php',
         'RT\\FoodMenu\\Widgets\\Elementor\\Sections\\Layout' => __DIR__ . '/../..' . '/app/Widgets/Elementor/Sections/Layout.php',
         'RT\\FoodMenu\\Widgets\\Elementor\\Sections\\Settings' => __DIR__ . '/../..' . '/app/Widgets/Elementor/Sections/Settings.php',

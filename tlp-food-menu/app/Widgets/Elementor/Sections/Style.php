@@ -595,35 +595,8 @@ class Style {
 		    'selectors' => [
 			    '{{WRAPPER}} .fmp-food-item, {{WRAPPER}} .fmp-el-global' => 'background-color: {{VALUE}}',
 		    ],
-		    'condition' => [
-				'fmp_layout!' => [ 'layout5' ]
-		    ],
 	    ];
 
-	    $obj->elControls[] = [
-		    'type'      => 'color',
-		    'id'        => 'fmp_sec_color5',
-		    'label'     => esc_html__( 'Background Color', 'tlp-food-menu' ),
-		    'selectors' => [
-			    '{{WRAPPER}} .fmp-layout5 .fmp-innner-wrap:before' => 'background-color: {{VALUE}}',
-			    '{{WRAPPER}} .fmp-el-global' => 'background-color: {{VALUE}}',
-		    ],
-		    'condition' => [
-				'fmp_layout' => [ 'layout5' ]
-		    ],
-	    ];
-
-	    $obj->elControls[] = [
-		    'type'      => 'color',
-		    'id'        => 'fmp_border_color5',
-		    'label'     => esc_html__( 'Border Color', 'tlp-food-menu' ),
-		    'selectors' => [
-			    '{{WRAPPER}} .fmp-layout5 .fmp-row::after' => 'background: {{VALUE}}',
-		    ],
-		    'condition' => [
-				'fmp_layout' => [ 'layout5' ]
-		    ],
-	    ];
 
 	    $obj->elControls[] = [
 		    'mode'     => 'group',
@@ -631,21 +604,8 @@ class Style {
 		    'label'    => esc_html__( 'Border', 'tlp-food-menu' ),
 		    'id'       => 'fmp_sec_border',
 		    'selector' => '{{WRAPPER}} .fmp-food-item, {{WRAPPER}} .fmp-el-global',
-		    'condition' => [
-			    'fmp_layout!' => [ 'layout5', 'layout6' ],
-		    ],
 	    ];
 
-	    $obj->elControls[] = [
-		    'mode'     => 'group',
-		    'type'     => 'border',
-		    'label'    => esc_html__( 'Border', 'tlp-food-menu' ),
-		    'id'       => 'fmp_sec_border6',
-		    'selector' => '{{WRAPPER}} .fmp-grid-by-cat-free.fmp-layout6 .fmp-innner-wrap',
-		    'condition' => [
-			    'fmp_layout' => [  'layout6' ],
-		    ],
-	    ];
 
 	    $obj->elControls[] = [
 		    'mode'       => 'responsive',
@@ -656,24 +616,8 @@ class Style {
 		    'selectors'  => [
 			    '{{WRAPPER}} .fmp-food-item, {{WRAPPER}} .fmp-el-global' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 		    ],
-		    'condition' => [
-			    'fmp_layout!' => [ 'layout5' ]
-		    ],
 	    ];
 
-	    $obj->elControls[] = [
-		    'mode'       => 'responsive',
-		    'type'       => 'dimensions',
-		    'id'         => 'fmp_sec_border_radius5',
-		    'label'      => esc_html__( 'Border Radius', 'tlp-food-menu' ),
-		    'size_units' => [ 'px', '%', 'em' ],
-		    'selectors'  => [
-			    '{{WRAPPER}} .fmp-layout5 .fmp-innner-wrap:before, {{WRAPPER}} .fmp-el-global' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		    ],
-		    'condition' => [
-			    'fmp_layout' => [ 'layout5' ]
-		    ],
-	    ];
 
 	    $obj->elControls[] = [
 		    'mode'       => 'responsive',
@@ -683,9 +627,6 @@ class Style {
 		    'size_units' => [ 'px', '%', 'em' ],
 		    'selectors'  => [
 			    '{{WRAPPER}} .fmp-food-item, {{WRAPPER}} .fmp-el-global' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		    ],
-		    'condition' => [
-			    'fmp_layout!' => [ 'layout5', 'layout6' ],
 		    ],
 	    ];
 
@@ -700,34 +641,6 @@ class Style {
 		    ],
 		    'condition' => [
 			    'fmp_layout!' => [ 'layout5', 'layout6' ],
-		    ],
-	    ];
-
-	    $obj->elControls[] = [
-		    'mode'       => 'responsive',
-		    'type'       => 'dimensions',
-		    'id'         => 'fmp_padding6',
-		    'label'      => esc_html__( 'Padding', 'tlp-food-menu' ),
-		    'size_units' => [ 'px', '%', 'em' ],
-		    'selectors'  => [
-			    '{{WRAPPER}} .fmp-layout6 .fmp-innner-wrap' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		    ],
-		    'condition' => [
-			    'fmp_layout' => [ 'layout6' ],
-		    ],
-	    ];
-
-	    $obj->elControls[] = [
-		    'mode'       => 'responsive',
-		    'type'       => 'dimensions',
-		    'id'         => 'fmp_margin6',
-		    'label'      => esc_html__( 'Margin', 'tlp-food-menu' ),
-		    'size_units' => [ 'px', '%', 'em' ],
-		    'selectors'  => [
-			    '{{WRAPPER}} .fmp-layout6 .fmp-innner-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		    ],
-		    'condition' => [
-			    'fmp_layout' => [ 'layout6' ],
 		    ],
 	    ];
 
@@ -1250,11 +1163,12 @@ class Style {
 		];
 
 		$obj->startSection( 'readmore_button_style', esc_html__( 'Read More Button', 'tlp-food-menu' ), self::$tab, [], $condition );
+
 		$obj->elControls[] = [
 			'mode'     => 'group',
 			'type'     => 'typography',
 			'id'       => 'fmp_readmore_buttons_typography',
-			'selector' => '{{WRAPPER}} .fmp-footer .fmp-btn-read-more, {{WRAPPER}} .fmp-body .fmp-btn-read-more',
+			'selector' => '{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more',
 		];
 
 
@@ -1269,8 +1183,7 @@ class Style {
 			'id'        => 'fmp_readmore_button_color',
 			'label'     => esc_html__( 'Button Color', 'tlp-food-menu' ),
 			'selectors' => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more' => 'color: {{VALUE}}',
-				'{{WRAPPER}} .fmp-body .fmp-btn-read-more' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart)' => 'color: {{VALUE}}',
 			],
 		];
 
@@ -1279,8 +1192,7 @@ class Style {
 			'id'        => 'fmp_readmore_button_bg_color',
 			'label'     => esc_html__( 'Button Background Color', 'tlp-food-menu' ),
 			'selectors' => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:before' => 'background: {{VALUE}}',
-				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:before' => 'background: {{VALUE}}',
+				'{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart):before' => 'background: {{VALUE}}',
 			],
 		];
 
@@ -1292,8 +1204,7 @@ class Style {
 			'id'        => 'fmp_readmore_button_hover_color',
 			'label'     => esc_html__( 'Hover Color', 'tlp-food-menu' ),
 			'selectors' => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:hover' => 'color: {{VALUE}}',
-				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:hover' => 'color: {{VALUE}}',
+				'{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart):hover' => 'color: {{VALUE}}',
 			],
 		];
 
@@ -1302,8 +1213,7 @@ class Style {
 			'id'        => 'fmp_readmore_button_hover_bg_color',
 			'label'     => esc_html__( 'Hover Background Color', 'tlp-food-menu' ),
 			'selectors' => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:after' => 'background: {{VALUE}}',
-				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:after' => 'background: {{VALUE}}',
+				'{{WRAPPER}}  .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart):after' => 'background: {{VALUE}}',
 			],
 		];
 
@@ -1316,7 +1226,7 @@ class Style {
 			'mode'     => 'group',
 			'type'     => 'border',
 			'id'       => 'fmp_readmore_button_border',
-			'selector' => '{{WRAPPER}} .fmp-footer .fmp-btn-read-more, {{WRAPPER}} .fmp-body .fmp-btn-read-more',
+			'selector' => '{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart)',
 		];
 
 		$obj->elControls[] = [
@@ -1325,8 +1235,7 @@ class Style {
 			'label'     => esc_html__( 'Hover Border Color', 'tlp-food-menu' ),
 			'condition' => [ 'fmp_readmore_button_border_border!' => [ '' ] ],
 			'selectors' => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:hover' => 'border-color: {{VALUE}}',
-				'{{WRAPPER}} .fmp-body .fmp-btn-read-more:hover' => 'border-color: {{VALUE}}',
+				'{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart):hover' => 'border-color: {{VALUE}}',
 			],
 		];
 
@@ -1341,7 +1250,7 @@ class Style {
 				'isLinked' => true,
 			],
 			'selectors'  => [
-				'{{WRAPPER}} .fmp-footer .fmp-btn-read-more:before, {{WRAPPER}} .fmp-body .fmp-btn-read-more:before, {{WRAPPER}} .fmp-footer .fmp-btn-read-more:after, {{WRAPPER}} .fmp-body .fmp-btn-read-more:after, {{WRAPPER}} .fmp-footer .fmp-btn-read-more, {{WRAPPER}} .fmp-body .fmp-btn-read-more' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
+				'{{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart), {{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart):before, {{WRAPPER}} .fmp-elementor-widget .fmp-btn-read-more:not(.add-to-cart):after' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; overflow: hidden;',
 			],
 		];
 

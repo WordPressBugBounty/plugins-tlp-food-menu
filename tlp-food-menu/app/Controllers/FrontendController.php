@@ -11,6 +11,9 @@ use RT\FoodMenu\Widgets;
 use RT\FoodMenu\Abstracts\Controller;
 use RT\FoodMenu\Controllers\Hooks;
 use RT\FoodMenu\Controllers\Frontend;
+use RT\FoodMenu\Controllers\Tip\Tip;
+use RT\FoodMenu\Controllers\SpecialMenu\SpecialMenu;
+use RT\FoodMenu\Controllers\Discount\Discount;
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,11 +36,16 @@ class FrontendController extends Controller {
 
 		$classes[] = Hooks\ActionHooks::class;
 		$classes[] = Hooks\FilterHooks::class;
+		$classes[] = Hooks\DashboardHooks::class;
 		$classes[] = Widgets\Vc\VcAddon::class;
 		$classes[] = Frontend\Shortcode::class;
 		$classes[] = Frontend\Template::class;
 		$classes[] = Frontend\Styles::class;
 		$classes[] = Frontend\ElementorAddons::class;
+		$classes[] = Frontend\FoodLocation::class;
+		$classes[] = Tip::class;
+		$classes[] = SpecialMenu::class;
+		$classes[] = Discount::class;
 
 		return $classes;
 	}

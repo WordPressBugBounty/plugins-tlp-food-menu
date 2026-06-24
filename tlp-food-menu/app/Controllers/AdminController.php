@@ -48,7 +48,7 @@ class AdminController extends Controller {
 	 * @return object
 	 */
 	private function notices() {
-		// $this->admin[] = Admin\Notices\Review::class;
+		$this->admin[] = Admin\Notices\Review::class;
 		if ( ! TLPFoodMenu()->has_pro() ) {
 			$this->admin[] = Admin\Notices\BlackFriday::class;
 		}
@@ -78,6 +78,7 @@ class AdminController extends Controller {
 	private function metabox() {
 		$this->admin[] = Admin\Metabox\PostMeta::class;
 		$this->admin[] = Admin\Metabox\ShortcodeMeta::class;
+		$this->admin[] = Admin\Metabox\OrderInfoMetabox::class;
 
 		return $this;
 	}

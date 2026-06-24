@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 extract( $arg );
 
+$items     = isset( $items ) ? $items : [];
 $gridQuery = new WP_Query( $args );
 
 $html  = '<div class="fmp-grids-wrapper">';
@@ -31,7 +32,7 @@ while ( $gridQuery->have_posts() ) {
 	$add_to_cart = null;
 
 	if ( TLPFoodMenu()->has_pro() ) {
-		$image = Fns::getFeatureImage( $id, $imgSize, $defaultImgId, $customImgSize );
+		$image = Fns::getFeatureImage( $id, $imgSize, $defaultImgId ?? '', $customImgSize ?? [] );
 	}
 
 	if ( $source == 'product' && $wc == true ) {

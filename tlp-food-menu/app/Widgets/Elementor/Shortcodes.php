@@ -41,10 +41,10 @@ class Shortcodes extends \Elementor\Widget_Base {
 			return [];
 		}
 
+        //'fmp-scrollbar',
 		return [
 			'fmp-image-load',
 			'fmp-swiper',
-			'fmp-scrollbar',
 			'fmp-flex',
 			'fmp-modal',
 			'fmp-actual-height',
@@ -57,9 +57,9 @@ class Shortcodes extends \Elementor\Widget_Base {
 			return [];
 		}
 
+        //'fmp-scrollbar',
 		return [
 			'fmp-swiper',
-			'fmp-scrollbar',
 			'fmp-fontawsome',
 			'fmp-modal',
 			'fmp-flex',

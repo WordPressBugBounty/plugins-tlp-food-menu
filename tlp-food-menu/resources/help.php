@@ -7,364 +7,653 @@
 
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit( 'This script cannot be accessed directly.' );
+    exit( 'This script cannot be accessed directly.' );
 }
 //phpcs:disable PluginCheck.CodeAnalysis.ImageFunctions.NonEnqueuedImage
-/**
- * Get Help
- */
 
-$iframe  = 'https://www.youtube.com/embed/4jyoaEtwCKE';
-$pro     = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
-$doc     = 'https://www.radiustheme.com/docs/food-menu/getting-started/installations/';
-$contact = 'https://www.radiustheme.com/contact/';
-$fb      = 'https://www.facebook.com/groups/234799147426640/';
-$rt      = 'https://www.radiustheme.com/';
-$review  = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5#new-post';
+$iframe      = 'https://www.youtube.com/embed/4jyoaEtwCKE';
+$pro         = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
+$doc         = 'https://www.radiustheme.com/docs/food-menu/getting-started/installations/';
+$contact     = 'https://www.radiustheme.com/contact/';
+$fb          = 'https://www.facebook.com/groups/234799147426640/';
+$rt          = 'https://www.radiustheme.com/';
+$review      = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5#new-post';
+$has_pro     = TLPFoodMenu()->has_pro();
+$primary_hex = \RT\FoodMenu\Helpers\Fns::get_setting( 'fm_primary_color', '#dc2626' );
+
+if ( ! $primary_hex || ! preg_match( '/^#[0-9a-fA-F]{6}$/', $primary_hex ) ) {
+    $primary_hex = '#dc2626';
+}
+
+$hex_raw = ltrim( $primary_hex, '#' );
+$r       = hexdec( substr( $hex_raw, 0, 2 ) );
+$g       = hexdec( substr( $hex_raw, 2, 2 ) );
+$b       = hexdec( substr( $hex_raw, 4, 2 ) );
+
+// Darker shade for gradient end.
+$dark_hex = sprintf( '#%02x%02x%02x', max( 0, (int) round( $r * 0.6 ) ), max( 0, (int) round( $g * 0.6 ) ), max( 0, (int) round( $b * 0.6 ) ) );
+
+// Hover shade.
+$hover_hex = sprintf( '#%02x%02x%02x', max( 0, (int) round( $r * 0.75 ) ), max( 0, (int) round( $g * 0.75 ) ), max( 0, (int) round( $b * 0.75 ) ) );
+
+// Light shade for testimonial border.
+$light_hex   = sprintf( '#%02x%02x%02x', min( 255, (int) round( $r + ( 255 - $r ) * 0.6 ) ), min( 255, (int) round( $g + ( 255 - $g ) * 0.6 ) ), min( 255, (int) round( $b + ( 255 - $b ) * 0.6 ) ) );
+$primary_rgb = "$r, $g, $b";
 ?>
-	<style>
-		.rtfm-help-wrapper {
-			width: 60%;
-			margin: 0 auto;
-		}
-		.rtfm-help-section .embed-wrapper {
-			position: relative;
-			display: block;
-			width: calc(100% - 40px);
-			padding: 0;
-			overflow: hidden;
-		}
-		.rtfm-help-section .embed-wrapper::before {
-			display: block;
-			content: "";
-			padding-top: 56.25%;
-		}
-		.rtfm-help-section iframe {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: 0;
-		}
-		.rtfm-help-wrapper .rt-document-box .rt-box-title {
-			margin-bottom: 30px;
-		}
-		.rtfm-help-wrapper .rt-document-box .rt-box-icon {
-			margin-top: -6px;
-		}
-		.rtfm-help-wrapper .rtfm-help-section {
-			margin-top: 30px;
-		}
-		.rtfm-feature-list ul {
-			column-count: 2;
-			column-gap: 30px;
-			margin-bottom: 0;
-		}
-		.rtfm-feature-list ul li {
-			padding: 0 0 12px;
-			margin-bottom: 0;
-			width: 100%;
-			font-size: 14px;
-		}
-		.rtfm-feature-list ul li span{
-            font-weight: 700
-		}
-		.rtfm-feature-list ul li:last-child {
-			padding-bottom: 0;
-		}
-		.rtfm-feature-list ul li i {
-            width: 20px;
-            height: 20px;
-            background: rgba(230, 0, 0, 0.1098039216);
-            color: #e60000;
-            border-radius: 20px;
+<style>
+    /* Reset & Base */
+    .fmp-help * {
+        box-sizing: border-box;
+    }
+
+    .fmp-help {
+        max-width: 1100px;
+        margin: 20px auto 40px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+        color: #1e293b;
+    }
+
+    .fmp-help a {
+        text-decoration: none;
+    }
+
+    /* Hero */
+    .fmp-help-hero {
+        background: linear-gradient(135deg, <?php echo esc_attr( $primary_hex ); ?> 0%, <?php echo esc_attr( $dark_hex ); ?> 100%);
+        border-radius: 16px;
+        padding: 48px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        margin-bottom: 32px;
+    }
+
+    .fmp-help-hero-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .fmp-help-hero-text h1 {
+        color: #FFFFFF;
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 12px;
+        line-height: 1.3;
+    }
+
+    .fmp-help-hero-text p {
+        font-size: 15px;
+        margin: 0 0 24px;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+
+    .fmp-help-hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .fmp-help-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+    }
+
+    .fmp-help-btn svg {
+        flex-shrink: 0;
+    }
+
+    .fmp-help-btn-white {
+        background: #fff;
+        color: <?php echo esc_attr( $primary_hex ); ?> !important;
+    }
+
+    .fmp-help-btn-white:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .fmp-help-btn-outline {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .fmp-help-btn-outline:hover {
+        background: rgba(255, 255, 255, 0.25);
+        color: #fff;
+    }
+
+    .fmp-help-hero-video {
+        flex: 0 0 420px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .fmp-help-hero-video .fmp-help-embed {
+        position: relative;
+        padding-top: 56.25%;
+    }
+
+    .fmp-help-hero-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Section heading */
+    .fmp-help-section-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        color: #0f172a;
+    }
+
+    .fmp-help-section-desc {
+        font-size: 14px;
+        color: #64748b;
+        margin: 0 0 24px;
+    }
+
+    /* Cards grid */
+    .fmp-help-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    .fmp-help-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 28px;
+        transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .fmp-help-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border-color: #cbd5e1;
+    }
+
+    .fmp-help-card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .fmp-help-card h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 8px;
+        color: #0f172a;
+    }
+
+    .fmp-help-card p {
+        font-size: 13px;
+        color: #64748b;
+        line-height: 1.6;
+        margin: 0 0 16px;
+    }
+
+    .fmp-help-card-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: <?php echo esc_attr( $primary_hex ); ?>;
+        transition: gap 0.2s;
+    }
+
+    .fmp-help-card-link:hover {
+        gap: 10px;
+        color: <?php echo esc_attr( $hover_hex ); ?>;
+    }
+
+    /* Features grid */
+    .fmp-help-features {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 32px;
+        margin-bottom: 32px;
+    }
+
+    .fmp-help-features-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    .fmp-help-features-header div {
+        flex: 1;
+    }
+
+    .fmp-help-features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 32px;
+    }
+
+    .fmp-help-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13.5px;
+        color: #334155;
+        line-height: 1.5;
+        padding: 8px 0;
+    }
+
+    .fmp-help-feature-check {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        background: #fef2f2;
+        background: rgba(<?php echo esc_attr($primary_rgb)  ?>, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+    }
+
+    .fmp-help-feature-check svg {
+        color: <?php echo esc_attr( $primary_hex ); ?>
+    }
+
+    .fmp-help-btn-red {
+        background: <?php echo esc_attr( $primary_hex ); ?>;
+        color: #fff !important;
+        flex-shrink: 0;
+    }
+
+    .fmp-help-btn-red:hover {
+        background: <?php echo esc_attr($dark_hex);  ?>
+    }
+
+    /* Testimonials */
+    .fmp-help-testimonials {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 32px;
+    }
+
+    .fmp-help-testimonial {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 28px;
+    }
+
+    .fmp-help-testimonial-quote {
+        font-size: 13.5px;
+        color: #475569;
+        line-height: 1.7;
+        margin: 0 0 20px;
+        position: relative;
+        padding-left: 16px;
+        border-left: 3px solid<?php echo esc_attr( $light_hex ); ?>;
+    }
+
+    .fmp-help-testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .fmp-help-testimonial-author img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #f1f5f9;
+    }
+
+    .fmp-help-testimonial-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #0f172a;
+        display: block;
+    }
+
+    .fmp-help-testimonial-stars {
+        display: flex;
+        gap: 2px;
+        margin-top: 4px;
+    }
+
+    .fmp-help-testimonial-stars svg {
+        color: #f59e0b;
+    }
+
+    /* CTA */
+    .fmp-help-cta {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        border-radius: 12px;
+        padding: 36px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .fmp-help-cta h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 6px;
+    }
+
+    .fmp-help-cta p {
+        font-size: 14px;
+        color: #94a3b8;
+        margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .fmp-help-hero {
+            flex-direction: column;
+            padding: 36px;
+            gap: 32px;
+        }
+
+        .fmp-help-hero-video {
+            flex: none;
+            width: 100%;
+            max-width: 560px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .fmp-help-cards {
+            grid-template-columns: 1fr;
+        }
+
+        .fmp-help-testimonials {
+            grid-template-columns: 1fr;
+        }
+
+        .fmp-help-features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .fmp-help-features-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .fmp-help-cta {
+            flex-direction: column;
             text-align: center;
-            line-height: 20px;
-            font-size: 16px;
-            margin-right: 8px;
-		}
-		.rtfm-pro-feature-content {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.rtfm-pro-feature-content .rt-document-box + .rt-document-box {
-			margin-left: 30px;
-		}
-		.rtfm-pro-feature-content .rt-document-box {
-			flex: 0 0 calc(33.3333% - 60px);
-			margin-top: 30px;
-		}
-		.rtfm-testimonials {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.rtfm-testimonials .rtfm-testimonial + .rtfm-testimonial  {
-			margin-left: 30px;
-		}
-		.rtfm-testimonials .rtfm-testimonial  {
-			flex: 0 0 calc(50% - 30px)
-		}
-		.rtfm-testimonial .client-info {
-			display: flex;
-			flex-wrap: wrap;
-			font-size: 14px;
-			align-items: center;
-		}
-		.rtfm-testimonial .client-info img {
-			width: 60px;
-			height: 60px;
-			object-fit: cover;
-			border-radius: 50%;
-			margin-right: 10px;
-			border: 1px solid #ddd;
-			-webkit-box-shadow: 0 1px 3px rgb(0, 0, 0, 0.2);
-			box-shadow: 0 1px 3px rgb(0, 0, 0, 0.2);
-		}
-		.rtfm-testimonial .client-info .rtfm-star {
-			color: #4C6FFF;
-		}
-		.rtfm-testimonial .client-info .client-name {
-			display: block;
-			color: #000;
-			font-size: 16px;
-			font-weight: 600;
-			margin: 8px 0 0;
-		}
-		.rtfm-call-to-action {
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: left center;
-			height: 150px;
-			color: #ffffff;
-			margin: 30px 0;
-		}
-		.rtfm-call-to-action a {
-			color: inherit;
-			display: flex;
-			flex-wrap: wrap;
-			width: 100%;
-			height: 100%;
-			flex: 1;
-			align-items: center;
-			font-size: 28px;
-			font-weight: 700;
-			text-decoration: none;
-			margin-left: 130px;
-			position: relative;
-			outline: none;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-		}
-		.rtfm-call-to-action a::before {
-			content: "";
-			position: absolute;
-			left: -30px;
-			top: 50%;
-			height: 30%;
-			width: 5px;
-			background: #fff;
-			-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
-		}
-		.rtfm-call-to-action:hover a {
-			text-decoration: underline;
-		}
-		.rtfm-testimonial p {
-			text-align: justify;
-		}
-		@media all and (max-width: 1400px) {
-			.rtfm-help-wrapper {
-				width: 80%;
-			}
-		}
-		@media all and (max-width: 1025px) {
-			.rtfm-pro-feature-content .rt-document-box {
-				flex: 0 0 calc(50% - 55px)
-			}
-			.rtfm-pro-feature-content .rt-document-box + .rt-document-box + .rt-document-box {
-				margin-left: 0;
-			}
-		}
-		@media all and (max-width: 991px) {
-			.rtfm-help-wrapper {
-				width: calc(100% - 40px);
-			}
-			.rtfm-call-to-action a {
-				justify-content: center;
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-			}
-			.rtfm-call-to-action a::before {
-				content: none;
-			}
-		}
-		@media all and (max-width: 600px) {
-			.rt-document-box .rt-box-content .rt-box-title {
-				line-height: 28px;
-			}
-			.rtfm-help-section .embed-wrapper {
-				width: 100%;
-			}
-			.rtfm-feature-list ul {
-				column-count: 1;
-			}
-			.rtfm-feature-list ul li {
-				width: 100%;
-			}
-			.rtfm-call-to-action a {
-				padding-left: 25px;
-				padding-right: 25px;
-				font-size: 20px;
-				line-height: 28px;
-				width: 80%;
-			}
-			.rtfm-testimonials {
-				display: block;
-			}
-			.rtfm-testimonials .rtfm-testimonial + .rtfm-testimonial {
-				margin-left: 0;
-				margin-top: 30px;
-				padding-top: 30px;
-				border-top: 1px solid #ddd;
-			}
-			.rtfm-pro-feature-content .rt-document-box {
-				width: 100%;
-				flex: auto;
-			}
-			.rtfm-pro-feature-content .rt-document-box + .rt-document-box {
-				margin-left: 0;
-			}
+        }
+    }
 
-			.rtfm-help-wrapper .rt-document-box {
-				display: block;
-				position: relative;
-			}
+    @media (max-width: 600px) {
+        .fmp-help-hero {
+            padding: 24px;
+        }
 
-			.rtfm-help-wrapper .rt-document-box .rt-box-icon {
-				position: absolute;
-				left: 20px;
-				top: 30px;
-				margin-top: 0;
-			}
+        .fmp-help-hero-text h1 {
+            font-size: 22px;
+        }
 
-			.rt-document-box .rt-box-content .rt-box-title {
-				margin-left: 45px;
-			}
-		}
-	</style>
-	<div class="rtfm-help-wrapper" >
-		<div class="rtfm-help-section rt-document-box">
-			<div class="rt-box-icon"><i class="dashicons dashicons-media-document"></i></div>
-			<div class="rt-box-content">
-				<h3 class="rt-box-title">Thank you for installing Food Menu</h3>
-				<div class="embed-wrapper">
-					<iframe src="<?php echo esc_url( $iframe ); ?>" title="Food Menu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-		<div class="rt-document-box">
-			<div class="rt-box-icon"><i class="dashicons dashicons-megaphone"></i></div>
-			<div class="rt-box-content rtfm-feature-list">
-				<h3 class="rt-box-title">Pro Features</h3>
-				<ul>
-					<li><i class="dashicons dashicons-saved"></i> 11 Amazing Layouts with Grid, Masonry, Slider, Isotope.</li>
-					<li><i class="dashicons dashicons-saved"></i> Even and Masonry Grid for all Grid.</li>
-					<li><i class="dashicons dashicons-saved"></i> Menu Item Popup with details.</li>
-					<li><i class="dashicons dashicons-saved"></i> Layout Preview in Shortcode Settings.</li>
-					<li><i class="dashicons dashicons-saved"></i> Layout by category.</li>
-					<li><i class="dashicons dashicons-saved"></i> Custom image size control.</li>
-					<li><i class="dashicons dashicons-saved"></i> All Text and Color control.</li>
-					<li><i class="dashicons dashicons-saved"></i> AJAX Pagination (Load more and Load on Scrolling).</li>
-					<li><i class="dashicons dashicons-saved"></i> AJAX Number Pagination (only for Grid layouts).</li>
-					<li><i class="dashicons dashicons-saved"></i> Search field on Isotope filter.</li>
-					<li><i class="dashicons dashicons-saved"></i> Custom number of menu per page.</li>
-					<li><i class="dashicons dashicons-saved"></i> Order by Name, Id, Date, Random, Menu order & Price.</li>
-					<li><i class="dashicons dashicons-saved"></i> <span>Visual table reservation system</span></li>
-					<li><i class="dashicons dashicons-saved"></i> Online Ordering System Using WooCommerce.</li>
-					<li><i class="dashicons dashicons-saved"></i> Deliver & Pickup Set Weekly Schedule Date by Time.</li>
-					<li><i class="dashicons dashicons-saved"></i> Product Global Addon & Individual Product Addon.</li>
-					<li><i class="dashicons dashicons-saved"></i> Ajax Tipping Form in Cart and Checkout Page.</li>
-					<li><i class="dashicons dashicons-saved"></i> Food Location by Product Taxonomy in Address.</li>
-					<li><i class="dashicons dashicons-saved"></i> Discount Set Specific Product Category and Individual Product.</li>
-					<li><i class="dashicons dashicons-saved"></i> Special Menu Offering Product Popup Box Show Specific Date.</li>
-					<li><i class="dashicons dashicons-saved"></i> More Features...</li>
-				</ul>
-			</div>
-		</div>
-		<div class="rtfm-call-to-action" style="background-image: url('<?php echo esc_url( TLPFoodMenu()->assets_url() ); ?>images/admin/banner.png')">
-			<a href="<?php echo esc_url( $pro ); ?>" target="_blank" class="rt-update-pro-btn">
-				Update to Pro & Get More Features
-			</a>
-		</div>
-		<div class="rt-document-box">
-			<div class="rt-box-icon"><i class="dashicons dashicons-thumbs-up"></i></div>
-			<div class="rt-box-content">
-				<h3 class="rt-box-title">Happy clients of the Food Menu</h3>
-				<div class="rtfm-testimonials">
-					<div class="rtfm-testimonial">
-						<p>I love this plugin. After trying few other menu plugins I must say this is so far the best one. I bought the Pro version and I can enjoy a great variety of layouts and an infinte combination of styles and settings. Technical support is (via email) is fast and reliable, and replied me during weekend hours. I feel 5 stars aren't enough to express how much I am satisfied with this plugin, after struggling with other (for me) not so complete options. Thank you RadiusTheme!</p>
-						<div class="client-info">
-							<img src="<?php echo esc_url( TLPFoodMenu()->assets_url() ); ?>images/admin/client1.jpeg">
-							<div>
-								<div class="rtfm-star">
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-								</div>
-								<span class="client-name">arenablue</span>
-							</div>
-						</div>
-					</div>
-					<div class="rtfm-testimonial">
-						<p>This plugin works like a charm, fully responsive without any js clash. Plugin functionality was clashing at one or two places with travelo theme but the author of the plugin provide me a quick support and resolve all issues with in a few minutes and updates the newer version on wordpress.org. I am very thankful and highly obliged to the author for his help and precious time.</p>
-						<div class="client-info">
-							<img src="<?php echo esc_url( TLPFoodMenu()->assets_url() ); ?>images/admin/client2.png">
-							<div>
-								<div class="rtfm-star">
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-									<i class="dashicons dashicons-star-filled"></i>
-								</div>
-								<span class="client-name">pavitwalia</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="rtfm-pro-feature-content">
-			<div class="rt-document-box">
-				<div class="rt-box-icon"><i class="dashicons dashicons-media-document"></i></div>
-				<div class="rt-box-content">
-					<h3 class="rt-box-title">Documentation</h3>
-					<p>Get started by spending some time with the documentation we included step by step process with screenshots with video.</p>
-					<a href="<?php echo esc_url( $doc ); ?>" target="_blank" class="rt-admin-btn">Documentation</a>
-				</div>
-			</div>
-			<div class="rt-document-box">
-				<div class="rt-box-icon"><i class="dashicons dashicons-sos"></i></div>
-				<div class="rt-box-content">
-					<h3 class="rt-box-title">Need Help?</h3>
-					<p>Stuck with something? Please create a
-						<a href="<?php echo esc_url( $contact ); ?>">ticket here</a> or post on <a href="<?php echo esc_url( $fb ); ?>">facebook group</a>. For emergency case join our <a href="<?php echo esc_url( $rt ); ?>">live chat</a>.</p>
-					<a href="<?php echo esc_url( $contact ); ?>" target="_blank" class="rt-admin-btn">Get Support</a>
-				</div>
-			</div>
-			<div class="rt-document-box">
-				<div class="rt-box-icon"><i class="dashicons dashicons-smiley"></i></div>
-				<div class="rt-box-content">
-					<h3 class="rt-box-title">Happy Our Work?</h3>
-					<p>If you are happy with <strong>Food Menu</strong> plugin, please add a rating. It would be glad to us.</p>
-					<a href="<?php echo esc_url( $review ); ?>" class="rt-admin-btn" target="_blank">Post Review</a>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php
+        .fmp-help-features {
+            padding: 24px;
+        }
+    }
+</style>
+
+<div class="fmp-help">
+
+    <!-- Hero -->
+    <div class="fmp-help-hero">
+        <div class="fmp-help-hero-text">
+            <h1><?php esc_html_e( 'Welcome to Food Menu', 'tlp-food-menu' ); ?></h1>
+            <p><?php esc_html_e( 'The most powerful restaurant menu and online ordering plugin for WordPress. Display beautiful food menus, manage orders, handle inventory, and grow your restaurant business.', 'tlp-food-menu' ); ?></p>
+            <div class="fmp-help-hero-actions">
+                <a href="<?php echo esc_url( $doc ); ?>" target="_blank" class="fmp-help-btn fmp-help-btn-white">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                    <?php esc_html_e( 'Read Documentation', 'tlp-food-menu' ); ?>
+                </a>
+                <a href="<?php echo esc_url( $contact ); ?>" target="_blank" class="fmp-help-btn fmp-help-btn-outline">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <?php esc_html_e( 'Get Support', 'tlp-food-menu' ); ?>
+                </a>
+            </div>
+        </div>
+        <div class="fmp-help-hero-video">
+            <div class="fmp-help-embed">
+                <iframe src="<?php echo esc_url( $iframe ); ?>" title="Food Menu" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="fmp-help-cards">
+        <div class="fmp-help-card">
+            <div class="fmp-help-card-icon" style="background: #eff6ff;">
+                <svg width="22" height="22" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+            </div>
+            <h3><?php esc_html_e( 'Documentation', 'tlp-food-menu' ); ?></h3>
+            <p><?php esc_html_e( 'Step-by-step guides with screenshots and videos to help you get started quickly and make the most of every feature.', 'tlp-food-menu' ); ?></p>
+            <a href="<?php echo esc_url( $doc ); ?>" target="_blank" class="fmp-help-card-link">
+                <?php esc_html_e( 'Browse docs', 'tlp-food-menu' ); ?>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="fmp-help-card">
+            <div class="fmp-help-card-icon" style="background: #f0fdf4;">
+                <svg width="22" height="22" fill="none" stroke="#16a34a" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <path d="M12 17h.01"/>
+                </svg>
+            </div>
+            <h3><?php esc_html_e( 'Need Help?', 'tlp-food-menu' ); ?></h3>
+            <p><?php esc_html_e( 'Stuck with something? Open a support ticket, post in our Facebook group, or start a live chat for urgent issues.', 'tlp-food-menu' ); ?></p>
+            <a href="<?php echo esc_url( $contact ); ?>" target="_blank" class="fmp-help-card-link">
+                <?php esc_html_e( 'Contact support', 'tlp-food-menu' ); ?>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="fmp-help-card">
+            <div class="fmp-help-card-icon" style="background: #fefce8;">
+                <svg width="22" height="22" fill="none" stroke="#ca8a04" stroke-width="2" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+            </div>
+            <h3><?php esc_html_e( 'Leave a Review', 'tlp-food-menu' ); ?></h3>
+            <p><?php esc_html_e( 'Enjoying Food Menu? Your 5-star review helps us reach more restaurant owners and motivates us to keep improving.', 'tlp-food-menu' ); ?></p>
+            <a href="<?php echo esc_url( $review ); ?>" target="_blank" class="fmp-help-card-link">
+                <?php esc_html_e( 'Write a review', 'tlp-food-menu' ); ?>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <?php if ( ! $has_pro ) : ?>
+        <!-- Pro Features -->
+        <div class="fmp-help-features">
+            <div class="fmp-help-features-header">
+                <div>
+                    <h2 class="fmp-help-section-title"><?php esc_html_e( 'Unlock Pro Features', 'tlp-food-menu' ); ?></h2>
+                    <p class="fmp-help-section-desc" style="margin-bottom:0"><?php esc_html_e( 'Take your restaurant website to the next level with powerful tools built for real-world food businesses.', 'tlp-food-menu' ); ?></p>
+                </div>
+                <a href="<?php echo esc_url( $pro ); ?>" target="_blank" class="fmp-help-btn fmp-help-btn-red">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                    <?php esc_html_e( 'Upgrade to Pro', 'tlp-food-menu' ); ?>
+                </a>
+            </div>
+            <div class="fmp-help-features-grid">
+                <?php
+                $features = [
+                        __( '11 layouts with Grid, Masonry, Slider & Isotope', 'tlp-food-menu' ),
+                        __( 'Online ordering system via WooCommerce', 'tlp-food-menu' ),
+                        __( 'Pickup & delivery with weekly schedules', 'tlp-food-menu' ),
+                        __( 'Product addons (global & per-product)', 'tlp-food-menu' ),
+                        __( 'Visual table reservation system', 'tlp-food-menu' ),
+                        __( 'Inventory management with reports', 'tlp-food-menu' ),
+                        __( 'Kitchen monitor for live order tracking', 'tlp-food-menu' ),
+                        __( 'QR code table ordering for dine-in', 'tlp-food-menu' ),
+                        __( 'POS printing (order, kitchen & delivery slips)', 'tlp-food-menu' ),
+                        __( 'Custom order statuses with email notifications', 'tlp-food-menu' ),
+                        __( 'Ajax tipping on cart & checkout', 'tlp-food-menu' ),
+                        __( 'Discount rules per product & category', 'tlp-food-menu' ),
+                        __( 'Special menu with time-based variations', 'tlp-food-menu' ),
+                        __( 'Front-end staff dashboard', 'tlp-food-menu' ),
+                        __( 'Menu item popup with full details', 'tlp-food-menu' ),
+                        __( 'Food location-based filtering', 'tlp-food-menu' ),
+                        __( 'AJAX pagination (load more & infinite scroll)', 'tlp-food-menu' ),
+                        __( 'Full text & color customization controls', 'tlp-food-menu' ),
+                ];
+                foreach ( $features as $feature ) :
+                    ?>
+                    <div class="fmp-help-feature-item">
+					<span class="fmp-help-feature-check">
+						<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+					</span>
+                        <?php echo esc_html( $feature ); ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- Testimonials -->
+    <div>
+        <h2 class="fmp-help-section-title"><?php esc_html_e( 'Loved by Restaurant Owners', 'tlp-food-menu' ); ?></h2>
+        <p class="fmp-help-section-desc"><?php esc_html_e( 'See what our users have to say about Food Menu.', 'tlp-food-menu' ); ?></p>
+    </div>
+    <div class="fmp-help-testimonials">
+        <div class="fmp-help-testimonial">
+            <p class="fmp-help-testimonial-quote"><?php esc_html_e( 'I love this plugin. After trying few other menu plugins I must say this is so far the best one. I bought the Pro version and I can enjoy a great variety of layouts and an infinite combination of styles and settings. Technical support is fast and reliable, and replied me during weekend hours. I feel 5 stars aren\'t enough to express how much I am satisfied with this plugin.', 'tlp-food-menu' ); ?></p>
+            <div class="fmp-help-testimonial-author">
+                <img src="<?php echo esc_url( TLPFoodMenu()->assets_url() ); ?>images/admin/client1.jpeg" alt="arenablue">
+                <div>
+                    <span class="fmp-help-testimonial-name">arenablue</span>
+                    <div class="fmp-help-testimonial-stars">
+                        <?php for ( $i = 0; $i < 5; $i ++ ) : ?>
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        <?php endfor; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fmp-help-testimonial">
+            <p class="fmp-help-testimonial-quote"><?php esc_html_e( 'This plugin works like a charm, fully responsive without any js clash. Plugin functionality was clashing at one or two places with my theme but the author provided quick support and resolved all issues within a few minutes and updated the newer version. I am very thankful and highly obliged to the author for the help.', 'tlp-food-menu' ); ?></p>
+            <div class="fmp-help-testimonial-author">
+                <img src="<?php echo esc_url( TLPFoodMenu()->assets_url() ); ?>images/admin/client2.png" alt="pavitwalia">
+                <div>
+                    <span class="fmp-help-testimonial-name">pavitwalia</span>
+                    <div class="fmp-help-testimonial-stars">
+                        <?php for ( $i = 0; $i < 5; $i ++ ) : ?>
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        <?php endfor; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php if ( ! $has_pro ) : ?>
+        <!-- CTA -->
+        <div class="fmp-help-cta">
+            <div>
+                <h3><?php esc_html_e( 'Ready to grow your restaurant business?', 'tlp-food-menu' ); ?></h3>
+                <p><?php esc_html_e( 'Join thousands of restaurant owners using Food Menu Pro to manage orders, menus, and more.', 'tlp-food-menu' ); ?></p>
+            </div>
+            <a href="<?php echo esc_url( $pro ); ?>" target="_blank" class="fmp-help-btn fmp-help-btn-white">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <?php esc_html_e( 'Upgrade to Pro', 'tlp-food-menu' ); ?>
+            </a>
+        </div>
+    <?php endif; ?>
+
+    <!-- Community -->
+    <div class="fmp-help-cards" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="fmp-help-card">
+            <div class="fmp-help-card-icon" style="background: #eff6ff;">
+                <svg width="22" height="22" fill="none" stroke="#2563eb" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+            </div>
+            <h3><?php esc_html_e( 'Join Our Community', 'tlp-food-menu' ); ?></h3>
+            <p><?php esc_html_e( 'Connect with other Food Menu users, share tips, ask questions, and get the latest plugin news in our Facebook group.', 'tlp-food-menu' ); ?></p>
+            <a href="<?php echo esc_url( $fb ); ?>" target="_blank" class="fmp-help-card-link">
+                <?php esc_html_e( 'Join Facebook group', 'tlp-food-menu' ); ?>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="fmp-help-card">
+            <div class="fmp-help-card-icon" style="background: #faf5ff;">
+                <svg width="22" height="22" fill="none" stroke="#7c3aed" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+            </div>
+            <h3><?php esc_html_e( 'Live Chat Support', 'tlp-food-menu' ); ?></h3>
+            <p><?php esc_html_e( 'For urgent issues, reach us directly via live chat on our website. Our team is ready to help you resolve any problem quickly.', 'tlp-food-menu' ); ?></p>
+            <a href="<?php echo esc_url( $rt ); ?>" target="_blank" class="fmp-help-card-link">
+                <?php esc_html_e( 'Start live chat', 'tlp-food-menu' ); ?>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</div>

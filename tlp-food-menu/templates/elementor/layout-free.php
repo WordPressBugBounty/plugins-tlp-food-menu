@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $add_to_cart = null;
+$items       = isset( $items ) ? $items : [];
 
 if ( $source == 'product' && $wc == true ) {
 	global $product;
@@ -52,7 +53,7 @@ $wooClass = 'product' === $source ? ' woo-template' : null;
 			$image = Fns::getFeatureImage( $pID, $imgSize );
 
 			if ( TLPFoodMenu()->has_pro() ) {
-				$image = Fns::getFeatureImage( $pID, $imgSize, $defaultImgId, $customImgSize );
+				$image = Fns::getFeatureImage( $pID, $imgSize, $defaultImgId ?? '', $customImgSize ?? [] );
 			}
 
 			if ( ! $link ) {

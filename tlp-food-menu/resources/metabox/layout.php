@@ -26,8 +26,14 @@ Fns::print_html( Fns::rtFieldGenerator( Options::scLayoutMetaFields() ), true );
 do_action( 'fmp_sc_meta_after_columns' );
 ?>
 
-<div class="rt-field-wrapper rt-field-group" id="rtfm_pagination">
-	<div class="rt-label">Pagination Settings</div>
+<?php $is_pagination_pro_locked = ! TLPFoodMenu()->has_pro(); ?>
+<div class="rt-field-wrapper rt-field-group<?php echo $is_pagination_pro_locked ? ' rt-pro-field' : ''; ?>" id="rtfm_pagination">
+	<div class="rt-label">
+		<?php esc_html_e( 'Pagination Settings', 'tlp-food-menu' ); ?>
+		<?php if ( $is_pagination_pro_locked ) : ?>
+			<span class="rtfm-tooltip"><?php esc_html_e( 'Pro', 'tlp-food-menu' ); ?></span>
+		<?php endif; ?>
+	</div>
 	<div class="rt-field">
 		<?php
 		Fns::print_html( Fns::rtFieldGenerator( Options::scPaginationFields() ), true );

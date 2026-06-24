@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $add_to_cart = null;
+$items       = isset( $items ) ? $items : [];
 
 if ( $source == 'product' && $wc == true ) {
 	global $product;
@@ -27,7 +28,7 @@ if ( $source == 'product' && $wc == true ) {
 		if ( $_product->is_in_stock() ) {
 			ob_start();
 			woocommerce_template_loop_add_to_cart();
-			$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $pID, $pType, $add_to_cart_text, $items, $addtocart, $quantity, $add_stock );
+			$add_to_cart .= apply_filters( 'rtfm_el_add_to_cart_btn', ob_get_contents(), $pLink, $pID, $pType, $add_to_cart_text, $items, $addtocart, $quantity, $add_stock );
 			ob_end_clean();
 		}
 	}
@@ -89,6 +90,15 @@ $popup = $fmp_el_popup == 'yes' ? 'fmp-popup' : 'fmp-link';
 
 		if ( !empty($meta['price']) && $priceswitch == 'yes' ) {
 			$html .= '<span class="price">' . wp_kses_post( $price ) . '</span>';
+		}
+
+		if ( 'product' === $source && 'yes' === $add_stock ) {
+			$_stock_status = get_post_meta( $pID, '_stock_status', true );
+			if ( 'outofstock' === $_stock_status ) {
+				$html .= '<div class="fmp-outofstock">' . esc_html__( 'Out of stock', 'tlp-food-menu' ) . '</div>';
+			} else {
+				$html .= '<div class="fmp-wc-stock-status">' . esc_html__( 'In Stock', 'tlp-food-menu' ) . '</div>';
+			}
 		}
 
 		$html .= '</div>';

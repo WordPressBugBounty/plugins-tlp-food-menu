@@ -63,6 +63,8 @@ class QueryArgs {
 			->paginationParams( $isCarousel )
 			->taxParams();
 
+		$this->args = apply_filters( 'rt_fm_sc_query_args', $this->args, $this->scID );
+
 		return $this->args;
 	}
 

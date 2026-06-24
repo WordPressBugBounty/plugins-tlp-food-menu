@@ -40,8 +40,6 @@ class FilterHooks {
 		// pro featured
 		add_filter( 'tlp_el_end_of_columns_section', [ $this, 'layoutControls' ]);
 		add_filter( 'tlp_el_pro_switcher', [ $this, 'el_pro_SetttingsControls' ]);
-		add_filter( 'tlp_el_pro_popup', [ $this, 'el_pro_popup' ]);
-		add_filter( 'tlp_image_align', [ $this, 'image_align' ], 10, 2 );
 		add_filter( 'tlp_el_image_animation', [ $this, 'image_animation' ], 10, 2 );
 
 	}
@@ -170,6 +168,18 @@ class FilterHooks {
 			'description' => __( 'Please select the grid style.', 'tlp-food-menu' ),
 			'classes'     => $this->classes,
 		];
+
+		$obj->elControls[] = [
+			'id' => 'tlp_el_grid_style_alrert',
+			'type' => \Elementor\Controls_Manager::ALERT,
+			'alert_type' => 'warning',
+			'heading' => esc_html__( 'Editor Preview Limitation', 'tlp-food-menu' ),
+			'content' => esc_html__( 'Masonry and Isotope filtering are disabled in the Elementor editor to prevent layout rendering issues. Your selected style will display correctly on the live site.', 'tlp-food-menu' ),
+			'condition' => [
+				'tlp_el_grid_style_promo' => 'masonry',
+			],
+		];
+
 		return $obj->elControls;
 	}
 	/**
@@ -197,9 +207,9 @@ class FilterHooks {
 		$obj->elControls[] = [
 			'type'        => 'text',
 			'id'          => 'fmp_readmore_text',
-			'label'       => esc_html__( 'Change Readmore buttontext', 'tlp-food-menu' ),
+			'label'       => esc_html__( 'Read More text', 'tlp-food-menu' ),
 			'default'     => 'Read More',
-			'description' => esc_html__( 'Please change "Read MOore" text', 'tlp-food-menu' ),
+			'description' => esc_html__( 'Please change "Read More" text', 'tlp-food-menu' ),
 			'condition'   => [ 'fmp_readmore_switch' => 'yes' ],
 		];
 
@@ -245,68 +255,6 @@ class FilterHooks {
 	}
 
 
-	/**
-	 * Layout Controls
-	 *
-	 * @param object $obj Variable.
-	 *
-	 * @return array
-	 */
-
-	public function el_pro_popup( $obj ) {
-
-		$obj->elControls[] = [
-			'type'        => 'switch',
-			'id'          => 'fmp_detail_page_popup',
-			'label'       => esc_html__( 'Enable Details Page Popup ?', 'tlp-food-menu' ),
-			'description' => esc_html__( 'Switch on to enable popup to detail page.', 'tlp-food-menu' ),
-			'label_on'    => esc_html__( 'On', 'tlp-food-menu' ),
-			'label_off'   => esc_html__( 'Off', 'tlp-food-menu' ),
-			'default'     => 'no',
-			'classes'     => $this->classes,
-			'condition'       => [
-				'fmp_detail_page_link' => [ 'yes' ],
-			],
-		];
-		return $obj->elControls;
-	}
-
-	/**
-	 * Layout Controls
-	 *
-	 * @param object $obj Variable.
-	 *
-	 * @return array
-	 */
-
-	public function image_align( $obj ) {
-		$obj->elControls[] = [
-			'type'        => \Elementor\Controls_Manager::CHOOSE,
-			'id'          => 'tlp_el_image_align_promo',
-			'label'       => __( 'Image Alignment', 'tlp-food-menu' ),
-			'options' => [
-				'flex-start' => [
-					'title' => esc_html__( 'Left', 'textdomain' ),
-					'icon' => 'eicon-text-align-left',
-				],
-				'center' => [
-					'title' => esc_html__( 'Center', 'textdomain' ),
-					'icon' => 'eicon-text-align-center',
-				],
-				'flex-end' => [
-					'title' => esc_html__( 'Right', 'textdomain' ),
-					'icon' => 'eicon-text-align-right',
-				],
-			],
-			'default' => 'center',
-			'toggle' => true,
-			'selectors' => [
-				'{{WRAPPER}} .fmp-wrapper .fmp-image-wrap, {{WRAPPER}} .fmp-box .fmp-img-wrapper' => 'align-self: {{VALUE}};',
-			],
-			'classes'     => $this->classes,
-		];
-		return $obj->elControls;
-	}
 
 	/**
 	 * Layout Controls

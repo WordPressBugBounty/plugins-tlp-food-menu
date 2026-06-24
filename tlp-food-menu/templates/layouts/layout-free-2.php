@@ -51,7 +51,7 @@ $class   .= ' fmp-item-' . $pID;
 			$image = Fns::getFeatureImage( $pID, $imgSize );
 
 			if ( TLPFoodMenu()->has_pro() ) {
-				$image = Fns::getFeatureImage( $pID, $imgSize, $defaultImgId, $customImgSize );
+				$image = Fns::getFeatureImage( $pID, $imgSize, $defaultImgId ?? '', $customImgSize ?? [] );
 			}
 
 			if ( ! $link ) {

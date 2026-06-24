@@ -37,7 +37,7 @@ while ( $gridQuery->have_posts() ) {
 	$add_to_cart = null;
 
 	if ( TLPFoodMenu()->has_pro() ) {
-		$image = Fns::getFeatureImage( $id, $imgSize, $defaultImgId, $customImgSize );
+		$image = Fns::getFeatureImage( $id, $imgSize, $defaultImgId ?? '', $customImgSize ?? [] );
 	}
 
 	if ( $source == 'product' && $wc == true ) {

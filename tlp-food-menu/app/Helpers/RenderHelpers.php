@@ -59,42 +59,42 @@ class RenderHelpers {
 
 		//if ( count( $scripts ) ) {
 
-			$style  = apply_filters( 'rtfm_styles_list', $style );
-			$script = apply_filters( 'rtfm_scripts_list', $script );
+		$style  = apply_filters( 'rtfm_styles_list', $style );
+		$script = apply_filters( 'rtfm_scripts_list', $script );
 
-			/**
-			 * Styles.
-			 */
-			array_push( $style, 'fm-frontend' );
+		/**
+		 * Styles.
+		 */
+		array_push( $style, 'fm-frontend' );
 
-			/**
-			 * Scripts.
-			 */
-			array_push( $script, 'fm-frontend' );
+		/**
+		 * Scripts.
+		 */
+		array_push( $script, 'fm-frontend' );
 
-			wp_enqueue_style( $style );
-			wp_enqueue_script( $script );
+		wp_enqueue_style( $style );
+		wp_enqueue_script( $script );
 
-			$nonce   = wp_create_nonce( Fns::nonceText() );
-			$ajaxurl = '';
+		$nonce   = wp_create_nonce( Fns::nonceText() );
+		$ajaxurl = '';
 
-			if ( in_array( 'sitepress-multilingual-cms/sitepress.php', get_option( 'active_plugins' ) ) ) {
-				$ajaxurl .= admin_url( 'admin-ajax.php?lang=' . ICL_LANGUAGE_CODE );
-			} else {
-				$ajaxurl .= admin_url( 'admin-ajax.php' );
-			}
+		if ( in_array( 'sitepress-multilingual-cms/sitepress.php', get_option( 'active_plugins' ) ) ) {
+			$ajaxurl .= admin_url( 'admin-ajax.php?lang=' . ICL_LANGUAGE_CODE );
+		} else {
+			$ajaxurl .= admin_url( 'admin-ajax.php' );
+		}
 
-			wp_localize_script(
-				'fm-frontend',
-				'fmp',
-				[
-					'ajaxurl'     => esc_url( $ajaxurl ),
-					'nonceID'     => esc_attr( Fns::nonceID() ),
-					'nonce'       => esc_attr( $nonce ),
-					'hasPro'      => TLPFoodMenu()->has_pro() ? 'true' : 'false',
-					'wc_cart_url' => TLPFoodMenu()->isWcActive() ? wc_get_cart_url() : '',
-				]
-			);
+		wp_localize_script(
+			'fm-frontend',
+			'fmp',
+			[
+				'ajaxurl'     => esc_url( $ajaxurl ),
+				'nonceID'     => esc_attr( Fns::nonceID() ),
+				'nonce'       => esc_attr( $nonce ),
+				'hasPro'      => TLPFoodMenu()->has_pro() ? 'true' : 'false',
+				'wc_cart_url' => TLPFoodMenu()->isWcActive() ? wc_get_cart_url() : '',
+			]
+		);
 
 		//}
 
@@ -205,8 +205,10 @@ class RenderHelpers {
 	 * @return array
 	 */
 	public static function metaScBuilder( $meta ) {
+
 		$metas = [
 			// Layout.
+			'layout_type'        => ! empty( $meta['fmp_layout_type'][0] ) ? esc_attr( $meta['fmp_layout_type'][0] ) : 'grid',
 			'layout'             => ! empty( $meta['fmp_layout'][0] ) ? esc_attr( $meta['fmp_layout'][0] ) : 'layout-free',
 			'gridType'           => ! empty( $meta['fmp_grid_style'][0] ) ? esc_html( $meta['fmp_grid_style'][0] ) : 'even',
 
@@ -262,36 +264,36 @@ class RenderHelpers {
 
 	public static function metaScBuilderEl( $meta ) {
 		$metas = [
-			'layout'             => ! empty( $meta['fmp_layout'] ) ? esc_attr( $meta['fmp_layout'] ) : 'layout1',
+			'layout' => ! empty( $meta['fmp_layout'] ) ? esc_attr( $meta['fmp_layout'] ) : 'layout1',
 
-			'dCols'              => ! empty( $meta['fmp_desktop_column'] ) ? absint( $meta['fmp_desktop_column'] ) : 0,
-			'tCols'              => ! empty( $meta['fmp_desktop_column_tablet'] ) ? absint( $meta['fmp_desktop_column_tablet'] ) : 0,
-			'mCols'              => ! empty( $meta['fmp_desktop_column_mobile'] ) ? absint( $meta['fmp_desktop_column_mobile'] ) : 0,
+			'dCols' => ! empty( $meta['fmp_desktop_column'] ) ? absint( $meta['fmp_desktop_column'] ) : 0,
+			'tCols' => ! empty( $meta['fmp_desktop_column_tablet'] ) ? absint( $meta['fmp_desktop_column_tablet'] ) : 0,
+			'mCols' => ! empty( $meta['fmp_desktop_column_mobile'] ) ? absint( $meta['fmp_desktop_column_mobile'] ) : 0,
 
-			'imgSize'            => isset( $meta['fmp_image_size'] ) ? $meta['fmp_image_size'] : 'medium',
-			'excerpt_limit'      => isset( $meta['fmp_excerpt_limit'] ) ? absint( $meta['fmp_excerpt_limit'] ) : 0,
-			'detail_link'        => ! empty( $meta['fmp_detail_link'] ) ? esc_attr( $meta['fmp_detail_link'] ) : null,
-			'featureImg'         => ! empty( $meta['fmp_feature_switch'] ) ? $meta['fmp_feature_switch'] : 1,
-			'hovericon'          => ! empty( $meta['fmp_hover_icon'] ) ? $meta['fmp_hover_icon'] : 0,
-			'grid_style'         => ! empty( $meta['tlp_el_grid_style_promo'] ) ? esc_attr( $meta['tlp_el_grid_style_promo'] ) : ' ',
+			'imgSize'       => isset( $meta['fmp_image_size'] ) ? $meta['fmp_image_size'] : 'medium',
+			'excerpt_limit' => isset( $meta['fmp_excerpt_limit'] ) ? absint( $meta['fmp_excerpt_limit'] ) : 0,
+			'detail_link'   => ! empty( $meta['fmp_detail_link'] ) ? esc_attr( $meta['fmp_detail_link'] ) : null,
+			'featureImg'    => ! empty( $meta['fmp_feature_switch'] ) ? $meta['fmp_feature_switch'] : 1,
+			'hovericon'     => ! empty( $meta['fmp_hover_icon'] ) ? $meta['fmp_hover_icon'] : 0,
+			'grid_style'    => ! empty( $meta['tlp_el_grid_style_promo'] ) ? esc_attr( $meta['tlp_el_grid_style_promo'] ) : ' ',
 
-			'readmore_text'        => ! empty( $meta['fmp_readmore_text'] ) ? $meta['fmp_readmore_text'] : '',
+			'readmore_text' => ! empty( $meta['fmp_readmore_text'] ) ? $meta['fmp_readmore_text'] : '',
 			//Switcher
-			'titleswitch'        => ! empty( $meta['fmp_title_switch'] ) ? $meta['fmp_title_switch'] : 1,
-			'priceswitch'        => ! empty( $meta['fmp_price_switch'] ) ? $meta['fmp_price_switch'] : 1,
-			'contentswitch'      => ! empty( $meta['fmp_content_switch'] ) ? $meta['fmp_content_switch'] : 1,
-			'fmp_el_popup'      => ! empty( $meta['fmp_detail_page_popup'] ) ? $meta['fmp_detail_page_popup'] : 1,
+			'titleswitch'   => ! empty( $meta['fmp_title_switch'] ) ? $meta['fmp_title_switch'] : 1,
+			'priceswitch'   => ! empty( $meta['fmp_price_switch'] ) ? $meta['fmp_price_switch'] : 1,
+			'contentswitch' => ! empty( $meta['fmp_content_switch'] ) ? $meta['fmp_content_switch'] : 1,
+			'fmp_el_popup'  => ! empty( $meta['fmp_detail_page_popup'] ) ? $meta['fmp_detail_page_popup'] : 1,
 
 
-			'readmore_switch'      => ! empty( $meta['fmp_readmore_switch'] ) ? $meta['fmp_readmore_switch'] : 1,
+			'readmore_switch' => ! empty( $meta['fmp_readmore_switch'] ) ? $meta['fmp_readmore_switch'] : 1,
 
-			'add_stock'      => ! empty( $meta['fmp_stock_status_switch'] ) ? $meta['fmp_stock_status_switch'] : 0,
-			'addtocart'      => ! empty( $meta['fmp_addtocart_switch'] ) ? $meta['fmp_addtocart_switch'] : 0,
-			'quantity'      => ! empty( $meta['fmp_quantity_switch'] ) ? $meta['fmp_quantity_switch'] : 0,
+			'add_stock' => ! empty( $meta['fmp_stock_status_switch'] ) ? $meta['fmp_stock_status_switch'] : 0,
+			'addtocart' => ! empty( $meta['fmp_addtocart_switch'] ) ? $meta['fmp_addtocart_switch'] : 0,
+			'quantity'  => ! empty( $meta['fmp_quantity_switch'] ) ? $meta['fmp_quantity_switch'] : 0,
 
 			// Filters.
-			'limit'              => ( ( empty( $meta['fmp_limit'] ) || $meta['fmp_limit'] === '-1' ) ? 10000000 : absint( $meta['fmp_limit'] ) ),
-			'source'             => ! empty( $meta['fmp_source'] ) ? $meta['fmp_source'] : TLPFoodMenu()->post_type,
+			'limit'     => ( ( empty( $meta['fmp_limit'] ) || $meta['fmp_limit'] === '-1' ) ? 10000000 : absint( $meta['fmp_limit'] ) ),
+			'source'    => ! empty( $meta['fmp_source'] ) ? $meta['fmp_source'] : TLPFoodMenu()->post_type,
 
 			'cats_title_type'    => ! empty( $meta['fmp_category_title_type'] ) ? esc_attr( $meta['fmp_category_title_type'] ) : 'default',
 
@@ -312,10 +314,10 @@ class RenderHelpers {
 			'wc'                 => class_exists( 'WooCommerce' ) ? true : false,
 		];
 
-		$metas['postIn'] = ( $metas['source'] === 'product' )	? ( isset( $meta['fmp_wc_post__in'] ) ? array_filter( (array) $meta['fmp_wc_post__in'] ) : [] ) : ( isset( $meta['fmp_post__in'] ) ? array_filter( (array) $meta['fmp_post__in'] ) : [] );
-		$metas['postNotIn'] = ( $metas['source'] === 'product' )	? ( isset( $meta['fmp_wc_post__not_in'] ) ? array_filter( (array) $meta['fmp_wc_post__not_in'] ) : [] ) : ( isset( $meta['fmp_post__not_in'] ) ? array_filter( (array) $meta['fmp_post__not_in'] ) : [] );
+		$metas['postIn']    = ( $metas['source'] === 'product' ) ? ( isset( $meta['fmp_wc_post__in'] ) ? array_filter( (array) $meta['fmp_wc_post__in'] ) : [] ) : ( isset( $meta['fmp_post__in'] ) ? array_filter( (array) $meta['fmp_post__in'] ) : [] );
+		$metas['postNotIn'] = ( $metas['source'] === 'product' ) ? ( isset( $meta['fmp_wc_post__not_in'] ) ? array_filter( (array) $meta['fmp_wc_post__not_in'] ) : [] ) : ( isset( $meta['fmp_post__not_in'] ) ? array_filter( (array) $meta['fmp_post__not_in'] ) : [] );
 
-		$metas['cats'] = ( $metas['source'] === 'product' )	? ( isset( $meta['fmp_wc_categories'] ) ? array_filter( (array) $meta['fmp_wc_categories'] ) : [] ) : ( isset( $meta['fmp_categories'] ) ? array_filter( (array) $meta['fmp_categories'] ) : [] );
+		$metas['cats'] = ( $metas['source'] === 'product' ) ? ( isset( $meta['fmp_wc_categories'] ) ? array_filter( (array) $meta['fmp_wc_categories'] ) : [] ) : ( isset( $meta['fmp_categories'] ) ? array_filter( (array) $meta['fmp_categories'] ) : [] );
 
 		return apply_filters( 'rtfm_meta_sc_builder', $metas, $meta );
 	}
@@ -323,23 +325,23 @@ class RenderHelpers {
 
 	public static function sliderMetaBuilderEl( array $meta ) {
 		$meta = [
-			'dCols'            => ! empty( $meta['fmp_desktop_column'] ) ? absint( $meta['fmp_desktop_column'] ) : 3,
-			'tCols'            => ! empty( $meta['fmp_desktop_column_tablet'] ) ? absint( $meta['fmp_desktop_column_tablet'] ) : 2,
-			'mCols'            => ! empty( $meta['fmp_desktop_column_mobile'] ) ? absint( $meta['fmp_desktop_column_mobile'] ) : 1,
-			'dGroup'           => ! empty( $meta['fmp_slide_groups'] ) ? absint( $meta['fmp_slide_groups'] ) : 1,
-			'tGroup'           => ! empty( $meta['fmp_slide_groups_tablet'] ) ? absint( $meta['fmp_slide_groups_tablet'] ) : 1,
-			'mGroup'           => ! empty( $meta['fmp_slide_groups_mobile'] ) ? absint( $meta['fmp_slide_groups_mobile'] ) : 1,
-			'autoPlay'         => ! empty( $meta['fmp_slide_autoplay'] ),
-			'stopOnHover'      => ! empty( $meta['fmp_pause_hover'] ),
-			'nav'              => ! empty( $meta['fmp_slider_nav'] ),
-			'dots'             => ! empty( $meta['fmp_slider_pagi'] ),
-			'loop'             => ! empty( $meta['fmp_slider_loop'] ),
-			'lazyLoad'         => ! empty( $meta['fmp_slider_lazy_load'] ),
-			'autoHeight'       => ! empty( $meta['fmp_slider_auto_height'] ),
-			'speed'            => isset( $meta['fmp_slide_speed'] ) ? absint( $meta['fmp_slide_speed'] ) : 2000,
-			'spaceBetween'     => isset( $meta['fmp_space_between_slides']['size'] ) && strlen( $meta['fmp_space_between_slides']['size'] ) ? absint( $meta['fmp_space_between_slides']['size'] ) : 30,
-			'autoPlayTimeOut'  => isset( $meta['fmp_autoplay_timeout'] ) ? absint( $meta['fmp_autoplay_timeout'] ) : 5000,
-			'navPosition'      => ! empty( $meta['fmp_slider_nav_position'] ) ? esc_attr( $meta['fmp_slider_nav_position'] ) : 'top',
+			'dCols'           => ! empty( $meta['fmp_desktop_column'] ) ? absint( $meta['fmp_desktop_column'] ) : 3,
+			'tCols'           => ! empty( $meta['fmp_desktop_column_tablet'] ) ? absint( $meta['fmp_desktop_column_tablet'] ) : 2,
+			'mCols'           => ! empty( $meta['fmp_desktop_column_mobile'] ) ? absint( $meta['fmp_desktop_column_mobile'] ) : 1,
+			'dGroup'          => ! empty( $meta['fmp_slide_groups'] ) ? absint( $meta['fmp_slide_groups'] ) : 1,
+			'tGroup'          => ! empty( $meta['fmp_slide_groups_tablet'] ) ? absint( $meta['fmp_slide_groups_tablet'] ) : 1,
+			'mGroup'          => ! empty( $meta['fmp_slide_groups_mobile'] ) ? absint( $meta['fmp_slide_groups_mobile'] ) : 1,
+			'autoPlay'        => ! empty( $meta['fmp_slide_autoplay'] ),
+			'stopOnHover'     => ! empty( $meta['fmp_pause_hover'] ),
+			'nav'             => ! empty( $meta['fmp_slider_nav'] ),
+			'dots'            => ! empty( $meta['fmp_slider_pagi'] ),
+			'loop'            => ! empty( $meta['fmp_slider_loop'] ),
+			'lazyLoad'        => ! empty( $meta['fmp_slider_lazy_load'] ),
+			'autoHeight'      => ! empty( $meta['fmp_slider_auto_height'] ),
+			'speed'           => isset( $meta['fmp_slide_speed'] ) ? absint( $meta['fmp_slide_speed'] ) : 2000,
+			'spaceBetween'    => isset( $meta['fmp_space_between_slides']['size'] ) && strlen( $meta['fmp_space_between_slides']['size'] ) ? absint( $meta['fmp_space_between_slides']['size'] ) : 30,
+			'autoPlayTimeOut' => isset( $meta['fmp_autoplay_timeout'] ) ? absint( $meta['fmp_autoplay_timeout'] ) : 5000,
+			'navPosition'     => ! empty( $meta['slider_nav_position'] ) ? esc_attr( $meta['slider_nav_position'] ) : 'top',
 		];
 
 		$meta['options'] = [
@@ -352,7 +354,7 @@ class RenderHelpers {
 			'preloadImages'  => ! $meta['lazyLoad'],
 			'lazy'           => $meta['lazyLoad'],
 			'breakpoints'    => [
-				0 => [
+				0   => [
 					'slidesPerView'  => $meta['mCols'],
 					'slidesPerGroup' => $meta['mGroup'],
 					'pagination'     => [ 'dynamicBullets' => true ],
@@ -374,11 +376,12 @@ class RenderHelpers {
 				'disableOnInteraction' => false,
 			];
 		}
-		$dotsClass = $meta['dots'] ? ' has-dots' : ' no-dots';
-		$navClass  = $meta['nav'] ? ' has-nav' : ' no-nav';
+		$dotsClass     = $meta['dots'] ? ' has-dots' : ' no-dots';
+		$navClass      = $meta['nav'] ? ' has-nav' : ' no-nav';
 		$meta['class'] = 'swiper rtfm-carousel-slider rt-pos-s ' . $meta['navPosition'] . '-nav' . $dotsClass . $navClass;
 		$meta['data']  = wp_json_encode( $meta['options'] );
 		unset( $meta['options'] );
+
 		return apply_filters( 'rtfm_slider_meta_builder', $meta );
 	}
 
@@ -1216,14 +1219,14 @@ class RenderHelpers {
 	public static function renderElPagination( $wpQuery, $meta, $limit ) {
 
 		$htmlUtility_el = null;
-		$html        = null;
-		$ajax        = false;
-		$postPp      = $wpQuery->query_vars['posts_per_page'];
-		$page        = $wpQuery->query_vars['paged'];
-		$foundPosts  = $wpQuery->found_posts;
-		$morePosts   = $foundPosts - ( $postPp * $page );
-		$totalPage   = $wpQuery->max_num_pages;
-		$foundPost   = $wpQuery->found_posts;
+		$html           = null;
+		$ajax           = false;
+		$postPp         = $wpQuery->query_vars['posts_per_page'];
+		$page           = $wpQuery->query_vars['paged'];
+		$foundPosts     = $wpQuery->found_posts;
+		$morePosts      = $foundPosts - ( $postPp * $page );
+		$totalPage      = $wpQuery->max_num_pages;
+		$foundPost      = $wpQuery->found_posts;
 
 		if ( $limit && empty( $wpQuery->query['tax_query'] ) && $foundPosts > $limit ) {
 			$foundPosts = $limit;
@@ -1236,11 +1239,11 @@ class RenderHelpers {
 		$morePosts  = absint( $morePosts );
 
 
-		$ajax = $meta['posts_loading_type'];
+		$ajax      = $meta['posts_loading_type'];
 		$ajax_type = $meta['posts_loading_type'];
 
 
-		if( $ajax === 'ajax-number-pagination' ){
+		if ( $ajax === 'ajax-number-pagination' ) {
 			$ajax_type = 'pagination_ajax';
 		}
 
@@ -1248,6 +1251,7 @@ class RenderHelpers {
 		if ( $htmlUtility_el ) {
 			$html .= '<div class="rt-pagination-wrap" data-total-pages="' . $totalPage . '" data-posts-per-page="' . $postPp . '" data-type="' . $ajax_type . '">' . $htmlUtility_el . '</div>';
 		}
+
 		return $html;
 	}
 
@@ -1262,7 +1266,7 @@ class RenderHelpers {
 	 * @return string
 	 */
 
-	public static function paginationEl( $pages = '', $range = 4, $ajax = false, $scID = '',  $page_num = null ) {
+	public static function paginationEl( $pages = '', $range = 4, $ajax = false, $scID = '', $page_num = null ) {
 
 
 		$html      = null;
@@ -1293,7 +1297,7 @@ class RenderHelpers {
 
 		if ( 1 != $pages ) {
 
-			$html .= '<div class="fmp-pagination'.$ajaxClass.'" data-sc-id="216"><ul class="pagination-list">';
+			$html .= '<div class="fmp-pagination' . $ajaxClass . '" data-sc-id="216"><ul class="pagination-list">';
 
 			if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
 				$html .= "<li class='page-num'><a href='" . get_pagenum_link( 1 ) . "' aria-label='First'>&laquo;</a></li>";

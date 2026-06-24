@@ -112,6 +112,14 @@ class Shortcode {
 		$isCarousel = preg_match( '/carousel/', $layout );
 		$isCat      = preg_match( '/grid-by-cat/', $layout );
 
+		$layout_type   = $metas['layout_type'];
+		$wrapper_class = "fm-$layout_type-layout-wrap";
+
+
+		if ( $isCarousel ) {
+			$metas['dCols'] = $scMeta['fmp_carousel_items_per_slider'][0] ?? ''; //Overwrite slider columns
+		}
+
 		$dCol = 0 === $metas['dCols'] ? RenderHelpers::defaultColumns( $layout ) : $metas['dCols'];
 		$tCol = 0 === $metas['tCols'] ? 2 : $metas['tCols'];
 		$mCol = 0 === $metas['mCols'] ? 1 : $metas['mCols'];
@@ -140,7 +148,7 @@ class Shortcode {
 			}
 		}
 
-		$containerClass = 'fmp-container-fluid fmp-wrapper fmp';
+		$containerClass = "fmp-container-fluid fmp-wrapper fmp fm-shortcode-wrapper $wrapper_class";
 		$containerClass .= ! empty( $animation ) ? ' fmp-hover-' . $animation : ' fmp-hover-zoom_in';
 		$containerClass .= ! empty( $imagePosition ) ? ' fmp-image-' . $imagePosition : ' fmp-image-top';
 		$containerClass .= ! empty( $imageShape ) ? ' fmp-image-' . $imageShape : ' fmp-img-normal';
@@ -211,7 +219,7 @@ class Shortcode {
 						$html .= $renderPagination;
 					} elseif ( 'load_more' === $metas['posts_loading_type'] || 'load_on_scroll' === $metas['posts_loading_type'] ) {
 						if ( TLPFoodMenu()->has_pro() ) {
-							$html .= apply_filters( 'rtfm_pagination', $scID, $metas['posts_loading_type'], $metas['load_more_text'], $fmpQuery );
+							$html .= apply_filters( 'rtfm_pagination', $scID, $metas['posts_loading_type'], $metas['load_more_text']??'', $fmpQuery );
 						}
 					}
 
@@ -262,9 +270,9 @@ class Shortcode {
 		$catVar = [];
 		$html   = null;
 
-		$source           = get_post_meta( $this->scId, 'fmp_source', true );
+		$source = get_post_meta( $this->scId, 'fmp_source', true );
 
-		$post_type        = ( $source && in_array( $source, array_keys( Options::scProductSource() ), true ) ) ? $source : TLPFoodMenu()->post_type;
+		$post_type = ( $source && in_array( $source, array_keys( Options::scProductSource() ), true ) ) ? $source : TLPFoodMenu()->post_type;
 
 		$categoryTaxonomy = ( 'product' === $post_type ) ? 'product_cat' : TLPFoodMenu()->taxonomies['category'];
 
@@ -321,6 +329,9 @@ class Shortcode {
 				];
 
 				$args['tax_query'] = $taxQ; //phpcs:ignore
+
+				// Apply location filter for multi-location support.
+				$args = apply_filters( 'rt_fm_sc_query_args', $args, $this->scId );
 
 				$data['args']                   = $args;
 				$data['taxonomy']               = $categoryTaxonomy;

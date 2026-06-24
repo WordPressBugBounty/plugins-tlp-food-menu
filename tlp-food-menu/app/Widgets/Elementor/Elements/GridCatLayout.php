@@ -28,7 +28,7 @@ class GridCatLayout extends ElementorWidget {
 	 */
 	public function __construct( $data = [], $args = null ) {
 		$this->elBase   = 'rtfm-food-grid-by-cat';
-		$this->elName   = esc_html__( 'Grid by Category Layouts', 'tlp-food-menu' );
+		$this->elName   = esc_html__( 'Group by Category Layouts', 'tlp-food-menu' );
 		$this->elIcon   = 'rtfm-elementor-icon eicon-gallery-grid';
 		$this->elPrefix = 'gridbycat';
 		parent::__construct( $data, $args );
@@ -134,8 +134,7 @@ class GridCatLayout extends ElementorWidget {
 			$this->get_widget_scripts($this->elPrefix);
 		}
 
-		$masonry = ( isset( $settings['tlp_el_grid_style_promo'] ) && $settings['tlp_el_grid_style_promo'] === 'masonry' ) ? 'rt-masonry-grid' : '';
-
+		$masonry = ( ! $this->isPreview() && isset( $settings['tlp_el_grid_style_promo'] ) && $settings['tlp_el_grid_style_promo'] === 'masonry' ) ? 'rt-masonry-grid' : '';
 		$animation = '';
 
 		if( 'zoom_out' === $settings['tlp_el_image_animation'] ){
@@ -236,7 +235,10 @@ class GridCatLayout extends ElementorWidget {
 			}
 		}
 
-		echo "<div class='fmp-image-top fmp-container-fluid fmp-wrapper " . esc_attr( $animation ) . "' id='fmp-container-" . esc_attr( $layout ) . "'>";
+		$fmp_col = $base_arg['dCols'];
+		$fmp_col = !empty( $fmp_col ) ? $fmp_col : 2;
+		$dataDesktopCol = 12 / $fmp_col;
+		echo "<div class='fmp-image-top fmp-container-fluid fmp-wrapper fmp-elementor-widget fmp-grid-cat-layout-wrapper " . esc_attr( $animation ) . "' id='fmp-container-" . esc_attr( $layout ) . "' data-desktop-col='". esc_attr( $dataDesktopCol ) . "'>";
 		echo "<div class='fmp-grid-by-cat-free fmp-elementor-layout fmp-row fmp-content-loader fmp-" . esc_attr( $layout ) . " fmp-even'>";
 
 		echo "<div class='fmp-grids-wrapper fmp-innner-sections'>";
@@ -246,9 +248,7 @@ class GridCatLayout extends ElementorWidget {
 		}
 
 		foreach ( $term_ids as $term_id ) {
-			$fmp_col = $base_arg['dCols'];
 
-			$fmp_col = !empty( $fmp_col ) ? $fmp_col : 2;
 
 			$term = get_term( $term_id, $taxonomy );
 
@@ -273,14 +273,33 @@ class GridCatLayout extends ElementorWidget {
 				continue;
 			}
 
-			if( 'layout5' === $layout ){
-				echo "<div class='fmp-innner-wrap'>";
+			// Clone base args for this term
+			$term_args = $args;
+			$term_args['tax_query'] = [
+				[
+					'taxonomy' => $taxonomy,
+					'field'    => 'term_id',
+					'terms'    => $term_id,
+				]
+			];
+
+			// Re-apply location filter for multi-location support.
+			$term_args = apply_filters( 'rt_fm_sc_query_args', $term_args, $scID );
+
+			$query = new \WP_Query( $term_args );
+
+			// Skip empty categories.
+			if ( ! $query->have_posts() ) {
+				wp_reset_postdata();
+				continue;
 			}
+
 			if( 'layout6' === $layout || 'layout7' === $layout  ){
-				$masonry_item = isset( $settings['tlp_el_grid_style_promo'] ) ? 'masonry-grid-item' : ' ';
+				$masonry_item = $masonry ? 'masonry-grid-item' : '';
 				echo "<div class='fmp-col-lg-".esc_attr( $fmp_col )." fmp-col-md-".esc_attr( $fmp_col )." fmp-col-sm-12 fmp-col-xs-12 ".esc_attr( $masonry_item )."'>";
-				echo '<div class="fmp-innner-wrap">';
 			}
+
+			echo "<div class='fmp-innner-wrap'>";
 
 			echo "<div class='fmp-category-title-wrapper " . esc_attr( $type ) . "' " . ( 'layout7' === $layout && ! empty( $catImage ) ? $catImage : '' ) . '>';
 
@@ -292,18 +311,6 @@ class GridCatLayout extends ElementorWidget {
 			 if ( $layout != 'layout6' && $layout != 'layout7' ) {
 				echo '<div class="fmp-row '.esc_attr( $masonry ).'">';
 			}
-
-			// Clone base args for this term
-			$term_args = $args;
-			$term_args['tax_query'] = [
-				[
-					'taxonomy' => $taxonomy,
-					'field'    => 'term_id',
-					'terms'    => $term_id,
-				]
-			];
-
-			$query = new \WP_Query( $term_args );
 
 			if ( $query->have_posts() ) {
 				while ( $query->have_posts() ) {
@@ -330,11 +337,15 @@ class GridCatLayout extends ElementorWidget {
 				}
 				wp_reset_postdata();
 			}
-			echo '</div>';
+			if ( $layout != 'layout6' && $layout != 'layout7' ) {
+				echo '</div>'; // close fmp-row
+			}
 
-			echo '</div>';
-			if( 'layout5' === $layout || 'layout6' === $layout || 'layout7' === $layout  ){
-				echo '</div>';
+			echo '</div>'; // close fmp-product-inner
+			echo '</div>'; // close fmp-innner-wrap
+
+			if( 'layout6' === $layout || 'layout7' === $layout  ){
+				echo '</div>'; // close fmp-col wrapper
 			}
 		}
 		if( 'layout6' === $layout || 'layout7' === $layout  ){
@@ -343,5 +354,6 @@ class GridCatLayout extends ElementorWidget {
 		echo '</div>';
 		echo '</div>';
 		echo '</div>';
+
 	}
 }

@@ -68,7 +68,7 @@ class MiniCartFns {
 					'id'          => 'mini_cart_position',
 					'type'        => 'select',
 					'class'       => 'fmp-select2',
-					'value'       => $settings['mini_cart_open_style'] ?? 'left_center',
+					'value'       => $settings['mini_cart_position'] ?? 'left_center',
 					'label'       => esc_html__( 'Mini Cart Position ', 'tlp-food-menu' ),
 					'description' => esc_html__( 'You can manage mini_cart position.', 'tlp-food-menu' ),
 					'options'     => [
@@ -158,23 +158,6 @@ class MiniCartFns {
 					'label'       => esc_html__( 'Custom Class to Open Mini Cart', 'tlp-food-menu' ),
 					'description' => esc_html__( 'If you would like to open the mini-cart by custom button on click just add the class name with comma separator. E.g: .icon-area-content a, span.cart-btn', 'tlp-food-menu' ),
 					'value'       => $settings['mini_cart_custom_selector'] ?? '',
-				],
-				'mini_cart_style'                  => [
-					'label' => esc_html__( 'Mini Cart Style', 'tlp-food-menu' ),
-					'type'  => 'title',
-				],
-				'mini_cart_primary'                => [
-					'id'    => 'mini_cart_primary',
-					'label' => esc_html__( 'Drawer Primary Color', 'tlp-food-menu' ),
-					'type'  => 'colorpicker',
-					'value' => $settings['mini_cart_primary'] ?? '',
-				],
-
-				'mini_cart_secondary'              => [
-					'id'    => 'mini_cart_secondary',
-					'label' => esc_html__( 'Drawer Secondary Color', 'tlp-food-menu' ),
-					'type'  => 'colorpicker',
-					'value' => $settings['mini_cart_secondary'] ?? '#505B74',
 				],
 				'mini_cart_btn_style'              => [
 					'label' => esc_html__( 'Floating Button Style', 'tlp-food-menu' ),

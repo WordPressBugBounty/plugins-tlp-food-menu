@@ -2,9 +2,9 @@
 Contributors: techlabpro1, mamunnu
 Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
-Requires at least: 5.0
-Tested up to: 6.9
-Stable tag: 5.3.3
+Requires at least: 6.5
+Tested up to: 7.0
+Stable tag: 6.0.0
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -84,11 +84,19 @@ This WordPress Food menu plugin is more than just a menu plugin—it’s a compl
 
 - **Easy Menu Management:** Easily create, update, and organize your restaurant menu and ensure your food menu remains always up-to-date and eye-catching.
 
+- **Modern Settings Panel:** A redesigned, React-based settings interface makes configuring your food menu faster and more intuitive than ever.
+
 - **Smooth Food Ordering:** This best menu plugin for WordPress connects with WooCommerce and allows you to upload food menu items as products to sell online.
 
 - **Food Delivery & Pickup Options:** It helps you easily manage food delivery and pickup orders with customizable settings!
 
-- **Restaurant Reservations:** This plugin lets you simplify the restaurant reservations process while allowing customers to reserve tables directly from your restaurant website.
+- **Restaurant Reservations:** Now available for free, this plugin lets you simplify the restaurant reservations process with a booking form, capacity handling, and an admin reservation list—so customers can reserve tables directly from your restaurant website.
+
+- **Tips & Gratuity:** Let customers add a tip or gratuity right on the cart and checkout, with flexible fixed or percentage-based amounts—now included free.
+
+- **Special Menu Popup:** Grab attention with an eye-catching popup that highlights your special menu, offer, or discount—complete with a custom title, call-to-action button, and multiple styles, scheduled to run until your chosen end date. Now available in the free version.
+
+- **Product Discounts:** Offer percentage-based discounts on your food menu products to run promotions and boost orders—now free.
 
 - **Flexible Customization:** Display your food menu with various layout options (Grid, List, Slider, Isotope) to align with your restaurant site and increase dwell time.
 
@@ -173,6 +181,39 @@ Upgrade to Food Menu Pro for enhanced capabilities that growing food businesses 
 [youtube https://www.youtube.com/watch?v=A-UFWL0KTfo]
 
 
+== 💎 New Pro Modules for Order & Restaurant Operations ==
+
+👉 **QR Code Table Ordering:** Let dine-in guests scan a QR code at their table to browse the menu and order instantly—each order is tied to its table for effortless service.
+
+👉 **Minimal Checkout for QR Orders:** Speed up dine-in ordering with a stripped-down, distraction-free checkout built specifically for QR table orders.
+
+👉 **Timed Products:** Schedule when individual products are available, so items automatically appear and disappear based on your set times.
+
+👉 **Custom Order Statuses:** Create your own WooCommerce order statuses and trigger email, SMS, and WhatsApp notifications for each one.
+
+👉 **Order Timeline:** Give your team a clear, visual journey of every order’s status changes right on the admin order page.
+
+👉 **Order Tracking:** Offer customers a public order tracking page where they can check progress using their order ID and email.
+
+👉 **Order Bumps:** Boost average order value with smart cross-sell suggestions shown in the mini-cart before checkout.
+
+👉 **Custom Checkout:** Build a tailored, multi-step checkout with configurable sections and flexible layout options.
+
+👉 **Order Custom Fields:** Add extra checkout fields (select and text) to collect the information you need—no code required.
+
+👉 **POS Printing:** Print four slip types—order confirmation, kitchen, packing, and delivery driver—for smooth back-of-house operations.
+
+👉 **SMS & WhatsApp Notifications:** Keep customers informed with automatic order and status-update messages via WhatsApp and SMS.
+
+👉 **Frontend Order Dashboard:** Give staff a dedicated order and inventory management interface outside of wp-admin.
+
+👉 **Inventory Management:** Track stock levels, record wastage, generate reports, and review detailed activity logs.
+
+👉 **Kitchen Monitor:** Run a live kitchen order board with order management, audio alerts, and quick status toggles.
+
+👉 **Role Manager:** Control role-based access to orders, inventory, and Kitchen Monitor management for your team.
+
+
 = Fully translatable =
 * POT files included (/languages/)
 
@@ -186,7 +227,7 @@ Upgrade to Food Menu Pro for enhanced capabilities that growing food businesses 
 
 = Requirements =
 
-* **WordPress version:** >= 5.0
+* **WordPress version:** >= 6.5
 * **PHP version:** >= 7.4
 
 == Frequently Asked Questions ==
@@ -265,6 +306,18 @@ If you like The Post Grid Plugin, then consider checking out our other WordPress
 11. General Settings
 
 == Changelog ==
+
+6.0.0 ( Jun 24, 2026 )
+New: New React based settings panel with a redesigned interface.
+New: Table Reservation system is now available in the free version (booking form, capacity handling, and admin reservation list).
+New: Tips / Gratuity on the cart and checkout is now available in the free version.
+New: Special Menu (time-based menu) is now available in the free version.
+New: Discount (percentage-based product discount) is now available in the free version.
+New: Food Order Location display on the WooCommerce.
+Added: Mini-cart option to exclude specific pages and post types from showing the floating cart.
+Added: WooCommerce Blocks Cart integration loader for Pickup/Delivery and Tip blocks.
+Improved: Compatibility with older WordPress versions.
+Improved: Tip: inline (Fixed)/(20%) suffix on order totals, Blocks support
 
 5.3.3 ( December 30, 2025 )
 Updated: mini-cart css modify, ShortCode Tab Design Issue.

@@ -69,7 +69,8 @@ class Layout {
 	 * @return static
 	 */
 	public static function grid_layout( $obj, $prefix = 'gridbycat' ) {
-		$status = ! TLPFoodMenu()->has_pro();
+		$status      = ! TLPFoodMenu()->has_pro();
+		/* translators: %s: layout group label, e.g. "Grid". */
 		$layout_name = sprintf( esc_html__( '%s Layouts', 'tlp-food-menu' ), ucfirst( $prefix ) );
 		$obj->startSection( 'layout_section', $layout_name, self::$tab );
 
@@ -92,22 +93,22 @@ class Layout {
 					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-4.png',
 				],
 				'layout5' => [
-					'title' => esc_html__( 'Layout 5', 'tlp-food-menu' ),
-					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-5.png',
+					'title'  => esc_html__( 'Layout 5', 'tlp-food-menu' ),
+					'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-5.png',
 					'is_pro' => $status,
 				],
 				'layout6' => [
-					'title' => esc_html__( 'Layout 6', 'tlp-food-menu' ),
-					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-6.png',
+					'title'  => esc_html__( 'Layout 6', 'tlp-food-menu' ),
+					'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-6.png',
 					'is_pro' => $status,
 				],
 				'layout7' => [
-					'title' => esc_html__( 'Layout 7', 'tlp-food-menu' ),
-					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-7.png',
+					'title'  => esc_html__( 'Layout 7', 'tlp-food-menu' ),
+					'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-7.png',
 					'is_pro' => $status,
 				],
-			]);
-		} elseif ( 'grid' == $prefix ){
+			] );
+		} elseif ( 'grid' == $prefix ) {
 			$layout = [
 				'layout1' => [
 					'title' => esc_html__( 'Layout 1', 'tlp-food-menu' ),
@@ -130,7 +131,7 @@ class Layout {
 					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/grid-layout-5.png',
 				],
 			];
-		} elseif ( 'slider' == $prefix ){
+		} elseif ( 'slider' == $prefix ) {
 			$layout = [
 				'layout1' => [
 					'title' => esc_html__( 'Layout 1', 'tlp-food-menu' ),
@@ -149,7 +150,7 @@ class Layout {
 					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/carousel-4.png',
 				],
 			];
-		} elseif ( 'isotope' == $prefix ){
+		} elseif ( 'isotope' == $prefix ) {
 			$layout = [
 				'layout1' => [
 					'title' => esc_html__( 'Layout 1', 'tlp-food-menu' ),
@@ -187,18 +188,18 @@ class Layout {
 					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-5.png',
 				],
 				'layout5' => [
-					'title' => esc_html__( 'Layout 5', 'tlp-food-menu' ),
-					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-2.png',
+					'title'  => esc_html__( 'Layout 5', 'tlp-food-menu' ),
+					'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-2.png',
 					'is_pro' => $status,
 				],
 				'layout6' => [
-					'title' => esc_html__( 'Layout 6', 'tlp-food-menu' ),
-					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-6.png',
+					'title'  => esc_html__( 'Layout 6', 'tlp-food-menu' ),
+					'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-6.png',
 					'is_pro' => $status,
 				],
 				'layout7' => [
-					'title' => esc_html__( 'Layout 7', 'tlp-food-menu' ),
-					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-7.png',
+					'title'  => esc_html__( 'Layout 7', 'tlp-food-menu' ),
+					'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-7.png',
 					'is_pro' => $status,
 				],
 			];
@@ -211,6 +212,15 @@ class Layout {
 			'default' => 'layout1',
 		];
 
+		if ( 'isotope' == $prefix ) {
+			$obj->elControls[] = [
+				'id'         => 'fmp_layout_warning',
+				'type'       => \Elementor\Controls_Manager::ALERT,
+				'alert_type' => 'warning',
+				'heading'    => esc_html__( 'Isotope Preview Limitation', 'tlp-food-menu' ),
+				'content'    => esc_html__( 'Isotope filtering are disabled in the Elementor editor to prevent layout rendering issues. Your selected layout will display correctly on the front-end.', 'tlp-food-menu' ),
+			];
+		}
 		$obj->endSection();
 
 		return new static();
@@ -247,24 +257,30 @@ class Layout {
 	 * @return static
 	 */
 	public static function columns( $obj ) {
-
+		$prefix = $obj->elPrefix ?? '';
 		$obj->startSection( 'columns_section', esc_html__( 'Columns', 'tlp-food-menu' ), self::$tab );
 
+		$columns = [
+			'12' => esc_html__( '1 Columns', 'tlp-food-menu' ),
+			'6'  => esc_html__( '2 Columns', 'tlp-food-menu' ),
+			'4'  => esc_html__( '3 Columns', 'tlp-food-menu' ),
+			'3'  => esc_html__( '4 Columns', 'tlp-food-menu' ),
+//			'2'  => esc_html__( '6 Columns', 'tlp-food-menu' ),
+		];
+
+		if ( in_array( $prefix, [ 'list', 'gridbycat' ] ) ) {
+			unset( $columns['2'] );
+		}
 		$obj->elControls[] = [
-			'type'           => 'select',
-			'id'             => 'fmp_desktop_column',
-			'mode'           => 'responsive',
-			'label'          => esc_html__( 'Number of Columns', 'tlp-food-menu' ),
-			'description'    => esc_html__( 'Please select the number of columns to show per row.', 'tlp-food-menu' ),
-		'options'        => [
-				'12' => esc_html__( '1 Columns', 'tlp-food-menu' ),
-				'6'  => esc_html__( '2 Columns', 'tlp-food-menu' ),
-				'4'  => esc_html__( '3 Columns', 'tlp-food-menu' ),
-				'3'  => esc_html__( '4 Columns', 'tlp-food-menu' ),
-				'2'  => esc_html__( '6 Columns', 'tlp-food-menu' ),
-			],
-			'default'        => '6',
-			'separator'      => 'after',
+			'type'        => 'select',
+			'id'          => 'fmp_desktop_column',
+			'mode'        => 'responsive',
+			'label'       => esc_html__( 'Number of Columns', 'tlp-food-menu' ),
+			'description' => esc_html__( 'Please select the number of columns to display per row. For the best view in the list layout, use 1 or 2 columns.', 'tlp-food-menu' ),
+			'options'     => $columns,
+			'default'     => '6',
+			'render_type' => 'template',
+			'separator'   => 'after',
 		];
 
 		$obj->elControls = self::filter( 'tlp_el_end_of_columns_section', $obj );
@@ -288,14 +304,14 @@ class Layout {
 			'id'             => 'fmp_desktop_column',
 			'mode'           => 'responsive',
 			'label'          => esc_html__( 'Number of Columns', 'tlp-food-menu' ),
-			'description'    => esc_html__( 'Please select the number of columns to show per row.', 'tlp-food-menu' ),
+			'description'    => esc_html__( 'Please select the number of columns to display per row.', 'tlp-food-menu' ),
 			'options'        => [
 				'1' => esc_html__( '1 Columns', 'tlp-food-menu' ),
-				'2'  => esc_html__( '2 Columns', 'tlp-food-menu' ),
-				'3'  => esc_html__( '3 Columns', 'tlp-food-menu' ),
-				'4'  => esc_html__( '4 Columns', 'tlp-food-menu' ),
-				'5'  => esc_html__( '5 Columns', 'tlp-food-menu' ),
-				'6'  => esc_html__( '6 Columns', 'tlp-food-menu' ),
+				'2' => esc_html__( '2 Columns', 'tlp-food-menu' ),
+				'3' => esc_html__( '3 Columns', 'tlp-food-menu' ),
+				'4' => esc_html__( '4 Columns', 'tlp-food-menu' ),
+				'5' => esc_html__( '5 Columns', 'tlp-food-menu' ),
+				'6' => esc_html__( '6 Columns', 'tlp-food-menu' ),
 			],
 			'default'        => '3',
 			'tablet_default' => '2',
@@ -304,8 +320,22 @@ class Layout {
 			'label_block'    => true,
 			'separator'      => 'after',
 		];
-		$obj->elControls = self::filter( 'tlp_el_end_of_columns_section', $obj );
+
+		$obj->elControls[] = [
+			'id'          => 'fmp_desktop_column_notice',
+			'type'        => \Elementor\Controls_Manager::NOTICE,
+			'notice_type' => 'warning',
+			'dismissible' => true,
+			'heading'     => esc_html__( 'Notice', 'tlp-food-menu' ),
+			'content'     => esc_html__( 'For list layout, more than 3 columns will be displayed depending on the available container width. If you select a higher number of columns on a smaller screen, fewer columns may be visible at a time due to limited screen space.', 'tlp-food-menu' ),
+			'condition'   => [
+				'fmp_layout' => [ 'layout2', 'layout4' ],
+			],
+		];
+
+		//$obj->elControls   = self::filter( 'tlp_el_end_of_columns_section', $obj );
 		$obj->endSection();
+
 		return new static();
 	}
 
@@ -324,12 +354,12 @@ class Layout {
 		$obj->elControls[] = [
 			'type'        => 'select',
 			'id'          => 'fmp_source',
-			'label'       => esc_html__( 'Include Food Menu', 'tlp-food-menu' ),
+			'label'       => esc_html__( 'Food Menu Source', 'tlp-food-menu' ),
 			'options'     => [
 				'food-menu' => __( 'Food Menu', 'tlp-food-menu' ),
 				'product'   => __( 'Product ( WooCommerce )', 'tlp-food-menu' ),
 			],
-			'default'        => 'food-menu',
+			'default'     => 'food-menu',
 			'description' => esc_html__( 'Please select the food menu to show. Leave it blank to include all posts.', 'tlp-food-menu' ),
 			'multiple'    => true,
 			'label_block' => true,
@@ -393,6 +423,7 @@ class Layout {
 			'id'          => 'fmp_limit',
 			'label'       => esc_html__( 'Post Limit', 'tlp-food-menu' ),
 			'default'     => 8,
+			'min'         => 1,
 			'description' => esc_html__( 'The number of posts to show. Set empty to show all posts.', 'tlp-food-menu' ),
 		];
 
@@ -413,7 +444,7 @@ class Layout {
 			'type'        => 'select2',
 			'id'          => 'fmp_wc_categories',
 			'label'       => esc_html__( 'Include Categories', 'tlp-food-menu' ),
-			'options'     => Fns::getElProductAllFmpCategoryList( ),
+			'options'     => Fns::getElProductAllFmpCategoryList(),
 			'description' => esc_html__( 'Please select the food menu category to show. Leave it blank to include all.', 'tlp-food-menu' ),
 			'multiple'    => true,
 			'label_block' => true,
@@ -451,15 +482,15 @@ class Layout {
 	public static function getElAllFmpCategoryListIsotope( $settings = [] ) {
 
 		$taxonomy = TLPFoodMenu()->taxonomies['category'];
-		$terms = [];
+		$terms    = [];
 
 		$terms['all'] = ! empty( $settings['fmp_change_btn_text'] ) ? $settings['fmp_change_btn_text'] : 'All Button';
 
 
-		$termList = get_terms([
+		$termList = get_terms( [
 			'taxonomy'   => $taxonomy,
 			'hide_empty' => 0,
-		]);
+		] );
 		if ( is_array( $termList ) && ! empty( $termList ) && empty( $termList['errors'] ) ) {
 			foreach ( $termList as $term ) {
 
@@ -468,6 +499,7 @@ class Layout {
 
 			}
 		}
+
 		return $terms;
 	}
 
@@ -486,12 +518,12 @@ class Layout {
 		$obj->elControls[] = [
 			'type'        => 'select',
 			'id'          => 'fmp_source',
-			'label'       => esc_html__( 'Include Food Menu', 'tlp-food-menu' ),
+			'label'       => esc_html__( 'Food Menu Source', 'tlp-food-menu' ),
 			'options'     => [
 				'food-menu' => __( 'Food Menu', 'tlp-food-menu' ),
 				'product'   => __( 'Product ( WooCommerce )', 'tlp-food-menu' ),
 			],
-			'default'        => 'food-menu',
+			'default'     => 'food-menu',
 			'description' => esc_html__( 'Please select the food menu to show. Leave it blank to include all posts.', 'tlp-food-menu' ),
 			'multiple'    => true,
 			'label_block' => true,
@@ -502,6 +534,7 @@ class Layout {
 			'id'          => 'fmp_limit',
 			'label'       => esc_html__( 'Post Limit', 'tlp-food-menu' ),
 			'default'     => 8,
+			'min'         => 1,
 			'description' => esc_html__( 'The number of posts to show. Set empty to show all posts.', 'tlp-food-menu' ),
 		];
 
@@ -520,7 +553,7 @@ class Layout {
 			'type'        => 'select2',
 			'id'          => 'fmp_wc_categories_include',
 			'label'       => esc_html__( 'Include Categories', 'tlp-food-menu' ),
-			'options'     => Fns::getElProductAllFmpCategoryList( ),
+			'options'     => Fns::getElProductAllFmpCategoryList(),
 			'description' => esc_html__( 'Please select the food menu category to show. Leave it blank to include all.', 'tlp-food-menu' ),
 			'multiple'    => true,
 			'label_block' => true,
@@ -611,10 +644,10 @@ class Layout {
 			'label'       => esc_html__( 'Pagination type', 'tlp-food-menu' ),
 			'description' => esc_html__( 'Please choose to reorder food menu.', 'tlp-food-menu' ),
 			'options'     => [
-				'number-pagination' => esc_html__( 'Numbered Pagination', 'tlp-food-menu' ),
+				'number-pagination'      => esc_html__( 'Numbered Pagination', 'tlp-food-menu' ),
 				'ajax-number-pagination' => esc_html__( 'Ajax Numbered Pagination', 'tlp-food-menu' ),
-				'ajax-load-more-button' => esc_html__( 'Ajax Load More Button', 'tlp-food-menu' ),
-				'ajax-load-more-scroll' => esc_html__( 'Ajax Load More on Scroll', 'tlp-food-menu' ),
+				'ajax-load-more-button'  => esc_html__( 'Ajax Load More Button', 'tlp-food-menu' ),
+				'ajax-load-more-scroll'  => esc_html__( 'Ajax Load More on Scroll', 'tlp-food-menu' ),
 			],
 			'default'     => 'number-pagination',
 			'condition'   => [ 'fmp_pagination' => [ 'yes' ] ],
@@ -625,6 +658,7 @@ class Layout {
 			'id'          => 'fmp_posts_per_page',
 			'label'       => esc_html__( 'Number of Posts Per Page', 'tlp-food-menu' ),
 			'default'     => 8,
+			'min'         => 1,
 			'description' => esc_html__( 'Please enter the number of food menu per page to show.', 'tlp-food-menu' ),
 			'condition'   => [ 'fmp_pagination' => [ 'yes' ] ],
 		];
@@ -658,8 +692,15 @@ class Layout {
 	 *
 	 * @return static
 	 */
-	public static function image( $obj, $prefix = 'list' ) {
+	public static function image( $obj, $prefix = '' ) {
+		$prefix = $obj->elPrefix ?? $prefix;
 		$obj->startSection( 'image_section', esc_html__( 'Image', 'tlp-food-menu' ), self::$tab );
+
+		$hover_icon_exclude = [ '' ];
+		if ( 'isotope' === $prefix ) {
+			$hover_icon_exclude[] = 'layout1';
+		}
+
 		$obj->elControls[] = [
 			'type'        => 'switch',
 			'id'          => 'fmp_feature_switch',
@@ -668,7 +709,7 @@ class Layout {
 			'label_on'    => esc_html__( 'On', 'tlp-food-menu' ),
 			'label_off'   => esc_html__( 'Off', 'tlp-food-menu' ),
 			'default'     => 'yes',
-			'separator'      => 'after',
+			'separator'   => 'after',
 		];
 
 		$obj->elControls[] = [
@@ -678,14 +719,51 @@ class Layout {
 			'description' => esc_html__( 'Switch on to enable hover icon.', 'tlp-food-menu' ),
 			'label_on'    => esc_html__( 'On', 'tlp-food-menu' ),
 			'label_off'   => esc_html__( 'Off', 'tlp-food-menu' ),
-			'default'     => 'yes',
-			'separator'      => 'after',
+			'default'     => false,
+			'separator'   => 'after',
+			'condition'   => [
+				'fmp_layout!' => $hover_icon_exclude,
+			],
 		];
 
-		if ( 'list' == $prefix ) {
-			$obj->elControls = self::filter( 'tlp_image_align', $obj );
-		}
+		$exclude_layouts = [
+			'grid'      => [ 'layout1', 'layout2', 'layout3', 'layout4', 'layout5' ],
+			'slider'    => [ 'layout1', 'layout3' ],
+			'isotope'   => [ 'layout1', 'layout3' ],
+			'gridbycat' => [ 'layout7' ],
+		];
 
+		$exclude_layout = $exclude_layouts[ $prefix ] ?? [];
+
+
+		$obj->elControls[] = [
+			'type'      => \Elementor\Controls_Manager::CHOOSE,
+			'id'        => 'tlp_el_image_align_promo',
+			'label'     => __( 'Image Alignment', 'tlp-food-menu' ),
+			'options'   => [
+				'flex-start' => [
+					'title' => esc_html__( 'Start', 'tlp-food-menu' ),
+					'icon'  => 'eicon-v-align-top',
+				],
+				'center'     => [
+					'title' => esc_html__( 'Center', 'tlp-food-menu' ),
+					'icon'  => 'eicon-v-align-middle',
+				],
+				'flex-end'   => [
+					'title' => esc_html__( 'End', 'tlp-food-menu' ),
+					'icon'  => 'eicon-v-align-bottom',
+				],
+			],
+			'default'   => 'flex-start',
+			'toggle'    => true,
+			'condition' => [
+				'fmp_layout!' => $exclude_layout,
+			],
+			'selectors' => [
+				'{{WRAPPER}} .fmp-wrapper .fmp-image-wrap, {{WRAPPER}} .fmp-box .fmp-img-wrapper' => 'align-self: {{VALUE}};',
+			],
+			'classes'   => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : ''
+		];
 
 
 		$obj->elControls[] = [
@@ -697,7 +775,7 @@ class Layout {
 			'label_block'     => true,
 			'content_classes' => 'elementor-descriptor',
 			'condition'       => [ 'fmp_feature_switch' => [ 'yes' ] ],
-			'separator'      => 'before',
+			'separator'       => 'before',
 		];
 
 		$obj->elControls = self::filter( 'tlp_el_image_animation', $obj );

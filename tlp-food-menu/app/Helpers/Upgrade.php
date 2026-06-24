@@ -23,7 +23,7 @@ class Upgrade {
 	 * @return bool
 	 */
 	public static function check_plugin_version() {
-		if ( version_compare( FOOD_MENU_PRO_VERSION, '3', '<' ) ) {
+		if ( ! defined( 'FOOD_MENU_PRO_VERSION' ) || version_compare( FOOD_MENU_PRO_VERSION, TLP_FOOD_MENU_REQUIRED_PRO_VERSION, '<' ) ) {
 			self::notice();
 
 			return false;
@@ -41,29 +41,23 @@ class Upgrade {
 		add_action(
 			'admin_notices',
 			function () {
-				$class     = 'notice notice-error';
-				$text      = 'Food Menu Pro';
-				$text_free = 'Food Menu';
-				$link      = add_query_arg(
-					[
-						'tab'       => 'plugin-information',
-						'plugin'    => 'tlp-food-menu',
-						'TB_iframe' => 'true',
-						'width'     => '640',
-						'height'    => '500',
-					],
-					admin_url( 'plugin-install.php' )
-				);
-				$link_pro  = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
-
-				printf(
-					'<div class="%1$s"><p><b>Error: <a target="_blank" href="%2$s"><strong>%3$s</strong></a> plugin cannot be activated.</b><br><br> <a target="_blank" href="%2$s"><strong>%3$s</strong></a> plugin is not compatible with the current version of <a class="thickbox open-plugin-details-modal" href="%5$s"><strong>%4$s</strong></a> plugin and hence it is kept deactivated. You need to update <a target="_blank" href="%2$s"><strong>%3$s</strong></a> plugin to 3.0.0 or more to get the pro features.</p></div>',
-					esc_attr( $class ),
-					esc_url( $link_pro ),
-					esc_html( $text ),
-					esc_html( $text_free ),
-					esc_url( $link )
-				);
+				$link_pro = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
+				$version  = esc_html( TLP_FOOD_MENU_REQUIRED_PRO_VERSION );
+				?>
+				<div class="notice notice-error fmp-version-notice" style="border-left: 4px solid #d63638; background: #fff; padding: 16px 20px; margin: 5px 0 15px; box-shadow: 0 1px 4px rgba(0,0,0,.08); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+					<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+						<span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #fce4e4; border-radius: 50%;">
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d63638" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+						</span>
+						<strong style="font-size: 14px; color: #1d2327;">Food Menu Pro — Features Disabled</strong>
+					</div>
+					<p style="margin: 0 0 12px; color: #50575e; font-size: 13px; line-height: 1.6;">
+						<strong>Food Menu Pro</strong> is not compatible with the current version of <strong>Food Menu</strong>.
+						Please update <strong>Food Menu Pro</strong> to version <code style="background: #f0f0f1; padding: 2px 6px; border-radius: 3px; font-size: 12px;"><?php echo esc_html( $version ); ?></code> or higher to restore pro features.
+					</p>
+					<a href="<?php echo esc_url( $link_pro ); ?>" target="_blank" style="display: inline-block; padding: 6px 16px; background: #d63638; color: #fff; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: 500;">Update Food Menu Pro</a>
+				</div>
+				<?php
 			}
 		);
 	}

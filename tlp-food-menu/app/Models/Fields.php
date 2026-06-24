@@ -39,6 +39,7 @@ class Fields {
 	private $blank;
 	private $post_type;
 	private $source_name;
+	private $freeOption;
 
 
 	function __construct() {
@@ -92,6 +93,7 @@ class Fields {
 		$this->attr           = isset( $attr['attr'] ) ? ( $attr['attr'] ? $attr['attr'] : null ) : null;
 		$this->alignment      = isset( $attr['alignment'] ) ? ( $attr['alignment'] ? $attr['alignment'] : null ) : null;
 		$this->blank          = ! empty( $attr['blank'] ) ? $attr['blank'] : null;
+		$this->freeOption     = isset( $attr['freeOption'] ) ? $attr['freeOption'] : '';
 		$this->class          = $this->class ? $this->class . ' rt-form-control' : 'rt-form-control';
 	}
 
@@ -419,12 +421,13 @@ class Fields {
 	private function textArea() {
 		$h  = null;
 		$h .= '<textarea
+				rows="5"
 				class="' . esc_attr( $this->class ) . ' rt-textarea"
 				id="' . esc_attr( $this->name ) . '"
 				name="' . esc_attr( $this->name ) . '"
 				placeholder="' . esc_attr( $this->placeholder ) . '"
 				' . Fns::htmlKses( $this->attr, 'basic' ) . '
-				>' . wp_kses_post( $this->value ) . '</textarea>';
+				>' . wp_kses_post( $this->value ?? '' ) . '</textarea>';
 
 		return $h;
 	}
@@ -479,10 +482,13 @@ class Fields {
 
 		if ( is_array( $this->options ) && ! empty( $this->options ) ) {
 			foreach ( $this->options as $key => $value ) {
-				$checked = ( $key == $this->value ? 'checked' : null );
-				$h      .= '<label for="' . esc_attr( $this->name ) . '-' . esc_attr( $key ) . '">
-								<input type="radio" id="' . esc_attr( $this->name ) . '-' . esc_attr( $key ) . '" ' . esc_attr( $checked ) . ' name="' . esc_attr( $this->name ) . '" value="' . esc_attr( $key ) . '">' . esc_html( $value ) . '
-							</label>';
+				$checked    = ( $key == $this->value ? 'checked' : null );
+				$is_pro     = $this->freeOption && $key !== $this->freeOption;
+				$labelClass = $is_pro ? ' class="rt-pro-option"' : '';
+
+				$h .= '<label for="' . esc_attr( $this->name ) . '-' . esc_attr( $key ) . '"' . $labelClass . '>
+							<input type="radio" id="' . esc_attr( $this->name ) . '-' . esc_attr( $key ) . '" ' . esc_attr( $checked ) . ' name="' . esc_attr( $this->name ) . '" value="' . esc_attr( $key ) . '"' . ( $is_pro ? ' disabled' : '' ) . '>' .'<span class="value">'. esc_html( $value ) .'</span>'. ( $is_pro ? ' <span class="rt-pro-badge">Pro</span>' : '' ) . '
+						</label>';
 			}
 		}
 
@@ -506,16 +512,25 @@ class Fields {
 
 		if ( is_array( $this->options ) && ! empty( $this->options ) ) {
 			foreach ( $this->options as $key => $value ) {
-				$checked  = ( $key == $selected_value ? 'checked' : null );
+				$is_pro   = ! empty( $value['is_pro'] );
+				$checked  = ( $key == $selected_value && ! $is_pro ? 'checked' : null );
 				$title    = isset( $value['title'] ) && $value['title'] ? $value['title'] : '';
 				$link     = isset( $value['layout_link'] ) && $value['layout_link'] ? $value['layout_link'] : '';
 				$linkHtml = empty( $link ) ? $title : '<a href="' . $link . '" target="_blank"  title="Click here to view Demo">' . $title . '</a>';
 				$layout   = isset( $value['layout'] ) ? $value['layout'] : '';
 				$taghtml  = isset( $value['tag'] ) ? '<div class="rtfm-layout-tag"><span>' . $value['tag'] . '</span></div>' : '';
 
+				if ( $is_pro ) {
+					$taghtml .= '<div class="rtfm-layout-pro-badge"><span>' . esc_html__( 'Pro', 'tlp-food-menu' ) . '</span></div>';
+				}
+
+				$wrapper_class = trim( 'rtfm-radio-layout ' . $layout . ( $is_pro ? ' is-pro' : '' ) );
+				$label_class   = trim( 'radio-image ' . $layout . ( $is_pro ? ' is-pro' : '' ) );
+				$disabled_attr = $is_pro ? ' disabled' : '';
+
 				$h .= sprintf(
-					'<div class="rtfm-radio-layout %7$s"><label data-type="%7$s" class="radio-image %7$s" for="%2$s">
-						<input type="radio" class="%4$s" id="%2$s" %3$s name="%4$s" value="%2$s">
+					'<div class="%10$s"><label data-type="%7$s" class="%11$s" for="%2$s">
+						<input type="radio" class="%4$s" id="%2$s" %3$s name="%4$s" value="%2$s"%12$s>
 						<div class="rtfm-radio-image-wrap">
 							<img src="%5$s" title="%6$s" alt="%2$s">
 							<div class="rtfm-checked"><span class="dashicons dashicons-yes"></span></div>
@@ -532,7 +547,10 @@ class Fields {
 					esc_attr( $title ),
 					esc_attr( $layout ),
 					Fns::htmlKses( $linkHtml, 'basic' ),
-					Fns::htmlKses( $taghtml, 'basic' )
+					Fns::htmlKses( $taghtml, 'basic' ),
+					esc_attr( $wrapper_class ),
+					esc_attr( $label_class ),
+					$disabled_attr
 				);
 			}
 		}
@@ -766,8 +784,12 @@ class Fields {
 
 		$h .= "<div class='rt-image-preview'>
 					" . Fns::htmlKses( $img, 'image' ) . "
-					<span class='dashicons dashicons-plus-alt rtAddImage'></span>
-					<span class='dashicons dashicons-trash rtRemoveImage " . esc_attr( $c ) . "'></span>
+					<span class='rtAddImage' title='" . esc_attr__( 'Upload Image', 'tlp-food-menu' ) . "'>
+						<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>
+					</span>
+					<span class='rtRemoveImage " . esc_attr( $c ) . "' title='" . esc_attr__( 'Remove Image', 'tlp-food-menu' ) . "'>
+						<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='3 6 5 6 21 6'/><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/></svg>
+					</span>
 				</div>";
 		$h .= '</div>';
 

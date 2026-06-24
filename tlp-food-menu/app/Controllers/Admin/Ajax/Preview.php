@@ -63,6 +63,8 @@ class Preview {
 			$cImageSize = ! empty( $_REQUEST['fmp_custom_image_size'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_custom_image_size'] ) ) : [];
 
 			$metas = [
+				'layout_type'    => ! empty( $_REQUEST['fmp_layout_type'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_layout_type'] ) ) : 'grid',
+
 				// Layout.
 				'layout'             => ! empty( $_REQUEST['fmp_layout'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_layout'] ) ) : 'layout-free',
 				'gridType'           => ! empty( $_REQUEST['fmp_grid_style'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_grid_style'] ) ) : 'even',
@@ -131,7 +133,7 @@ class Preview {
 				'margin'             => ! empty( $_REQUEST['fmp_margin'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_margin'] ) ) : 'default',
 				'read_more'          => ! empty( $_REQUEST['fmp_read_more_button_text'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_read_more_button_text'] ) ) : esc_html__( 'Read More', 'tlp-food-menu' ),
 
-				'action'             => ! empty( $_REQUEST['action'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) : '',
+				'action' => ! empty( $_REQUEST['action'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['action'] ) ) : '',
 			];
 
 			$cOpt = ! empty( $_REQUEST['fmp_carousel_options'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_carousel_options'] ) ) : [];
@@ -195,7 +197,11 @@ class Preview {
 				$preLoaderHtml = '<div class="fmp-loading-overlay full-op"></div><div class="fmp-loading fmp-ball-clip-rotate"><div></div></div>';
 			}
 
-			$containerClass  = 'fmp-container-fluid fmp-wrapper fmp';
+			$layout_type = $metas['layout_type'];
+
+			$wrapper_class = "fm-$layout_type-layout-wrap";
+
+			$containerClass = "fmp-container-fluid fmp-wrapper fmp fm-shortcode-wrapper $wrapper_class";
 			$containerClass .= ! empty( $animation ) ? ' fmp-hover-' . $animation : ' fmp-hover-zoom_in';
 			$containerClass .= ! empty( $imagePosition ) ? ' fmp-image-' . $imagePosition : ' fmp-image-top';
 			$containerClass .= ! empty( $imageShape ) ? ' fmp-image-' . $imageShape : ' fmp-img-normal';
@@ -329,17 +335,30 @@ class Preview {
 							$metas['posts_loading_type']
 						);
 
-						$html .= '<div class="fmp-col-xs-12">';
-						$html .= '<div class="fmp-utility">';
+						// Pagination / load-more is rendered for preview only —
+						// it isn't wired up in admin AJAX. Wrap it with a class
+						// the admin-preview JS hooks into to swallow clicks and
+						// show the "front-end only" notice.
+						$disabled_msg = esc_attr__( 'Pagination/Loadmore works only in the front-end', 'tlp-food-menu' );
 
+						$paginate_html = '';
 						if ( 'pagination' === $metas['posts_loading_type'] || 'pagination_ajax' === $metas['posts_loading_type'] ) {
-							$html .= $renderPagination;
+							$paginate_html = $renderPagination;
 						} elseif ( 'load_more' === $metas['posts_loading_type'] || 'load_on_scroll' === $metas['posts_loading_type'] ) {
 							if ( TLPFoodMenu()->has_pro() ) {
-								$html .= apply_filters( 'rtfm_pagination', $scID, $metas['posts_loading_type'], $metas['load_more_text'], $fmpQuery );
+								$paginate_html = apply_filters( 'rtfm_pagination', $scID, $metas['posts_loading_type'], $metas['load_more_text'], $fmpQuery );
 							}
 						}
 
+						// Neutralize navigable URLs on the server so the
+						// preview can never reload the admin page, even if
+						// the JS click handler doesn't run. The JS handler
+						// still shows the toast notice on click.
+						$paginate_html = preg_replace( '#\shref\s*=\s*(["\'])[^"\']*\\1#i', ' href="#"', (string) $paginate_html );
+
+						$html .= '<div class="fmp-col-xs-12">';
+						$html .= '<div class="fmp-utility fmp-preview-disabled-paginate" data-fmp-disabled-msg="' . $disabled_msg . '">';
+						$html .= $paginate_html;
 						$html .= '</div>';
 						$html .= '</div>';
 					}
@@ -372,13 +391,13 @@ class Preview {
 	/**
 	 * Layout Style
 	 *
-	 * @param int   $ID ID.
+	 * @param int $ID ID.
 	 * @param array $scMeta SCMeta.
 	 *
 	 * @return string
 	 */
 	private function layoutStyle( $ID, $scMeta ) {
-		$css  = null;
+		$css = null;
 		$css .= "<style type='text/css' media='all'>";
 
 		// Title.
@@ -781,13 +800,22 @@ class Preview {
 			$css .= '}';
 		}
 
-		// Primary Color.
-		$primaryColor = ( ! empty( $scMeta['fmp_primary_color'] ) ? $scMeta['fmp_primary_color'] : null );
+		// Primary Color — shortcode setting first, then global settings fallback.
+		$primaryColor = ! empty( $scMeta['fmp_primary_color'] ) ? $scMeta['fmp_primary_color'] : Fns::get_setting( 'fm_primary_color', '' );
 
 		if ( $primaryColor ) {
+			$r        = hexdec( substr( $primaryColor, 1, 2 ) );
+			$g        = hexdec( substr( $primaryColor, 3, 2 ) );
+			$b        = hexdec( substr( $primaryColor, 5, 2 ) );
+			$dark_hex = sprintf( '#%02x%02x%02x', max( 0, (int) ( $r * 0.9 ) ), max( 0, (int) ( $g * 0.9 ) ), max( 0, (int) ( $b * 0.9 ) ) );
+			$soft_hex = sprintf( '#%02x%02x%02x', 255 - (int) ( ( 255 - $r ) * 0.03 ), 255 - (int) ( ( 255 - $g ) * 0.03 ), 255 - (int) ( ( 255 - $b ) * 0.03 ) );
+
 			// Primary Color.
 			$css .= "#{$ID} { ";
 			$css .= '--rtfm-primary-color:' . $primaryColor . ';';
+			$css .= '--rtfm-primary-rgb:' . $r . ',' . $g . ',' . $b . ';';
+			$css .= '--rtfm-primary-dark:' . $dark_hex . ';';
+			$css .= '--rtfm-primary-soft:' . $soft_hex . ';';
 			$css .= '}';
 
 			// Cat layout.
@@ -840,14 +868,14 @@ class Preview {
 			$sDesc_size      = ( ! empty( $sDesc['size'] ) ? absint( $sDesc['size'] ) : null );
 			$sDesc_weight    = ( ! empty( $sDesc['weight'] ) ? $sDesc['weight'] : null );
 			$sDesc_alignment = ( ! empty( $sDesc['align'] ) ? $sDesc['align'] : null );
-			$css            .= "#{$ID} .fmp-box .fmp-title p,";
-			$css            .= "#{$ID} .fmp-content-wrap > p,";
-			$css            .= "#{$ID} .fmp-media-body > p,";
-			$css            .= "#{$ID} .fmp-box li > p,";
-			$css            .= "#{$ID} .fmp-body > p,";
-			$css            .= "#{$ID} .fmp-content > p,";
-			$css            .= "#{$ID} [class*=fmp-layout-free] .fmp-food-item .fmp-body p,";
-			$css            .= "#{$ID} .fmp-media-body .info-part > p {";
+			$css             .= "#{$ID} .fmp-box .fmp-title p,";
+			$css             .= "#{$ID} .fmp-content-wrap > p,";
+			$css             .= "#{$ID} .fmp-media-body > p,";
+			$css             .= "#{$ID} .fmp-box li > p,";
+			$css             .= "#{$ID} .fmp-body > p,";
+			$css             .= "#{$ID} .fmp-content > p,";
+			$css             .= "#{$ID} [class*=fmp-layout-free] .fmp-food-item .fmp-body p,";
+			$css             .= "#{$ID} .fmp-media-body .info-part > p {";
 
 			if ( $sDesc_color ) {
 				$css .= 'color:' . $sDesc_color . ';';
@@ -1050,7 +1078,7 @@ class Preview {
 			$dCol = $tCol = $mCol = 12;
 		}
 
-		$arg['grid']   = 'fmp-col-lg-' . $dCol . ' fmp-col-md-' . $dCol . ' fmp-col-sm-' . $tCol . ' fmp-col-xs-' . $mCol . ' ';
+		$arg['grid']  = 'fmp-col-lg-' . $dCol . ' fmp-col-md-' . $dCol . ' fmp-col-sm-' . $tCol . ' fmp-col-xs-' . $mCol . ' ';
 		$arg['class'] .= ' ' . $metas['gridType'] . '-grid-item ';
 
 		$arg['class'] .= 'fmp-grid-item';
@@ -1099,7 +1127,7 @@ class Preview {
 			$cOpt = ! empty( $scMeta['fmp_carousel_options'] ) ? $scMeta['fmp_carousel_options'] : [];
 			$cOpt = ! empty( $scMeta['fmp_carousel_options'] ) ? $scMeta['fmp_carousel_options'] : [];
 
-			$arg['class']   .= ' fmp-carousel-item';
+			$arg['class']    .= ' fmp-carousel-item';
 			$arg['lazyLoad'] = ( in_array( 'lazy_load', $carouselOpts, true ) ? true : false );
 		}
 

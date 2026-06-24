@@ -90,12 +90,20 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		private function check_pro() {
 			$active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
 
+			/**
+			 * Is the pro not activated, return from here.
+			 */
 			if ( ! in_array( 'food-menu-pro/food-menu-pro.php', $active_plugins, true ) ) {
 				return;
 			}
 
+			/**
+			 * Is pro activated, check version compatibility.
+			 * Remove pro's plugins_loaded hook to prevent incompatible
+			 * old pro versions from initializing against updated free code.
+			 */
 			if ( false === Upgrade::check_plugin_version() ) {
-				add_action( 'admin_init', [ Upgrade::class, 'deactivate' ] );
+				remove_action( 'plugins_loaded', 'FMP', 20 );
 
 				return;
 			}
@@ -111,11 +119,10 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 			$fm_pro_path = WP_PLUGIN_DIR . '/food-menu-pro/food-menu-pro.php';
 
 			if ( file_exists( $fm_pro_path ) ) {
-				$plugin_path = get_plugin_data( $fm_pro_path );
+				$plugin_data = get_plugin_data( $fm_pro_path );
 
-				if ( isset( $plugin_path['Version'] ) ) {
-					if ( version_compare( $plugin_path['Version'], '3', '<' ) ) {
-						// add_action( 'admin_init', [ Upgrade::class, 'notice' ] );
+				if ( isset( $plugin_data['Version'] ) ) {
+					if ( version_compare( $plugin_data['Version'], TLP_FOOD_MENU_REQUIRED_PRO_VERSION, '<' ) ) {
 						Upgrade::notice();
 					}
 				}
@@ -151,8 +158,8 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		 * @return void
 		 */
 		private function init_hooks() {
-			\add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ], - 1 );
-			\add_action( 'init', [ $this, 'initialize' ], 0 );
+			add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ], - 1 );
+			add_action( 'init', [ $this, 'initialize' ], 0 );
 		}
 
 		/**
@@ -167,6 +174,9 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 			}
 			$this->load_text_domain();
 			Helpers\Fns::instances( $this->controllers() );
+
+			// Register REST API endpoints.
+			new Controllers\Api\DashboardApi();
 		}
 
 		/**
@@ -202,6 +212,15 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 			$controllers[] = Controllers\FrontendController::class;
 			$controllers[] = Controllers\GutenbergController::class;
 			$controllers[] = Controllers\MiniCart\MiniCart::class;
+
+			// Reservation form shortcode is always registered (gates rendering on the
+			// `fmp_food_reservation_status` setting internally), so embedded shortcodes
+			// show the "disabled" notice instead of breaking when the feature is off.
+			$controllers[] = Controllers\Frontend\ResiShortcode::class;
+
+			if ( Helpers\Fns::enable_reservation() ) {
+				$controllers[] = Controllers\Reservation\Reservation::class;
+			}
 
 			if ( did_action( 'elementor/loaded' ) ) {
 				$controllers[] = Controllers\ElementorController::class;

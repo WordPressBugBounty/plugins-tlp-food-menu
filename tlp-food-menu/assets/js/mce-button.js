@@ -50,7 +50,7 @@
 				'fmp',
 				{
 					icon: 'fmp',
-					tooltip: 'Food menu pro',
+					tooltip: 'Add Shortcode (Food Menu)',
 					cmd: 'fmp_popup',
 				}
 			);

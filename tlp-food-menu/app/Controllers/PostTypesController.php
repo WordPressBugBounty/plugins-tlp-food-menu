@@ -7,6 +7,8 @@
 
 namespace RT\FoodMenu\Controllers;
 
+use RT\FoodMenu\Helpers\Fns;
+
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
@@ -122,7 +124,7 @@ class PostTypesController {
 				'feeds'      => true,
 			],
 			'menu_position'   => 20,
-			'menu_icon'       => TLPFoodMenu()->assets_url() . 'images/icon-16x16.png',
+			'menu_icon'       => TLPFoodMenu()->assets_url() . 'images/icon-16x16.svg',
 		];
 
 		$args[ TLPFoodMenu()->post_type ]['labels'] = [
@@ -171,6 +173,46 @@ class PostTypesController {
 			'not_found'          => esc_html__( 'No Shortcode found.', 'tlp-food-menu' ),
 			'not_found_in_trash' => esc_html__( 'No Shortcode found in trash.', 'tlp-food-menu' ),
 		];
+
+		/**
+		 * Post Type: Reservations (gated by the enable-reservation setting).
+		 */
+		if ( Fns::enable_reservation() ) {
+			$args['fmp_reservation'] = [
+				'supports'            => false,
+				'hierarchical'        => true,
+				'public'              => false,
+				'show_ui'             => true,
+				'show_in_menu'        => 'edit.php?post_type=' . TLPFoodMenu()->post_type,
+				'menu_icon'           => 'dashicons-grid-view',
+				'menu_position'       => 1,
+				'show_in_admin_bar'   => false,
+				'show_in_nav_menus'   => false,
+				'can_export'          => true,
+				'has_archive'         => false,
+				'publicly_queryable'  => false,
+				'query_var'           => false,
+				'exclude_from_search' => true,
+				'capability_type'     => 'post',
+				'show_in_rest'        => false,
+				'rewrite'             => false,
+			];
+
+			$args['fmp_reservation']['labels'] = [
+				'menu_name'          => esc_html__( 'Reservations', 'tlp-food-menu' ),
+				'name'               => esc_html__( 'Reservations', 'tlp-food-menu' ),
+				'singular_name'      => esc_html__( 'Reservations', 'tlp-food-menu' ),
+				'all_items'          => esc_html__( 'All Reservations', 'tlp-food-menu' ),
+				'add_new'            => esc_html__( 'Add Reservation', 'tlp-food-menu' ),
+				'add_new_item'       => esc_html__( 'Add Reservation', 'tlp-food-menu' ),
+				'edit_item'          => esc_html__( 'Edit Reservation', 'tlp-food-menu' ),
+				'new_item'           => esc_html__( 'New Reservation', 'tlp-food-menu' ),
+				'view_item'          => esc_html__( 'View Reservation', 'tlp-food-menu' ),
+				'search_items'       => esc_html__( 'Search Reservation', 'tlp-food-menu' ),
+				'not_found'          => esc_html__( 'No Reservation found', 'tlp-food-menu' ),
+				'not_found_in_trash' => esc_html__( 'No Reservation in the trash', 'tlp-food-menu' ),
+			];
+		}
 
 		return $args;
 	}
@@ -221,12 +263,13 @@ class PostTypesController {
 			'not_found'                  => esc_html__( 'No categories found.', 'tlp-food-menu' ),
 		];
 
-		if ( TLPFoodMenu()->isWcActive() ) {
+		if ( TLPFoodMenu()->isWcActive() && Fns::get_setting( 'fmp_food_location_popup' ) === 'on' ) {
 			$args['food-location'] = [
 				'post_type'         => 'product',
 				'public'            => true,
-				'show_in_nav_menus' => true,
+				'show_in_nav_menus' => false,
 				'show_ui'           => true,
+				'show_in_menu'      => true,
 				'show_tagcloud'     => true,
 				'hierarchical'      => true,
 				'rewrite'           => [
@@ -275,8 +318,8 @@ class PostTypesController {
 			2  => esc_html__( 'ShortCode options updated.', 'tlp-food-menu' ),
 			3  => esc_html__( 'Custom field deleted.', 'tlp-food-menu' ),
 			4  => esc_html__( 'ShortCode updated.', 'tlp-food-menu' ),
-			/* translators: %s: date and time of the revision */
 			5  => isset( $_GET['revision'] ) ? sprintf( //phpcs:ignore
+				/* translators: %s: date and time of the revision */
 				esc_html__( //phpcs:ignore
 					'ShortCode restored to revision from %s',
 					'tlp-food-menu'
@@ -314,6 +357,9 @@ class PostTypesController {
 			echo '<style>
             table.wp-list-table .column-name {
                 width: 14%;
+            }
+            table.wp-list-table .column-taxonomy-tpl-food-location {
+                min-width: 140px;
             }
         </style>';
 		}

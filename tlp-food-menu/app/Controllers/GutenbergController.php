@@ -74,6 +74,7 @@ class GutenbergController {
 			( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? time() : TLP_FOOD_MENU_VERSION,
 			true
 		);
+		wp_set_script_translations( 'rt-food-menu-cgb-block-js', 'tlp-food-menu', FOOD_MENU_PLUGIN_DIR_PATH . 'languages' );
 
 		wp_localize_script(
 			'rt-food-menu-cgb-block-js',

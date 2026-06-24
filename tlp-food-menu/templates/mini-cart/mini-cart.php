@@ -145,6 +145,7 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 
 <!--Minicart footer -->
 <div class="mini-cart-bottom">
+	<?php do_action( 'fmp_before_mini_cart_coupon' ); ?>
 	<?php if ( 'on' !== $coupon_visibility ) : ?>
 		<div class="fmp-apply-coupon-toggle">
 			<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -180,12 +181,6 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 				<td data-title="<?php esc_attr_e( 'Subtotal', 'tlp-food-menu' ); ?>">
 					<?php
 					wc_cart_totals_subtotal_html(); //Just print total no need extra calculation like VAT
-
-					/*if ( 'on' === $extra_field_visibility ) {
-						wc_cart_totals_subtotal_html();
-					} else {
-						Fns::print_html( wc_price( WC()->cart->get_cart_contents_total() ), true );
-					}*/
 					?>
 				</td>
 			</tr>

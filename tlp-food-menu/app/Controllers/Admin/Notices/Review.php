@@ -36,23 +36,36 @@ class Review {
 	 */
 	public static function check_installation_time() {
 
-		// Added Lines Start.
 		$nobug = get_option( 'rtfm_spare_me', '0' );
 
-		if ( $nobug == '1' || $nobug == '3' ) {
+		// Dismissed permanently ("No thanks") or already rated — never show again.
+		if ( '1' === $nobug || '3' === $nobug ) {
 			return;
 		}
 
-		$install_date = get_option( 'rtfm_plugin_activation_time' );
-		$past_date    = strtotime( '-10 days' );
+		$now          = strtotime( 'now' );
+		$install_date = (int) get_option( 'rtfm_plugin_activation_time' );
 
-		$remind_time = get_option( 'rtfm_remind_me' );
-		$remind_due  = strtotime( '+15 days', $remind_time );
-		$now         = strtotime( 'now' );
+		// Safety net: if the activation time was never stored, start the clock now
+		// so a fresh site never gets the notice immediately.
+		if ( ! $install_date ) {
+			$install_date = $now;
+			update_option( 'rtfm_plugin_activation_time', $install_date );
+		}
 
-		if ( $now >= $remind_due ) {
-			add_action( 'admin_notices', [ __CLASS__, 'display_admin_notice' ] );
-		} elseif ( ( $past_date >= $install_date ) && $nobug !== '2' ) {
+		// User clicked "Maybe later": show again 15 days after that click.
+		if ( '2' === $nobug ) {
+			$remind_time = (int) get_option( 'rtfm_remind_me' );
+
+			if ( $remind_time && $now >= strtotime( '+15 days', $remind_time ) ) {
+				add_action( 'admin_notices', [ __CLASS__, 'display_admin_notice' ] );
+			}
+
+			return;
+		}
+
+		// First-time prompt: only after the plugin has been active for 15 days.
+		if ( $now >= strtotime( '+15 days', $install_date ) ) {
 			add_action( 'admin_notices', [ __CLASS__, 'display_admin_notice' ] );
 		}
 	}
@@ -131,15 +144,19 @@ class Review {
 			$reviewurl    = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5#new-post';
 
 			printf(
-				'<div class="notice rtfm-review-notice rtfm-review-notice--extended">
-					<div class="rtfm-review-notice_content">
-						<h3>Enjoying Food Menu - Restaurant Menu & Online Ordering for WooCommerce?</h3>
-						<p>Thank you for choosing Food Menu - Restaurant Menu & Online Ordering for WooCommerce. If you have found our plugin useful and makes you smile, please consider giving us a 5-star rating on WordPress.org. It will help us to grow.</p>
-						<div class="rtfm-review-notice_actions">
-							<a href="%s" class="rtfm-review-button rtfm-review-button--cta" target="_blank"><span>⭐ Yes, You Deserve It!</span></a>
-							<a href="%s" class="rtfm-review-button rtfm-review-button--cta rtfm-review-button--outline"><span>😀 Already Rated!</span></a>
-							<a href="%s" class="rtfm-review-button rtfm-review-button--cta rtfm-review-button--outline"><span>🔔 Remind Me Later</span></a>
-							<a href="%s" class="rtfm-review-button rtfm-review-button--cta rtfm-review-button--error rtfm-review-button--outline"><span>😐 No Thanks</span></a>
+				'<div class="notice rtfm-review-notice">
+					<div class="rtfm-review-notice__icon">
+						<span class="rtfm-review-notice__icon-mark">🍽️</span>
+					</div>
+					<div class="rtfm-review-notice__body">
+						<div class="rtfm-review-notice__stars">★★★★★</div>
+						<h3 class="rtfm-review-notice__title">Enjoying Food Menu for WooCommerce?</h3>
+						<p class="rtfm-review-notice__text">We have poured a lot of care into building Food Menu &mdash; Restaurant Menu &amp; Online Ordering for WooCommerce. If it has made running your menu easier, a quick 5-star review on WordPress.org would mean the world to our team and help others discover it.</p>
+						<div class="rtfm-review-notice__actions">
+							<a href="%s" class="rtfm-review-button rtfm-review-button--primary" target="_blank" rel="noopener">⭐ Sure, you deserve it!</a>
+							<a href="%s" class="rtfm-review-button rtfm-review-button--ghost">Already rated</a>
+							<a href="%s" class="rtfm-review-button rtfm-review-button--ghost">Maybe later</a>
+							<a href="%s" class="rtfm-review-button rtfm-review-button--link">No thanks</a>
 						</div>
 					</div>
 				</div>',
@@ -150,110 +167,129 @@ class Review {
 			);
 
 			echo '<style>
-				.rtfm-review-button--cta {
-					--e-button-context-color: #5d3dfd;
-					--e-button-context-color-dark: #5d3dfd;
-					--e-button-context-tint: rgb(75 47 157/4%);
-					--e-focus-color: rgb(75 47 157/40%);
-				}
 				.rtfm-review-notice {
 					position: relative;
-					margin: 5px 20px 5px 2px;
-					border: 1px solid #ccd0d4;
+					display: flex;
+					gap: 18px;
+					margin: 16px 20px 16px 2px;
+					padding: 22px 24px;
+					border: 1px solid #e4e7ec;
+					border-left: 4px solid #5d3dfd;
+					border-radius: 10px;
 					background: #fff;
-					box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-					font-family: Roboto, Arial, Helvetica, Verdana, sans-serif;
-					border-inline-start-width: 4px;
+					box-shadow: 0 4px 16px rgba(16, 24, 40, 0.06);
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 				}
 				.rtfm-review-notice.notice {
+					padding: 22px 24px;
+				}
+				.rtfm-review-notice__icon {
+					flex: 0 0 auto;
+				}
+				.rtfm-review-notice__icon-mark {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 52px;
+					height: 52px;
+					border-radius: 12px;
+					background: linear-gradient(135deg, #6d4bff 0%, #8b5cf6 100%);
+					font-size: 26px;
+					line-height: 1;
+					box-shadow: 0 6px 14px rgba(93, 61, 253, 0.28);
+				}
+				.rtfm-review-notice__body {
+					flex: 1 1 auto;
+					min-width: 0;
+				}
+				.rtfm-review-notice__stars {
+					color: #f5a623;
+					font-size: 16px;
+					letter-spacing: 3px;
+					line-height: 1;
+					margin-bottom: 8px;
+				}
+				.rtfm-review-notice__title {
+					margin: 0 0 6px;
 					padding: 0;
+					font-size: 18px;
+					font-weight: 600;
+					line-height: 1.3;
+					color: #101828;
 				}
-				.rtfm-review-notice:before {
-					position: absolute;
-					top: -1px;
-					bottom: -1px;
-					left: -4px;
-					display: block;
-					width: 4px;
-					background: -webkit-linear-gradient(bottom, #4C6FFF 0%, #6939c6 100%);
-					background: linear-gradient(0deg, #4C6FFF 0%, #6939c6 100%);
-					content: "";
-				}
-				.rtfm-review-notice_content {
-					padding: 20px;
-				}
-				.rtfm-review-notice_actions > * + * {
-					margin-inline-start: 8px;
-					-webkit-margin-start: 8px;
-					-moz-margin-start: 8px;
-				}
-				.rtfm-review-notice p {
+				.rtfm-review-notice__text {
 					margin: 0;
 					padding: 0;
-					line-height: 1.5;
+					max-width: 760px;
+					font-size: 13px;
+					line-height: 1.6;
+					color: #475467;
 				}
-				p + .rtfm-review-notice_actions {
-					margin-top: 1rem;
-				}
-				.rtfm-review-notice h3 {
-					margin: 0;
-					font-size: 1.0625rem;
-					line-height: 1.2;
-				}
-				.rtfm-review-notice h3 + p {
-					margin-top: 8px;
+				.rtfm-review-notice__actions {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					gap: 10px;
+					margin-top: 16px;
 				}
 				.rtfm-review-button {
-					display: inline-block;
-					padding: 0.4375rem 0.75rem;
-					border: 1px solid var(--e-button-context-color);
-					border-radius: 3px;;
-					background: var(--e-button-context-color);
-					color: #fff;
-					vertical-align: middle;
-					text-align: center;
+					display: inline-flex;
+					align-items: center;
+					padding: 8px 16px;
+					border-radius: 8px;
+					font-size: 13px;
+					font-weight: 600;
+					line-height: 1;
 					text-decoration: none;
 					white-space: nowrap;
+					transition: all 0.15s ease;
 				}
-				.rtfm-review-button:active {
-					background: var(--e-button-context-color-dark);
+				.rtfm-review-button--primary {
+					background: linear-gradient(135deg, #6d4bff 0%, #8b5cf6 100%);
+					color: #fff !important;
+					box-shadow: 0 4px 12px rgba(93, 61, 253, 0.28);
+					text-decoration: none !important;
+				}
+				.rtfm-review-button--primary:hover,
+				.rtfm-review-button--primary:focus {
+					transform: translateY(-1px);
+					box-shadow: 0 6px 16px rgba(93, 61, 253, 0.36);
 					color: #fff;
-					text-decoration: none;
+				}
+				.rtfm-review-button--ghost {
+					background: #f4f3ff;
+					color: #5d3dfd;
+					border: 1px solid #e0dbff;
+					text-decoration: none !important;
+				}
+				.rtfm-review-button--ghost:hover,
+				.rtfm-review-button--ghost:focus {
+					background: #ece9ff;
+					color: #4c2ff0;
+				}
+				.rtfm-review-button--link {
+					background: transparent;
+					color: #98a2b3;
+				}
+				.rtfm-review-button--link:hover,
+				.rtfm-review-button--link:focus {
+					color: #667085;
+					text-decoration: underline;
 				}
 				.rtfm-review-button:focus {
-					outline: 0;
-					background: var(--e-button-context-color-dark);
-					box-shadow: 0 0 0 2px var(--e-focus-color);
-					color: #fff;
-					text-decoration: none;
+					outline: 2px solid rgba(93, 61, 253, 0.4);
+					outline-offset: 2px;
 				}
-				.rtfm-review-button:hover {
-					background: var(--e-button-context-color-dark);
-					color: #fff;
-					text-decoration: none;
-				}
-				.rtfm-review-button.focus {
-					outline: 0;
-					box-shadow: 0 0 0 2px var(--e-focus-color);
-				}
-				.rtfm-review-button--error {
-					--e-button-context-color: #d72b3f;
-					--e-button-context-color-dark: #ae2131;
-					--e-button-context-tint: rgba(215,43,63,0.04);
-					--e-focus-color: rgba(215,43,63,0.4);
-				}
-				.rtfm-review-button.rtfm-review-button--outline {
-					border: 1px solid;
-					background: 0 0;
-					color: var(--e-button-context-color);
-				}
-				.rtfm-review-button.rtfm-review-button--outline:focus {
-					background: var(--e-button-context-tint);
-					color: var(--e-button-context-color-dark);
-				}
-				.rtfm-review-button.rtfm-review-button--outline:hover {
-					background: var(--e-button-context-tint);
-					color: var(--e-button-context-color-dark);
+				@media screen and (max-width: 782px) {
+					.rtfm-review-notice {
+						padding: 18px;
+					}
+					.rtfm-review-notice.notice {
+						padding: 18px;
+					}
+					.rtfm-review-notice__icon {
+						display: none;
+					}
 				}
 			</style>';
 		}

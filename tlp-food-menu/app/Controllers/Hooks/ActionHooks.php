@@ -31,12 +31,6 @@ class ActionHooks {
 	 */
 	public $classes = '';
 
-	/**
-	 * Settings.
-	 *
-	 * @var array
-	 */
-	public $settings = [];
 
 	/**
 	 * Class Init.
@@ -44,7 +38,6 @@ class ActionHooks {
 	 * @return void
 	 */
 	protected function init() {
-		$this->settings = get_option( TLPFoodMenu()->options['settings'] );
 		add_action( 'fmp_single_summery', [ $this, 'fmp_single_images' ], 10 );
 		add_action( 'fmp_single_summery', [ $this, 'fmp_before_summery' ], 20 );
 		add_action( 'fmp_single_summery', [ $this, 'fmp_summery_title' ], 30 );
@@ -52,105 +45,8 @@ class ActionHooks {
 		add_action( 'fmp_single_summery', [ $this, 'fmp_summery' ], 50 );
 		add_action( 'fmp_single_summery', [ $this, 'fmp_summery_meta' ], 60 );
 		add_action( 'fmp_single_summery', [ $this, 'fmp_after_summery' ], 70 );
-		$enable_food_location = $this->settings['fmp_food_location_popup'] ?? '';
-		if ( TLPFoodMenu()->isWcActive() && ! empty( $enable_food_location ) ) {
-			// footer load location popup.
-			add_action( 'wp_footer', [ $this, 'render_food_location_popup' ] );
-			// add new checkout page and save meta date.
-			add_action( 'woocommerce_checkout_before_customer_details', [ $this, 'render_location_form' ] );
-			add_action( 'woocommerce_checkout_create_order', [ $this, 'location_update_meta' ] );
-			add_action( 'woocommerce_order_details_after_order_table_items', [ $this, 'order_details' ] );
-		}
-	}
 
-	/**
-	 * Order details meta data
-	 *
-	 * @param object $order .
-	 *
-	 * @return void
-	 */
-	public function order_details( $order ) {
-		$food_location = $order->get_meta( 'fmp_location_name' );
-		if ( $food_location ) :
-			?>
-            <tr>
-                <th scope="row"><?php echo esc_html__( 'Food Location:', 'tlp-food-menu' ); ?></th>
-                <td><?php echo esc_html( $food_location ); ?></td>
-            </tr>
-		<?php
-		endif;
-	}
-
-	/**
-	 * Update location form data.
-	 *
-	 * @param object $order .
-	 *
-	 * @return void
-	 */
-	public function location_update_meta( $order ) {
-		$nonce_value = ! empty( $_REQUEST['woocommerce-process-checkout-nonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['woocommerce-process-checkout-nonce'] ) ) : '';
-		if ( ! wp_verify_nonce( $nonce_value, 'woocommerce-process_checkout' ) ) {
-			return;
-		}
-		if ( ! empty( sanitize_text_field( wp_unslash( $_POST['fmp_location_name'] ) ) ) ) {
-			$order->update_meta_data( 'fmp_location_name', sanitize_text_field( wp_unslash( $_POST['fmp_location_name'] ) ) );
-		}
-	}
-
-	/**
-	 * Checkout location form.
-	 *
-	 * @return void
-	 */
-	public function render_location_form() {
-		$order_location = apply_filters( 'fm_order_location_checkout_title', __( 'Food Order Location', 'tlp-food-menu' ) );
-		?>
-        <div id="fmp-location-field">
-            <div class="fmp-location-title"><?php echo esc_html( $order_location ); ?></div>
-            <div class="fmp-location-name"></div>
-            <input type="hidden" name="fmp_location_name" class="fmp-location-name"/>
-        </div>
-		<?php
-	}
-
-	/**
-	 * Popup food location in footer.
-	 *
-	 * @return void
-	 */
-	public function render_food_location_popup() {
-		?>
-        <div class="fmp-location-box-wrap"></div>
-        <script type="text/javascript">
-            const locationData = localStorage.getItem('fmp_location')
-
-            if ((null === locationData)) {
-                jQuery(document).ready(function () {
-                    jQuery('.fmp-location-box-wrap').html(`
-								<div id="fmp-location-modal" class="fmp-popup-modal">
-									<div class="modal-content">
-										<select name="fmp-location" class="fmp-location">
-											<?php
-                                                $fmp_locations = Fns::get_location_data( '', '', 'id' );
-                                                foreach ( $fmp_locations as $key => $value ) {
-                                                    $selected = count( $fmp_locations ) <= 2 ? 'selected=selected' : '';
-                                                    echo "<option value='" . esc_html( $key ) . "'" . esc_attr( $selected ) . '>' . esc_html( $value ) . '</option>';
-                                                }
-                                            ?>
-										</select>
-
-										<div class="confirm-msg fmp-hidden"><?php echo esc_html__( 'Save Your Preferred Location', 'tlp-food-menu' ); ?></div>
-										<button class="fmp-save-option fmp-btn"><?php echo esc_html__( 'Save', 'tlp-food-menu' ); ?></button>
-										<button class="fmp-close fmp-btn"> X </button>
-									</div>
-								</div>
-							`)
-                })
-            }
-        </script>
-		<?php
+		add_action( 'woocommerce_order_details_after_order_table_items', [ $this, 'food_menu_order_details' ] );
 	}
 
 	/**
@@ -281,28 +177,13 @@ class ActionHooks {
 		$settings      = get_option( TLPFoodMenu()->options['settings'] );
 		$hiddenOptions = ! empty( $settings['hide_options'] ) ? $settings['hide_options'] : [];
 
-		if ( ! in_array( 'summery', $hiddenOptions ) || ( wp_doing_ajax() && ! in_array( 'description', $hiddenOptions ) ) ) {
+		if ( ! in_array( 'summery', $hiddenOptions ) || ( wp_doing_ajax() && ! in_array( 'summery', $hiddenOptions ) ) ) {
 			?>
             <div class="fmp-short-description summery entry-summery ">
 				<?php
-				global $post;
-
-				if ( in_array( $post->post_type, [ TLPFoodMenu()->post_type, 'product' ] ) ) {
-
-					if ( ! in_array( 'description', $hiddenOptions ) ) {
-						the_excerpt();
-					} else {
-						the_content();
-					}
-				} else {
-					if ( ! in_array( 'summery', $hiddenOptions ) ) {
-						the_excerpt();
-					}
-
-					if ( wp_doing_ajax() && ! in_array( 'description', $hiddenOptions ) ) {
-						the_content();
-					}
-				}
+                if ( ! in_array( 'summery', $hiddenOptions ) ) {
+                    the_excerpt();
+                }
 				?>
             </div>
 			<?php
@@ -361,5 +242,47 @@ class ActionHooks {
             </div>
 			<?php
 		}
+	}
+
+	/**
+	 * Render the "Food Order Details" section with the customer's selected
+	 * location on the WooCommerce order details page (order-received +
+	 * My Account → View Order).
+	 *
+	 * Hooked to `woocommerce_order_details_after_order_table_items`, which
+	 * fires inside the order items `<tbody>` — output must be `<tr>` rows.
+	 *
+	 * Pro replaces this with its own richer version covering pickup/delivery,
+	 * QR table, tip, and custom fields (see Pro `ActionHooks::food_menu_order_details`).
+	 *
+	 * @param \WC_Order $order Order being viewed.
+	 *
+	 * @return void
+	 */
+	public function food_menu_order_details( $order ) {
+		if ( ! $order instanceof \WC_Order ) {
+			return;
+		}
+
+		$location = $order->get_meta( 'fmp_location_name' );
+
+		if ( ! $location ) {
+			return;
+		}
+		?>
+		<tr class="fmp-order-details-row">
+			<th colspan="2" style="padding-top:20px;border-top:2px solid #e5e7eb;">
+				<?php esc_html_e( 'Food Order Details', 'tlp-food-menu' ); ?>
+			</th>
+		</tr>
+		<tr>
+			<th><?php esc_html_e( 'Location:', 'tlp-food-menu' ); ?></th>
+			<td>
+				<span style="display:inline-block;padding:2px 10px;background:#e67e22;border-radius:4px;color:#fff;font-weight:600;">
+					<?php echo esc_html( $location ); ?>
+				</span>
+			</td>
+		</tr>
+		<?php
 	}
 }

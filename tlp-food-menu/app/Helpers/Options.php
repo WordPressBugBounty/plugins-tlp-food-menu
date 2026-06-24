@@ -29,12 +29,13 @@ class Options {
 				'options'   => self::fmpItemFields(),
 			],
 			'fmp_mobile_item_fields' => [
-				'type'      => 'checkbox',
-				'label'     => esc_html__( 'Field Selection on Mobile', 'tlp-food-menu' ),
-				'multiple'  => true,
-				'alignment' => 'vertical',
-				'default'   => array_keys( self::fmpMobileItemFields() ),
-				'options'   => self::fmpMobileItemFields(),
+				'type'        => 'checkbox',
+				'label'       => esc_html__( 'Hide Fields on Mobile Devices', 'tlp-food-menu' ),
+				'description' => esc_html__( 'Select which of the above selected fields should be hidden on mobile devices.', 'tlp-food-menu' ),
+				'multiple'    => true,
+				'alignment'   => 'vertical',
+				'default'     => array_keys( self::fmpMobileItemFields() ),
+				'options'     => self::fmpMobileItemFields(),
 			],
 		];
 	}
@@ -196,8 +197,33 @@ class Options {
 				'type'        => 'switch',
 				'description' => esc_html__( 'Enable Reservation. Please refresh the page after saving the changes to apply the reservation.', 'tlp-food-menu' ),
 				'value'       => $settings['fmp_food_reservation_status'] ?? '',
+				'holderClass' => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : '',
 			];
 		}
+
+		$general['fmp_enable_frontend_inventory'] = [
+			'label'       => esc_html__( 'Inventory management', 'tlp-food-menu' ),
+			'type'        => 'switch',
+			'description' => esc_html__( 'Enable Inventory management on the front-end page.', 'tlp-food-menu' ),
+			'value'       => $settings['fmp_enable_frontend_inventory'] ?? '',
+			'holderClass' => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : '',
+		];
+
+		$general['fmp_enable_custom_order_statuses'] = [
+			'label'       => esc_html__( 'Custom Order Statuses', 'tlp-food-menu' ),
+			'type'        => 'switch',
+			'description' => esc_html__( 'Add custom workflow statuses (e.g., Prepping, In Oven, Driver Out) to WooCommerce orders.', 'tlp-food-menu' ),
+			'value'       => $settings['fmp_enable_custom_order_statuses'] ?? '',
+			'holderClass' => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : '',
+		];
+
+		$general['fmp_enable_order_slot_limits'] = [
+			'label'       => esc_html__( 'Order Slot Limits', 'tlp-food-menu' ),
+			'type'        => 'switch',
+			'description' => esc_html__( 'Limit the number of pickup/delivery orders per time slot to prevent kitchen overload.', 'tlp-food-menu' ),
+			'value'       => $settings['fmp_enable_order_slot_limits'] ?? '',
+			'holderClass' => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : '',
+		];
 
 		$general['fmp_preloader'] = [
 			'type'        => 'checkbox',
@@ -208,32 +234,68 @@ class Options {
 			'option'      => 1,
 		];
 
-			$general['fmp_food_location_popup'] = [
-				'label'       => esc_html__( 'Allow Food Location ?', 'tlp-food-menu' ),
-				'type'        => 'switch',
-				'description' => esc_html__( 'Implement a front-end location pop-up to capture user location for food delivery.', 'tlp-food-menu' ),
-				'value'       => $settings['fmp_food_location_popup'] ?? '',
-			];
+		$general['fmp_food_location_popup'] = [
+			'label'       => esc_html__( 'Allow Food Location ?', 'tlp-food-menu' ),
+			'type'        => 'switch',
+			'description' => esc_html__( 'Implement a front-end location pop-up to capture user location for food delivery.', 'tlp-food-menu' ),
+			'value'       => $settings['fmp_food_location_popup'] ?? '',
+		];
 
-			if ( ! TLPFoodMenu()->has_pro() ) {
-				$general['trailing_zeroes'] = [
-					'label'       => esc_html__( 'Hide Trailing Zeroes', 'tlp-food-menu' ),
-					'type'        => 'checkbox',
-					'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
-					'description' => esc_html__( 'Switch on to hide trailing zeroes from the price.', 'tlp-food-menu' ),
-					'default'     => 0,
-					'option'      => 1,
-					'value'       => ! empty( $settings['trailing_zeroes'] ) ? $settings['trailing_zeroes'] : 0,
-				];
-			}
-			return apply_filters( 'fmp_general_settings2', $general, $settings );
+		$general['fmp_floating_location_btn'] = [
+			'label'       => esc_html__( 'Show Floating Location Button', 'tlp-food-menu' ),
+			'type'        => 'switch',
+			'description' => ! empty( $settings['fmp_food_location_popup'] )
+				? esc_html__( 'Display a floating button on all pages so users can change their selected location anytime.', 'tlp-food-menu' )
+				: esc_html__( 'Requires "Allow Food Location" to be enabled first.', 'tlp-food-menu' ),
+			'value'       => ! empty( $settings['fmp_food_location_popup'] ) ? ( $settings['fmp_floating_location_btn'] ?? '' ) : '',
+		];
+
+		$general['fmp_location_float_position'] = [
+			'label'       => esc_html__( 'Floating Location Button Position', 'tlp-food-menu' ),
+			'type'        => 'select',
+			'class'       => 'fmp-select2',
+			'description' => esc_html__( 'Choose where the floating location button appears on the page.', 'tlp-food-menu' ),
+			'value'       => $settings['fmp_location_float_position'] ?? 'right_bottom',
+			'options'     => [
+				'right_top'    => esc_html__( 'Right Top', 'tlp-food-menu' ),
+				'right_bottom' => esc_html__( 'Right Bottom', 'tlp-food-menu' ),
+				'left_top'     => esc_html__( 'Left Top', 'tlp-food-menu' ),
+				'left_bottom'  => esc_html__( 'Left Bottom', 'tlp-food-menu' ),
+			],
+		];
+
+
+		if ( TLPFoodMenu()->has_pro() ) {
+			$general['fmp_enable_multi_location'] = [
+				'label'       => esc_html__( 'Enable Multi-Location Branch Support', 'tlp-food-menu' ),
+				'type'        => 'switch',
+				'description' => ! empty( $settings['fmp_food_location_popup'] )
+					? esc_html__( 'Enable separate menus, opening hours, and reservation capacities for different location branches. Note: Multi-location mode supports Normal Reservation only. Visual Table Layout Reservation is not supported in multi-location mode.', 'tlp-food-menu' )
+					: esc_html__( 'Requires "Allow Food Location" to be enabled first.', 'tlp-food-menu' ),
+				'value'       => ! empty( $settings['fmp_food_location_popup'] ) ? ( $settings['fmp_enable_multi_location'] ?? '' ) : '',
+			];
+		}
+
+		if ( ! TLPFoodMenu()->has_pro() ) {
+			$general['trailing_zeroes'] = [
+				'label'       => esc_html__( 'Hide Trailing Zeroes', 'tlp-food-menu' ),
+				'type'        => 'checkbox',
+				'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
+				'description' => esc_html__( 'Switch on to hide trailing zeroes from the price.', 'tlp-food-menu' ),
+				'default'     => 0,
+				'option'      => 1,
+				'value'       => ! empty( $settings['trailing_zeroes'] ) ? $settings['trailing_zeroes'] : 0,
+			];
+		}
+
+		return apply_filters( 'fmp_general_settings2', $general, $settings );
 	}
 
 	public static function detailPageSettings() {
 		$settings = get_option( TLPFoodMenu()->options['settings'] );
 
 		$detailPageSettings = [
-			'hide_options'             => [
+			'hide_options' => [
 				'label'       => esc_html__( 'Hide Options', 'tlp-food-menu' ),
 				'description' => esc_html__( 'When the description is disabled, the short description will automatically display the complete content of the description to ensure no information is lost.', 'tlp-food-menu' ),
 				'type'        => 'checkbox',
@@ -241,12 +303,6 @@ class Options {
 				'alignment'   => 'vertical',
 				'options'     => self::detailsPageHiddenOptions(),
 				'value'       => ! empty( $settings['hide_options'] ) ? $settings['hide_options'] : [],
-			],
-
-			'fmp_single_primary_color' => [
-				'type'  => 'colorpicker',
-				'label' => esc_html__( 'Primary Color', 'tlp-food-menu' ),
-				'value' => ! empty( $settings['fmp_single_primary_color'] ) ? $settings['fmp_single_primary_color'] : null,
 			],
 		];
 
@@ -285,7 +341,7 @@ class Options {
 					'buy_url'   => 'https://1.envato.market/o4JqWO',
 					'doc_url'   => 'https://www.radiustheme.com/demo/wordpress/themes/foodymat/docs/',
 				],
-				'panpie' => [
+				'panpie'    => [
 					'title'     => 'Panpie - Restaurant WordPress Theme',
 					'image_url' => TLPFoodMenu()->assets_url() . 'images/panpie.jpg',
 					'url'       => 'https://1.envato.market/3PenAX',
@@ -352,7 +408,7 @@ class Options {
 		$scStyleButtonBgColorFields = [
 			'fmp_button_bg_color'          => [
 				'type'        => 'colorpicker',
-				'label'       => esc_html__( 'Background Color', 'tlp-food-menu' ),
+				'label'       => esc_html__( 'Gradient Background (1st Color)', 'tlp-food-menu' ),
 				'description' => __( '<b>Note:</b> You need to choose both colors for gradient background. If you need a single color, please choose only the 1st color.', 'tlp-food-menu' ),
 			],
 			'fmp_button_bg_color_2'        => [
@@ -361,7 +417,7 @@ class Options {
 			],
 			'fmp_button_hover_bg_color'    => [
 				'type'        => 'colorpicker',
-				'label'       => esc_html__( 'Hover Background Color', 'tlp-food-menu' ),
+				'label'       => esc_html__( 'Hover Gradient Background (1st Color)', 'tlp-food-menu' ),
 				'description' => __( '<b>Note:</b> You need to choose both colors for gradient background. If you need a single color, please choose only the 1st color.', 'tlp-food-menu' ),
 			],
 			'fmp_button_hover_bg_color_2'  => [
@@ -476,7 +532,7 @@ class Options {
 				'default' => 'grid',
 			],
 
-			'fmp_layout'      => [
+			'fmp_layout' => [
 				'type'    => 'radio-image',
 				'label'   => esc_html__( 'Select Layout', 'tlp-food-menu' ),
 				'class'   => 'fmp-select2',
@@ -484,14 +540,14 @@ class Options {
 				'default' => 'layout-free',
 			],
 
-			'fmp_grid_style'  => [
+			'fmp_grid_style' => [
 				'type'        => 'radio',
 				'label'       => esc_html__( 'Grid Style', 'tlp-food-menu' ),
 				'alignment'   => 'vertical',
-				'holderClass' => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : '',
 				'options'     => self::scGridStyle(),
 				'default'     => 'even',
 				'description' => esc_html__( 'Please select the grid style.', 'tlp-food-menu' ),
+				'freeOption'  => ! TLPFoodMenu()->has_pro() ? 'even' : '',
 			],
 		];
 
@@ -509,7 +565,6 @@ class Options {
 				'type'    => 'select',
 				'label'   => __( 'Desktop Columns <i>(For devices > 991px)</i>', 'tlp-food-menu' ),
 				'id'      => 'fmp_column',
-				'class'   => 'fmp-select2',
 				'default' => 0,
 				'options' => self::scColumns(),
 			],
@@ -517,7 +572,6 @@ class Options {
 				'type'    => 'select',
 				'label'   => __( 'Tab Columns <i>(For devices < 991px)</i>', 'tlp-food-menu' ),
 				'id'      => 'fmp_column',
-				'class'   => 'fmp-select2',
 				'default' => 0,
 				'options' => self::scColumns(),
 			],
@@ -525,7 +579,6 @@ class Options {
 				'type'    => 'select',
 				'label'   => __( 'Mobile Columns <i>(For devices < 768px)</i>', 'tlp-food-menu' ),
 				'id'      => 'fmp_column',
-				'class'   => 'fmp-select2',
 				'default' => 0,
 				'options' => self::scColumns(),
 			],
@@ -541,7 +594,7 @@ class Options {
 	 */
 	public static function scPaginationFields() {
 		$scPaginationFields = [
-			'fmp_pagination'      => [
+			'fmp_pagination' => [
 				'type'        => 'checkbox',
 				'label'       => esc_html__( 'Enable Pagination?', 'tlp-food-menu' ),
 				'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
@@ -559,12 +612,12 @@ class Options {
 				'description' => sprintf(
 					'%s%s',
 					esc_html__( 'Please choose the pagination type.', 'tlp-food-menu' ),
-					! TLPFoodMenu()->has_pro() ? __( '<br><b style="font-size: 13px"><a href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/" target="_blank" style="color: #de0000">Upgrade to PRO</a> to unlock Load More and Ajax Pagination.</b>', 'tlp-food-menu' ) : ''
+					! TLPFoodMenu()->has_pro() ? __( '<br><b style="font-size: 13px"><a href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/" target="_blank" style="color: var(--fmp-admin-primary, #dc2626)">Upgrade to PRO</a> to unlock Load More and Ajax Pagination.</b>', 'tlp-food-menu' ) : ''
 				),
 				'options'     => self::paginationType(),
 			],
 
-			'fmp_posts_per_page'  => [
+			'fmp_posts_per_page' => [
 				'type'        => 'number',
 				'label'       => esc_html__( 'Number of Posts Per Page', 'tlp-food-menu' ),
 				'description' => esc_html__( 'Please enter the number of posts to show per page.', 'tlp-food-menu' ),
@@ -583,20 +636,20 @@ class Options {
 	 */
 	public static function scImageMetaFields() {
 		$scImageMetaFields = [
-			'fmp_image_size'     => [
+			'fmp_image_size' => [
 				'type'        => 'select',
 				'label'       => esc_html__( 'Image Size', 'tlp-food-menu' ),
 				'class'       => 'fmp-select2',
 				'description' => sprintf(
 					'%s%s',
 					esc_html__( 'Please select the featured image dimension.', 'tlp-food-menu' ),
-					! TLPFoodMenu()->has_pro() ? __( '<br><b style="font-size: 13px"><a href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/" target="_blank" style="color: #de0000">Upgrade to PRO</a> to unlock Custom Image Size.</b>', 'tlp-food-menu' ) : ''
+					! TLPFoodMenu()->has_pro() ? __( '<br><b style="font-size: 13px"><a href="https://www.radiustheme.com/downloads/food-menu-pro-wordpress/" target="_blank" style="color: var(--fmp-admin-primary, #dc2626)">Upgrade to PRO</a> to unlock Custom Image Size.</b>', 'tlp-food-menu' ) : ''
 				),
 				'options'     => Fns::get_image_sizes(),
 				'default'     => 'medium',
 			],
 
-			'fmp_image_radius'   => [
+			'fmp_image_radius' => [
 				'type'        => 'text',
 				'label'       => esc_html__( 'Border Radius', 'tlp-food-menu' ),
 				'class'       => 'fmp-select2',
@@ -607,13 +660,13 @@ class Options {
 				'type'        => 'radio',
 				'label'       => esc_html__( 'Image Position', 'tlp-food-menu' ),
 				'alignment'   => 'horizontal',
-				'holderClass' => ! TLPFoodMenu()->has_pro() ? 'rt-pro-field' : '',
 				'default'     => 'top',
 				'description' => __( 'Please select the featured image position.', 'tlp-food-menu' ),
 				'options'     => Fns::get_image_position(),
+				'freeOption'  => ! TLPFoodMenu()->has_pro() ? 'top' : '',
 			],
 
-			'fmp_image_hover'    => [
+			'fmp_image_hover' => [
 				'type'        => 'select',
 				'label'       => esc_html__( 'Hover Animation', 'tlp-food-menu' ),
 				'class'       => 'fmp-select2',
@@ -623,7 +676,7 @@ class Options {
 				'options'     => Fns::get_image_hover(),
 			],
 
-			'fmp_hover_icon'     => [
+			'fmp_hover_icon' => [
 				'type'        => 'checkbox',
 				'label'       => esc_html__( 'Enable Hover Icon?', 'tlp-food-menu' ),
 				'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
@@ -665,7 +718,7 @@ class Options {
 	public static function scExcerptMetaFields() {
 
 		$scExcerptMetaFields = [
-			'fmp_excerpt_limit'       => [
+			'fmp_excerpt_limit' => [
 				'type'        => 'number',
 				'label'       => esc_html__( 'Excerpt limit', 'tlp-food-menu' ),
 				'description' => __( 'Limits the Excerpt text (letter limit). Leave it blank for full excerpt.<br> <strong>Please note that, HTML tags will not work if excerpt limit is applied.</strong>', 'tlp-food-menu' ),
@@ -690,7 +743,7 @@ class Options {
 	public static function scDetailsMetaFields() {
 
 		$scDetailsMetaFields = [
-			'fmp_detail_page_link'   => [
+			'fmp_detail_page_link' => [
 				'type'        => 'checkbox',
 				'label'       => esc_html__( 'Link to Detail Page?', 'tlp-food-menu' ),
 				'optionLabel' => esc_html__( 'Enable', 'tlp-food-menu' ),
@@ -699,7 +752,7 @@ class Options {
 				'option'      => 1,
 			],
 
-			'fmp_single_food_popup'  => [
+			'fmp_single_food_popup' => [
 				'type'        => 'checkbox',
 				'label'       => esc_html__( 'Enable Details Page Popup?', 'tlp-food-menu' ),
 				'holderClass' => 'fmp_single_food_popup fmp-hidden',
@@ -810,39 +863,56 @@ class Options {
 		return apply_filters( 'fmp_sc_layouts', $layouts );
 	}
 
-    public static function elListLayouts() {
-        return apply_filters(
-            'rtfm_elementor_list_layouts',
-            [
-                'layout1'  => [
-                    'title' => esc_html__( 'Layout 1', 'tlp-food-menu' ),
-                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-1.png',
-                ],
-                'layout2' => [
-                    'title' => esc_html__( 'Layout 2', 'tlp-food-menu' ),
-                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-2.png',
-                ],
-                'layout3'  => [
-                    'title' => esc_html__( 'Layout 3', 'tlp-food-menu' ),
-                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-3.png',
-                ],
-                'layout4'  => [
-                    'title' => esc_html__( 'Layout 4', 'tlp-food-menu' ),
-                    'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-4.png',
-                ],
-            ]
-        );
-    }
+	public static function elListLayouts() {
+		return apply_filters(
+			'rtfm_elementor_list_layouts',
+			[
+				'layout1' => [
+					'title' => esc_html__( 'Layout 1', 'tlp-food-menu' ),
+					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-1.png',
+				],
+				'layout2' => [
+					'title' => esc_html__( 'Layout 2', 'tlp-food-menu' ),
+					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-2.png',
+				],
+				'layout3' => [
+					'title' => esc_html__( 'Layout 3', 'tlp-food-menu' ),
+					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-3.png',
+				],
+				'layout4' => [
+					'title' => esc_html__( 'Layout 4', 'tlp-food-menu' ),
+					'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layout-4.png',
+				],
+			]
+		);
+	}
 
 	public static function scLayoutTypes() {
+		$is_pro_locked = ! TLPFoodMenu()->has_pro();
+
 		$types = [
+			'grid'        => [
+				'title'  => esc_html__( 'Grid Layouts', 'tlp-food-menu' ),
+				'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/grid-layouts.png',
+				'is_pro' => $is_pro_locked,
+			],
 			'list'        => [
 				'title' => esc_html__( 'List Layouts', 'tlp-food-menu' ),
 				'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/list-layouts.png',
 			],
 			'grid-by-cat' => [
-				'title' => esc_html__( 'Grid by Category Layouts', 'tlp-food-menu' ),
+				'title' => esc_html__( 'Group by Category Layouts', 'tlp-food-menu' ),
 				'img'   => TLPFoodMenu()->assets_url() . 'images/layouts/grid-by-category-layouts.png',
+			],
+			'slider'      => [
+				'title'  => esc_html__( 'Slider Layouts', 'tlp-food-menu' ),
+				'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/carousel-3.png',
+				'is_pro' => $is_pro_locked,
+			],
+			'isotope'     => [
+				'title'  => esc_html__( 'Isotope Filters Layouts', 'tlp-food-menu' ),
+				'img'    => TLPFoodMenu()->assets_url() . 'images/layouts/isotope-filters-layouts.png',
+				'is_pro' => $is_pro_locked,
 			],
 		];
 
@@ -2331,21 +2401,49 @@ class Options {
 	}
 
 	public static function get_pro_feature_list() {
-		$pro = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
-		return '<ol>
-					<li>11 Amazing Layouts with Grid, Masonry, Isotope & Slider.</li>
-					<li>Even and Masonry Grid for all Grid.</li>
-					<li>Search field on Isotope</li>
-					<li>Woocommerce Support</li>
-					<li>Order by Id, Name, Create Date, Menu Order, Random & Price</li>
-					<li>Display image size (thumbnail, medium, large, full and Custom Image Size)</li>
-					<li>Ajax Pagination: Load more, Load on scroll and AJAX Number Pagination</li>
-					<li>AJAX Number Pagination (only for Grid layouts)</li>
-					<li>Single popup Menu Item Popup</li>
-					<li>Overlay color and opacity control</li>
-					<li>All Text color, size and Button Color control.</li>
-				</ol>
-				<a href="' . esc_url( $pro ) . '" class="rt-admin-btn" target="_blank">Get Pro Version</a>';
+		$pro     = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/';
+		$assets  = TLPFoodMenu()->assets_url();
+		$primary = Fns::get_setting( 'fm_primary_color', '#fc202e' );
+
+		$features = [
+			__( 'Online Ordering', 'tlp-food-menu' ),
+			__( 'Product Addons', 'tlp-food-menu' ),
+			__( 'Pickup & Delivery', 'tlp-food-menu' ),
+			__( 'Table Reservation', 'tlp-food-menu' ),
+			__( 'Inventory Management', 'tlp-food-menu' ),
+			__( 'QR Code Table Ordering', 'tlp-food-menu' ),
+			__( 'POS Printing', 'tlp-food-menu' ),
+			__( 'Custom Order Statuses', 'tlp-food-menu' ),
+			__( 'Timed Products', 'tlp-food-menu' ),
+			__( 'Tips & Gratuity', 'tlp-food-menu' ),
+			__( 'Discounts', 'tlp-food-menu' ),
+			__( 'Table Layout Designer', 'tlp-food-menu' ),
+			__( 'Frontend Order Dashboard', 'tlp-food-menu' ),
+			__( '20+ Menu Layouts', 'tlp-food-menu' ),
+		];
+
+		$list = '';
+
+		foreach ( $features as $feature ) {
+			$list .= '<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+				<span style="font-size:14px;font-weight:400;color:#333;">' . esc_html( $feature ) . '</span>
+			</div>';
+		}
+
+		return '<div style="border-radius:12px;border:1px solid #E9EDF7;overflow:hidden;background:#fff; margin-bottom: 25px;">
+			<div style="display:flex;align-items:center;justify-content:center;background:' . esc_attr( $primary ) . ';">
+				<img src="' . esc_url( $assets ) . 'images/dash-order-banner.webp" alt="" style="max-width:100%;display:block;" />
+			</div>
+			<div style="padding:20px;">
+				<h3 style="font-size:18px;font-weight:700;text-align:left;margin:0 0 16px;color:#1a1a2e;">' . esc_html__( 'Pro Features', 'tlp-food-menu' ) . '</h3>
+				' . $list . '
+				<a href="' . esc_url( $pro ) . '" target="_blank" style="display:block;text-align:center;margin-top:20px;padding:10px 16px;border:2px solid ' . esc_attr( $primary ) . ';color:' . esc_attr( $primary ) . ';border-radius:5px;font-weight:600;font-size:14px;text-decoration:none;"
+					onmouseover="this.style.backgroundColor=\'' . esc_js( $primary ) . '\';this.style.color=\'#fff\';"
+					onmouseout="this.style.backgroundColor=\'transparent\';this.style.color=\'' . esc_js( $primary ) . '\';"
+				>' . esc_html__( 'Get The Deal!', 'tlp-food-menu' ) . '</a>
+			</div>
+		</div>';
 	}
 
 	/**
@@ -2358,6 +2456,181 @@ class Options {
 			'fmp_sc_pagination_type',
 			[
 				'pagination' => esc_html__( 'Numbered Pagination', 'tlp-food-menu' ),
+			]
+		);
+	}
+
+
+	/**
+	 * Reservation meta field definitions (admin post-edit form).
+	 *
+	 * @return array[]
+	 */
+	public static function reservationMetaField() {
+		$post_id  = get_the_ID();
+		$raw_date = $post_id ? get_post_meta( $post_id, 'fmp_resi_meta_date', true ) : '';
+		$date_val = '';
+
+		if ( $raw_date ) {
+			$timestamp = is_numeric( $raw_date ) ? (int) $raw_date : strtotime( $raw_date );
+			$date_val  = $timestamp ? date_i18n( get_option( 'date_format', 'F j, Y' ), $timestamp ) : '';
+		}
+
+		$required_label = ' <span class="fmp-required-indicator">*</span>';
+		$required_attr  = 'required="required"';
+
+		$fields = [
+			'fmp_resi_meta_date'       => [
+				'label'       => esc_html__( 'Date', 'tlp-food-menu' ) . $required_label,
+				'type'        => 'text',
+				'value'       => $date_val,
+				'attr'        => $required_attr,
+				'description' => esc_html__( 'Date of reservation', 'tlp-food-menu' ),
+			],
+			'fmp_resi_meta_start_time' => [
+				'label' => esc_html__( 'Start Time', 'tlp-food-menu' ) . $required_label,
+				'type'  => 'text',
+				'attr'  => $required_attr,
+			],
+			'fmp_resi_meta_end_time'   => [
+				'label' => esc_html__( 'End Time', 'tlp-food-menu' ) . $required_label,
+				'type'  => 'text',
+				'attr'  => $required_attr,
+			],
+			'fmp_resi_meta_seat'       => [
+				'label'   => esc_html__( 'Guest Number', 'tlp-food-menu' ) . $required_label,
+				'type'    => 'select',
+				'attr'    => $required_attr,
+				'blank'   => esc_html__( 'Select Guest Number', 'tlp-food-menu' ),
+				'options' => Fns::get_guest_limit(),
+			],
+			'fmp_resi_meta_name'       => [
+				'label' => esc_html__( 'Name', 'tlp-food-menu' ) . $required_label,
+				'type'  => 'text',
+				'attr'  => $required_attr,
+			],
+			'fmp_resi_meta_email'      => [
+				'label' => esc_html__( 'Email', 'tlp-food-menu' ) . $required_label,
+				'type'  => 'text',
+				'attr'  => $required_attr,
+			],
+			'fmp_resi_meta_phone'      => [
+				'label' => esc_html__( 'Phone', 'tlp-food-menu' ) . $required_label,
+				'type'  => 'text',
+				'attr'  => $required_attr,
+			],
+			'fmp_resi_meta_message'    => [
+				'label' => esc_html__( 'Message', 'tlp-food-menu' ),
+				'type'  => 'textarea',
+			],
+			'fmp_resi_meta_status'     => [
+				'label'       => esc_html__( 'Status', 'tlp-food-menu' ),
+				'type'        => 'select',
+				'options'     => Fns::get_reservation_status(),
+				'description' => esc_html__( 'Please enter the reservation status', 'tlp-food-menu' ),
+			],
+		];
+
+		// Insert Location select before Status when the food-location feature is enabled.
+		$location_enabled = 'on' === Fns::get_setting( 'fmp_food_location_popup', '' );
+		if ( $location_enabled && taxonomy_exists( 'tpl-food-location' ) ) {
+			$terms           = get_terms(
+				[
+					'taxonomy'   => 'tpl-food-location',
+					'hide_empty' => false,
+					'orderby'    => 'name',
+					'order'      => 'ASC',
+				]
+			);
+			$location_opts = [];
+			if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+				foreach ( $terms as $term ) {
+					$location_opts[ $term->term_id ] = $term->name;
+				}
+			}
+
+			$location_field = [
+				'fmp_resi_meta_location' => [
+					'label'       => esc_html__( 'Location', 'tlp-food-menu' ),
+					'type'        => 'select',
+					'blank'       => esc_html__( 'Select Location', 'tlp-food-menu' ),
+					'options'     => $location_opts,
+					'description' => esc_html__( 'Choose the reservation location.', 'tlp-food-menu' ),
+				],
+			];
+
+			// Place Location just before Status for a natural reading order.
+			$status_field = [ 'fmp_resi_meta_status' => $fields['fmp_resi_meta_status'] ];
+			unset( $fields['fmp_resi_meta_status'] );
+			$fields = $fields + $location_field + $status_field;
+		}
+
+		return $fields;
+	}
+
+	public static function front_end_order_settings() {
+
+		$settings = get_option( TLPFoodMenu()->options['settings'] );
+
+		return apply_filters(
+			'fmp/frontend_order_settings/fields',
+			[
+				'fmp_enable_frontend_order' => [
+					'label'       => esc_html__( 'Enable Front-end order management', 'tlp-food-menu' ),
+					'type'        => 'switch',
+					'description' => esc_html__( 'Once this feature is enabled, you’ll be able to manage orders directly from the front end.', 'tlp-food-menu' ),
+					'value'       => $settings['fmp_enable_frontend_order'] ?? '',
+				],
+				'fmp_frontend_order_page'   => [
+					'id'      => 'fmp_frontend_order_page',
+					'type'    => 'select',
+					'class'   => 'fmp-select2',
+					'value'   => $settings['fmp_frontend_order_page'] ?? '',
+					'label'   => esc_html__( 'Choose front-order page', 'tlp-food-menu' ),
+					'options' => Fns::get_all_page_list(),
+				],
+
+				'fmp_frontend_order_header_footer' => [
+					'id'      => 'fmp_frontend_order_header_footer',
+					'type'    => 'select',
+					'class'   => 'fmp-select2',
+					'value'   => $settings['fmp_frontend_order_header_footer'] ?? 'enable',
+					'label'   => esc_html__( 'Header / Footer Visibility', 'tlp-food-menu' ),
+					'options' => [
+						'enable'  => esc_html__( 'Enable', 'tlp-food-menu' ),
+						'disable' => esc_html__( 'Disable', 'tlp-food-menu' ),
+					],
+				],
+
+				'fmp_order_per_page' => [
+					'id'    => 'fmp_order_per_page',
+					'type'  => 'number',
+					'value' => $settings['fmp_order_per_page'] ?? '',
+					'label' => esc_html__( 'Order Per Page', 'tlp-food-menu' ),
+				],
+
+				'fmp_frontend_order_role'   => [
+					'id'      => 'fmp_frontend_order_role',
+					'type'    => 'select',
+					'class'   => 'fmp-select2',
+					'value'   => $settings['fmp_frontend_order_role'] ?? '',
+					'label'   => esc_html__( 'Choose a role for order manager', 'tlp-food-menu' ),
+					'options' => Fns::get_all_wp_roles(),
+				],
+				'fmp_available_rooms'       => [
+					'id'          => 'fmp_available_rooms',
+					'type'        => 'textarea',
+					'value'       => $settings['fmp_available_rooms'] ?? '',
+					'label'       => esc_html__( 'Enter Room numbers (Optional)', 'tlp-food-menu' ),
+					'description' => esc_html__( 'Enter all room numbers separated by commas (e.g., A21, B22, C1, D5). You can use this to group orders by room or for similar purposes. Leave this field empty to disable the feature.', 'tlp-food-menu' ),
+				],
+				'fmp_order_container_width' => [
+					'id'    => 'fmp_order_container_width',
+					'type'  => 'number',
+					'value' => $settings['fmp_order_container_width'] ?? '',
+					'label' => esc_html__( 'Container Width', 'tlp-food-menu' ),
+				],
+
 			]
 		);
 	}

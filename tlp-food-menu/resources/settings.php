@@ -52,6 +52,15 @@ $settings = get_option( TLPFoodMenu()->options['settings'] );
 					],
 				];
 
+                if(TLPFoodMenu()->has_pro()){
+	                $tabs['frontend_order'] = [
+		                'id'      => 'frontend-order',
+		                'title'   => esc_html__( 'Frontend Order and Inventory', 'tlp-food-menu' ),
+		                'icon'    => 'dashicons-list-view',
+		                'content' => Fns::rtFieldGenerator( Options::front_end_order_settings() ),
+	                ];
+                }
+
 				$tabs = apply_filters( 'tlp_fm_settings_tab', $tabs );
 
 				$tabList    = '';
