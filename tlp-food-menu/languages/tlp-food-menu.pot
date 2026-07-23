@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-24T10:02:41+00:00\n"
+"POT-Creation-Date: 2026-06-25T07:27:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: tlp-food-menu\n"
@@ -684,17 +684,17 @@ msgstr ""
 msgid "Please select thme"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:161
+#: app/Controllers/MiniCart/MiniCart.php:167
 #: app/Controllers/MiniCart/MiniCartHooks.php:124
 msgid "Item"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:161
+#: app/Controllers/MiniCart/MiniCart.php:167
 #: app/Controllers/MiniCart/MiniCartHooks.php:124
 msgid "Items"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:215
+#: app/Controllers/MiniCart/MiniCart.php:221
 msgid "Loadding..."
 msgstr ""
 

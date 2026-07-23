@@ -109,6 +109,12 @@ class MiniCart {
             return;
         }
 
+        // WC()->cart is only initialized on the frontend; on admin screens
+        // (e.g. widgets.php) it is null, so bail before touching the cart.
+        if ( is_admin() || ! ( WC()->cart instanceof \WC_Cart ) ) {
+            return;
+        }
+
         $exclude_pages = $this->options['mini_cart_exclude_pages'] ?? [];
         if ( ! empty( $exclude_pages ) && is_array( $exclude_pages ) ) {
             $excluded_page_ids   = [];
