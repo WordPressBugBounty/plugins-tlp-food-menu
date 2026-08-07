@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 6.0.0
+Stable tag: 6.0.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -15,7 +15,7 @@ Restaurant menu plugin for WordPress with food menu display, online food orderin
 
 Food Menu is a WordPress restaurant menu plugin that lets you build a beautiful food menu and take online food orders through WooCommerce. It works as a standalone menu display with no WooCommerce required, then upgrades to full online ordering whenever you are ready. Restaurants, cafés, cloud kitchens, fast-food outlets, and catering services use it to showcase dishes and sell online from one place.
 
-The big 6.0.0 update makes the plugin far more generous: table reservation, tips and gratuity, special-menu popups, and product discounts are now free, alongside a faster React-based settings panel. If you want a simple, good-looking menu, Food Menu does that on its own. If you want a complete restaurant ordering system, switch the data source to WooCommerce and you are ready to accept orders.
+**The big 6.0.0 update makes the plugin far more generous:** table reservation, tips and gratuity, special-menu popups, and product discounts are now free, alongside a faster React-based settings panel. If you want a simple, good-looking menu, Food Menu does that on its own. If you want a complete restaurant ordering system, switch the data source to WooCommerce and you are ready to accept orders.
 
 👉 [Demo](https://www.radiustheme.com/demo/plugins/food-menu/) | [Documentation](https://www.radiustheme.com/docs/food-menu/) | [Get Pro Version](https://www.radiustheme.com/downloads/food-menu-pro-wordpress/) 👈
 
@@ -137,7 +137,7 @@ Upgrade to Food Menu Pro for the capabilities growing food businesses need.
 - **Kitchen Monitor** — a live kitchen board with audio alerts and quick status toggles.
 - **Role Manager** — role-based access to orders, inventory, and the Kitchen Monitor.
 
-[https://www.youtube.com/watch?v=7X6dv7GljSA&list=PLJuuUOzROPu0&index=7]
+[youtube https://www.youtube.com/watch?v=7X6dv7GljSA&list=PLJuuUOzROPu0&index=7]
 
 == 🎯 Who Is Food Menu For? ==
 
@@ -257,6 +257,11 @@ If you like Food Menu, consider our other WordPress plugins:
 Major update. Table Reservation, Tips, Special Menu, and Product Discount are now free, plus a new React settings panel and a new Pro operations suite (QR ordering, kitchen monitor, POS printing, SMS/WhatsApp, inventory, and more). Back up before updating.
 
 == Changelog ==
+
+= 6.0.1 ( Jul 15, 2026 ) =
+Fixed: On widgets page WC_Cart not found for mini-cart
+Updated: Settings and a few CSS updated
+Added: Company logo option added in Settings
 
 = 6.0.0 ( Jun 24, 2026 ) =
 * New: React-based settings panel with a redesigned interface.
