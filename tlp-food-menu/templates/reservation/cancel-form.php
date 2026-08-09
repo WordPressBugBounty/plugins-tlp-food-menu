@@ -1,3 +1,8 @@
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <div class="fmp-resi-cancel-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="fmp-resi-cancel-modal-title">
 	<div class="fmp-resi-cancel-modal-dialog" role="document">
 		<div class="fmp-resi-cancel-modal-header">
@@ -27,7 +32,7 @@
 							<span class='fmp-required'>*</span>
 						</label>
 						<input type='text' class='fmp-form-control' id='fmp_resi_cancel_booking_id' name='fmp_resi_cancel_booking_id'
-							   value='' placeholder="<?php echo esc_attr__( 'Enter booking ID', 'tlp-food-menu' ); ?>" required/>
+								value='' placeholder="<?php echo esc_attr__( 'Enter booking ID', 'tlp-food-menu' ); ?>" required/>
 					</div>
 
 					<div class='fmp-field'>
@@ -36,7 +41,7 @@
 							<span class='fmp-required'>*</span>
 						</label>
 						<input type='text' class='fmp-form-control' id='fmp_resi_cancel_email' name='fmp_resi_cancel_email'
-							   value='' placeholder="<?php echo esc_attr__( 'Enter email', 'tlp-food-menu' ); ?>" required/>
+								value='' placeholder="<?php echo esc_attr__( 'Enter email', 'tlp-food-menu' ); ?>" required/>
 					</div>
 
 					<div class='fmp-field'>
@@ -45,7 +50,7 @@
 							<span class='fmp-required'>*</span>
 						</label>
 						<input type='tel' class='fmp-form-control' id='fmp_resi_cancel_phone' name='fmp_resi_cancel_phone'
-							   value='' inputmode='tel' autocomplete='tel' maxlength='20' placeholder="<?php echo esc_attr__( 'Enter phone', 'tlp-food-menu' ); ?>" required/>
+								value='' inputmode='tel' autocomplete='tel' maxlength='20' placeholder="<?php echo esc_attr__( 'Enter phone', 'tlp-food-menu' ); ?>" required/>
 					</div>
 
 					<div class='fmp-field'>

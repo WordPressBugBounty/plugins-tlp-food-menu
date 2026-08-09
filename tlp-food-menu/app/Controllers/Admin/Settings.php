@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Admin Settings Class.
  *
@@ -111,8 +112,8 @@ class Settings {
 	public function register_admin_menu() {
 		add_submenu_page(
 			'edit.php?post_type=' . TLPFoodMenu()->post_type,
-			esc_html__( '', 'tlp-food-menu' ),
-			esc_html__( '', 'tlp-food-menu' ),
+			'',
+			'',
 			'manage_options',
 			'fmp_dashboard',
 			[ $this, 'render_admin_panel' ],

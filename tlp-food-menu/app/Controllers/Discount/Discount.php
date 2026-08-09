@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 
 namespace RT\FoodMenu\Controllers\Discount;
 
@@ -228,14 +229,16 @@ class Discount {
 			return;
 		}
 
-		$ids_json      = wp_json_encode( array_map( 'intval', array_keys( $message_map ) ) );
-		$messages_json = wp_json_encode( $message_map );
+		// Encode with hex flags so no HTML characters ( <, >, &, quotes ) can break out of the <script> tag.
+		$json_flags    = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+		$ids_json      = wp_json_encode( array_map( 'intval', array_keys( $message_map ) ), $json_flags );
+		$messages_json = wp_json_encode( $message_map, $json_flags );
 
 		?>
 		<script>
 			(function () {
-				var ids = <?php echo $ids_json; ?>;
-				var messages = <?php echo $messages_json; ?>;
+				var ids = <?php echo $ids_json; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Safe JSON, HTML chars hex-encoded above. ?>;
+				var messages = <?php echo $messages_json; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Safe JSON, HTML chars hex-encoded above. ?>;
 
 				function escapeHtml(str) {
 					return String(str)

@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Settings Ajax Class.
  *
@@ -71,9 +72,9 @@ class Settings {
 		$error = true;
 
 		$new_data = [
-			'fmp_enable_frontend_order'     => sanitize_text_field( $_REQUEST['fmp_enable_frontend_order'] ),
-			'fmp_enable_frontend_inventory' => sanitize_text_field( $_REQUEST['fmp_enable_frontend_inventory'] ),
-			'fmp_food_reservation_status' => sanitize_text_field( $_REQUEST['fmp_food_reservation_status'] ),
+			'fmp_enable_frontend_order'     => isset( $_REQUEST['fmp_enable_frontend_order'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_enable_frontend_order'] ) ) : '',
+			'fmp_enable_frontend_inventory' => isset( $_REQUEST['fmp_enable_frontend_inventory'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_enable_frontend_inventory'] ) ) : '',
+			'fmp_food_reservation_status'   => isset( $_REQUEST['fmp_food_reservation_status'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['fmp_food_reservation_status'] ) ) : '',
 		];
 
 		$should_refresh = $this->should_refresh_if_change( $new_data );

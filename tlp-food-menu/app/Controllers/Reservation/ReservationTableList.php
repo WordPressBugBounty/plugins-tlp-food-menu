@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 
 namespace RT\FoodMenu\Controllers\Reservation;
 
@@ -59,6 +60,7 @@ class ReservationTableList {
 			return;
 		}
 
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Admin list-table filters read via GET; read-only, no state change, nonce not applicable.
 		if ( ! isset( $_GET['orderby'] ) ) {
 			$query->set( 'orderby', 'date' );
 			$query->set( 'order', 'DESC' );
@@ -66,7 +68,6 @@ class ReservationTableList {
 
 		$meta_query = [];
 
-		//phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		if ( ! empty( $_GET['location_filter'] ) ) {
 			$meta_query[] = [
 				'key'     => 'fmp_resi_meta_location',
@@ -88,8 +89,8 @@ class ReservationTableList {
 			$start_date = sanitize_text_field( wp_unslash( $_GET['created_date_start'] ) );
 			$end_date   = sanitize_text_field( wp_unslash( $_GET['created_date_end'] ) );
 
-			$start_date = date( 'Y-m-d', strtotime( $start_date ) );
-			$end_date   = date( 'Y-m-d', strtotime( $end_date ) );
+			$start_date = gmdate( 'Y-m-d', strtotime( $start_date ) );
+			$end_date   = gmdate( 'Y-m-d', strtotime( $end_date ) );
 
 			$query->set( 'date_query', [
 				[
@@ -124,6 +125,7 @@ class ReservationTableList {
 		if ( ! empty( $meta_query ) ) {
 			$query->set( 'meta_query', $meta_query );
 		}
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}
 
 	/**
@@ -138,16 +140,23 @@ class ReservationTableList {
 			return;
 		}
 
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Admin list-table filters read via GET; read-only, no state change, nonce not applicable.
 		$status_meta_key    = 'fmp_resi_meta_status';
-		$status_meta_values = $wpdb->get_col(
-			$wpdb->prepare(
-				"SELECT DISTINCT meta_value FROM {$wpdb->postmeta} WHERE meta_key = %s",
-				$status_meta_key
-			)
-		);
-		$status_meta_values = array_filter( $status_meta_values );
+		$cache_key          = 'fmp_resi_status_meta_values';
+		$status_meta_values = wp_cache_get( $cache_key, 'tlp_food_menu' );
 
-		//phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( false === $status_meta_values ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- DISTINCT lookup of reservation statuses; result cached below via wp_cache_set().
+			$status_meta_values = $wpdb->get_col(
+				$wpdb->prepare(
+					"SELECT DISTINCT meta_value FROM {$wpdb->postmeta} WHERE meta_key = %s",
+					$status_meta_key
+				)
+			);
+			$status_meta_values = array_filter( $status_meta_values );
+			wp_cache_set( $cache_key, $status_meta_values, 'tlp_food_menu', HOUR_IN_SECONDS );
+		}
+
 		$status_meta_filter = ! empty( $_GET['status_meta_filter'] ) ? sanitize_text_field( wp_unslash( $_GET['status_meta_filter'] ) ) : '';
 
 		if ( $status_meta_values ) {
@@ -169,7 +178,6 @@ class ReservationTableList {
 			'taxonomy'   => 'tpl-food-location',
 			'hide_empty' => false,
 		] );
-		//phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$selected_location = ! empty( $_GET['location_filter'] ) ? absint( $_GET['location_filter'] ) : '';
 
 		if ( ! is_wp_error( $locations ) && ! empty( $locations ) ) {
@@ -209,6 +217,7 @@ class ReservationTableList {
 				   placeholder="<?php esc_attr_e( 'End date', 'tlp-food-menu' ); ?>" id="booking_date_end">
 		</div>
 		<?php
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}
 
 	/**
@@ -379,9 +388,9 @@ class ReservationTableList {
 				$booking_start_time = str_replace( ' ', '', get_post_meta( $post_id, 'fmp_resi_meta_start_time', true ) );
 				$booking_end_time   = str_replace( ' ', '', get_post_meta( $post_id, 'fmp_resi_meta_end_time', true ) );
 
-				$today_date   = strtotime( date( 'Y-m-d' ) );
+				$today_date   = strtotime( gmdate( 'Y-m-d' ) );
 				$booking_date = is_numeric( $booking_date ) ? (int) $booking_date : strtotime( $booking_date );
-				$booking_date = strtotime( date( 'Y-m-d', $booking_date ) );
+				$booking_date = strtotime( gmdate( 'Y-m-d', $booking_date ) );
 				printf(
 					"<div class='booking-date'>%s %s</div>",
 					$booking_date === $today_date ? '<span class="fmp-current-time"></span>' : '',
@@ -463,10 +472,11 @@ class ReservationTableList {
 	}
 
 	public function remove_admin_notices_on_reservation_page() {
-		//phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Read-only admin screen check; no form data processed.
 		if ( ! empty( $_GET['post_type'] ) && 'fmp_reservation' === $_GET['post_type'] ) {
 			remove_all_actions( 'admin_notices' );
 			remove_all_actions( 'all_admin_notices' );
 		}
+		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}
 }

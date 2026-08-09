@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 
 namespace RT\FoodMenu\Controllers\Reservation;
 
@@ -45,8 +46,9 @@ class Reservation {
 		add_action( 'wp_ajax_booking_seat_capacity', [ $this, 'booking_seat_capacity' ] );
 		add_action( 'wp_ajax_nopriv_booking_seat_capacity', [ $this, 'booking_seat_capacity' ] );
 
+		// Status change is an admin-only operation (reservation list-table dropdown).
+		// Intentionally NOT registered for nopriv — a logged-out visitor must never change reservation status.
 		add_action( 'wp_ajax_save_fmp_resi_meta_status', [ $this, 'save_fmp_resi_meta_status' ] );
-		add_action( 'wp_ajax_nopriv_save_fmp_resi_meta_status', [ $this, 'save_fmp_resi_meta_status' ] );
 
 		add_action( 'fmp_reservation_change_email_hook', [ $this, 'fmp_reservation_change_email_hook' ], 10, 2 );
 
@@ -458,6 +460,17 @@ class Reservation {
 			wp_send_json_error( [ 'message' => 'Invalid or missing parameters' ] );
 		}
 
+		// Authorization. The nonce alone is not an authorization boundary: it is localized on the
+		// public reservation page and is not session-bound for logged-out visitors. Only a user who
+		// can edit this specific reservation may change its status, and the target must be a reservation.
+		if ( 'fmp_reservation' !== get_post_type( $post_id ) ) {
+			wp_send_json_error( [ 'message' => 'Invalid reservation' ] );
+		}
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			wp_send_json_error( [ 'message' => 'You are not allowed to change this reservation status.' ] );
+		}
+
 		update_post_meta( $post_id, 'fmp_resi_meta_status', $meta_value );
 
 		do_action( 'fmp_reservation_change_email_hook', $post_id, $meta_value );
@@ -494,7 +507,7 @@ class Reservation {
 		$args['resi_id']      = $post_id;
 		$args['invoice']      = $booking_id;
 		$resi_date            = is_numeric( $resi_date ) ? (int) $resi_date : strtotime( $resi_date );
-		$args['booking_date'] = date( get_option( 'date_format' ), $resi_date ) . ' (' . $resi_start_time . ' to ' . $resi_end_time . ')';
+		$args['booking_date'] = gmdate( get_option( 'date_format' ), $resi_date ) . ' (' . $resi_start_time . ' to ' . $resi_end_time . ')';
 		$mail_body            = Fns::mail_body_markup( $args, 'user' );
 
 		Fns::send_email( [

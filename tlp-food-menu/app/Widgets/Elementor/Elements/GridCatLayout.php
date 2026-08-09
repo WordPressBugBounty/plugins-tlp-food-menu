@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Elementor GridCatLayout Widget Class.
  *
@@ -260,12 +261,11 @@ class GridCatLayout extends ElementorWidget {
 				$cat_thumb_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
 			}
 
-			$catImage = '';
+			$catImgSrc = '';
 			if ( $cat_thumb_id ) {
 				$catImageS = wp_get_attachment_image_src( $cat_thumb_id, 'large' );
 				if ( ! empty( $catImageS[0] ) ) {
 					$catImgSrc = $catImageS[0];
-					$catImage = 'style="background-image: url(' . esc_url( $catImgSrc ) . ');"';
 				}
 			}
 
@@ -301,9 +301,13 @@ class GridCatLayout extends ElementorWidget {
 
 			echo "<div class='fmp-innner-wrap'>";
 
-			echo "<div class='fmp-category-title-wrapper " . esc_attr( $type ) . "' " . ( 'layout7' === $layout && ! empty( $catImage ) ? $catImage : '' ) . '>';
+			echo "<div class='fmp-category-title-wrapper " . esc_attr( $type ) . "'";
+			if ( 'layout7' === $layout && ! empty( $catImgSrc ) ) {
+				echo ' style="background-image: url(' . esc_url( $catImgSrc ) . ');"';
+			}
+			echo '>';
 
-			echo "<h2 class='fmp-category-title'><span>{$term->name}</span></h2>";
+			echo "<h2 class='fmp-category-title'><span>" . esc_html( $term->name ) . '</span></h2>';
 			echo "</div>";
 
 			echo '<div class="fmp-col-xs-12 fmp-grids-wrapper fmp-product-inner">';

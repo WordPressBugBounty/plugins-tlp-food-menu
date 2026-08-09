@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Dashboard API Class.
  *
@@ -431,7 +432,7 @@ class DashboardApi {
 				$booking_start_time = str_replace( ' ', '', get_post_meta( $post_id, 'fmp_resi_meta_start_time', true ) );
 				$booking_end_time   = str_replace( ' ', '', get_post_meta( $post_id, 'fmp_resi_meta_end_time', true ) );
 				$booking_date = is_numeric( $booking_date ) ? (int) $booking_date : strtotime( $booking_date );
-				$booking_date = strtotime( date( 'Y-m-d', $booking_date ) );
+				$booking_date = strtotime( gmdate( 'Y-m-d', $booking_date ) );
 				$reservations[]    = [
 					'id'            => $post_id,
 					'customer_name' => get_post_meta( $post_id, '_fmp_customer_name', true ) ?: $post->post_title,

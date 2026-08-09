@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Action Hook Class.
  *
@@ -38,6 +39,7 @@ class DashboardHooks {
     public function remove_admin_notice() {
         $screen = get_current_screen();
 
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only admin screen check; no form data processed.
         if ( $screen && $screen->post_type === TLPFoodMenu()->post_type && ! empty( $_GET['page'] ) ) {
             remove_all_actions( 'admin_notices' );
             remove_all_actions( 'all_admin_notices' );

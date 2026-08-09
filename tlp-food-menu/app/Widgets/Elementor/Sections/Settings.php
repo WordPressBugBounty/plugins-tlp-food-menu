@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Elementor Settings Class.
  *
@@ -247,6 +248,20 @@ class Settings {
 			'description' => esc_html__( 'Switch on to display show display search button.', 'tlp-food-menu' ),
 			'label_on'    => esc_html__( 'On', 'tlp-food-menu' ),
 			'label_off'   => esc_html__( 'Off', 'tlp-food-menu' ),
+		];
+
+		$obj->elControls[] = [
+			'type'        => 'switch',
+			'id'          => 'fmp_isotope_group_by_cat',
+			'label'       => esc_html__( 'Group Items by Category ?', 'tlp-food-menu' ),
+			'description' => esc_html__( 'On the "Show All" view, order items grouped by category, following the filter-bar order. If an item is assigned to more than one category, it is shown once and placed under the first matching category in that order. Forces the Even grid style (Masonry would break the order).', 'tlp-food-menu' ),
+			'label_on'    => esc_html__( 'On', 'tlp-food-menu' ),
+			'label_off'   => esc_html__( 'Off', 'tlp-food-menu' ),
+			'default'     => 'no',
+			'condition'   => [
+				'fmp_isotope_filter'    => [ 'yes' ],
+				'fmp_switch_all_button' => 'yes',
+			],
 		];
 
 		$obj->endSection();

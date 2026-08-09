@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Review Notice Class.
  *
@@ -141,7 +142,7 @@ class Review {
 			$dont_disturb = add_query_arg( $args + [ 'rtfm_spare_me' => '1' ], self::current_admin_url() );
 			$remind_me    = add_query_arg( $args + [ 'rtfm_remind_me' => '1' ], self::current_admin_url() );
 			$rated        = add_query_arg( $args + [ 'rtfm_rated' => '1' ], self::current_admin_url() );
-			$reviewurl    = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5#new-post';
+			$reviewurl    = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/#new-post';
 
 			printf(
 				'<div class="notice rtfm-review-notice">

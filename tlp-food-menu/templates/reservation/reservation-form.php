@@ -1,4 +1,8 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 $cancelFormShowHide = ! empty( $settings['fmp_resi_enable_cancel_form'] ) ? $settings['fmp_resi_enable_cancel_form'] : 'on';
 ?>
 
@@ -26,7 +30,7 @@ $cancelFormShowHide = ! empty( $settings['fmp_resi_enable_cancel_form'] ) ? $set
 						<span class='fmp-required'>*</span>
 					</label>
 					<input type='text' class='fmp-form-control' id='fmp_resi_start_time' name='fmp_resi_start_time' placeholder="<?php echo esc_attr__( 'Start Time', 'tlp-food-menu' ); ?>"
-						   value='' required/>
+							value='' required/>
 				</div>
 			</div>
 			<div class="fmp-col-lg-6 fmp-col-md-6 fmp-col-sm-6 fmp-col-xs-12">
@@ -36,7 +40,7 @@ $cancelFormShowHide = ! empty( $settings['fmp_resi_enable_cancel_form'] ) ? $set
 						<span class='fmp-required'>*</span>
 					</label>
 					<input type='text' class='fmp-form-control' id='fmp_resi_end_time' name='fmp_resi_end_time' value='' placeholder="<?php echo esc_attr__( 'End Time', 'tlp-food-menu' ); ?>"
-						   required/>
+							required/>
 				</div>
 			</div>
 		</div>
@@ -95,7 +99,7 @@ $cancelFormShowHide = ! empty( $settings['fmp_resi_enable_cancel_form'] ) ? $set
 		<div class="fmp-field fmp-resi-submit-btn-wrap">
 			<button type="submit" class="fmp-resi-submit-btn" data-form-type="booking-form"><?php echo esc_html__( 'Request Booking', 'tlp-food-menu' ); ?></button>
 
-            <?php if ( ! empty( $cancelFormShowHide ) ) : ?>
+			<?php if ( ! empty( $cancelFormShowHide ) ) : ?>
 				<span class="fmp-resi-request-cancel"><?php echo esc_html__( 'Request Cancel', 'tlp-food-menu' ); ?></span>
 			<?php endif; ?>
 		</div>

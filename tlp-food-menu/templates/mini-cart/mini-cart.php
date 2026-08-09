@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Mini-cart
  *
@@ -180,7 +181,7 @@ $coupon_visibility      = $settings['mini_cart_coupon_visibility'] ?? '';
 				<th><?php esc_html_e( 'Subtotal', 'tlp-food-menu' ); ?></th>
 				<td data-title="<?php esc_attr_e( 'Subtotal', 'tlp-food-menu' ); ?>">
 					<?php
-					wc_cart_totals_subtotal_html(); //Just print total no need extra calculation like VAT
+					wc_cart_totals_subtotal_html(); // Just print total no need extra calculation like VAT
 					?>
 				</td>
 			</tr>

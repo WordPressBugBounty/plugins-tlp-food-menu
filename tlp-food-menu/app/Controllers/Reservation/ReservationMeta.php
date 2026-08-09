@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 
 namespace RT\FoodMenu\Controllers\Reservation;
 
@@ -165,9 +166,11 @@ class ReservationMeta {
 		foreach ( $fields as $metaKey => $field ) {
 			if ( 'fmp_resi_meta_status' === $metaKey ) {
 				$reser_status = get_post_meta( $post_id, $metaKey, true );
-				if ( isset( $_REQUEST[ $metaKey ] ) && $reser_status !== $_REQUEST[ $metaKey ] ) {
-					$newReservation = $_REQUEST[ $metaKey ];
-					do_action( 'fmp_reservation_change_email_hook', $post_id, $newReservation );
+				if ( isset( $_REQUEST[ $metaKey ] ) ) {
+					$newReservation = sanitize_text_field( wp_unslash( $_REQUEST[ $metaKey ] ) );
+					if ( $reser_status !== $newReservation ) {
+						do_action( 'fmp_reservation_change_email_hook', $post_id, $newReservation );
+					}
 				}
 			}
 

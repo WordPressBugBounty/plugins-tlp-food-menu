@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Get help page.
  *
@@ -17,7 +18,7 @@ $doc         = 'https://www.radiustheme.com/docs/food-menu/getting-started/insta
 $contact     = 'https://www.radiustheme.com/contact/';
 $fb          = 'https://www.facebook.com/groups/234799147426640/';
 $rt          = 'https://www.radiustheme.com/';
-$review      = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/?filter=5#new-post';
+$review      = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/#new-post';
 $has_pro     = TLPFoodMenu()->has_pro();
 $primary_hex = \RT\FoodMenu\Helpers\Fns::get_setting( 'fm_primary_color', '#dc2626' );
 

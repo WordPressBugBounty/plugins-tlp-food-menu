@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Food Location Controller.
  *
@@ -350,6 +351,7 @@ class FoodLocation {
 	 * @return void
 	 */
 	public function location_update_meta( $order ) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing -- Runs on woocommerce_checkout_create_order / Store API after WC has already verified the checkout nonce (see docblock).
 		$posted_name = isset( $_POST['fmp_location_name'] ) ? sanitize_text_field( wp_unslash( $_POST['fmp_location_name'] ) ) : '';
 		$location_id = $this->getLocationId();
 

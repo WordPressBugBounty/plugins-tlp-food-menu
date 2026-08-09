@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: tlp-food-menu 6.0.0\n"
+"Project-Id-Version: tlp-food-menu 6.0.2\n"
 "Report-Msgid-Bugs-To: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-25T07:27:12+00:00\n"
+"POT-Creation-Date: 2026-08-09T07:15:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: tlp-food-menu\n"
@@ -39,288 +39,289 @@ msgstr ""
 msgid "https://radiustheme.com/"
 msgstr ""
 
-#: app/Blocks/CheckoutLocation.php:97
-#: app/Controllers/Frontend/FoodLocation.php:115
+#: app/Blocks/CheckoutLocation.php:98
+#: app/Controllers/Frontend/FoodLocation.php:116
 #: src/js/checkout-location/index.js:30
 msgid "Food Order Location"
 msgstr ""
 
-#: app/Blocks/CheckoutTip.php:89
-#: app/Controllers/Tip/TipFns.php:67
-#: templates/tip/tip-form.php:12
+#: app/Blocks/CheckoutTip.php:90
+#: app/Controllers/Tip/TipFns.php:68
+#: templates/tip/tip-form.php:13
 #: src/js/checkout-tip/index.js:39
 msgid "Do you want to provide a tip?"
 msgstr ""
 
-#: app/Blocks/CheckoutTip.php:100
-#: app/Controllers/Tip/TipFns.php:57
-#: templates/tip/tip-form.php:17
+#: app/Blocks/CheckoutTip.php:101
+#: app/Controllers/Tip/TipFns.php:58
+#: templates/tip/tip-form.php:18
 #: src/js/checkout-tip/index.js:165
 msgid "Fixed"
 msgstr ""
 
-#: app/Blocks/CheckoutTip.php:101
-#: templates/tip/tip-form.php:21
+#: app/Blocks/CheckoutTip.php:102
+#: templates/tip/tip-form.php:22
 #: src/js/checkout-tip/index.js:166
 msgid "Percentage(%)"
 msgstr ""
 
-#: app/Blocks/CheckoutTip.php:102
-#: templates/tip/tip-form.php:67
+#: app/Blocks/CheckoutTip.php:103
+#: templates/tip/tip-form.php:68
 #: src/js/checkout-tip/index.js:216
 msgid "Add Tip"
 msgstr ""
 
-#: app/Blocks/CheckoutTip.php:103
-#: templates/tip/tip-form.php:68
+#: app/Blocks/CheckoutTip.php:104
+#: templates/tip/tip-form.php:69
 #: src/js/checkout-tip/index.js:223
 msgid "Remove Tip"
 msgstr ""
 
-#: app/Controllers/Admin/AdminColumns.php:131
-#: app/Helpers/Options.php:46
-#: app/Helpers/Options.php:57
-#: app/Helpers/Options.php:326
-#: app/Widgets/Elementor/Sections/Layout.php:697
-#: app/Widgets/Elementor/Sections/Style.php:478
-msgid "Image"
-msgstr ""
-
 #: app/Controllers/Admin/AdminColumns.php:132
-#: app/Controllers/Admin/Metabox/PostMeta.php:138
 #: app/Helpers/Options.php:47
 #: app/Helpers/Options.php:58
 #: app/Helpers/Options.php:327
-#: app/Helpers/Options.php:482
-#: app/Helpers/Options.php:1038
-#: app/Widgets/Elementor/Sections/Style.php:356
+#: app/Widgets/Elementor/Sections/Layout.php:698
+#: app/Widgets/Elementor/Sections/Style.php:479
+msgid "Image"
+msgstr ""
+
+#: app/Controllers/Admin/AdminColumns.php:133
+#: app/Controllers/Admin/Metabox/PostMeta.php:139
+#: app/Helpers/Options.php:48
+#: app/Helpers/Options.php:59
+#: app/Helpers/Options.php:328
+#: app/Helpers/Options.php:483
+#: app/Helpers/Options.php:1039
+#: app/Widgets/Elementor/Sections/Style.php:357
 #: src/settings/components/sections/DetailPageSettings.jsx:47
 msgid "Price"
 msgstr ""
 
-#: app/Controllers/Admin/AdminColumns.php:176
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:229
-#: app/Controllers/PostTypesController.php:149
-#: app/Controllers/PostTypesController.php:167
+#: app/Controllers/Admin/AdminColumns.php:177
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:230
+#: app/Controllers/PostTypesController.php:150
 #: app/Controllers/PostTypesController.php:168
+#: app/Controllers/PostTypesController.php:169
 msgid "Shortcode"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:118
+#: app/Controllers/Admin/Ajax/Preview.php:119
+#: app/Widgets/Elementor/Elements/ListLayout.php:315
 msgid "Load More"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:134
-#: app/Controllers/Admin/Ajax/Preview.php:1268
+#: app/Controllers/Admin/Ajax/Preview.php:135
+#: app/Controllers/Admin/Ajax/Preview.php:1269
 msgid "Read More"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:256
+#: app/Controllers/Admin/Ajax/Preview.php:257
 msgid "Show all"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:276
-#: app/Controllers/Admin/Ajax/Preview.php:1041
-#: app/Controllers/Admin/Ajax/Preview.php:1269
-#: app/Controllers/Frontend/Shortcode.php:356
+#: app/Controllers/Admin/Ajax/Preview.php:277
+#: app/Controllers/Admin/Ajax/Preview.php:1042
+#: app/Controllers/Admin/Ajax/Preview.php:1270
+#: app/Controllers/Frontend/Shortcode.php:381
 msgid "Add to cart"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:284
-#: app/Controllers/Admin/Ajax/Preview.php:292
-#: app/Controllers/Frontend/Shortcode.php:172
-#: app/Controllers/Frontend/Shortcode.php:180
+#: app/Controllers/Admin/Ajax/Preview.php:285
+#: app/Controllers/Admin/Ajax/Preview.php:293
+#: app/Controllers/Frontend/Shortcode.php:182
+#: app/Controllers/Frontend/Shortcode.php:205
 msgid "Loading ..."
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:342
+#: app/Controllers/Admin/Ajax/Preview.php:343
 msgid "Pagination/Loadmore works only in the front-end"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:368
-#: app/Controllers/Frontend/Shortcode.php:232
+#: app/Controllers/Admin/Ajax/Preview.php:369
+#: app/Controllers/Frontend/Shortcode.php:257
 msgid "No posts found."
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:377
-#: app/Controllers/Admin/Ajax/Settings.php:140
-#: app/Controllers/Admin/Ajax/Settings.php:175
+#: app/Controllers/Admin/Ajax/Preview.php:378
+#: app/Controllers/Admin/Ajax/Settings.php:141
+#: app/Controllers/Admin/Ajax/Settings.php:176
 msgid "Security Error !!"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Preview.php:1051
-#: app/Controllers/Frontend/Shortcode.php:366
+#: app/Controllers/Admin/Ajax/Preview.php:1052
+#: app/Controllers/Frontend/Shortcode.php:391
 msgid "No categories found"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Settings.php:137
-#: app/Controllers/Admin/Ajax/Settings.php:235
+#: app/Controllers/Admin/Ajax/Settings.php:138
+#: app/Controllers/Admin/Ajax/Settings.php:236
 msgid "Settings successfully updated"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Shortcode.php:56
+#: app/Controllers/Admin/Ajax/Shortcode.php:57
 msgid "Select Short code"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Shortcode.php:58
+#: app/Controllers/Admin/Ajax/Shortcode.php:59
 msgid "Default"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Shortcode.php:69
+#: app/Controllers/Admin/Ajax/Shortcode.php:70
 msgid "No shortCode found."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:64
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:65
 msgid "Food Menu - Order Information"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:105
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:115
-#: app/Controllers/Reservation/ReservationTableList.php:312
-#: app/Helpers/Options.php:2554
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:106
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:116
+#: app/Controllers/Reservation/ReservationTableList.php:321
+#: app/Helpers/Options.php:2555
 msgid "Location"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:115
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:116
 msgid "Update Location"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:119
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:120
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:185
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:249
 msgid "— None —"
 msgstr ""
 
 #. translators: %s: link to the Food Locations taxonomy edit screen.
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:153
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:154
 #, php-format
 msgid "No locations found. <a href=\"%s\">Add a location</a> first."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:160
+#: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:161
 msgid "Changes are saved when you click the main \"Update\" button."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/PostMeta.php:81
+#: app/Controllers/Admin/Metabox/PostMeta.php:82
 msgid "Food Details"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/PostMeta.php:144
+#: app/Controllers/Admin/Metabox/PostMeta.php:145
 msgid "Insert the price, leave blank if it is free"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:123
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:124
 msgid "Short Code Generator"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:132
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:133
 msgid "Layout Preview"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:141
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:426
-#: app/Helpers/Fns.php:1276
-#: resources/help.php:468
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:142
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:427
+#: app/Helpers/Fns.php:1377
+#: resources/help.php:469
 #: src/settings/App.jsx:847
 msgid "Documentation"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:227
-#: app/Controllers/Reservation/ReservationMeta.php:69
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:228
+#: app/Controllers/Reservation/ReservationMeta.php:70
 #: src/settings/components/sections/ReservationSettings.jsx:68
 msgid "Copy"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:228
-#: app/Controllers/Reservation/Reservation.php:176
-#: app/Controllers/Reservation/ReservationMeta.php:85
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:229
+#: app/Controllers/Reservation/Reservation.php:178
+#: app/Controllers/Reservation/ReservationMeta.php:86
 #: src/settings/components/sections/ReservationSettings.jsx:52
 msgid "Copied!"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:230
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:231
 msgid "PHP Snippet"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:231
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:232
 msgid "Copy this shortcode and paste it into any page, post, or widget to display this menu."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:232
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:233
 msgid "Use this PHP snippet inside your theme or template files to render this menu programmatically."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:246
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:247
 #: src/settings/components/sections/ReservationSettings.jsx:52
 #: src/settings/components/sections/ReservationSettings.jsx:53
 msgid "Copy shortcode"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:256
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:257
 msgid "Copy PHP snippet"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:366
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:367
 msgid "Layout"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:367
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:368
 msgid "Filtering"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:368
-#: app/Helpers/Options.php:25
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:369
+#: app/Helpers/Options.php:26
 msgid "Field Selection"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:369
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:370
 msgid "Styling"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:427
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:428
 msgid "Step by step guide with screenshots & video."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:428
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:429
 msgid "View Docs"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:435
-#: resources/help.php:486
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:436
+#: resources/help.php:487
 msgid "Need Help?"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:436
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:437
 msgid "Create a ticket or join our live chat."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:437
-#: resources/help.php:448
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:438
+#: resources/help.php:449
 msgid "Get Support"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:475
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:476
 msgid "Pro Field Alert!"
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:476
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:477
 msgid "Sorry! This is a Pro field. To activate this field, you need to upgrade to the Pro version."
 msgstr ""
 
-#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:477
+#: app/Controllers/Admin/Metabox/ShortcodeMeta.php:478
 msgid "Get Pro Version"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:125
 #: app/Controllers/Admin/Settings.php:126
-#: app/Controllers/PostTypesController.php:285
-#: app/Controllers/PostTypesController.php:287
+#: app/Controllers/Admin/Settings.php:127
+#: app/Controllers/PostTypesController.php:286
+#: app/Controllers/PostTypesController.php:288
 msgid "Food Locations"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:137
 #: app/Controllers/Admin/Settings.php:138
-#: app/Helpers/Options.php:2410
+#: app/Controllers/Admin/Settings.php:139
+#: app/Helpers/Options.php:2411
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:6
 #: src/settings/components/sections/ProductAddons.jsx:14
 #: src/settings/components/sections/ProductAddons.jsx:25
@@ -329,14 +330,14 @@ msgstr ""
 msgid "Product Addons"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:149
 #: app/Controllers/Admin/Settings.php:150
+#: app/Controllers/Admin/Settings.php:151
 #: src/settings/components/sections/ReservationSettings.jsx:507
 msgid "Table Layout"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:173
 #: app/Controllers/Admin/Settings.php:174
+#: app/Controllers/Admin/Settings.php:175
 #: src/settings/components/sections/QrTableOrderingSettings.jsx:16
 #: src/settings/components/sections/QrTableOrderingSettings.jsx:24
 #: src/settings/utils.js:68
@@ -344,9 +345,9 @@ msgstr ""
 msgid "QR Table Ordering"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:185
 #: app/Controllers/Admin/Settings.php:186
-#: app/Helpers/Options.php:2417
+#: app/Controllers/Admin/Settings.php:187
+#: app/Helpers/Options.php:2418
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:13
 #: src/settings/components/sections/TimedProductsSettings.jsx:13
 #: src/settings/components/sections/TimedProductsSettings.jsx:22
@@ -355,82 +356,82 @@ msgstr ""
 msgid "Timed Products"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:199
-#: app/Controllers/Admin/Settings.php:219
-#: app/Controllers/Admin/Settings.php:226
-#: resources/settings.php:23
+#: app/Controllers/Admin/Settings.php:200
+#: app/Controllers/Admin/Settings.php:220
+#: app/Controllers/Admin/Settings.php:227
+#: resources/settings.php:24
 msgid "Food Menu Settings"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:200
-#: app/Controllers/Admin/Settings.php:227
+#: app/Controllers/Admin/Settings.php:201
+#: app/Controllers/Admin/Settings.php:228
 #: src/settings/App.jsx:263
 #: src/settings/App.jsx:296
 #: src/settings/App.jsx:347
 msgid "Settings"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:236
 #: app/Controllers/Admin/Settings.php:237
+#: app/Controllers/Admin/Settings.php:238
 msgid "Get Help"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:307
+#: app/Controllers/Admin/Settings.php:308
 msgid "Facing issue?"
 msgstr ""
 
-#: app/Controllers/Admin/Settings.php:308
+#: app/Controllers/Admin/Settings.php:309
 msgid "Please open a support ticket."
 msgstr ""
 
-#: app/Controllers/Admin/Upgrade.php:94
+#: app/Controllers/Admin/Upgrade.php:95
 msgid "Heads up, Please backup before upgrade to version "
 msgstr ""
 
-#: app/Controllers/Discount/Discount.php:99
-#: app/Controllers/Discount/Discount.php:108
+#: app/Controllers/Discount/Discount.php:100
+#: app/Controllers/Discount/Discount.php:109
 msgid "Discount "
 msgstr ""
 
-#: app/Controllers/Discount/Discount.php:109
+#: app/Controllers/Discount/Discount.php:110
 msgid "% off"
 msgstr ""
 
-#: app/Controllers/Discount/Discount.php:365
-#: app/Controllers/Discount/Discount.php:467
+#: app/Controllers/Discount/Discount.php:368
+#: app/Controllers/Discount/Discount.php:470
 #: src/settings/utils.js:163
 #: src/settings/utils.js:313
 msgid "Discount"
 msgstr ""
 
-#: app/Controllers/Discount/Discount.php:375
+#: app/Controllers/Discount/Discount.php:378
 msgid "Product price"
 msgstr ""
 
-#: app/Controllers/Discount/Discount.php:468
+#: app/Controllers/Discount/Discount.php:471
 msgid "Main price"
 msgstr ""
 
-#: app/Controllers/Discount/Discount.php:469
+#: app/Controllers/Discount/Discount.php:472
 msgid "Price after discount"
 msgstr ""
 
-#: app/Controllers/ElementorController.php:74
-#: app/Controllers/PostTypesController.php:110
+#: app/Controllers/ElementorController.php:75
 #: app/Controllers/PostTypesController.php:111
-#: app/Controllers/PostTypesController.php:131
+#: app/Controllers/PostTypesController.php:112
 #: app/Controllers/PostTypesController.php:132
 #: app/Controllers/PostTypesController.php:133
-#: app/Helpers/Options.php:1059
-#: app/Widgets/Elementor/Sections/Layout.php:50
-#: app/Widgets/Elementor/Sections/Layout.php:359
-#: app/Widgets/Elementor/Sections/Layout.php:523
-#: app/Widgets/Elementor/Shortcodes.php:28
-#: app/Widgets/Elementor/Shortcodes.php:74
-#: app/Widgets/FmWidget.php:32
-#: app/Widgets/FmWidget.php:59
-#: app/Widgets/Vc/VcAddon.php:38
-#: app/Widgets/Vc/VcAddon.php:61
+#: app/Controllers/PostTypesController.php:134
+#: app/Helpers/Options.php:1060
+#: app/Widgets/Elementor/Sections/Layout.php:51
+#: app/Widgets/Elementor/Sections/Layout.php:360
+#: app/Widgets/Elementor/Sections/Layout.php:524
+#: app/Widgets/Elementor/Shortcodes.php:29
+#: app/Widgets/Elementor/Shortcodes.php:75
+#: app/Widgets/FmWidget.php:33
+#: app/Widgets/FmWidget.php:60
+#: app/Widgets/Vc/VcAddon.php:39
+#: app/Widgets/Vc/VcAddon.php:62
 #: src/admin-panel/components/dashboard/Header.jsx:91
 #: src/js/tlp-food-menu-blocks.js:7
 #: src/js/tlp-food-menu-blocks.js:12
@@ -441,167 +442,142 @@ msgstr ""
 msgid "Food Menu"
 msgstr ""
 
-#: app/Controllers/ElementorController.php:116
+#: app/Controllers/ElementorController.php:117
 msgid "Filter By Categories"
 msgstr ""
 
-#: app/Controllers/ElementorController.php:118
+#: app/Controllers/ElementorController.php:119
 msgid "Select the departments you want to filter, Leave it blank for all departments."
 msgstr ""
 
-#: app/Controllers/ElementorController.php:153
-#: app/Helpers/Options.php:895
+#: app/Controllers/ElementorController.php:154
+#: app/Helpers/Options.php:896
 msgid "Grid Layouts"
 msgstr ""
 
-#: app/Controllers/ElementorController.php:154
-#: app/Controllers/ElementorController.php:161
-#: app/Controllers/ElementorController.php:168
+#: app/Controllers/ElementorController.php:155
+#: app/Controllers/ElementorController.php:162
+#: app/Controllers/ElementorController.php:169
 msgid "Available in Pro version: Advanced food menu layout"
 msgstr ""
 
-#: app/Controllers/ElementorController.php:160
-#: app/Helpers/Options.php:908
+#: app/Controllers/ElementorController.php:161
+#: app/Helpers/Options.php:909
 msgid "Slider Layouts"
 msgstr ""
 
-#: app/Controllers/ElementorController.php:167
-#: app/Helpers/Options.php:913
+#: app/Controllers/ElementorController.php:168
+#: app/Helpers/Options.php:914
 msgid "Isotope Filters Layouts"
 msgstr ""
 
 #. translators: %s: comma-separated list of removed product names
-#: app/Controllers/Frontend/FoodLocation.php:256
+#: app/Controllers/Frontend/FoodLocation.php:257
 #, php-format
 msgid "The following items were removed from your cart because they are not available at your selected location: %s"
 msgstr ""
 
-#: app/Controllers/Frontend/FoodLocation.php:298
-#: app/Helpers/Options.php:2556
+#: app/Controllers/Frontend/FoodLocation.php:299
+#: app/Helpers/Options.php:2557
 msgid "Select Location"
 msgstr ""
 
-#: app/Controllers/Frontend/FoodLocation.php:318
+#: app/Controllers/Frontend/FoodLocation.php:319
 msgid "Save"
 msgstr ""
 
-#: app/Controllers/Frontend/FoodLocation.php:319
+#: app/Controllers/Frontend/FoodLocation.php:320
 msgid "Save Your Preferred Location"
 msgstr ""
 
-#: app/Controllers/Frontend/ResiShortcode.php:92
+#: app/Controllers/Frontend/ResiShortcode.php:93
 msgid "Reservations are currently unavailable"
 msgstr ""
 
-#: app/Controllers/Frontend/ResiShortcode.php:96
+#: app/Controllers/Frontend/ResiShortcode.php:97
 msgid "The reservation feature is disabled in your settings. Only site administrators can see this message."
 msgstr ""
 
-#: app/Controllers/Frontend/ResiShortcode.php:99
+#: app/Controllers/Frontend/ResiShortcode.php:100
 msgid "Open Reservation Settings"
 msgstr ""
 
-#: app/Controllers/Frontend/ResiShortcode.php:103
+#: app/Controllers/Frontend/ResiShortcode.php:104
 msgid "Please contact us directly to book a table."
 msgstr ""
 
-#: app/Controllers/Hooks/ActionHooks.php:216
+#: app/Controllers/Hooks/ActionHooks.php:217
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/Controllers/Hooks/ActionHooks.php:234
+#: app/Controllers/Hooks/ActionHooks.php:235
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/Controllers/Hooks/ActionHooks.php:275
+#: app/Controllers/Hooks/ActionHooks.php:276
 msgid "Food Order Details"
 msgstr ""
 
-#: app/Controllers/Hooks/ActionHooks.php:279
+#: app/Controllers/Hooks/ActionHooks.php:280
 msgid "Location:"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:48
+#: app/Controllers/Hooks/FilterHooks.php:49
 msgid "Full Size"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:112
-#: app/Helpers/Options.php:91
-#: templates/elementor/grid-by-cat-free-1.php:96
-#: templates/elementor/grid-by-cat-free-2.php:96
-#: templates/elementor/grid-by-cat-free-3.php:96
-#: templates/elementor/grid-by-cat-free-4.php:98
-#: templates/elementor/layout-list-free-1.php:101
-#: templates/elementor/layout-list-free-2.php:95
-#: templates/elementor/layout-list-free-3.php:100
-#: templates/elementor/layout-list-free-4.php:94
+#: app/Controllers/Hooks/FilterHooks.php:113
+#: app/Helpers/Options.php:92
+#: templates/elementor/grid-by-cat-free-1.php:97
+#: templates/elementor/grid-by-cat-free-2.php:97
+#: templates/elementor/grid-by-cat-free-3.php:97
+#: templates/elementor/grid-by-cat-free-4.php:99
+#: templates/elementor/layout-list-free-1.php:102
+#: templates/elementor/layout-list-free-2.php:96
+#: templates/elementor/layout-list-free-3.php:101
+#: templates/elementor/layout-list-free-4.php:95
 msgid "Out of stock"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:122
+#: app/Controllers/Hooks/FilterHooks.php:123
 msgid "Add to Cart"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:162
+#: app/Controllers/Hooks/FilterHooks.php:163
 msgid "Masonry Style"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:164
+#: app/Controllers/Hooks/FilterHooks.php:165
 msgid "Even"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:165
+#: app/Controllers/Hooks/FilterHooks.php:166
 msgid "Masonry"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:168
-#: app/Helpers/Options.php:549
+#: app/Controllers/Hooks/FilterHooks.php:169
+#: app/Helpers/Options.php:550
 msgid "Please select the grid style."
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:176
+#: app/Controllers/Hooks/FilterHooks.php:177
 msgid "Editor Preview Limitation"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:177
+#: app/Controllers/Hooks/FilterHooks.php:178
 msgid "Masonry and Isotope filtering are disabled in the Elementor editor to prevent layout rendering issues. Your selected style will display correctly on the live site."
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:198
+#: app/Controllers/Hooks/FilterHooks.php:199
 msgid "Read More ?"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:199
-msgid "Switch on to show read more button."
-msgstr ""
-
 #: app/Controllers/Hooks/FilterHooks.php:200
-#: app/Controllers/Hooks/FilterHooks.php:221
-#: app/Controllers/Hooks/FilterHooks.php:234
-#: app/Controllers/Hooks/FilterHooks.php:246
-#: app/Widgets/Elementor/Sections/Layout.php:637
-#: app/Widgets/Elementor/Sections/Layout.php:709
-#: app/Widgets/Elementor/Sections/Layout.php:720
-#: app/Widgets/Elementor/Sections/Settings.php:50
-#: app/Widgets/Elementor/Sections/Settings.php:59
-#: app/Widgets/Elementor/Sections/Settings.php:83
-#: app/Widgets/Elementor/Sections/Settings.php:93
-#: app/Widgets/Elementor/Sections/Settings.php:102
-#: app/Widgets/Elementor/Sections/Settings.php:123
-#: app/Widgets/Elementor/Sections/Settings.php:133
-#: app/Widgets/Elementor/Sections/Settings.php:204
-#: app/Widgets/Elementor/Sections/Settings.php:228
-#: app/Widgets/Elementor/Sections/Settings.php:248
-#: app/Widgets/Elementor/Sections/Settings.php:295
-#: app/Widgets/Elementor/Sections/Settings.php:305
-#: app/Widgets/Elementor/Sections/Settings.php:356
-#: app/Widgets/Elementor/Sections/Settings.php:366
-#: app/Widgets/Elementor/Sections/Settings.php:376
-msgid "On"
+msgid "Switch on to show read more button."
 msgstr ""
 
 #: app/Controllers/Hooks/FilterHooks.php:201
@@ -621,1449 +597,1476 @@ msgstr ""
 #: app/Widgets/Elementor/Sections/Settings.php:205
 #: app/Widgets/Elementor/Sections/Settings.php:229
 #: app/Widgets/Elementor/Sections/Settings.php:249
-#: app/Widgets/Elementor/Sections/Settings.php:296
-#: app/Widgets/Elementor/Sections/Settings.php:306
-#: app/Widgets/Elementor/Sections/Settings.php:357
-#: app/Widgets/Elementor/Sections/Settings.php:367
-#: app/Widgets/Elementor/Sections/Settings.php:377
+#: app/Widgets/Elementor/Sections/Settings.php:258
+#: app/Widgets/Elementor/Sections/Settings.php:310
+#: app/Widgets/Elementor/Sections/Settings.php:320
+#: app/Widgets/Elementor/Sections/Settings.php:371
+#: app/Widgets/Elementor/Sections/Settings.php:381
+#: app/Widgets/Elementor/Sections/Settings.php:391
+msgid "On"
+msgstr ""
+
+#: app/Controllers/Hooks/FilterHooks.php:202
+#: app/Controllers/Hooks/FilterHooks.php:223
+#: app/Controllers/Hooks/FilterHooks.php:236
+#: app/Controllers/Hooks/FilterHooks.php:248
+#: app/Widgets/Elementor/Sections/Layout.php:639
+#: app/Widgets/Elementor/Sections/Layout.php:711
+#: app/Widgets/Elementor/Sections/Layout.php:722
+#: app/Widgets/Elementor/Sections/Settings.php:52
+#: app/Widgets/Elementor/Sections/Settings.php:61
+#: app/Widgets/Elementor/Sections/Settings.php:85
+#: app/Widgets/Elementor/Sections/Settings.php:95
+#: app/Widgets/Elementor/Sections/Settings.php:104
+#: app/Widgets/Elementor/Sections/Settings.php:125
+#: app/Widgets/Elementor/Sections/Settings.php:135
+#: app/Widgets/Elementor/Sections/Settings.php:206
+#: app/Widgets/Elementor/Sections/Settings.php:230
+#: app/Widgets/Elementor/Sections/Settings.php:250
+#: app/Widgets/Elementor/Sections/Settings.php:259
+#: app/Widgets/Elementor/Sections/Settings.php:311
+#: app/Widgets/Elementor/Sections/Settings.php:321
+#: app/Widgets/Elementor/Sections/Settings.php:372
+#: app/Widgets/Elementor/Sections/Settings.php:382
+#: app/Widgets/Elementor/Sections/Settings.php:392
 msgid "Off"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:210
+#: app/Controllers/Hooks/FilterHooks.php:211
 msgid "Read More text"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:212
+#: app/Controllers/Hooks/FilterHooks.php:213
 msgid "Please change \"Read More\" text"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:219
+#: app/Controllers/Hooks/FilterHooks.php:220
 msgid "Stock Status ?"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:220
+#: app/Controllers/Hooks/FilterHooks.php:221
 msgid "Switch on to show stock status."
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:232
+#: app/Controllers/Hooks/FilterHooks.php:233
 msgid "Add To cart ?"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:233
+#: app/Controllers/Hooks/FilterHooks.php:234
 msgid "Switch on to show Add to cart ( wooCommerce )."
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:244
+#: app/Controllers/Hooks/FilterHooks.php:245
 msgid "Quantity ?"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:245
+#: app/Controllers/Hooks/FilterHooks.php:246
 msgid "Switch on to show quantity ( wooCommerce )."
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:271
+#: app/Controllers/Hooks/FilterHooks.php:272
 msgid "Image Animation"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:273
-#: app/Helpers/Fns.php:761
+#: app/Controllers/Hooks/FilterHooks.php:274
+#: app/Helpers/Fns.php:862
 msgid "None"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:274
-#: app/Helpers/Fns.php:759
+#: app/Controllers/Hooks/FilterHooks.php:275
+#: app/Helpers/Fns.php:860
 msgid "Zoom In"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:275
-#: app/Helpers/Fns.php:760
+#: app/Controllers/Hooks/FilterHooks.php:276
+#: app/Helpers/Fns.php:861
 msgid "Zoom Out"
 msgstr ""
 
-#: app/Controllers/Hooks/FilterHooks.php:278
+#: app/Controllers/Hooks/FilterHooks.php:279
 msgid "Please select thme"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:167
-#: app/Controllers/MiniCart/MiniCartHooks.php:124
+#: app/Controllers/MiniCart/MiniCart.php:168
+#: app/Controllers/MiniCart/MiniCartHooks.php:125
 msgid "Item"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:167
-#: app/Controllers/MiniCart/MiniCartHooks.php:124
+#: app/Controllers/MiniCart/MiniCart.php:168
+#: app/Controllers/MiniCart/MiniCartHooks.php:125
 msgid "Items"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:221
+#: app/Controllers/MiniCart/MiniCart.php:222
 msgid "Loadding..."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:29
+#: app/Controllers/MiniCart/MiniCartFns.php:30
 #: src/settings/components/sections/MiniCartSettings.jsx:44
 msgid "The mini-cart is intentionally hidden on the cart and checkout pages."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:32
+#: app/Controllers/MiniCart/MiniCartFns.php:33
 msgid "Enable Mini Cart?"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:34
+#: app/Controllers/MiniCart/MiniCartFns.php:35
 msgid "Switch on to enable mini cart."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:39
+#: app/Controllers/MiniCart/MiniCartFns.php:40
 msgid "Cart Drawer Settings"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:48
+#: app/Controllers/MiniCart/MiniCartFns.php:49
 #: src/settings/components/sections/MiniCartSettings.jsx:63
 msgid "Drawer Style"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:50
+#: app/Controllers/MiniCart/MiniCartFns.php:51
 msgid "Style - 01"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:51
+#: app/Controllers/MiniCart/MiniCartFns.php:52
 msgid "Style - 02"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:52
+#: app/Controllers/MiniCart/MiniCartFns.php:53
 msgid "Style - 03"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:61
+#: app/Controllers/MiniCart/MiniCartFns.php:62
 #: src/settings/components/sections/MiniCartSettings.jsx:84
 msgid "Drawer Opening Behavior"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:63
+#: app/Controllers/MiniCart/MiniCartFns.php:64
 msgid "Open each time after add to the cart"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:64
+#: app/Controllers/MiniCart/MiniCartFns.php:65
 msgid "Open when floating button is clicked"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:72
+#: app/Controllers/MiniCart/MiniCartFns.php:73
 msgid "Mini Cart Position "
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:73
+#: app/Controllers/MiniCart/MiniCartFns.php:74
 msgid "You can manage mini_cart position."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:75
+#: app/Controllers/MiniCart/MiniCartFns.php:76
 msgid "left Center"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:76
+#: app/Controllers/MiniCart/MiniCartFns.php:77
 msgid "left Bottom"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:77
+#: app/Controllers/MiniCart/MiniCartFns.php:78
 #: src/settings/components/sections/MiniCartSettings.jsx:123
 msgid "Right Center"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:78
-#: app/Helpers/Options.php:261
+#: app/Controllers/MiniCart/MiniCartFns.php:79
+#: app/Helpers/Options.php:262
 #: src/settings/components/sections/FoodLocationSettings.jsx:96
 #: src/settings/components/sections/MiniCartSettings.jsx:125
 msgid "Right Bottom"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:85
+#: app/Controllers/MiniCart/MiniCartFns.php:86
 msgid "Price extra field Visibility"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:86
+#: app/Controllers/MiniCart/MiniCartFns.php:87
 msgid "Enable to showing all cost (Shipping, Tax etc) in price table. Otherwise only Subtotal will show."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:93
+#: app/Controllers/MiniCart/MiniCartFns.php:94
 #: src/settings/components/sections/MiniCartSettings.jsx:151
 msgid "Coupon Form Visibility"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:94
+#: app/Controllers/MiniCart/MiniCartFns.php:95
 msgid "You may show / hide coupon input box on the mini-cart footer area"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:101
+#: app/Controllers/MiniCart/MiniCartFns.php:102
 #: src/settings/components/sections/MiniCartSettings.jsx:169
 msgid "Empty Cart Message"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:102
+#: app/Controllers/MiniCart/MiniCartFns.php:103
 msgid "Enter empty cart message. E.g: No products in the cart"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:103
+#: app/Controllers/MiniCart/MiniCartFns.php:104
 msgid "No products in the cart."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:109
+#: app/Controllers/MiniCart/MiniCartFns.php:110
 #: src/settings/components/sections/MiniCartSettings.jsx:188
 msgid "Shop Button Text"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:110
+#: app/Controllers/MiniCart/MiniCartFns.php:111
 msgid "Change Go Shopping Button text"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:111
+#: app/Controllers/MiniCart/MiniCartFns.php:112
 #: src/settings/components/sections/MiniCartSettings.jsx:202
 msgid "Go Shopping"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:117
+#: app/Controllers/MiniCart/MiniCartFns.php:118
 msgid "Float Button Settings"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:125
+#: app/Controllers/MiniCart/MiniCartFns.php:126
 #: src/settings/components/sections/MiniCartSettings.jsx:207
 msgid "Float Button Style"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:127
+#: app/Controllers/MiniCart/MiniCartFns.php:128
 msgid "Style # 01"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:128
+#: app/Controllers/MiniCart/MiniCartFns.php:129
 msgid "Style # 02"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:129
+#: app/Controllers/MiniCart/MiniCartFns.php:130
 msgid "Style # 03"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:130
+#: app/Controllers/MiniCart/MiniCartFns.php:131
 msgid "Style # 04"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:137
+#: app/Controllers/MiniCart/MiniCartFns.php:138
 msgid "Others Settings"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:142
+#: app/Controllers/MiniCart/MiniCartFns.php:143
 #: src/settings/components/sections/MiniCartSettings.jsx:229
 msgid "Overlay Visibility"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:143
+#: app/Controllers/MiniCart/MiniCartFns.php:144
 msgid "Enable this option to show the overlay"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:150
+#: app/Controllers/MiniCart/MiniCartFns.php:151
 #: src/settings/components/sections/MiniCartSettings.jsx:248
 msgid "Show On Mobile"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:151
+#: app/Controllers/MiniCart/MiniCartFns.php:152
 msgid "Enable this option to Show On Mobile."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:158
+#: app/Controllers/MiniCart/MiniCartFns.php:159
 #: src/settings/components/sections/MiniCartSettings.jsx:266
 msgid "Custom Class to Open Mini Cart"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:159
+#: app/Controllers/MiniCart/MiniCartFns.php:160
 #: src/settings/components/sections/MiniCartSettings.jsx:268
 msgid "If you would like to open the mini-cart by custom button on click just add the class name with comma separator. E.g: .icon-area-content a, span.cart-btn"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:163
+#: app/Controllers/MiniCart/MiniCartFns.php:164
 msgid "Floating Button Style"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:168
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:140
+#: app/Controllers/MiniCart/MiniCartFns.php:169
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:141
 #: src/settings/components/sections/SpecialMenuSettings.jsx:378
 msgid "Button Background"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:175
+#: app/Controllers/MiniCart/MiniCartFns.php:176
 msgid "Button Background - Hover"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:184
+#: app/Controllers/MiniCart/MiniCartFns.php:185
 msgid "If you need you can enter float button width"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:185
+#: app/Controllers/MiniCart/MiniCartFns.php:186
 #: src/settings/components/sections/MiniCartSettings.jsx:344
 msgid "Float Button Min Width"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:193
-#: app/Helpers/Options.php:654
-#: app/Widgets/Elementor/Sections/Style.php:236
-#: app/Widgets/Elementor/Sections/Style.php:483
-#: app/Widgets/Elementor/Sections/Style.php:614
-#: app/Widgets/Elementor/Sections/Style.php:821
-#: app/Widgets/Elementor/Sections/Style.php:1246
-#: app/Widgets/Elementor/Sections/Style.php:1362
+#: app/Controllers/MiniCart/MiniCartFns.php:194
+#: app/Helpers/Options.php:655
+#: app/Widgets/Elementor/Sections/Style.php:237
+#: app/Widgets/Elementor/Sections/Style.php:484
+#: app/Widgets/Elementor/Sections/Style.php:615
+#: app/Widgets/Elementor/Sections/Style.php:822
+#: app/Widgets/Elementor/Sections/Style.php:1247
+#: app/Widgets/Elementor/Sections/Style.php:1363
 #: src/settings/components/sections/MiniCartSettings.jsx:366
 msgid "Border Radius"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:194
+#: app/Controllers/MiniCart/MiniCartFns.php:195
 msgid "Enter Border Radius. Ex. 10px | 5px 5px 5px 5px | 0 5px 5px 0"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartHooks.php:241
+#: app/Controllers/MiniCart/MiniCartHooks.php:242
 msgid "Product quantity"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartHooks.php:321
 #: app/Controllers/MiniCart/MiniCartHooks.php:322
+#: app/Controllers/MiniCart/MiniCartHooks.php:323
 msgid "Shipping"
 msgstr ""
 
 #. translators: %s location.
-#: app/Controllers/MiniCart/MiniCartHooks.php:340
+#: app/Controllers/MiniCart/MiniCartHooks.php:341
 #, php-format
 msgid "(estimated for %s)"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartHooks.php:364
 #: app/Controllers/MiniCart/MiniCartHooks.php:365
+#: app/Controllers/MiniCart/MiniCartHooks.php:366
 msgid "Total"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:134
+#: app/Controllers/PostTypesController.php:135
 msgid "All Foods"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:135
 #: app/Controllers/PostTypesController.php:136
+#: app/Controllers/PostTypesController.php:137
 msgid "Add Food"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:137
+#: app/Controllers/PostTypesController.php:138
 msgid "Edit Food"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:138
+#: app/Controllers/PostTypesController.php:139
 msgid "New Food"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:139
+#: app/Controllers/PostTypesController.php:140
 msgid "View Food"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:140
+#: app/Controllers/PostTypesController.php:141
 msgid "Search Food"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:141
+#: app/Controllers/PostTypesController.php:142
 msgid "No Food found"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:142
+#: app/Controllers/PostTypesController.php:143
 msgid "No Food in the trash"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:150
+#: app/Controllers/PostTypesController.php:151
 msgid "Food menu pro shortcode generator"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:166
+#: app/Controllers/PostTypesController.php:167
 msgid "Shortcode Generator"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:169
+#: app/Controllers/PostTypesController.php:170
 msgid "Edit Shortcode"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:170
+#: app/Controllers/PostTypesController.php:171
 msgid "New Shortcode"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:171
+#: app/Controllers/PostTypesController.php:172
 msgid "View Shortcode"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:172
+#: app/Controllers/PostTypesController.php:173
 msgid "Shortcode Locations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:173
+#: app/Controllers/PostTypesController.php:174
 msgid "No Shortcode found."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:174
+#: app/Controllers/PostTypesController.php:175
 msgid "No Shortcode found in trash."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:202
 #: app/Controllers/PostTypesController.php:203
 #: app/Controllers/PostTypesController.php:204
+#: app/Controllers/PostTypesController.php:205
 msgid "Reservations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:205
+#: app/Controllers/PostTypesController.php:206
 msgid "All Reservations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:206
 #: app/Controllers/PostTypesController.php:207
+#: app/Controllers/PostTypesController.php:208
 msgid "Add Reservation"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:208
+#: app/Controllers/PostTypesController.php:209
 msgid "Edit Reservation"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:209
+#: app/Controllers/PostTypesController.php:210
 msgid "New Reservation"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:210
+#: app/Controllers/PostTypesController.php:211
 msgid "View Reservation"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:211
+#: app/Controllers/PostTypesController.php:212
 msgid "Search Reservation"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:212
+#: app/Controllers/PostTypesController.php:213
 msgid "No Reservation found"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:213
+#: app/Controllers/PostTypesController.php:214
 msgid "No Reservation in the trash"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:248
-#: app/Controllers/PostTypesController.php:250
-#: app/Helpers/Options.php:990
-#: app/Widgets/Elementor/Sections/Layout.php:430
+#: app/Controllers/PostTypesController.php:249
+#: app/Controllers/PostTypesController.php:251
+#: app/Helpers/Options.php:991
+#: app/Widgets/Elementor/Sections/Layout.php:431
 msgid "Categories"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:249
-#: app/Widgets/Elementor/Sections/Style.php:501
+#: app/Controllers/PostTypesController.php:250
+#: app/Widgets/Elementor/Sections/Style.php:502
 msgid "Category"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:251
+#: app/Controllers/PostTypesController.php:252
 msgid "Edit Category"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:252
+#: app/Controllers/PostTypesController.php:253
 msgid "Update Category"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:253
+#: app/Controllers/PostTypesController.php:254
 msgid "Add New Category"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:254
+#: app/Controllers/PostTypesController.php:255
 msgid "New Category"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:255
+#: app/Controllers/PostTypesController.php:256
 msgid "Parent Category"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:256
+#: app/Controllers/PostTypesController.php:257
 msgid "Parent Category:"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:257
+#: app/Controllers/PostTypesController.php:258
 msgid "All Categories"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:258
+#: app/Controllers/PostTypesController.php:259
 msgid "Search Categories"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:259
+#: app/Controllers/PostTypesController.php:260
 msgid "Popular Categories"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:260
+#: app/Controllers/PostTypesController.php:261
 msgid "Separate categories with commas"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:261
+#: app/Controllers/PostTypesController.php:262
 msgid "Add or remove categories"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:262
+#: app/Controllers/PostTypesController.php:263
 msgid "Choose from the most used  categories"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:263
+#: app/Controllers/PostTypesController.php:264
 msgid "No categories found."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:286
+#: app/Controllers/PostTypesController.php:287
 #: src/settings/components/sections/FoodLocationSettings.jsx:14
 #: src/settings/utils.js:50
 #: src/settings/utils.js:257
 msgid "Food Location"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:288
+#: app/Controllers/PostTypesController.php:289
 msgid "Edit Food Location"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:289
+#: app/Controllers/PostTypesController.php:290
 msgid "Update Food Location"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:290
+#: app/Controllers/PostTypesController.php:291
 msgid "Add New Food Location"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:291
+#: app/Controllers/PostTypesController.php:292
 msgid "New Food Location"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:292
+#: app/Controllers/PostTypesController.php:293
 msgid "Parent Food Location"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:293
+#: app/Controllers/PostTypesController.php:294
 msgid "Parent Food Location:"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:294
+#: app/Controllers/PostTypesController.php:295
 msgid "All Food Locations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:295
+#: app/Controllers/PostTypesController.php:296
 msgid "Search Food Locations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:296
+#: app/Controllers/PostTypesController.php:297
 msgid "Popular Food Locations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:297
+#: app/Controllers/PostTypesController.php:298
 msgid "Separate food locations with commas"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:298
+#: app/Controllers/PostTypesController.php:299
 msgid "Add or remove food locations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:299
+#: app/Controllers/PostTypesController.php:300
 msgid "Choose from the most used  food locations"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:300
+#: app/Controllers/PostTypesController.php:301
 msgid "No food locations found."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:317
 #: app/Controllers/PostTypesController.php:318
+#: app/Controllers/PostTypesController.php:319
 msgid "ShortCode options updated."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:319
+#: app/Controllers/PostTypesController.php:320
 msgid "Custom field deleted."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:320
+#: app/Controllers/PostTypesController.php:321
 msgid "ShortCode updated."
 msgstr ""
 
 #. translators: %s: date and time of the revision
-#: app/Controllers/PostTypesController.php:323
+#: app/Controllers/PostTypesController.php:324
 #, php-format
 msgid "ShortCode restored to revision from %s"
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:329
+#: app/Controllers/PostTypesController.php:330
 msgid "ShortCode published."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:330
+#: app/Controllers/PostTypesController.php:331
 msgid "ShortCode saved."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:331
+#: app/Controllers/PostTypesController.php:332
 msgid "ShortCode submitted."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:332
+#: app/Controllers/PostTypesController.php:333
 msgid "ShortCode scheduled for."
 msgstr ""
 
-#: app/Controllers/PostTypesController.php:333
+#: app/Controllers/PostTypesController.php:334
 msgid "ShortCode draft updated."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:155
+#: app/Controllers/Reservation/Reservation.php:157
 msgid "Kindly fill out this field."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:156
+#: app/Controllers/Reservation/Reservation.php:158
 msgid "Please select a booking date."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:157
+#: app/Controllers/Reservation/Reservation.php:159
 msgid "Please select a start time."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:158
+#: app/Controllers/Reservation/Reservation.php:160
 msgid "Please select an end time."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:159
+#: app/Controllers/Reservation/Reservation.php:161
 msgid "Please select the number of guests."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:160
+#: app/Controllers/Reservation/Reservation.php:162
 msgid "Please enter your name."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:161
+#: app/Controllers/Reservation/Reservation.php:163
 msgid "Please enter your email address."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:162
-#: app/Controllers/Reservation/ReservationMeta.php:246
+#: app/Controllers/Reservation/Reservation.php:164
+#: app/Controllers/Reservation/ReservationMeta.php:249
 msgid "Please enter your phone number."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:163
+#: app/Controllers/Reservation/Reservation.php:165
 msgid "Please enter your booking ID."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:164
+#: app/Controllers/Reservation/Reservation.php:166
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:165
-#: app/Controllers/Reservation/ReservationMeta.php:245
+#: app/Controllers/Reservation/Reservation.php:167
+#: app/Controllers/Reservation/ReservationMeta.php:248
 msgid "Please enter a valid phone number for the selected country."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:166
+#: app/Controllers/Reservation/Reservation.php:168
 msgid "End time must be greater than start time."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:168
-#: templates/reservation/reservation-form.php:51
+#: app/Controllers/Reservation/Reservation.php:170
+#: templates/reservation/reservation-form.php:55
 msgid "Select total guests"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:171
+#: app/Controllers/Reservation/Reservation.php:173
 msgid "Thank you!"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:172
+#: app/Controllers/Reservation/Reservation.php:174
 msgid "OK"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:173
-#: templates/reservation/cancel-form.php:17
+#: app/Controllers/Reservation/Reservation.php:175
+#: templates/reservation/cancel-form.php:22
 msgid "Close"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:174
-#: app/Controllers/Reservation/ReservationMeta.php:64
-#: app/Controllers/Reservation/ReservationSubmit.php:272
-#: app/Controllers/Reservation/ReservationTableList.php:309
-#: app/Helpers/Fns.php:2208
-#: templates/reservation/cancel-form.php:26
+#: app/Controllers/Reservation/Reservation.php:176
+#: app/Controllers/Reservation/ReservationMeta.php:65
+#: app/Controllers/Reservation/ReservationSubmit.php:273
+#: app/Controllers/Reservation/ReservationTableList.php:318
+#: app/Helpers/Fns.php:2309
+#: templates/reservation/cancel-form.php:31
 msgid "Booking ID"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:175
+#: app/Controllers/Reservation/Reservation.php:177
 msgid "Copy booking ID"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:250
+#: app/Controllers/Reservation/Reservation.php:252
 msgid "Fully booked. Try another time."
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:400
+#: app/Controllers/Reservation/Reservation.php:402
 msgid "Something went wrong"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:434
+#: app/Controllers/Reservation/Reservation.php:436
 msgid "Everything is okay"
 msgstr ""
 
-#: app/Controllers/Reservation/Reservation.php:482
-#: app/Helpers/Fns.php:2408
+#: app/Controllers/Reservation/Reservation.php:495
+#: app/Helpers/Fns.php:2509
 msgid "Hello "
 msgstr ""
 
 #. translators: 1: new status, 2: booking id
-#: app/Controllers/Reservation/Reservation.php:485
+#: app/Controllers/Reservation/Reservation.php:498
 #, php-format
 msgid "We would like to inform you that your reservation status has been updated to <strong>%1$s</strong> under the booking id - <strong>%2$s</strong>"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:42
+#: app/Controllers/Reservation/ReservationFns.php:43
 msgid "Enable Cancelled Form?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:44
+#: app/Controllers/Reservation/ReservationFns.php:45
 msgid "Allow users to easily cancel their reservations through a dedicated cancellation form."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:75
+#: app/Controllers/Reservation/ReservationFns.php:76
 #: src/settings/components/sections/ReservationSettings.jsx:106
 msgid "Seat Capacity"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:77
+#: app/Controllers/Reservation/ReservationFns.php:78
 msgid "Enter total seat capacity"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:82
+#: app/Controllers/Reservation/ReservationFns.php:83
 #: src/settings/components/sections/ReservationSettings.jsx:122
 msgid "Min Guest"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:84
+#: app/Controllers/Reservation/ReservationFns.php:85
 msgid "Enter minimum guests number for reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:89
+#: app/Controllers/Reservation/ReservationFns.php:90
 #: src/settings/components/sections/ReservationSettings.jsx:135
 msgid "Max Guest"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:91
+#: app/Controllers/Reservation/ReservationFns.php:92
 msgid "Enter maximum guests number for reservation"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:123
+#: app/Controllers/Reservation/ReservationFns.php:124
 #: src/settings/components/sections/ReservationSettings.jsx:166
 msgid "Time Interval"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:124
+#: app/Controllers/Reservation/ReservationFns.php:125
 msgid "Enter flexible time intervals to dynamically generate time slots in the reservation form."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:128
+#: app/Controllers/Reservation/ReservationFns.php:129
 #: src/settings/components/sections/ReservationSettings.jsx:149
 msgid "Default Reservation Status"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:130
+#: app/Controllers/Reservation/ReservationFns.php:131
 msgid "Choose default reservation status."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:155
+#: app/Controllers/Reservation/ReservationFns.php:156
 #: src/settings/components/sections/ReservationSettings.jsx:248
 msgid "Sender Email Address"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:157
+#: app/Controllers/Reservation/ReservationFns.php:158
 msgid "Emails will be sent to both the admin and the user from the following email address."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:162
+#: app/Controllers/Reservation/ReservationFns.php:163
 #: src/settings/components/sections/ReservationSettings.jsx:265
 msgid "Admin Receive Email"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:164
+#: app/Controllers/Reservation/ReservationFns.php:165
 msgid "If 'Sender Email Address' is not set, both admin and user emails will be sent to this address."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:168
+#: app/Controllers/Reservation/ReservationFns.php:169
 msgid "User Reservation Pending Notification?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:170
+#: app/Controllers/Reservation/ReservationFns.php:171
 msgid "Notify user upon new reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:174
+#: app/Controllers/Reservation/ReservationFns.php:175
 msgid "Admin Reservation Pending Notification?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:176
+#: app/Controllers/Reservation/ReservationFns.php:177
 msgid "Notify admin upon new reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:181
+#: app/Controllers/Reservation/ReservationFns.php:182
 msgid "User Reservation Confirm Notification?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:183
+#: app/Controllers/Reservation/ReservationFns.php:184
 msgid "Notify user upon confirm reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:187
+#: app/Controllers/Reservation/ReservationFns.php:188
 msgid "Admin Reservation Confirm Notification?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:189
+#: app/Controllers/Reservation/ReservationFns.php:190
 msgid "Notify admin upon confirm reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:194
+#: app/Controllers/Reservation/ReservationFns.php:195
 msgid "User Reservation Cancelled Notification?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:196
+#: app/Controllers/Reservation/ReservationFns.php:197
 msgid "Notify user upon cancelled reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:200
+#: app/Controllers/Reservation/ReservationFns.php:201
 msgid "Admin Reservation Cancelled Notification?"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:202
+#: app/Controllers/Reservation/ReservationFns.php:203
 msgid "Notify admin upon cancelled reservation."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:206
+#: app/Controllers/Reservation/ReservationFns.php:207
 #: src/settings/components/sections/ReservationSettings.jsx:320
 msgid "Pending Message Text"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:208
+#: app/Controllers/Reservation/ReservationFns.php:209
 msgid "Reservation pending message text"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:212
+#: app/Controllers/Reservation/ReservationFns.php:213
 #: src/settings/components/sections/ReservationSettings.jsx:374
 msgid "Confirmed Message Text"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:214
+#: app/Controllers/Reservation/ReservationFns.php:215
 msgid "Reservation confirmation message text"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:218
+#: app/Controllers/Reservation/ReservationFns.php:219
 #: src/settings/components/sections/ReservationSettings.jsx:428
 msgid "Cancelled Message Text"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationFns.php:220
+#: app/Controllers/Reservation/ReservationFns.php:221
 msgid "Reservation cancelled message text"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationMeta.php:42
+#: app/Controllers/Reservation/ReservationMeta.php:43
 msgid "Reservation Data"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationMeta.php:67
+#: app/Controllers/Reservation/ReservationMeta.php:68
 msgid "Copy Booking ID"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:137
+#: app/Controllers/Reservation/ReservationSubmit.php:138
 msgid "Reservation could not be completed."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:147
-#: app/Helpers/Options.php:1037
-#: app/Helpers/Options.php:2484
-#: templates/reservation/reservation-form.php:15
+#: app/Controllers/Reservation/ReservationSubmit.php:148
+#: app/Helpers/Options.php:1038
+#: app/Helpers/Options.php:2485
+#: templates/reservation/reservation-form.php:19
 msgid "Date"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:150
-#: app/Helpers/Fns.php:2210
-#: app/Helpers/Options.php:2491
-#: templates/reservation/reservation-form.php:25
-#: templates/reservation/reservation-form.php:28
+#: app/Controllers/Reservation/ReservationSubmit.php:151
+#: app/Helpers/Fns.php:2311
+#: app/Helpers/Options.php:2492
+#: templates/reservation/reservation-form.php:29
+#: templates/reservation/reservation-form.php:32
 msgid "Start Time"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:153
-#: app/Helpers/Fns.php:2211
-#: app/Helpers/Options.php:2496
-#: templates/reservation/reservation-form.php:35
-#: templates/reservation/reservation-form.php:38
+#: app/Controllers/Reservation/ReservationSubmit.php:154
+#: app/Helpers/Fns.php:2312
+#: app/Helpers/Options.php:2497
+#: templates/reservation/reservation-form.php:39
+#: templates/reservation/reservation-form.php:42
 msgid "End Time"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:156
-#: app/Helpers/Options.php:2501
-#: templates/reservation/reservation-form.php:46
+#: app/Controllers/Reservation/ReservationSubmit.php:157
+#: app/Helpers/Options.php:2502
+#: templates/reservation/reservation-form.php:50
 msgid "Guest Number"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:159
-#: app/Helpers/Fns.php:2213
-#: app/Helpers/Options.php:1036
-#: app/Helpers/Options.php:2508
-#: templates/reservation/reservation-form.php:65
+#: app/Controllers/Reservation/ReservationSubmit.php:160
+#: app/Helpers/Fns.php:2314
+#: app/Helpers/Options.php:1037
+#: app/Helpers/Options.php:2509
+#: templates/reservation/reservation-form.php:69
 #: src/admin-panel/components/dashboard/FoodOrders.jsx:206
 msgid "Name"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:162
-#: app/Controllers/Reservation/ReservationSubmit.php:275
-#: app/Helpers/Fns.php:2214
-#: app/Helpers/Options.php:2513
-#: templates/reservation/cancel-form.php:35
-#: templates/reservation/reservation-form.php:74
+#: app/Controllers/Reservation/ReservationSubmit.php:163
+#: app/Controllers/Reservation/ReservationSubmit.php:276
+#: app/Helpers/Fns.php:2315
+#: app/Helpers/Options.php:2514
+#: templates/reservation/cancel-form.php:40
+#: templates/reservation/reservation-form.php:78
 msgid "Email"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:164
-#: app/Controllers/Reservation/ReservationSubmit.php:277
+#: app/Controllers/Reservation/ReservationSubmit.php:165
+#: app/Controllers/Reservation/ReservationSubmit.php:278
 msgid "Email (invalid format)"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:167
-#: app/Controllers/Reservation/ReservationSubmit.php:280
-#: app/Helpers/Fns.php:2215
-#: app/Helpers/Options.php:2518
-#: templates/reservation/cancel-form.php:44
-#: templates/reservation/reservation-form.php:82
+#: app/Controllers/Reservation/ReservationSubmit.php:168
+#: app/Controllers/Reservation/ReservationSubmit.php:281
+#: app/Helpers/Fns.php:2316
+#: app/Helpers/Options.php:2519
+#: templates/reservation/cancel-form.php:49
+#: templates/reservation/reservation-form.php:86
 #: src/settings/components/sections/CheckoutSettings.jsx:16
 msgid "Phone"
 msgstr ""
 
 #. translators: %s: comma-separated list of missing field names
-#: app/Controllers/Reservation/ReservationSubmit.php:175
-#: app/Controllers/Reservation/ReservationSubmit.php:289
+#: app/Controllers/Reservation/ReservationSubmit.php:176
+#: app/Controllers/Reservation/ReservationSubmit.php:290
 #, php-format
 msgid "The following fields are required: %s"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:193
+#: app/Controllers/Reservation/ReservationSubmit.php:194
 msgid "Sorry, all seats are booked for this time slot. Please choose a different time."
 msgstr ""
 
 #. translators: %d: number of available seats
-#: app/Controllers/Reservation/ReservationSubmit.php:204
+#: app/Controllers/Reservation/ReservationSubmit.php:205
 #, php-format
 msgid "Only %d seat(s) available for this time slot. Please reduce the number of guests or choose a different time."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:226
+#: app/Controllers/Reservation/ReservationSubmit.php:227
 msgid "Failed to place booking. Please try again"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:315
+#: app/Controllers/Reservation/ReservationSubmit.php:316
 msgid "No reservation found please provide the details"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationSubmit.php:326
+#: app/Controllers/Reservation/ReservationSubmit.php:327
 msgid "Your request for cancellation has been processed successfully."
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:155
-#: app/Controllers/Reservation/ReservationTableList.php:316
-#: app/Helpers/Fns.php:2217
-#: app/Helpers/Options.php:2527
+#: app/Controllers/Reservation/ReservationTableList.php:164
+#: app/Controllers/Reservation/ReservationTableList.php:325
+#: app/Helpers/Fns.php:2318
+#: app/Helpers/Options.php:2528
 #: src/admin-panel/components/dashboard/FoodOrders.jsx:215
 msgid "Status"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:177
+#: app/Controllers/Reservation/ReservationTableList.php:185
 msgid "All Locations"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:194
-#: app/Controllers/Reservation/ReservationTableList.php:310
+#: app/Controllers/Reservation/ReservationTableList.php:202
+#: app/Controllers/Reservation/ReservationTableList.php:319
 msgid "Created Date"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:196
-#: app/Controllers/Reservation/ReservationTableList.php:207
+#: app/Controllers/Reservation/ReservationTableList.php:204
+#: app/Controllers/Reservation/ReservationTableList.php:215
 msgid "Start date"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:198
-#: app/Controllers/Reservation/ReservationTableList.php:209
+#: app/Controllers/Reservation/ReservationTableList.php:206
+#: app/Controllers/Reservation/ReservationTableList.php:217
 msgid "End date"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:205
-#: app/Controllers/Reservation/ReservationTableList.php:311
-#: app/Helpers/Fns.php:2209
+#: app/Controllers/Reservation/ReservationTableList.php:213
+#: app/Controllers/Reservation/ReservationTableList.php:320
+#: app/Helpers/Fns.php:2310
 msgid "Reservation Date"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:244
+#: app/Controllers/Reservation/ReservationTableList.php:253
 msgid "Reservation Details"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:259
-#: app/Controllers/Reservation/ReservationTableList.php:399
+#: app/Controllers/Reservation/ReservationTableList.php:268
+#: app/Controllers/Reservation/ReservationTableList.php:408
 msgid "Total Guest: "
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:313
+#: app/Controllers/Reservation/ReservationTableList.php:322
 msgid "Contact Details"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:314
-#: app/Helpers/Fns.php:2212
+#: app/Controllers/Reservation/ReservationTableList.php:323
+#: app/Helpers/Fns.php:2313
 msgid "Seat"
 msgstr ""
 
-#: app/Controllers/Reservation/ReservationTableList.php:315
-#: app/Helpers/Fns.php:2216
-#: app/Helpers/Options.php:2523
-#: templates/reservation/cancel-form.php:53
-#: templates/reservation/reservation-form.php:90
+#: app/Controllers/Reservation/ReservationTableList.php:324
+#: app/Helpers/Fns.php:2317
+#: app/Helpers/Options.php:2524
+#: templates/reservation/cancel-form.php:58
+#: templates/reservation/reservation-form.php:94
 msgid "Message"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:36
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:37
 msgid "Enable Special Menu?"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:38
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:39
 msgid "Enable special menu?"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:42
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:43
 #: src/settings/components/sections/SpecialMenuSettings.jsx:42
 msgid "Popup End Date"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:44
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:45
 msgid "Special menu popup available from the current date to the end date"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:48
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:49
 #: src/settings/components/sections/SpecialMenuSettings.jsx:63
 msgid "Preset Style"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:51
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:52
 msgid "Choose a visual style for the popup. 1 is the classic yellow layout; 2-4 are new variations."
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:54
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:55
 #: src/settings/components/sections/SpecialMenuSettings.jsx:91
 msgid "Preset 1 — Classic Yellow"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:55
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:56
 #: src/settings/components/sections/SpecialMenuSettings.jsx:97
 msgid "Preset 2 — Dark Modern"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:56
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:57
 #: src/settings/components/sections/SpecialMenuSettings.jsx:104
 msgid "Preset 3 — Light Minimal"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:57
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:58
 #: src/settings/components/sections/SpecialMenuSettings.jsx:111
 msgid "Preset 4 — Gradient Banner"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:61
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:62
 #: src/settings/components/sections/SpecialMenuSettings.jsx:158
 msgid "Special Menu Title"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:63
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:64
 msgid "Special menu day title"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:67
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:68
 #: src/settings/components/sections/SpecialMenuSettings.jsx:177
 msgid "Discount / Offer"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:69
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:70
 msgid "Special menu discount or offer Eg: 30% off"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:73
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:74
 #: src/settings/components/sections/SpecialMenuSettings.jsx:194
 msgid "Special Menu Text"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:75
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:76
 msgid "Special menu discount duration Eg: Special menu offer in 3 day"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:80
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:81
 msgid "Include Menus"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:90
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:91
 #: src/settings/components/sections/SpecialMenuSettings.jsx:254
 msgid "Button Text"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:92
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:93
 msgid "Button text for special menu popup"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:97
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:98
 #: src/settings/components/sections/SpecialMenuSettings.jsx:274
 msgid "Button Link"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:99
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:100
 msgid "The button serves as a link to the specified page"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:104
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:105
 msgid "Modal Style"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:111
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:112
 msgid "If you need you can enter special menu modal width"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:112
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:113
 #: src/settings/components/sections/SpecialMenuSettings.jsx:299
 msgid "Modal Min Width"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:119
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:120
 msgid "If you need you can enter special menu modal height"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:120
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:121
 #: src/settings/components/sections/SpecialMenuSettings.jsx:321
 msgid "Modal Min Height"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:126
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:127
 msgid "Special Menu Title Color"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:133
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:134
 msgid "Special Menu BG"
 msgstr ""
 
-#: app/Controllers/SpecialMenu/SpecialMenuFns.php:147
+#: app/Controllers/SpecialMenu/SpecialMenuFns.php:148
 msgid "Button BG - Hover"
 msgstr ""
 
-#: app/Controllers/Tip/Tip.php:110
+#: app/Controllers/Tip/Tip.php:111
 msgid "The Tip has been removed successfully"
 msgstr ""
 
-#: app/Controllers/Tip/Tip.php:112
-#: app/Controllers/Tip/Tip.php:194
+#: app/Controllers/Tip/Tip.php:113
+#: app/Controllers/Tip/Tip.php:195
 msgid "Nonce is not valid! Please try again"
 msgstr ""
 
-#: app/Controllers/Tip/Tip.php:144
+#: app/Controllers/Tip/Tip.php:145
 msgid "Tip"
 msgstr ""
 
-#: app/Controllers/Tip/Tip.php:189
+#: app/Controllers/Tip/Tip.php:190
 msgid "The tip has been successfully added."
 msgstr ""
 
-#: app/Controllers/Tip/Tip.php:191
+#: app/Controllers/Tip/Tip.php:192
 msgid "Error: Invalid tip type or value selected. Please try again."
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:30
+#: app/Controllers/Tip/TipFns.php:31
 msgid "Enable Tip?"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:32
+#: app/Controllers/Tip/TipFns.php:33
 msgid "Enable tip/donation option at checkout and cart?"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:41
+#: app/Controllers/Tip/TipFns.php:42
 #: src/settings/components/sections/TipSettings.jsx:35
 msgid "Display Tip Form"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:43
+#: app/Controllers/Tip/TipFns.php:44
 msgid "Checkout Page"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:44
+#: app/Controllers/Tip/TipFns.php:45
 msgid "Cart Page"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:45
-#: app/Controllers/Tip/TipFns.php:56
+#: app/Controllers/Tip/TipFns.php:46
+#: app/Controllers/Tip/TipFns.php:57
 msgid "Both"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:54
+#: app/Controllers/Tip/TipFns.php:55
 msgid "Allow tip for"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:58
+#: app/Controllers/Tip/TipFns.php:59
 msgid "Percentage"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:65
+#: app/Controllers/Tip/TipFns.php:66
 #: src/settings/components/sections/TipSettings.jsx:77
 msgid "Tip Heading Text"
 msgstr ""
 
-#: app/Controllers/Tip/TipFns.php:66
+#: app/Controllers/Tip/TipFns.php:67
 msgid "Tip heading text. E.g: Do you want to provide a tip?"
 msgstr ""
 
-#: app/Helpers/Fns.php:690
-#: app/Models/Fields.php:860
-#: app/Widgets/Elementor/Sections/Style.php:135
-#: app/Widgets/Elementor/Sections/Style.php:715
-#: app/Widgets/Elementor/Sections/Style.php:1030
-#: app/Widgets/Elementor/Sections/Style.php:1179
-#: app/Widgets/Elementor/Sections/Style.php:1285
+#: app/Helpers/Fns.php:791
+#: app/Models/Fields.php:861
+#: app/Widgets/Elementor/Sections/Style.php:136
+#: app/Widgets/Elementor/Sections/Style.php:716
+#: app/Widgets/Elementor/Sections/Style.php:1031
+#: app/Widgets/Elementor/Sections/Style.php:1180
+#: app/Widgets/Elementor/Sections/Style.php:1286
 msgid "Normal"
 msgstr ""
 
-#: app/Helpers/Fns.php:691
+#: app/Helpers/Fns.php:792
 msgid "Circle"
 msgstr ""
 
-#: app/Helpers/Fns.php:702
-#: app/Widgets/Elementor/Sections/Settings.php:70
+#: app/Helpers/Fns.php:803
+#: app/Widgets/Elementor/Sections/Settings.php:71
 msgid "Top"
 msgstr ""
 
-#: app/Helpers/Fns.php:703
-#: app/Models/Fields.php:853
-#: app/Widgets/Elementor/Sections/Layout.php:749
-#: app/Widgets/Elementor/Sections/Style.php:118
-#: app/Widgets/Elementor/Sections/Style.php:699
+#: app/Helpers/Fns.php:804
+#: app/Models/Fields.php:854
+#: app/Widgets/Elementor/Sections/Layout.php:750
+#: app/Widgets/Elementor/Sections/Style.php:119
+#: app/Widgets/Elementor/Sections/Style.php:700
 msgid "Center"
 msgstr ""
 
-#: app/Helpers/Fns.php:704
+#: app/Helpers/Fns.php:805
 msgid "Bottom"
 msgstr ""
 
-#: app/Helpers/Fns.php:715
-#: app/Helpers/Options.php:943
+#: app/Helpers/Fns.php:816
+#: app/Helpers/Options.php:944
 msgid "Layout Default"
 msgstr ""
 
-#: app/Helpers/Fns.php:716
-#: app/Widgets/Elementor/Sections/Settings.php:215
-#: app/Widgets/Elementor/Sections/Settings.php:405
+#: app/Helpers/Fns.php:817
+#: app/Widgets/Elementor/Sections/Settings.php:216
+#: app/Widgets/Elementor/Sections/Settings.php:420
 msgid "Type 1"
 msgstr ""
 
-#: app/Helpers/Fns.php:717
-#: app/Widgets/Elementor/Sections/Settings.php:216
-#: app/Widgets/Elementor/Sections/Settings.php:406
+#: app/Helpers/Fns.php:818
+#: app/Widgets/Elementor/Sections/Settings.php:217
+#: app/Widgets/Elementor/Sections/Settings.php:421
 msgid "Type 2"
 msgstr ""
 
-#: app/Helpers/Fns.php:721
-#: app/Widgets/Elementor/Sections/Settings.php:217
-#: app/Widgets/Elementor/Sections/Settings.php:407
+#: app/Helpers/Fns.php:822
+#: app/Widgets/Elementor/Sections/Settings.php:218
+#: app/Widgets/Elementor/Sections/Settings.php:422
 msgid "Type 3"
 msgstr ""
 
-#: app/Helpers/Fns.php:722
-#: app/Widgets/Elementor/Sections/Settings.php:408
+#: app/Helpers/Fns.php:823
+#: app/Widgets/Elementor/Sections/Settings.php:423
 msgid "Type 4"
 msgstr ""
 
-#: app/Helpers/Fns.php:735
+#: app/Helpers/Fns.php:836
 msgid "Single Page"
 msgstr ""
 
-#: app/Helpers/Fns.php:736
+#: app/Helpers/Fns.php:837
 msgid "Pop Up"
 msgstr ""
 
-#: app/Helpers/Fns.php:747
-#: app/Widgets/Elementor/Sections/Settings.php:319
+#: app/Helpers/Fns.php:848
+#: app/Widgets/Elementor/Sections/Settings.php:334
 msgid "Same Tab"
 msgstr ""
 
-#: app/Helpers/Fns.php:748
-#: app/Widgets/Elementor/Sections/Settings.php:320
+#: app/Helpers/Fns.php:849
+#: app/Widgets/Elementor/Sections/Settings.php:335
 msgid "New Tab"
 msgstr ""
 
-#: app/Helpers/Fns.php:1096
+#: app/Helpers/Fns.php:1197
 msgid "Default Image"
 msgstr ""
 
-#: app/Helpers/Fns.php:1274
+#: app/Helpers/Fns.php:1375
 msgid "Buy"
 msgstr ""
 
-#: app/Helpers/Fns.php:1275
+#: app/Helpers/Fns.php:1376
 msgid "Demo"
 msgstr ""
 
-#: app/Helpers/Fns.php:1521
+#: app/Helpers/Fns.php:1622
 msgid "Select Delivery Location"
 msgstr ""
 
-#: app/Helpers/Fns.php:1522
+#: app/Helpers/Fns.php:1623
 msgid "No Delivery Location is Set"
 msgstr ""
 
-#: app/Helpers/Fns.php:1787
-#: app/Helpers/Fns.php:1805
+#: app/Helpers/Fns.php:1888
+#: app/Helpers/Fns.php:1906
 msgid "-Select-"
 msgstr ""
 
-#: app/Helpers/Fns.php:2006
+#: app/Helpers/Fns.php:2107
 #: src/settings/components/sections/ReservationSettings.jsx:161
 msgid "Pending"
 msgstr ""
 
-#: app/Helpers/Fns.php:2007
+#: app/Helpers/Fns.php:2108
 #: src/settings/components/sections/ReservationSettings.jsx:160
 msgid "Confirmed"
 msgstr ""
 
-#: app/Helpers/Fns.php:2008
+#: app/Helpers/Fns.php:2109
 #: src/admin-panel/components/dashboard/FoodOrders.jsx:11
 msgid "Cancelled"
 msgstr ""
 
-#: app/Helpers/Fns.php:2009
+#: app/Helpers/Fns.php:2110
 #: src/admin-panel/components/dashboard/FoodOrders.jsx:10
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:26
 msgid "Completed"
 msgstr ""
 
-#: app/Helpers/Fns.php:2232
+#: app/Helpers/Fns.php:2333
 msgid "Thank you for your booking. Your reservation is currently pending. We will notify you once it has been confirmed."
 msgstr ""
 
-#: app/Helpers/Fns.php:2233
+#: app/Helpers/Fns.php:2334
 msgid "Thank you for your booking. Your reservation has been successfully confirmed."
 msgstr ""
 
-#: app/Helpers/Fns.php:2234
+#: app/Helpers/Fns.php:2335
 msgid "Your cancellation request has been successfully processed."
 msgstr ""
 
-#: app/Helpers/Fns.php:2393
+#: app/Helpers/Fns.php:2494
 msgid "New Reservation Request"
 msgstr ""
 
-#: app/Helpers/Fns.php:2394
+#: app/Helpers/Fns.php:2495
 #: src/admin-panel/components/dashboard/Header.jsx:45
 msgid "Admin"
 msgstr ""
 
-#: app/Helpers/Options.php:33
+#: app/Helpers/Options.php:34
 msgid "Hide Fields on Mobile Devices"
 msgstr ""
 
-#: app/Helpers/Options.php:34
+#: app/Helpers/Options.php:35
 msgid "Select which of the above selected fields should be hidden on mobile devices."
 msgstr ""
 
-#: app/Helpers/Options.php:45
-#: app/Helpers/Options.php:56
-#: app/Helpers/Options.php:478
-#: app/Widgets/Elementor/Sections/Style.php:40
+#: app/Helpers/Options.php:46
+#: app/Helpers/Options.php:57
+#: app/Helpers/Options.php:479
+#: app/Widgets/Elementor/Sections/Style.php:41
 msgid "Title"
 msgstr ""
 
-#: app/Helpers/Options.php:48
-#: app/Helpers/Options.php:59
-#: app/Widgets/Elementor/Sections/Style.php:447
+#: app/Helpers/Options.php:49
+#: app/Helpers/Options.php:60
+#: app/Widgets/Elementor/Sections/Style.php:448
 msgid "Excerpt"
 msgstr ""
 
-#: app/Helpers/Options.php:68
+#: app/Helpers/Options.php:69
 msgid "Food menu type"
 msgstr ""
 
-#: app/Helpers/Options.php:85
+#: app/Helpers/Options.php:86
 msgid "Stock status"
 msgstr ""
 
-#: app/Helpers/Options.php:90
+#: app/Helpers/Options.php:91
 msgid "In stock"
 msgstr ""
 
-#: app/Helpers/Options.php:99
+#: app/Helpers/Options.php:100
 msgid "Simple Menu"
 msgstr ""
 
-#: app/Helpers/Options.php:100
+#: app/Helpers/Options.php:101
 msgid "Variable Menu"
 msgstr ""
 
-#: app/Helpers/Options.php:107
+#: app/Helpers/Options.php:108
 msgid "Menu order"
 msgstr ""
 
-#: app/Helpers/Options.php:112
+#: app/Helpers/Options.php:113
 msgid "Enable ingredient"
 msgstr ""
 
-#: app/Helpers/Options.php:118
+#: app/Helpers/Options.php:119
 msgid "Enable nutrition"
 msgstr ""
 
-#: app/Helpers/Options.php:124
+#: app/Helpers/Options.php:125
 msgid "Enable reviews"
 msgstr ""
 
-#: app/Helpers/Options.php:137
-#: src/settings/components/sections/GeneralSettings.jsx:46
+#: app/Helpers/Options.php:138
+#: src/settings/components/sections/GeneralSettings.jsx:48
 msgid "Food Menu Type"
 msgstr ""
 
-#: app/Helpers/Options.php:146
+#: app/Helpers/Options.php:147
 msgid "The food menu custom post type can be sourced from the food menu post but it does not include an online ordering system."
 msgstr ""
 
-#: app/Helpers/Options.php:147
+#: app/Helpers/Options.php:148
 msgid "Online ordering functionality is sourced from WooCommerce products, with WooCommerce being mandatory. All online ordering features, such as product addons, tipping, pickup/delivery options, discount specials, and special menu items, are available in the pro version."
 msgstr ""
 
-#: app/Helpers/Options.php:151
+#: app/Helpers/Options.php:152
 msgid "Food Menu (Slug)"
 msgstr ""
 
-#: app/Helpers/Options.php:158
+#: app/Helpers/Options.php:159
 msgid "This option can't be blank, must have a maximum length of 20 characters and cannot contain capital letters or spaces."
 msgstr ""
 
-#: app/Helpers/Options.php:159
+#: app/Helpers/Options.php:160
 msgid "After each change, please re-save your permalinks (Go to Dashboard > Settings > Permalinks. Click save button)."
 msgstr ""
 
-#: app/Helpers/Options.php:163
-#: src/settings/components/sections/GeneralSettings.jsx:187
+#: app/Helpers/Options.php:164
+#: src/settings/components/sections/GeneralSettings.jsx:189
 msgid "Currency"
 msgstr ""
 
-#: app/Helpers/Options.php:167
-#: app/Helpers/Options.php:175
+#: app/Helpers/Options.php:168
+#: app/Helpers/Options.php:176
 #: src/js/tlp-food-menu-blocks.js:28
 msgid "Select one"
 msgstr ""
 
-#: app/Helpers/Options.php:171
-#: src/settings/components/sections/GeneralSettings.jsx:204
+#: app/Helpers/Options.php:172
+#: src/settings/components/sections/GeneralSettings.jsx:206
 msgid "Currency Position"
 msgstr ""
 
-#: app/Helpers/Options.php:196
+#: app/Helpers/Options.php:197
 msgid "Enable Reservation ?"
 msgstr ""
 
-#: app/Helpers/Options.php:198
+#: app/Helpers/Options.php:199
 msgid "Enable Reservation. Please refresh the page after saving the changes to apply the reservation."
 msgstr ""
 
-#: app/Helpers/Options.php:205
+#: app/Helpers/Options.php:206
 msgid "Inventory management"
 msgstr ""
 
-#: app/Helpers/Options.php:207
+#: app/Helpers/Options.php:208
 msgid "Enable Inventory management on the front-end page."
 msgstr ""
 
-#: app/Helpers/Options.php:213
-#: app/Helpers/Options.php:2416
+#: app/Helpers/Options.php:214
+#: app/Helpers/Options.php:2417
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:12
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:141
 #: src/settings/components/sections/OrderStatusesSettings.jsx:14
@@ -2073,615 +2076,615 @@ msgstr ""
 msgid "Custom Order Statuses"
 msgstr ""
 
-#: app/Helpers/Options.php:215
+#: app/Helpers/Options.php:216
 msgid "Add custom workflow statuses (e.g., Prepping, In Oven, Driver Out) to WooCommerce orders."
 msgstr ""
 
-#: app/Helpers/Options.php:221
+#: app/Helpers/Options.php:222
 msgid "Order Slot Limits"
 msgstr ""
 
-#: app/Helpers/Options.php:223
+#: app/Helpers/Options.php:224
 msgid "Limit the number of pickup/delivery orders per time slot to prevent kitchen overload."
 msgstr ""
 
-#: app/Helpers/Options.php:230
+#: app/Helpers/Options.php:231
 msgid "Enable Preloader?"
 msgstr ""
 
-#: app/Helpers/Options.php:231
-#: app/Helpers/Options.php:283
-#: app/Helpers/Options.php:600
-#: app/Helpers/Options.php:682
-#: app/Helpers/Options.php:749
-#: app/Helpers/Options.php:759
-#: app/Helpers/Options.php:2600
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:89
+#: app/Helpers/Options.php:232
+#: app/Helpers/Options.php:284
+#: app/Helpers/Options.php:601
+#: app/Helpers/Options.php:683
+#: app/Helpers/Options.php:750
+#: app/Helpers/Options.php:760
+#: app/Helpers/Options.php:2601
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:88
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:136
 msgid "Enable"
 msgstr ""
 
-#: app/Helpers/Options.php:232
+#: app/Helpers/Options.php:233
 msgid "Switch on to enable preloader."
 msgstr ""
 
-#: app/Helpers/Options.php:238
+#: app/Helpers/Options.php:239
 msgid "Allow Food Location ?"
 msgstr ""
 
-#: app/Helpers/Options.php:240
+#: app/Helpers/Options.php:241
 msgid "Implement a front-end location pop-up to capture user location for food delivery."
 msgstr ""
 
-#: app/Helpers/Options.php:245
+#: app/Helpers/Options.php:246
 #: src/settings/components/sections/FoodLocationSettings.jsx:56
 msgid "Show Floating Location Button"
 msgstr ""
 
-#: app/Helpers/Options.php:248
+#: app/Helpers/Options.php:249
 msgid "Display a floating button on all pages so users can change their selected location anytime."
 msgstr ""
 
-#: app/Helpers/Options.php:249
-#: app/Helpers/Options.php:274
+#: app/Helpers/Options.php:250
+#: app/Helpers/Options.php:275
 msgid "Requires \"Allow Food Location\" to be enabled first."
 msgstr ""
 
-#: app/Helpers/Options.php:254
+#: app/Helpers/Options.php:255
 msgid "Floating Location Button Position"
 msgstr ""
 
-#: app/Helpers/Options.php:257
+#: app/Helpers/Options.php:258
 msgid "Choose where the floating location button appears on the page."
 msgstr ""
 
-#: app/Helpers/Options.php:260
+#: app/Helpers/Options.php:261
 #: src/settings/components/sections/FoodLocationSettings.jsx:93
 msgid "Right Top"
 msgstr ""
 
-#: app/Helpers/Options.php:262
+#: app/Helpers/Options.php:263
 #: src/settings/components/sections/FoodLocationSettings.jsx:94
 msgid "Left Top"
 msgstr ""
 
-#: app/Helpers/Options.php:263
+#: app/Helpers/Options.php:264
 #: src/settings/components/sections/FoodLocationSettings.jsx:95
 #: src/settings/components/sections/MiniCartSettings.jsx:124
 msgid "Left Bottom"
 msgstr ""
 
-#: app/Helpers/Options.php:270
+#: app/Helpers/Options.php:271
 msgid "Enable Multi-Location Branch Support"
 msgstr ""
 
-#: app/Helpers/Options.php:273
+#: app/Helpers/Options.php:274
 msgid "Enable separate menus, opening hours, and reservation capacities for different location branches. Note: Multi-location mode supports Normal Reservation only. Visual Table Layout Reservation is not supported in multi-location mode."
 msgstr ""
 
-#: app/Helpers/Options.php:281
-#: src/settings/components/sections/GeneralSettings.jsx:282
+#: app/Helpers/Options.php:282
+#: src/settings/components/sections/GeneralSettings.jsx:284
 msgid "Hide Trailing Zeroes"
 msgstr ""
 
-#: app/Helpers/Options.php:284
+#: app/Helpers/Options.php:285
 msgid "Switch on to hide trailing zeroes from the price."
 msgstr ""
 
-#: app/Helpers/Options.php:299
+#: app/Helpers/Options.php:300
 #: src/settings/components/sections/DetailPageSettings.jsx:30
 msgid "Hide Options"
 msgstr ""
 
-#: app/Helpers/Options.php:300
+#: app/Helpers/Options.php:301
 msgid "When the description is disabled, the short description will automatically display the complete content of the description to ensure no information is lost."
 msgstr ""
 
-#: app/Helpers/Options.php:319
+#: app/Helpers/Options.php:320
 msgid "Food Menu Post ( Custom Post )"
 msgstr ""
 
-#: app/Helpers/Options.php:320
+#: app/Helpers/Options.php:321
 msgid "Online Ordering ( Woocommerce Product )"
 msgstr ""
 
-#: app/Helpers/Options.php:393
+#: app/Helpers/Options.php:394
 msgid "Custom Parent Class"
 msgstr ""
 
-#: app/Helpers/Options.php:395
+#: app/Helpers/Options.php:396
 msgid "Please enter custom parent class for adding custom css."
 msgstr ""
 
-#: app/Helpers/Options.php:411
+#: app/Helpers/Options.php:412
 msgid "Gradient Background (1st Color)"
 msgstr ""
 
-#: app/Helpers/Options.php:412
-#: app/Helpers/Options.php:421
-#: app/Helpers/Options.php:430
-#: app/Helpers/Options.php:492
+#: app/Helpers/Options.php:413
+#: app/Helpers/Options.php:422
+#: app/Helpers/Options.php:431
+#: app/Helpers/Options.php:493
 msgid "<b>Note:</b> You need to choose both colors for gradient background. If you need a single color, please choose only the 1st color."
 msgstr ""
 
-#: app/Helpers/Options.php:416
+#: app/Helpers/Options.php:417
 msgid "Gradient Background (2nd Color)"
 msgstr ""
 
-#: app/Helpers/Options.php:420
+#: app/Helpers/Options.php:421
 msgid "Hover Gradient Background (1st Color)"
 msgstr ""
 
-#: app/Helpers/Options.php:425
+#: app/Helpers/Options.php:426
 msgid "Hover Gradient Background (2nd Color)"
 msgstr ""
 
-#: app/Helpers/Options.php:429
-#: app/Widgets/Elementor/Sections/Style.php:192
-#: app/Widgets/Elementor/Sections/Style.php:776
-#: app/Widgets/Elementor/Sections/Style.php:1095
+#: app/Helpers/Options.php:430
+#: app/Widgets/Elementor/Sections/Style.php:193
+#: app/Widgets/Elementor/Sections/Style.php:777
+#: app/Widgets/Elementor/Sections/Style.php:1096
 msgid "Active Background Color"
 msgstr ""
 
-#: app/Helpers/Options.php:434
+#: app/Helpers/Options.php:435
 msgid "Active Gradient Background (2nd Color)"
 msgstr ""
 
-#: app/Helpers/Options.php:450
+#: app/Helpers/Options.php:451
 msgid "Text color"
 msgstr ""
 
-#: app/Helpers/Options.php:454
+#: app/Helpers/Options.php:455
 msgid "Hover Text Color"
 msgstr ""
 
-#: app/Helpers/Options.php:458
+#: app/Helpers/Options.php:459
 msgid "Active Text Color"
 msgstr ""
 
-#: app/Helpers/Options.php:462
+#: app/Helpers/Options.php:463
 msgid "Typography"
 msgstr ""
 
-#: app/Helpers/Options.php:487
+#: app/Helpers/Options.php:488
 msgid "Vertical Border Color"
 msgstr ""
 
-#: app/Helpers/Options.php:491
+#: app/Helpers/Options.php:492
 msgid "Category Banner"
 msgstr ""
 
-#: app/Helpers/Options.php:508
+#: app/Helpers/Options.php:509
 msgid "Element / Content Wrapper"
 msgstr ""
 
-#: app/Helpers/Options.php:509
+#: app/Helpers/Options.php:510
 msgid "Please enter the content/element border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: app/Helpers/Options.php:513
+#: app/Helpers/Options.php:514
 msgid "Full Section Wrapper"
 msgstr ""
 
-#: app/Helpers/Options.php:514
+#: app/Helpers/Options.php:515
 msgid "Please enter the section border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: app/Helpers/Options.php:530
+#: app/Helpers/Options.php:531
 msgid "Select Layout Type"
 msgstr ""
 
-#: app/Helpers/Options.php:537
+#: app/Helpers/Options.php:538
 msgid "Select Layout"
 msgstr ""
 
-#: app/Helpers/Options.php:545
+#: app/Helpers/Options.php:546
 msgid "Grid Style"
 msgstr ""
 
-#: app/Helpers/Options.php:566
+#: app/Helpers/Options.php:567
 msgid "Desktop Columns <i>(For devices > 991px)</i>"
 msgstr ""
 
-#: app/Helpers/Options.php:573
+#: app/Helpers/Options.php:574
 msgid "Tab Columns <i>(For devices < 991px)</i>"
 msgstr ""
 
-#: app/Helpers/Options.php:580
+#: app/Helpers/Options.php:581
 msgid "Mobile Columns <i>(For devices < 768px)</i>"
 msgstr ""
 
-#: app/Helpers/Options.php:599
-#: app/Widgets/Elementor/Sections/Layout.php:635
+#: app/Helpers/Options.php:600
+#: app/Widgets/Elementor/Sections/Layout.php:636
 msgid "Enable Pagination?"
 msgstr ""
 
-#: app/Helpers/Options.php:601
-#: app/Widgets/Elementor/Sections/Layout.php:636
+#: app/Helpers/Options.php:602
+#: app/Widgets/Elementor/Sections/Layout.php:637
 msgid "Switch on to enable pagination."
 msgstr ""
 
-#: app/Helpers/Options.php:607
-#: app/Widgets/Elementor/Sections/Layout.php:644
+#: app/Helpers/Options.php:608
+#: app/Widgets/Elementor/Sections/Layout.php:645
 msgid "Pagination type"
 msgstr ""
 
-#: app/Helpers/Options.php:614
+#: app/Helpers/Options.php:615
 msgid "Please choose the pagination type."
 msgstr ""
 
-#: app/Helpers/Options.php:615
+#: app/Helpers/Options.php:616
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: var(--fmp-admin-primary, #dc2626)\">Upgrade to PRO</a> to unlock Load More and Ajax Pagination.</b>"
 msgstr ""
 
-#: app/Helpers/Options.php:622
-#: app/Widgets/Elementor/Sections/Layout.php:659
+#: app/Helpers/Options.php:623
+#: app/Widgets/Elementor/Sections/Layout.php:660
 msgid "Number of Posts Per Page"
 msgstr ""
 
-#: app/Helpers/Options.php:623
+#: app/Helpers/Options.php:624
 msgid "Please enter the number of posts to show per page."
 msgstr ""
 
-#: app/Helpers/Options.php:641
+#: app/Helpers/Options.php:642
 msgid "Image Size"
 msgstr ""
 
-#: app/Helpers/Options.php:645
+#: app/Helpers/Options.php:646
 msgid "Please select the featured image dimension."
 msgstr ""
 
-#: app/Helpers/Options.php:646
+#: app/Helpers/Options.php:647
 msgid "<br><b style=\"font-size: 13px\"><a href=\"https://www.radiustheme.com/downloads/food-menu-pro-wordpress/\" target=\"_blank\" style=\"color: var(--fmp-admin-primary, #dc2626)\">Upgrade to PRO</a> to unlock Custom Image Size.</b>"
 msgstr ""
 
-#: app/Helpers/Options.php:656
+#: app/Helpers/Options.php:657
 msgid "Please enter the featured image border radius. Please enter with unit. Example: 10px. <br>Leave it blank to keep layout default border radius."
 msgstr ""
 
-#: app/Helpers/Options.php:661
+#: app/Helpers/Options.php:662
 msgid "Image Position"
 msgstr ""
 
-#: app/Helpers/Options.php:664
+#: app/Helpers/Options.php:665
 msgid "Please select the featured image position."
 msgstr ""
 
-#: app/Helpers/Options.php:671
+#: app/Helpers/Options.php:672
 msgid "Hover Animation"
 msgstr ""
 
-#: app/Helpers/Options.php:675
+#: app/Helpers/Options.php:676
 msgid "Please select the featured image hover animation."
 msgstr ""
 
-#: app/Helpers/Options.php:681
-#: app/Widgets/Elementor/Sections/Layout.php:718
+#: app/Helpers/Options.php:682
+#: app/Widgets/Elementor/Sections/Layout.php:719
 msgid "Enable Hover Icon?"
 msgstr ""
 
-#: app/Helpers/Options.php:683
-#: app/Widgets/Elementor/Sections/Layout.php:719
+#: app/Helpers/Options.php:684
+#: app/Widgets/Elementor/Sections/Layout.php:720
 msgid "Switch on to enable hover icon."
 msgstr ""
 
-#: app/Helpers/Options.php:702
+#: app/Helpers/Options.php:703
 msgid "Category Title Type"
 msgstr ""
 
-#: app/Helpers/Options.php:705
+#: app/Helpers/Options.php:706
 msgid "Please select the category title type."
 msgstr ""
 
-#: app/Helpers/Options.php:723
+#: app/Helpers/Options.php:724
 msgid "Excerpt limit"
 msgstr ""
 
-#: app/Helpers/Options.php:724
+#: app/Helpers/Options.php:725
 msgid "Limits the Excerpt text (letter limit). Leave it blank for full excerpt.<br> <strong>Please note that, HTML tags will not work if excerpt limit is applied.</strong>"
 msgstr ""
 
-#: app/Helpers/Options.php:728
+#: app/Helpers/Options.php:729
 msgid "Custom Text <br>After Excerpt"
 msgstr ""
 
-#: app/Helpers/Options.php:731
+#: app/Helpers/Options.php:732
 msgid "Adds texts after excerpt."
 msgstr ""
 
-#: app/Helpers/Options.php:748
-#: app/Widgets/Elementor/Sections/Settings.php:293
+#: app/Helpers/Options.php:749
+#: app/Widgets/Elementor/Sections/Settings.php:308
 msgid "Link to Detail Page?"
 msgstr ""
 
-#: app/Helpers/Options.php:750
-#: app/Widgets/Elementor/Sections/Settings.php:294
+#: app/Helpers/Options.php:751
+#: app/Widgets/Elementor/Sections/Settings.php:309
 msgid "Switch on to enable linking to detail page."
 msgstr ""
 
-#: app/Helpers/Options.php:757
+#: app/Helpers/Options.php:758
 msgid "Enable Details Page Popup?"
 msgstr ""
 
-#: app/Helpers/Options.php:762
+#: app/Helpers/Options.php:763
 msgid "Switch on to enable details page popup."
 msgstr ""
 
-#: app/Helpers/Options.php:767
-#: app/Widgets/Elementor/Sections/Settings.php:317
+#: app/Helpers/Options.php:768
+#: app/Widgets/Elementor/Sections/Settings.php:332
 msgid "Link Target"
 msgstr ""
 
-#: app/Helpers/Options.php:771
+#: app/Helpers/Options.php:772
 msgid "Please select the detail page link target."
 msgstr ""
 
-#: app/Helpers/Options.php:781
+#: app/Helpers/Options.php:782
 msgid "Soft Crop"
 msgstr ""
 
-#: app/Helpers/Options.php:782
+#: app/Helpers/Options.php:783
 msgid "Hard Crop"
 msgstr ""
 
-#: app/Helpers/Options.php:793
+#: app/Helpers/Options.php:794
 msgid "Layout (Free)"
 msgstr ""
 
-#: app/Helpers/Options.php:794
+#: app/Helpers/Options.php:795
 msgid "Grid By Category (Free)"
 msgstr ""
 
-#: app/Helpers/Options.php:808
+#: app/Helpers/Options.php:809
 msgid "List Layout 1"
 msgstr ""
 
-#: app/Helpers/Options.php:814
+#: app/Helpers/Options.php:815
 msgid "List Layout 2"
 msgstr ""
 
-#: app/Helpers/Options.php:820
+#: app/Helpers/Options.php:821
 msgid "List Layout 3"
 msgstr ""
 
-#: app/Helpers/Options.php:826
+#: app/Helpers/Options.php:827
 msgid "List Layout 4"
 msgstr ""
 
-#: app/Helpers/Options.php:832
+#: app/Helpers/Options.php:833
 msgid "Grid By Category 1"
 msgstr ""
 
-#: app/Helpers/Options.php:844
+#: app/Helpers/Options.php:845
 msgid "Grid By Category 2"
 msgstr ""
 
-#: app/Helpers/Options.php:850
+#: app/Helpers/Options.php:851
 msgid "Grid By Category 3"
 msgstr ""
 
-#: app/Helpers/Options.php:856
+#: app/Helpers/Options.php:857
 msgid "Grid By Category 4"
 msgstr ""
 
-#: app/Helpers/Options.php:871
-#: app/Widgets/Elementor/Sections/Layout.php:80
-#: app/Widgets/Elementor/Sections/Layout.php:114
-#: app/Widgets/Elementor/Sections/Layout.php:137
-#: app/Widgets/Elementor/Sections/Layout.php:156
-#: app/Widgets/Elementor/Sections/Layout.php:175
+#: app/Helpers/Options.php:872
+#: app/Widgets/Elementor/Sections/Layout.php:81
+#: app/Widgets/Elementor/Sections/Layout.php:115
+#: app/Widgets/Elementor/Sections/Layout.php:138
+#: app/Widgets/Elementor/Sections/Layout.php:157
+#: app/Widgets/Elementor/Sections/Layout.php:176
 msgid "Layout 1"
 msgstr ""
 
-#: app/Helpers/Options.php:875
-#: app/Widgets/Elementor/Sections/Layout.php:84
-#: app/Widgets/Elementor/Sections/Layout.php:118
-#: app/Widgets/Elementor/Sections/Layout.php:141
-#: app/Widgets/Elementor/Sections/Layout.php:160
-#: app/Widgets/Elementor/Sections/Layout.php:179
+#: app/Helpers/Options.php:876
+#: app/Widgets/Elementor/Sections/Layout.php:85
+#: app/Widgets/Elementor/Sections/Layout.php:119
+#: app/Widgets/Elementor/Sections/Layout.php:142
+#: app/Widgets/Elementor/Sections/Layout.php:161
+#: app/Widgets/Elementor/Sections/Layout.php:180
 msgid "Layout 2"
 msgstr ""
 
-#: app/Helpers/Options.php:879
-#: app/Widgets/Elementor/Sections/Layout.php:88
-#: app/Widgets/Elementor/Sections/Layout.php:122
-#: app/Widgets/Elementor/Sections/Layout.php:145
-#: app/Widgets/Elementor/Sections/Layout.php:164
-#: app/Widgets/Elementor/Sections/Layout.php:183
+#: app/Helpers/Options.php:880
+#: app/Widgets/Elementor/Sections/Layout.php:89
+#: app/Widgets/Elementor/Sections/Layout.php:123
+#: app/Widgets/Elementor/Sections/Layout.php:146
+#: app/Widgets/Elementor/Sections/Layout.php:165
+#: app/Widgets/Elementor/Sections/Layout.php:184
 msgid "Layout 3"
 msgstr ""
 
-#: app/Helpers/Options.php:883
-#: app/Widgets/Elementor/Sections/Layout.php:92
-#: app/Widgets/Elementor/Sections/Layout.php:126
-#: app/Widgets/Elementor/Sections/Layout.php:149
-#: app/Widgets/Elementor/Sections/Layout.php:168
-#: app/Widgets/Elementor/Sections/Layout.php:187
+#: app/Helpers/Options.php:884
+#: app/Widgets/Elementor/Sections/Layout.php:93
+#: app/Widgets/Elementor/Sections/Layout.php:127
+#: app/Widgets/Elementor/Sections/Layout.php:150
+#: app/Widgets/Elementor/Sections/Layout.php:169
+#: app/Widgets/Elementor/Sections/Layout.php:188
 msgid "Layout 4"
 msgstr ""
 
-#: app/Helpers/Options.php:900
-#: app/Widgets/Elementor/Elements/ListLayout.php:32
+#: app/Helpers/Options.php:901
+#: app/Widgets/Elementor/Elements/ListLayout.php:33
 msgid "List Layouts"
 msgstr ""
 
-#: app/Helpers/Options.php:904
-#: app/Widgets/Elementor/Elements/GridCatLayout.php:31
+#: app/Helpers/Options.php:905
+#: app/Widgets/Elementor/Elements/GridCatLayout.php:32
 msgid "Group by Category Layouts"
 msgstr ""
 
-#: app/Helpers/Options.php:929
+#: app/Helpers/Options.php:930
 msgid "Even Grid"
 msgstr ""
 
-#: app/Helpers/Options.php:930
+#: app/Helpers/Options.php:931
 msgid "Masonry Grid"
-msgstr ""
-
-#: app/Helpers/Options.php:944
-#: app/Widgets/Elementor/Sections/Layout.php:264
-#: app/Widgets/Elementor/Sections/Layout.php:309
-msgid "1 Columns"
 msgstr ""
 
 #: app/Helpers/Options.php:945
 #: app/Widgets/Elementor/Sections/Layout.php:265
 #: app/Widgets/Elementor/Sections/Layout.php:310
-msgid "2 Columns"
+msgid "1 Columns"
 msgstr ""
 
 #: app/Helpers/Options.php:946
 #: app/Widgets/Elementor/Sections/Layout.php:266
 #: app/Widgets/Elementor/Sections/Layout.php:311
-msgid "3 Columns"
+msgid "2 Columns"
 msgstr ""
 
 #: app/Helpers/Options.php:947
 #: app/Widgets/Elementor/Sections/Layout.php:267
 #: app/Widgets/Elementor/Sections/Layout.php:312
-msgid "4 Columns"
+msgid "3 Columns"
 msgstr ""
 
 #: app/Helpers/Options.php:948
+#: app/Widgets/Elementor/Sections/Layout.php:268
 #: app/Widgets/Elementor/Sections/Layout.php:313
-msgid "5 Columns"
+msgid "4 Columns"
 msgstr ""
 
 #: app/Helpers/Options.php:949
 #: app/Widgets/Elementor/Sections/Layout.php:314
+msgid "5 Columns"
+msgstr ""
+
+#: app/Helpers/Options.php:950
+#: app/Widgets/Elementor/Sections/Layout.php:315
 msgid "6 Columns"
 msgstr ""
 
-#: app/Helpers/Options.php:964
+#: app/Helpers/Options.php:965
 msgid "Food item data source"
 msgstr ""
 
-#: app/Helpers/Options.php:969
+#: app/Helpers/Options.php:970
 msgid "Please select a food item data source"
 msgstr ""
 
-#: app/Helpers/Options.php:972
+#: app/Helpers/Options.php:973
 msgid "Include Posts"
 msgstr ""
 
-#: app/Helpers/Options.php:975
+#: app/Helpers/Options.php:976
 msgid "List of post IDs to diplay (comma-separated values, for example: 1,2,3). <br>Set empty to show all posts."
 msgstr ""
 
-#: app/Helpers/Options.php:978
+#: app/Helpers/Options.php:979
 msgid "Exclude Posts"
 msgstr ""
 
-#: app/Helpers/Options.php:981
+#: app/Helpers/Options.php:982
 msgid "List of post IDs to exclude (comma-separated values, for example: 1,2,3) <br>Set empty to show all posts."
 msgstr ""
 
-#: app/Helpers/Options.php:984
+#: app/Helpers/Options.php:985
 msgid "Posts Limit"
 msgstr ""
 
-#: app/Helpers/Options.php:987
-#: app/Widgets/Elementor/Sections/Layout.php:427
-#: app/Widgets/Elementor/Sections/Layout.php:538
+#: app/Helpers/Options.php:988
+#: app/Widgets/Elementor/Sections/Layout.php:428
+#: app/Widgets/Elementor/Sections/Layout.php:539
 msgid "The number of posts to show. Set empty to show all posts."
 msgstr ""
 
-#: app/Helpers/Options.php:994
+#: app/Helpers/Options.php:995
 msgid "Select the category you want to filter, Leave it blank for all category."
 msgstr ""
 
-#: app/Helpers/Options.php:998
-#: app/Widgets/Elementor/Sections/Layout.php:462
-#: app/Widgets/Elementor/Sections/Layout.php:592
+#: app/Helpers/Options.php:999
+#: app/Widgets/Elementor/Sections/Layout.php:463
+#: app/Widgets/Elementor/Sections/Layout.php:593
 msgid "Order By"
 msgstr ""
 
-#: app/Helpers/Options.php:1002
-#: app/Helpers/Options.php:1009
+#: app/Helpers/Options.php:1003
+#: app/Helpers/Options.php:1010
 msgid "Please choose to reorder posts."
 msgstr ""
 
-#: app/Helpers/Options.php:1006
-#: app/Widgets/Elementor/Sections/Layout.php:471
-#: app/Widgets/Elementor/Sections/Layout.php:601
+#: app/Helpers/Options.php:1007
+#: app/Widgets/Elementor/Sections/Layout.php:472
+#: app/Widgets/Elementor/Sections/Layout.php:602
 #: src/admin-panel/components/dashboard/Header.jsx:158
 msgid "Order"
 msgstr ""
 
-#: app/Helpers/Options.php:1020
+#: app/Helpers/Options.php:1021
 msgid "IN — show posts which associate with one or more of selected terms"
 msgstr ""
 
-#: app/Helpers/Options.php:1021
+#: app/Helpers/Options.php:1022
 msgid "NOT IN — show posts which do not associate with any of selected terms"
 msgstr ""
 
-#: app/Helpers/Options.php:1022
+#: app/Helpers/Options.php:1023
 msgid "AND — show posts which associate with all of selected terms"
 msgstr ""
 
-#: app/Helpers/Options.php:1023
+#: app/Helpers/Options.php:1024
 msgid "EXISTS —"
 msgstr ""
 
-#: app/Helpers/Options.php:1024
+#: app/Helpers/Options.php:1025
 msgid "NOT EXISTS —"
 msgstr ""
 
-#: app/Helpers/Options.php:1035
+#: app/Helpers/Options.php:1036
 msgid "Menu Order"
 msgstr ""
 
-#: app/Helpers/Options.php:1039
+#: app/Helpers/Options.php:1040
 #: src/admin-panel/components/dashboard/FoodOrders.jsx:203
 msgid "ID"
 msgstr ""
 
-#: app/Helpers/Options.php:1052
+#: app/Helpers/Options.php:1053
 msgid "Ascending"
 msgstr ""
 
-#: app/Helpers/Options.php:1053
+#: app/Helpers/Options.php:1054
 msgid "Descending"
 msgstr ""
 
-#: app/Helpers/Options.php:1063
+#: app/Helpers/Options.php:1064
 msgid "WooCommerce"
 msgstr ""
 
-#: app/Helpers/Options.php:1071
+#: app/Helpers/Options.php:1072
 msgid "Left (£99.99)"
 msgstr ""
 
-#: app/Helpers/Options.php:1072
+#: app/Helpers/Options.php:1073
 msgid "Right (99.99£)"
 msgstr ""
 
-#: app/Helpers/Options.php:1073
+#: app/Helpers/Options.php:1074
 msgid "Left with space (£ 99.99)"
 msgstr ""
 
-#: app/Helpers/Options.php:1074
+#: app/Helpers/Options.php:1075
 msgid "Right with space (99.99 £)"
 msgstr ""
 
-#: app/Helpers/Options.php:1080
+#: app/Helpers/Options.php:1081
 msgid "Display in 2 column"
 msgstr ""
 
-#: app/Helpers/Options.php:1081
+#: app/Helpers/Options.php:1082
 msgid "Display in 1 column"
 msgstr ""
 
-#: app/Helpers/Options.php:2409
-#: resources/settings.php:109
+#: app/Helpers/Options.php:2410
+#: resources/settings.php:110
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:5
-#: src/settings/components/sections/GeneralSettings.jsx:20
+#: src/settings/components/sections/GeneralSettings.jsx:22
 msgid "Online Ordering"
 msgstr ""
 
-#: app/Helpers/Options.php:2411
-#: resources/settings.php:111
+#: app/Helpers/Options.php:2412
+#: resources/settings.php:112
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:7
 #: src/settings/components/sections/PickupDeliverySettings.jsx:436
 #: src/settings/utils.js:152
@@ -2689,25 +2692,25 @@ msgstr ""
 msgid "Pickup & Delivery"
 msgstr ""
 
-#: app/Helpers/Options.php:2412
-#: resources/settings.php:112
+#: app/Helpers/Options.php:2413
+#: resources/settings.php:113
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:8
 msgid "Table Reservation"
 msgstr ""
 
-#: app/Helpers/Options.php:2413
+#: app/Helpers/Options.php:2414
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:9
 #: src/settings/components/sections/DashboardInventorySettings.jsx:43
 #: src/settings/components/sections/InventorySettings.jsx:18
 msgid "Inventory Management"
 msgstr ""
 
-#: app/Helpers/Options.php:2414
+#: app/Helpers/Options.php:2415
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:10
 msgid "QR Code Table Ordering"
 msgstr ""
 
-#: app/Helpers/Options.php:2415
+#: app/Helpers/Options.php:2416
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:11
 #: src/settings/components/sections/PosPrintingSettings.jsx:18
 #: src/settings/utils.js:176
@@ -2715,1071 +2718,1079 @@ msgstr ""
 msgid "POS Printing"
 msgstr ""
 
-#: app/Helpers/Options.php:2418
+#: app/Helpers/Options.php:2419
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:14
 msgid "Tips & Gratuity"
 msgstr ""
 
-#: app/Helpers/Options.php:2419
+#: app/Helpers/Options.php:2420
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:15
 msgid "Discounts"
 msgstr ""
 
-#: app/Helpers/Options.php:2420
+#: app/Helpers/Options.php:2421
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:16
 msgid "Table Layout Designer"
 msgstr ""
 
-#: app/Helpers/Options.php:2421
+#: app/Helpers/Options.php:2422
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:17
 msgid "Frontend Order Dashboard"
 msgstr ""
 
-#: app/Helpers/Options.php:2422
-#: resources/settings.php:113
+#: app/Helpers/Options.php:2423
+#: resources/settings.php:114
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:18
 msgid "20+ Menu Layouts"
 msgstr ""
 
-#: app/Helpers/Options.php:2439
-#: resources/settings.php:107
+#: app/Helpers/Options.php:2440
+#: resources/settings.php:108
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:34
 #: src/settings/App.jsx:1182
 msgid "Pro Features"
 msgstr ""
 
-#: app/Helpers/Options.php:2444
-#: resources/settings.php:126
+#: app/Helpers/Options.php:2445
+#: resources/settings.php:127
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:63
 #: src/settings/App.jsx:1204
 msgid "Get The Deal!"
 msgstr ""
 
-#: app/Helpers/Options.php:2458
-#: app/Widgets/Elementor/Sections/Layout.php:647
+#: app/Helpers/Options.php:2459
+#: app/Widgets/Elementor/Sections/Layout.php:648
 msgid "Numbered Pagination"
 msgstr ""
 
-#: app/Helpers/Options.php:2488
+#: app/Helpers/Options.php:2489
 msgid "Date of reservation"
 msgstr ""
 
-#: app/Helpers/Options.php:2504
+#: app/Helpers/Options.php:2505
 msgid "Select Guest Number"
 msgstr ""
 
-#: app/Helpers/Options.php:2530
+#: app/Helpers/Options.php:2531
 msgid "Please enter the reservation status"
 msgstr ""
 
-#: app/Helpers/Options.php:2558
+#: app/Helpers/Options.php:2559
 msgid "Choose the reservation location."
 msgstr ""
 
-#: app/Helpers/Options.php:2579
+#: app/Helpers/Options.php:2580
 msgid "Enable Front-end order management"
 msgstr ""
 
-#: app/Helpers/Options.php:2581
+#: app/Helpers/Options.php:2582
 msgid "Once this feature is enabled, you’ll be able to manage orders directly from the front end."
 msgstr ""
 
-#: app/Helpers/Options.php:2589
+#: app/Helpers/Options.php:2590
 msgid "Choose front-order page"
 msgstr ""
 
-#: app/Helpers/Options.php:2598
+#: app/Helpers/Options.php:2599
 msgid "Header / Footer Visibility"
 msgstr ""
 
-#: app/Helpers/Options.php:2601
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:90
+#: app/Helpers/Options.php:2602
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:89
 msgid "Disable"
 msgstr ""
 
-#: app/Helpers/Options.php:2609
+#: app/Helpers/Options.php:2610
 #: src/settings/components/sections/DashboardOrderSettings.jsx:32
 msgid "Order Per Page"
 msgstr ""
 
-#: app/Helpers/Options.php:2617
+#: app/Helpers/Options.php:2618
 msgid "Choose a role for order manager"
 msgstr ""
 
-#: app/Helpers/Options.php:2624
+#: app/Helpers/Options.php:2625
 msgid "Enter Room numbers (Optional)"
 msgstr ""
 
-#: app/Helpers/Options.php:2625
+#: app/Helpers/Options.php:2626
 msgid "Enter all room numbers separated by commas (e.g., A21, B22, C1, D5). You can use this to group orders by room or for similar purposes. Leave this field empty to disable the feature."
 msgstr ""
 
-#: app/Helpers/Options.php:2631
+#: app/Helpers/Options.php:2632
 msgid "Container Width"
 msgstr ""
 
-#: app/Models/Fields.php:524
-#: resources/metabox/layout.php:34
+#: app/Models/Fields.php:525
+#: resources/metabox/layout.php:35
 #: src/settings/components/sections/ReservationSettings.jsx:491
 msgid "Pro"
 msgstr ""
 
-#: app/Models/Fields.php:787
+#: app/Models/Fields.php:788
 msgid "Upload Image"
 msgstr ""
 
-#: app/Models/Fields.php:790
+#: app/Models/Fields.php:791
 msgid "Remove Image"
 msgstr ""
 
-#: app/Models/Fields.php:851
-#: app/Widgets/Elementor/Sections/Style.php:114
-#: app/Widgets/Elementor/Sections/Style.php:695
+#: app/Models/Fields.php:852
+#: app/Widgets/Elementor/Sections/Style.php:115
+#: app/Widgets/Elementor/Sections/Style.php:696
 msgid "Left"
 msgstr ""
 
-#: app/Models/Fields.php:852
-#: app/Widgets/Elementor/Sections/Style.php:122
-#: app/Widgets/Elementor/Sections/Style.php:703
+#: app/Models/Fields.php:853
+#: app/Widgets/Elementor/Sections/Style.php:123
+#: app/Widgets/Elementor/Sections/Style.php:704
 msgid "Right"
 msgstr ""
 
-#: app/Models/Fields.php:854
+#: app/Models/Fields.php:855
 msgid "Justify"
 msgstr ""
 
-#: app/Models/Fields.php:861
+#: app/Models/Fields.php:862
 msgid "Bold"
 msgstr ""
 
-#: app/Models/Fields.php:862
+#: app/Models/Fields.php:863
 msgid "Bolder"
 msgstr ""
 
-#: app/Models/Fields.php:863
+#: app/Models/Fields.php:864
 msgid "Lighter"
 msgstr ""
 
-#: app/Models/Fields.php:864
+#: app/Models/Fields.php:865
 msgid "Inherit"
 msgstr ""
 
-#: app/Models/Fields.php:865
+#: app/Models/Fields.php:866
 msgid "Initial"
 msgstr ""
 
-#: app/Models/Fields.php:866
+#: app/Models/Fields.php:867
 msgid "Unset"
 msgstr ""
 
-#: app/Models/Fields.php:867
+#: app/Models/Fields.php:868
 msgid "100"
 msgstr ""
 
-#: app/Models/Fields.php:868
+#: app/Models/Fields.php:869
 msgid "200"
 msgstr ""
 
-#: app/Models/Fields.php:869
+#: app/Models/Fields.php:870
 msgid "300"
 msgstr ""
 
-#: app/Models/Fields.php:870
+#: app/Models/Fields.php:871
 msgid "400"
 msgstr ""
 
-#: app/Models/Fields.php:871
+#: app/Models/Fields.php:872
 msgid "500"
 msgstr ""
 
-#: app/Models/Fields.php:872
+#: app/Models/Fields.php:873
 msgid "600"
 msgstr ""
 
-#: app/Models/Fields.php:873
+#: app/Models/Fields.php:874
 msgid "700"
 msgstr ""
 
-#: app/Models/Fields.php:874
+#: app/Models/Fields.php:875
 msgid "800"
 msgstr ""
 
-#: app/Models/Fields.php:875
+#: app/Models/Fields.php:876
 msgid "900"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:54
+#: app/Widgets/Elementor/Sections/Layout.php:55
 msgid "Select Shortcode"
 msgstr ""
 
 #. translators: %s: layout group label, e.g. "Grid".
-#: app/Widgets/Elementor/Sections/Layout.php:74
+#: app/Widgets/Elementor/Sections/Layout.php:75
 #, php-format
 msgid "%s Layouts"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:96
-#: app/Widgets/Elementor/Sections/Layout.php:130
-#: app/Widgets/Elementor/Sections/Layout.php:191
+#: app/Widgets/Elementor/Sections/Layout.php:97
+#: app/Widgets/Elementor/Sections/Layout.php:131
+#: app/Widgets/Elementor/Sections/Layout.php:192
 msgid "Layout 5"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:101
-#: app/Widgets/Elementor/Sections/Layout.php:196
+#: app/Widgets/Elementor/Sections/Layout.php:102
+#: app/Widgets/Elementor/Sections/Layout.php:197
 msgid "Layout 6"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:106
-#: app/Widgets/Elementor/Sections/Layout.php:201
+#: app/Widgets/Elementor/Sections/Layout.php:107
+#: app/Widgets/Elementor/Sections/Layout.php:202
 msgid "Layout 7"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:220
+#: app/Widgets/Elementor/Sections/Layout.php:221
 msgid "Isotope Preview Limitation"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:221
+#: app/Widgets/Elementor/Sections/Layout.php:222
 msgid "Isotope filtering are disabled in the Elementor editor to prevent layout rendering issues. Your selected layout will display correctly on the front-end."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:237
+#: app/Widgets/Elementor/Sections/Layout.php:238
 msgid "Layouts"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:261
-#: app/Widgets/Elementor/Sections/Layout.php:301
+#: app/Widgets/Elementor/Sections/Layout.php:262
+#: app/Widgets/Elementor/Sections/Layout.php:302
 msgid "Columns"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:278
-#: app/Widgets/Elementor/Sections/Layout.php:306
+#: app/Widgets/Elementor/Sections/Layout.php:279
+#: app/Widgets/Elementor/Sections/Layout.php:307
 msgid "Number of Columns"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:279
+#: app/Widgets/Elementor/Sections/Layout.php:280
 msgid "Please select the number of columns to display per row. For the best view in the list layout, use 1 or 2 columns."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:307
+#: app/Widgets/Elementor/Sections/Layout.php:308
 msgid "Please select the number of columns to display per row."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:329
+#: app/Widgets/Elementor/Sections/Layout.php:330
 msgid "Notice"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:330
+#: app/Widgets/Elementor/Sections/Layout.php:331
 msgid "For list layout, more than 3 columns will be displayed depending on the available container width. If you select a higher number of columns on a smaller screen, fewer columns may be visible at a time due to limited screen space."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:352
-#: app/Widgets/Elementor/Sections/Layout.php:516
+#: app/Widgets/Elementor/Sections/Layout.php:353
+#: app/Widgets/Elementor/Sections/Layout.php:517
 msgid "Query"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:357
-#: app/Widgets/Elementor/Sections/Layout.php:521
+#: app/Widgets/Elementor/Sections/Layout.php:358
+#: app/Widgets/Elementor/Sections/Layout.php:522
 msgid "Food Menu Source"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:360
-#: app/Widgets/Elementor/Sections/Layout.php:524
+#: app/Widgets/Elementor/Sections/Layout.php:361
+#: app/Widgets/Elementor/Sections/Layout.php:525
 msgid "Product ( WooCommerce )"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:363
-#: app/Widgets/Elementor/Sections/Layout.php:376
-#: app/Widgets/Elementor/Sections/Layout.php:387
-#: app/Widgets/Elementor/Sections/Layout.php:527
+#: app/Widgets/Elementor/Sections/Layout.php:364
+#: app/Widgets/Elementor/Sections/Layout.php:377
+#: app/Widgets/Elementor/Sections/Layout.php:388
+#: app/Widgets/Elementor/Sections/Layout.php:528
 msgid "Please select the food menu to show. Leave it blank to include all posts."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:369
+#: app/Widgets/Elementor/Sections/Layout.php:370
 msgid "Include"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:374
+#: app/Widgets/Elementor/Sections/Layout.php:375
 msgid "Include Food Menu"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:385
+#: app/Widgets/Elementor/Sections/Layout.php:386
 #: src/settings/components/sections/DiscountSettings.jsx:45
 msgid "Include Products"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:394
+#: app/Widgets/Elementor/Sections/Layout.php:395
 msgid "Exclude"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:399
-#: app/Widgets/Elementor/Sections/Layout.php:410
+#: app/Widgets/Elementor/Sections/Layout.php:400
+#: app/Widgets/Elementor/Sections/Layout.php:411
 msgid "Exclude Food Menu"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:401
-#: app/Widgets/Elementor/Sections/Layout.php:412
+#: app/Widgets/Elementor/Sections/Layout.php:402
+#: app/Widgets/Elementor/Sections/Layout.php:413
 msgid "Please select the food menu to exclude. Leave it blank to exclude none."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:424
-#: app/Widgets/Elementor/Sections/Layout.php:535
+#: app/Widgets/Elementor/Sections/Layout.php:425
+#: app/Widgets/Elementor/Sections/Layout.php:536
 msgid "Post Limit"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:435
-#: app/Widgets/Elementor/Sections/Layout.php:446
-#: app/Widgets/Elementor/Sections/Layout.php:544
-#: app/Widgets/Elementor/Sections/Layout.php:555
+#: app/Widgets/Elementor/Sections/Layout.php:436
+#: app/Widgets/Elementor/Sections/Layout.php:447
+#: app/Widgets/Elementor/Sections/Layout.php:545
+#: app/Widgets/Elementor/Sections/Layout.php:556
 #: src/settings/components/sections/DiscountSettings.jsx:61
 msgid "Include Categories"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:437
-#: app/Widgets/Elementor/Sections/Layout.php:448
-#: app/Widgets/Elementor/Sections/Layout.php:546
-#: app/Widgets/Elementor/Sections/Layout.php:557
+#: app/Widgets/Elementor/Sections/Layout.php:438
+#: app/Widgets/Elementor/Sections/Layout.php:449
+#: app/Widgets/Elementor/Sections/Layout.php:547
+#: app/Widgets/Elementor/Sections/Layout.php:558
 msgid "Please select the food menu category to show. Leave it blank to include all."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:457
-#: app/Widgets/Elementor/Sections/Layout.php:587
+#: app/Widgets/Elementor/Sections/Layout.php:458
+#: app/Widgets/Elementor/Sections/Layout.php:588
 msgid "Sorting"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:463
-#: app/Widgets/Elementor/Sections/Layout.php:472
-#: app/Widgets/Elementor/Sections/Layout.php:593
-#: app/Widgets/Elementor/Sections/Layout.php:602
-#: app/Widgets/Elementor/Sections/Layout.php:645
+#: app/Widgets/Elementor/Sections/Layout.php:464
+#: app/Widgets/Elementor/Sections/Layout.php:473
+#: app/Widgets/Elementor/Sections/Layout.php:594
+#: app/Widgets/Elementor/Sections/Layout.php:603
+#: app/Widgets/Elementor/Sections/Layout.php:646
 msgid "Please choose to reorder food menu."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:563
+#: app/Widgets/Elementor/Sections/Layout.php:564
 msgid "Categories Select Menu"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:569
-#: app/Widgets/Elementor/Sections/Layout.php:580
+#: app/Widgets/Elementor/Sections/Layout.php:570
+#: app/Widgets/Elementor/Sections/Layout.php:581
 msgid "Isotope Filter (Default Selected Item)"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:571
-#: app/Widgets/Elementor/Sections/Layout.php:582
+#: app/Widgets/Elementor/Sections/Layout.php:572
+#: app/Widgets/Elementor/Sections/Layout.php:583
 msgid "Please select the default selected filter term (Selected item)."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:628
-#: app/Widgets/Elementor/Sections/Layout.php:679
+#: app/Widgets/Elementor/Sections/Layout.php:629
+#: app/Widgets/Elementor/Sections/Layout.php:680
 msgid "Pagination"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:648
+#: app/Widgets/Elementor/Sections/Layout.php:649
 msgid "Ajax Numbered Pagination"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:649
+#: app/Widgets/Elementor/Sections/Layout.php:650
 msgid "Ajax Load More Button"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:650
+#: app/Widgets/Elementor/Sections/Layout.php:651
 msgid "Ajax Load More on Scroll"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:662
+#: app/Widgets/Elementor/Sections/Layout.php:663
 msgid "Please enter the number of food menu per page to show."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:707
+#: app/Widgets/Elementor/Sections/Layout.php:708
 msgid "Display Featured Image?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:708
+#: app/Widgets/Elementor/Sections/Layout.php:709
 msgid "Switch on to display featured image."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:742
+#: app/Widgets/Elementor/Sections/Layout.php:743
 msgid "Image Alignment"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:745
+#: app/Widgets/Elementor/Sections/Layout.php:746
 msgid "Start"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:753
+#: app/Widgets/Elementor/Sections/Layout.php:754
 msgid "End"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Layout.php:772
+#: app/Widgets/Elementor/Sections/Layout.php:773
 msgid "Select Image Size"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:43
+#: app/Widgets/Elementor/Sections/Settings.php:44
 #: src/settings/components/sections/OrderBumpsSettings.jsx:91
 msgid "Slider Settings"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:44
+#: app/Widgets/Elementor/Sections/Settings.php:45
 msgid "Controls"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:49
+#: app/Widgets/Elementor/Sections/Settings.php:50
 msgid "Infinite Loop"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:52
+#: app/Widgets/Elementor/Sections/Settings.php:53
 msgid "Switch on to enable slider infinite loop."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:58
+#: app/Widgets/Elementor/Sections/Settings.php:59
 msgid "Navigation Arrows"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:61
+#: app/Widgets/Elementor/Sections/Settings.php:62
 msgid "Switch on to enable slider navigation arrows."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:68
+#: app/Widgets/Elementor/Sections/Settings.php:69
 msgid "Arrows Position"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:71
+#: app/Widgets/Elementor/Sections/Settings.php:72
 msgid "Middle"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:73
+#: app/Widgets/Elementor/Sections/Settings.php:74
 msgid "Please select the slider arrows position."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:82
+#: app/Widgets/Elementor/Sections/Settings.php:83
 msgid "Dot Pagination"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:85
+#: app/Widgets/Elementor/Sections/Settings.php:86
 msgid "Switch on to enable slider dot pagination."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:92
+#: app/Widgets/Elementor/Sections/Settings.php:93
 msgid "Auto Height"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:95
+#: app/Widgets/Elementor/Sections/Settings.php:96
 msgid "Switch on to enable slider dynamic height."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:101
+#: app/Widgets/Elementor/Sections/Settings.php:102
 msgid "Image Lazy Load"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:104
+#: app/Widgets/Elementor/Sections/Settings.php:105
 msgid "Switch on to enable slider image lazy load."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:110
+#: app/Widgets/Elementor/Sections/Settings.php:111
 msgid "Slide Speed (in ms)"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:111
+#: app/Widgets/Elementor/Sections/Settings.php:112
 msgid "Please enter the duration of transition between slides (in ms)."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:117
+#: app/Widgets/Elementor/Sections/Settings.php:118
 #: src/settings/components/sections/OrderBumpsSettings.jsx:194
 msgid "Autoplay"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:122
+#: app/Widgets/Elementor/Sections/Settings.php:123
 msgid "Enable Autoplay?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:125
+#: app/Widgets/Elementor/Sections/Settings.php:126
 msgid "Switch on to enable slider autoplay."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:132
+#: app/Widgets/Elementor/Sections/Settings.php:133
 msgid "Pause on Mouse Hover?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:135
+#: app/Widgets/Elementor/Sections/Settings.php:136
 msgid "Switch on to enable slider autoplay pause on mouse hover."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:142
+#: app/Widgets/Elementor/Sections/Settings.php:143
 msgid "Autoplay Delay (in ms)"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:146
+#: app/Widgets/Elementor/Sections/Settings.php:147
 msgid "Please select autoplay interval delay (in ms)."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:198
+#: app/Widgets/Elementor/Sections/Settings.php:199
 msgid "Isotope Filter"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:202
+#: app/Widgets/Elementor/Sections/Settings.php:203
 msgid "Enable Isotope Filter Button ?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:203
+#: app/Widgets/Elementor/Sections/Settings.php:204
 msgid "Switch on to display show isotope filter button."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:212
+#: app/Widgets/Elementor/Sections/Settings.php:213
 msgid "Isotope Filter Style Type"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:213
+#: app/Widgets/Elementor/Sections/Settings.php:214
 msgid "Please select the isotope filter style type."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:226
+#: app/Widgets/Elementor/Sections/Settings.php:227
 msgid "Display \"Show All Button\" ?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:227
+#: app/Widgets/Elementor/Sections/Settings.php:228
 msgid "Switch on to display show all button."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:236
+#: app/Widgets/Elementor/Sections/Settings.php:237
 msgid "Change Button Text"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:239
+#: app/Widgets/Elementor/Sections/Settings.php:240
 msgid "Please change \"All Button\" text"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:246
+#: app/Widgets/Elementor/Sections/Settings.php:247
 msgid "Display Filer Search Button ?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:247
+#: app/Widgets/Elementor/Sections/Settings.php:248
 msgid "Switch on to display show display search button."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:266
+#: app/Widgets/Elementor/Sections/Settings.php:256
+msgid "Group Items by Category ?"
+msgstr ""
+
+#: app/Widgets/Elementor/Sections/Settings.php:257
+msgid "On the \"Show All\" view, order items grouped by category, following the filter-bar order. If an item is assigned to more than one category, it is shown once and placed under the first matching category in that order. Forces the Even grid style (Masonry would break the order)."
+msgstr ""
+
+#: app/Widgets/Elementor/Sections/Settings.php:281
 msgid "Content Limit"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:270
+#: app/Widgets/Elementor/Sections/Settings.php:285
 msgid "Content limit"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:271
+#: app/Widgets/Elementor/Sections/Settings.php:286
 msgid "Limits the short content text (word limit). Leave it blank for full text."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:288
+#: app/Widgets/Elementor/Sections/Settings.php:303
 msgid "Details Page"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:303
+#: app/Widgets/Elementor/Sections/Settings.php:318
 msgid "Enable Details Page Popup ?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:304
+#: app/Widgets/Elementor/Sections/Settings.php:319
 msgid "Switch on to enable popup to detail page."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:349
+#: app/Widgets/Elementor/Sections/Settings.php:364
 msgid "Content Visibility"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:354
+#: app/Widgets/Elementor/Sections/Settings.php:369
 msgid "Show Title?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:355
+#: app/Widgets/Elementor/Sections/Settings.php:370
 msgid "Switch on to show food menu title."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:364
+#: app/Widgets/Elementor/Sections/Settings.php:379
 msgid "Show Price?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:365
+#: app/Widgets/Elementor/Sections/Settings.php:380
 msgid "Switch on to show food menu price."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:374
+#: app/Widgets/Elementor/Sections/Settings.php:389
 msgid "Show Excerpt?"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:375
+#: app/Widgets/Elementor/Sections/Settings.php:390
 msgid "Switch on to show food menu excerpt."
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:398
+#: app/Widgets/Elementor/Sections/Settings.php:413
 msgid "Category Settings"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Settings.php:403
+#: app/Widgets/Elementor/Sections/Settings.php:418
 msgid "Select Category Title Type"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:52
-#: app/Widgets/Elementor/Sections/Style.php:368
-#: app/Widgets/Elementor/Sections/Style.php:459
-#: app/Widgets/Elementor/Sections/Style.php:513
-#: app/Widgets/Elementor/Sections/Style.php:720
-#: app/Widgets/Elementor/Sections/Style.php:1035
+#: app/Widgets/Elementor/Sections/Style.php:53
+#: app/Widgets/Elementor/Sections/Style.php:369
+#: app/Widgets/Elementor/Sections/Style.php:460
+#: app/Widgets/Elementor/Sections/Style.php:514
+#: app/Widgets/Elementor/Sections/Style.php:721
+#: app/Widgets/Elementor/Sections/Style.php:1036
 msgid "Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:61
+#: app/Widgets/Elementor/Sections/Style.php:62
 msgid "Hover color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:70
+#: app/Widgets/Elementor/Sections/Style.php:71
 msgid "Border color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:82
-#: app/Widgets/Elementor/Sections/Style.php:202
-#: app/Widgets/Elementor/Sections/Style.php:338
-#: app/Widgets/Elementor/Sections/Style.php:604
-#: app/Widgets/Elementor/Sections/Style.php:786
-#: app/Widgets/Elementor/Sections/Style.php:1223
-#: app/Widgets/Elementor/Sections/Style.php:1338
+#: app/Widgets/Elementor/Sections/Style.php:83
+#: app/Widgets/Elementor/Sections/Style.php:203
+#: app/Widgets/Elementor/Sections/Style.php:339
+#: app/Widgets/Elementor/Sections/Style.php:605
+#: app/Widgets/Elementor/Sections/Style.php:787
+#: app/Widgets/Elementor/Sections/Style.php:1224
+#: app/Widgets/Elementor/Sections/Style.php:1339
 msgid "Border"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:99
+#: app/Widgets/Elementor/Sections/Style.php:100
 msgid "Filter Button"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:111
-#: app/Widgets/Elementor/Sections/Style.php:692
+#: app/Widgets/Elementor/Sections/Style.php:112
+#: app/Widgets/Elementor/Sections/Style.php:693
 msgid "Alignment"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:131
-#: app/Widgets/Elementor/Sections/Style.php:712
-#: app/Widgets/Elementor/Sections/Style.php:1027
-#: app/Widgets/Elementor/Sections/Style.php:1175
-#: app/Widgets/Elementor/Sections/Style.php:1282
+#: app/Widgets/Elementor/Sections/Style.php:132
+#: app/Widgets/Elementor/Sections/Style.php:713
+#: app/Widgets/Elementor/Sections/Style.php:1028
+#: app/Widgets/Elementor/Sections/Style.php:1176
+#: app/Widgets/Elementor/Sections/Style.php:1283
 #: src/settings/components/sections/SpecialMenuSettings.jsx:345
 msgid "Colors"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:140
-#: app/Widgets/Elementor/Sections/Style.php:1184
-#: app/Widgets/Elementor/Sections/Style.php:1290
+#: app/Widgets/Elementor/Sections/Style.php:141
+#: app/Widgets/Elementor/Sections/Style.php:1185
+#: app/Widgets/Elementor/Sections/Style.php:1291
 msgid "Button Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:149
-#: app/Widgets/Elementor/Sections/Style.php:1193
-#: app/Widgets/Elementor/Sections/Style.php:1301
+#: app/Widgets/Elementor/Sections/Style.php:150
+#: app/Widgets/Elementor/Sections/Style.php:1194
+#: app/Widgets/Elementor/Sections/Style.php:1302
 msgid "Button Background Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:156
-#: app/Widgets/Elementor/Sections/Style.php:737
-#: app/Widgets/Elementor/Sections/Style.php:1059
-#: app/Widgets/Elementor/Sections/Style.php:1200
-#: app/Widgets/Elementor/Sections/Style.php:1310
+#: app/Widgets/Elementor/Sections/Style.php:157
+#: app/Widgets/Elementor/Sections/Style.php:738
+#: app/Widgets/Elementor/Sections/Style.php:1060
+#: app/Widgets/Elementor/Sections/Style.php:1201
+#: app/Widgets/Elementor/Sections/Style.php:1311
 msgid "Hover"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:161
-#: app/Widgets/Elementor/Sections/Style.php:742
-#: app/Widgets/Elementor/Sections/Style.php:1064
-#: app/Widgets/Elementor/Sections/Style.php:1205
-#: app/Widgets/Elementor/Sections/Style.php:1315
+#: app/Widgets/Elementor/Sections/Style.php:162
+#: app/Widgets/Elementor/Sections/Style.php:743
+#: app/Widgets/Elementor/Sections/Style.php:1065
+#: app/Widgets/Elementor/Sections/Style.php:1206
+#: app/Widgets/Elementor/Sections/Style.php:1316
 msgid "Hover Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:170
-#: app/Widgets/Elementor/Sections/Style.php:751
-#: app/Widgets/Elementor/Sections/Style.php:1074
-#: app/Widgets/Elementor/Sections/Style.php:1214
-#: app/Widgets/Elementor/Sections/Style.php:1326
+#: app/Widgets/Elementor/Sections/Style.php:171
+#: app/Widgets/Elementor/Sections/Style.php:752
+#: app/Widgets/Elementor/Sections/Style.php:1075
+#: app/Widgets/Elementor/Sections/Style.php:1215
+#: app/Widgets/Elementor/Sections/Style.php:1327
 msgid "Hover Background Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:178
-#: app/Widgets/Elementor/Sections/Style.php:761
-#: app/Widgets/Elementor/Sections/Style.php:1090
+#: app/Widgets/Elementor/Sections/Style.php:179
+#: app/Widgets/Elementor/Sections/Style.php:762
+#: app/Widgets/Elementor/Sections/Style.php:1091
 #: src/settings/App.jsx:765
 msgid "Active"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:183
-#: app/Widgets/Elementor/Sections/Style.php:766
+#: app/Widgets/Elementor/Sections/Style.php:184
+#: app/Widgets/Elementor/Sections/Style.php:767
 msgid "Active Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:214
-#: app/Widgets/Elementor/Sections/Style.php:798
-#: app/Widgets/Elementor/Sections/Style.php:1083
-#: app/Widgets/Elementor/Sections/Style.php:1235
-#: app/Widgets/Elementor/Sections/Style.php:1350
+#: app/Widgets/Elementor/Sections/Style.php:215
+#: app/Widgets/Elementor/Sections/Style.php:799
+#: app/Widgets/Elementor/Sections/Style.php:1084
+#: app/Widgets/Elementor/Sections/Style.php:1236
+#: app/Widgets/Elementor/Sections/Style.php:1351
 msgid "Hover Border Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:224
-#: app/Widgets/Elementor/Sections/Style.php:808
-#: app/Widgets/Elementor/Sections/Style.php:1104
+#: app/Widgets/Elementor/Sections/Style.php:225
+#: app/Widgets/Elementor/Sections/Style.php:809
+#: app/Widgets/Elementor/Sections/Style.php:1105
 msgid "Active Border Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:247
-#: app/Widgets/Elementor/Sections/Style.php:832
-#: app/Widgets/Elementor/Sections/Style.php:1113
+#: app/Widgets/Elementor/Sections/Style.php:248
+#: app/Widgets/Elementor/Sections/Style.php:833
+#: app/Widgets/Elementor/Sections/Style.php:1114
 msgid "Spacing"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:253
+#: app/Widgets/Elementor/Sections/Style.php:254
 msgid "Wrapper Padding"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:264
-#: app/Widgets/Elementor/Sections/Style.php:626
-#: app/Widgets/Elementor/Sections/Style.php:1130
+#: app/Widgets/Elementor/Sections/Style.php:265
+#: app/Widgets/Elementor/Sections/Style.php:627
+#: app/Widgets/Elementor/Sections/Style.php:1131
 msgid "Padding"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:275
-#: app/Widgets/Elementor/Sections/Style.php:637
-#: app/Widgets/Elementor/Sections/Style.php:850
-#: app/Widgets/Elementor/Sections/Style.php:1141
+#: app/Widgets/Elementor/Sections/Style.php:276
+#: app/Widgets/Elementor/Sections/Style.php:638
+#: app/Widgets/Elementor/Sections/Style.php:851
+#: app/Widgets/Elementor/Sections/Style.php:1142
 msgid "Margin"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:297
+#: app/Widgets/Elementor/Sections/Style.php:298
 msgid "Search Button"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:311
+#: app/Widgets/Elementor/Sections/Style.php:312
 msgid "Placeholder Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:320
+#: app/Widgets/Elementor/Sections/Style.php:321
 msgid "Text Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:329
+#: app/Widgets/Elementor/Sections/Style.php:330
 msgid "BG Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:377
-#: app/Widgets/Elementor/Sections/Style.php:522
-#: app/Widgets/Elementor/Sections/Style.php:594
-#: app/Widgets/Elementor/Sections/Style.php:729
-#: app/Widgets/Elementor/Sections/Style.php:1045
+#: app/Widgets/Elementor/Sections/Style.php:378
+#: app/Widgets/Elementor/Sections/Style.php:523
+#: app/Widgets/Elementor/Sections/Style.php:595
+#: app/Widgets/Elementor/Sections/Style.php:730
+#: app/Widgets/Elementor/Sections/Style.php:1046
 #: src/settings/components/sections/SpecialMenuSettings.jsx:365
 msgid "Background Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:389
+#: app/Widgets/Elementor/Sections/Style.php:390
 msgid "BG Color (Only Grid Layout 1) "
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:404
+#: app/Widgets/Elementor/Sections/Style.php:405
 msgid "BG Color (Only Grid Layout 4) "
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:416
+#: app/Widgets/Elementor/Sections/Style.php:417
 msgid "BG Color (Only Grid Layout 5) "
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:427
+#: app/Widgets/Elementor/Sections/Style.php:428
 msgid "Border (Only Grid Layout 5)"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:536
+#: app/Widgets/Elementor/Sections/Style.php:537
 msgid "Only Image Change"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:548
+#: app/Widgets/Elementor/Sections/Style.php:549
 msgid "Background Image"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:567
+#: app/Widgets/Elementor/Sections/Style.php:568
 msgid "Border Color"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:589
+#: app/Widgets/Elementor/Sections/Style.php:590
 msgid "Global Style"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:650
+#: app/Widgets/Elementor/Sections/Style.php:651
 msgid "Box Shadow"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:678
+#: app/Widgets/Elementor/Sections/Style.php:679
 msgid "Pagination Style"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:838
-#: app/Widgets/Elementor/Sections/Style.php:1119
+#: app/Widgets/Elementor/Sections/Style.php:839
+#: app/Widgets/Elementor/Sections/Style.php:1120
 msgid "Wrapper Margin"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:892
+#: app/Widgets/Elementor/Sections/Style.php:893
 msgid "Slider Style"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:893
-#: app/Widgets/Elementor/Sections/Style.php:899
+#: app/Widgets/Elementor/Sections/Style.php:894
+#: app/Widgets/Elementor/Sections/Style.php:900
 msgid "Arrow Size"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:921
+#: app/Widgets/Elementor/Sections/Style.php:922
 msgid "Arrow Width"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:953
+#: app/Widgets/Elementor/Sections/Style.php:954
 msgid "Arrow Height"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:971
+#: app/Widgets/Elementor/Sections/Style.php:972
 msgid "Dot Size"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:977
+#: app/Widgets/Elementor/Sections/Style.php:978
 msgid "Dot Width"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:1009
+#: app/Widgets/Elementor/Sections/Style.php:1010
 msgid "Dot Height"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:1165
+#: app/Widgets/Elementor/Sections/Style.php:1166
 msgid "Read More Button"
 msgstr ""
 
-#: app/Widgets/Elementor/Sections/Style.php:1273
+#: app/Widgets/Elementor/Sections/Style.php:1274
 msgid "Add to Cart Button"
 msgstr ""
 
-#: app/Widgets/Elementor/Shortcodes.php:84
+#: app/Widgets/Elementor/Shortcodes.php:85
 msgid "Select ShortCode"
 msgstr ""
 
-#: app/Widgets/Elementor/Shortcodes.php:98
+#: app/Widgets/Elementor/Shortcodes.php:99
 msgid "Please select a food menu shordcode"
 msgstr ""
 
-#: app/Widgets/FmWidget.php:29
+#: app/Widgets/FmWidget.php:30
 msgid "Display Food menu"
 msgstr ""
 
-#: app/Widgets/FmWidget.php:68
+#: app/Widgets/FmWidget.php:69
 msgid "Title:"
 msgstr ""
 
-#: app/Widgets/FmWidget.php:77
+#: app/Widgets/FmWidget.php:78
 msgid "Select Food Menu"
 msgstr ""
 
-#: app/Widgets/Vc/VcAddon.php:49
-#: app/Widgets/Vc/VcAddon.php:72
+#: app/Widgets/Vc/VcAddon.php:50
+#: app/Widgets/Vc/VcAddon.php:73
 msgid "ShortCode"
 msgstr ""
 
-#: app/Widgets/Vc/VcAddon.php:53
-#: app/Widgets/Vc/VcAddon.php:76
+#: app/Widgets/Vc/VcAddon.php:54
+#: app/Widgets/Vc/VcAddon.php:77
 msgid "ShortCode list"
 msgstr ""
 
-#: resources/general-settings.php:20
+#: resources/general-settings.php:21
 #: src/settings/components/sections/PickupDeliverySettings.jsx:40
 msgid "Date & Time Format"
 msgstr ""
 
-#: resources/general-settings.php:24
+#: resources/general-settings.php:25
 #: src/settings/components/sections/PickupDeliverySettings.jsx:41
 msgid "Date format for delivery & pickup orders"
 msgstr ""
 
-#: resources/general-settings.php:32
+#: resources/general-settings.php:33
 msgid "Selected current timezone is "
 msgstr ""
 
-#: resources/general-settings.php:34
+#: resources/general-settings.php:35
 msgid "Universal time is "
 msgstr ""
 
-#: resources/general-settings.php:39
+#: resources/general-settings.php:40
 #: src/settings/components/sections/PickupDeliverySettings.jsx:56
 msgid "Update Date & Time Format"
 msgstr ""
 
-#: resources/help.php:434
+#: resources/help.php:435
 msgid "Welcome to Food Menu"
 msgstr ""
 
-#: resources/help.php:435
+#: resources/help.php:436
 msgid "The most powerful restaurant menu and online ordering plugin for WordPress. Display beautiful food menus, manage orders, handle inventory, and grow your restaurant business."
 msgstr ""
 
-#: resources/help.php:442
+#: resources/help.php:443
 msgid "Read Documentation"
 msgstr ""
 
-#: resources/help.php:469
+#: resources/help.php:470
 msgid "Step-by-step guides with screenshots and videos to help you get started quickly and make the most of every feature."
 msgstr ""
 
-#: resources/help.php:471
+#: resources/help.php:472
 msgid "Browse docs"
 msgstr ""
 
-#: resources/help.php:487
+#: resources/help.php:488
 msgid "Stuck with something? Open a support ticket, post in our Facebook group, or start a live chat for urgent issues."
 msgstr ""
 
-#: resources/help.php:489
+#: resources/help.php:490
 msgid "Contact support"
 msgstr ""
 
-#: resources/help.php:502
+#: resources/help.php:503
 msgid "Leave a Review"
 msgstr ""
 
-#: resources/help.php:503
+#: resources/help.php:504
 msgid "Enjoying Food Menu? Your 5-star review helps us reach more restaurant owners and motivates us to keep improving."
 msgstr ""
 
-#: resources/help.php:505
+#: resources/help.php:506
 msgid "Write a review"
 msgstr ""
 
-#: resources/help.php:519
+#: resources/help.php:520
 msgid "Unlock Pro Features"
 msgstr ""
 
-#: resources/help.php:520
+#: resources/help.php:521
 msgid "Take your restaurant website to the next level with powerful tools built for real-world food businesses."
 msgstr ""
 
-#: resources/help.php:526
-#: resources/help.php:615
+#: resources/help.php:527
+#: resources/help.php:616
 #: src/settings/App.jsx:730
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: resources/help.php:532
+#: resources/help.php:533
 msgid "11 layouts with Grid, Masonry, Slider & Isotope"
 msgstr ""
 
-#: resources/help.php:533
+#: resources/help.php:534
 msgid "Online ordering system via WooCommerce"
 msgstr ""
 
-#: resources/help.php:534
+#: resources/help.php:535
 msgid "Pickup & delivery with weekly schedules"
 msgstr ""
 
-#: resources/help.php:535
+#: resources/help.php:536
 msgid "Product addons (global & per-product)"
 msgstr ""
 
-#: resources/help.php:536
+#: resources/help.php:537
 msgid "Visual table reservation system"
 msgstr ""
 
-#: resources/help.php:537
+#: resources/help.php:538
 msgid "Inventory management with reports"
 msgstr ""
 
-#: resources/help.php:538
+#: resources/help.php:539
 msgid "Kitchen monitor for live order tracking"
 msgstr ""
 
-#: resources/help.php:539
+#: resources/help.php:540
 msgid "QR code table ordering for dine-in"
 msgstr ""
 
-#: resources/help.php:540
+#: resources/help.php:541
 msgid "POS printing (order, kitchen & delivery slips)"
 msgstr ""
 
-#: resources/help.php:541
+#: resources/help.php:542
 msgid "Custom order statuses with email notifications"
 msgstr ""
 
-#: resources/help.php:542
+#: resources/help.php:543
 msgid "Ajax tipping on cart & checkout"
 msgstr ""
 
-#: resources/help.php:543
+#: resources/help.php:544
 msgid "Discount rules per product & category"
 msgstr ""
 
-#: resources/help.php:544
+#: resources/help.php:545
 msgid "Special menu with time-based variations"
 msgstr ""
 
-#: resources/help.php:545
+#: resources/help.php:546
 msgid "Front-end staff dashboard"
 msgstr ""
 
-#: resources/help.php:546
+#: resources/help.php:547
 msgid "Menu item popup with full details"
 msgstr ""
 
-#: resources/help.php:547
+#: resources/help.php:548
 msgid "Food location-based filtering"
 msgstr ""
 
-#: resources/help.php:548
+#: resources/help.php:549
 msgid "AJAX pagination (load more & infinite scroll)"
 msgstr ""
 
-#: resources/help.php:549
+#: resources/help.php:550
 msgid "Full text & color customization controls"
 msgstr ""
 
-#: resources/help.php:566
+#: resources/help.php:567
 msgid "Loved by Restaurant Owners"
 msgstr ""
 
-#: resources/help.php:567
+#: resources/help.php:568
 msgid "See what our users have to say about Food Menu."
 msgstr ""
 
-#: resources/help.php:571
+#: resources/help.php:572
 msgid "I love this plugin. After trying few other menu plugins I must say this is so far the best one. I bought the Pro version and I can enjoy a great variety of layouts and an infinite combination of styles and settings. Technical support is fast and reliable, and replied me during weekend hours. I feel 5 stars aren't enough to express how much I am satisfied with this plugin."
 msgstr ""
 
-#: resources/help.php:587
+#: resources/help.php:588
 msgid "This plugin works like a charm, fully responsive without any js clash. Plugin functionality was clashing at one or two places with my theme but the author provided quick support and resolved all issues within a few minutes and updated the newer version. I am very thankful and highly obliged to the author for the help."
 msgstr ""
 
-#: resources/help.php:608
+#: resources/help.php:609
 msgid "Ready to grow your restaurant business?"
 msgstr ""
 
-#: resources/help.php:609
+#: resources/help.php:610
 msgid "Join thousands of restaurant owners using Food Menu Pro to manage orders, menus, and more."
 msgstr ""
 
-#: resources/help.php:631
+#: resources/help.php:632
 msgid "Join Our Community"
 msgstr ""
 
-#: resources/help.php:632
+#: resources/help.php:633
 msgid "Connect with other Food Menu users, share tips, ask questions, and get the latest plugin news in our Facebook group."
 msgstr ""
 
-#: resources/help.php:634
+#: resources/help.php:635
 msgid "Join Facebook group"
 msgstr ""
 
-#: resources/help.php:647
+#: resources/help.php:648
 msgid "Live Chat Support"
 msgstr ""
 
-#: resources/help.php:648
+#: resources/help.php:649
 msgid "For urgent issues, reach us directly via live chat on our website. Our team is ready to help you resolve any problem quickly."
 msgstr ""
 
-#: resources/help.php:650
+#: resources/help.php:651
 msgid "Start live chat"
 msgstr ""
 
-#: resources/metabox/layout.php:32
+#: resources/metabox/layout.php:33
 msgid "Pagination Settings"
 msgstr ""
 
@@ -3799,162 +3810,162 @@ msgstr ""
 msgid "Extra Styles"
 msgstr ""
 
-#: resources/settings.php:31
-#: src/settings/components/sections/GeneralSettings.jsx:39
+#: resources/settings.php:32
+#: src/settings/components/sections/GeneralSettings.jsx:41
 #: src/settings/components/sections/ReservationSettings.jsx:539
 #: src/settings/utils.js:35
 #: src/settings/utils.js:204
 msgid "General"
 msgstr ""
 
-#: resources/settings.php:37
+#: resources/settings.php:38
 msgid "Detail page settings"
 msgstr ""
 
-#: resources/settings.php:43
+#: resources/settings.php:44
 #: src/settings/components/sections/MiniCartSettings.jsx:31
 #: src/settings/utils.js:124
 #: src/settings/utils.js:293
 msgid "Mini Cart"
 msgstr ""
 
-#: resources/settings.php:58
+#: resources/settings.php:59
 msgid "Frontend Order and Inventory"
 msgstr ""
 
-#: resources/settings.php:94
+#: resources/settings.php:95
 #: src/settings/App.jsx:319
 msgid "Save Changes"
 msgstr ""
 
-#: resources/settings.php:110
+#: resources/settings.php:111
 msgid "Product Addon"
 msgstr ""
 
-#: resources/settings.php:114
+#: resources/settings.php:115
 #: src/settings/components/sections/SpecialMenuSettings.jsx:17
 msgid "Special Menu"
 msgstr ""
 
-#: resources/settings.php:115
+#: resources/settings.php:116
 msgid "More Features..."
 msgstr ""
 
-#: templates/archive-food-menu-cat.php:75
+#: templates/archive-food-menu-cat.php:76
 msgid "No food found."
 msgstr ""
 
-#: templates/elementor/grid-by-cat-free-1.php:98
-#: templates/elementor/grid-by-cat-free-2.php:98
-#: templates/elementor/grid-by-cat-free-3.php:98
-#: templates/elementor/grid-by-cat-free-4.php:100
-#: templates/elementor/layout-list-free-1.php:103
-#: templates/elementor/layout-list-free-2.php:97
-#: templates/elementor/layout-list-free-3.php:102
-#: templates/elementor/layout-list-free-4.php:96
+#: templates/elementor/grid-by-cat-free-1.php:99
+#: templates/elementor/grid-by-cat-free-2.php:99
+#: templates/elementor/grid-by-cat-free-3.php:99
+#: templates/elementor/grid-by-cat-free-4.php:101
+#: templates/elementor/layout-list-free-1.php:104
+#: templates/elementor/layout-list-free-2.php:98
+#: templates/elementor/layout-list-free-3.php:103
+#: templates/elementor/layout-list-free-4.php:97
 msgid "In Stock"
 msgstr ""
 
-#: templates/location/floating-button.php:22
+#: templates/location/floating-button.php:23
 msgid "Change"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:26
+#: templates/mini-cart/mini-cart.php:27
 msgid "Cart Item"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:26
+#: templates/mini-cart/mini-cart.php:27
 msgid "Shopping Cart"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:40
+#: templates/mini-cart/mini-cart.php:41
 msgid "Clear All"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:90
+#: templates/mini-cart/mini-cart.php:91
 msgid "Remove this item"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:95
+#: templates/mini-cart/mini-cart.php:96
 msgid "Remove"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:125
+#: templates/mini-cart/mini-cart.php:126
 #: src/settings/components/ui/AsyncSelect.jsx:224
 msgid "Loading..."
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:158
+#: templates/mini-cart/mini-cart.php:159
 msgid "Click Here"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:159
+#: templates/mini-cart/mini-cart.php:160
 msgid "Apply Coupon"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:168
+#: templates/mini-cart/mini-cart.php:169
 msgid "Apply"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:180
 #: templates/mini-cart/mini-cart.php:181
+#: templates/mini-cart/mini-cart.php:182
 msgid "Subtotal"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:13
+#: templates/reservation/cancel-form.php:18
 msgid "Cancel Reservation"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:14
+#: templates/reservation/cancel-form.php:19
 msgid "Enter your booking details to request a cancellation."
 msgstr ""
 
-#: templates/reservation/cancel-form.php:30
+#: templates/reservation/cancel-form.php:35
 msgid "Enter booking ID"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:39
+#: templates/reservation/cancel-form.php:44
 msgid "Enter email"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:48
+#: templates/reservation/cancel-form.php:53
 msgid "Enter phone"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:55
+#: templates/reservation/cancel-form.php:60
 msgid "Enter the reason"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:59
-#: templates/reservation/reservation-form.php:99
+#: templates/reservation/cancel-form.php:64
+#: templates/reservation/reservation-form.php:103
 msgid "Request Cancel"
 msgstr ""
 
-#: templates/reservation/cancel-form.php:60
+#: templates/reservation/cancel-form.php:65
 msgid "Cancel"
 msgstr ""
 
-#: templates/reservation/reservation-form.php:18
+#: templates/reservation/reservation-form.php:22
 msgid "Booking date"
 msgstr ""
 
-#: templates/reservation/reservation-form.php:68
+#: templates/reservation/reservation-form.php:72
 msgid "Enter your name"
 msgstr ""
 
-#: templates/reservation/reservation-form.php:77
+#: templates/reservation/reservation-form.php:81
 msgid "Enter your email"
 msgstr ""
 
-#: templates/reservation/reservation-form.php:85
+#: templates/reservation/reservation-form.php:89
 msgid "Enter your phone"
 msgstr ""
 
-#: templates/reservation/reservation-form.php:92
+#: templates/reservation/reservation-form.php:96
 msgid "Enter your message"
 msgstr ""
 
-#: templates/reservation/reservation-form.php:96
+#: templates/reservation/reservation-form.php:100
 msgid "Request Booking"
 msgstr ""
 
@@ -4596,183 +4607,183 @@ msgstr ""
 msgid "Floating Button Position"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:22
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:21
 #: src/settings/utils.js:196
 #: src/settings/utils.js:325
 msgid "Front-End Dashboard"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:25
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:24
 msgid "Enable a front-end dashboard for staff to manage orders, inventory, and more without accessing the WordPress admin."
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:30
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:29
 msgid "Enable Front-End Dashboard"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:32
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:31
 msgid "Allow authorized users to access the dashboard from the front-end."
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:46
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:45
 msgid "Choose Dashboard Page"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:48
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:47
 msgid "Select the page where the front-end dashboard will be displayed."
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:57
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:56
 msgid "Select a page..."
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:58
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:57
 #: src/settings/components/sections/SpecialMenuSettings.jsx:249
 msgid "Search pages..."
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:69
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:68
 msgid "View the dashboard"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:77
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:76
 msgid "Header/Footer Visibility"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:79
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:78
 msgid "Show or hide the theme header and footer on the dashboard page."
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:95
-msgid "Dashboard Logo"
-msgstr ""
-
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:97
-msgid "Upload a custom logo for the front-end dashboard sidebar. If not set, the default plugin icon will be used."
-msgstr ""
-
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:103
-msgid "Upload Logo"
-msgstr ""
-
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:108
-msgid "Dashboard Logo Height"
-msgstr ""
-
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:110
-msgid "Set the height of the dashboard sidebar logo in pixels. Range: 20–100."
-msgstr ""
-
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:124
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:94
 msgid "Auto-Refresh Interval"
 msgstr ""
 
-#: src/settings/components/sections/FrontendDashboardSettings.jsx:126
+#: src/settings/components/sections/FrontendDashboardSettings.jsx:96
 msgid "Controls how often (in seconds) the dashboard checks for new orders. Applies to the Orders list and Kitchen Monitor. Range: 30–3600 seconds."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:11
+#: src/settings/components/sections/GeneralSettings.jsx:13
 msgid "Food Menu Post Type"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:12
+#: src/settings/components/sections/GeneralSettings.jsx:14
 msgid "Display-only menu. Great for static restaurant menus."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:15
+#: src/settings/components/sections/GeneralSettings.jsx:17
 msgid "Display static food items"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:21
+#: src/settings/components/sections/GeneralSettings.jsx:23
 msgid "Full WooCommerce integration with cart & checkout."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:25
+#: src/settings/components/sections/GeneralSettings.jsx:27
 msgid "WooCommerce full stack"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:42
+#: src/settings/components/sections/GeneralSettings.jsx:44
 msgid "Configure the basic settings for your food menu."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:70
+#: src/settings/components/sections/GeneralSettings.jsx:72
 msgid "Requires WooCommerce plugin to be active"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:126
+#: src/settings/components/sections/GeneralSettings.jsx:128
 msgid "The Food Menu post type supports menu display only and does not include online ordering. Online ordering requires WooCommerce, with advanced features available in the Pro version."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:134
+#: src/settings/components/sections/GeneralSettings.jsx:136
 msgid "No matter which Food Menu Type you choose, both types can be used in the shortcode builder and Elementor. However, some features may be locked depending on the type, so choose the Food Menu Type that best fits your needs."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:141
+#: src/settings/components/sections/GeneralSettings.jsx:143
 msgid "Food Menu Slug"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:143
+#: src/settings/components/sections/GeneralSettings.jsx:145
 msgid "This field is required, max 20 characters, no uppercase or spaces. After changes, re-save permalinks (Dashboard → Settings → Permalinks → Save)."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:158
+#: src/settings/components/sections/GeneralSettings.jsx:160
 msgid "Enable AJAX Add to Cart"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:180
+#: src/settings/components/sections/GeneralSettings.jsx:182
 msgid "Currency Settings"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:183
+#: src/settings/components/sections/GeneralSettings.jsx:185
 msgid "Configure currency display options."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:198
+#: src/settings/components/sections/GeneralSettings.jsx:200
 msgid "Select currency..."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:199
+#: src/settings/components/sections/GeneralSettings.jsx:201
 msgid "Search currencies..."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:215
+#: src/settings/components/sections/GeneralSettings.jsx:217
 msgid "Left ($99)"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:216
+#: src/settings/components/sections/GeneralSettings.jsx:218
 msgid "Right (99$)"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:223
+#: src/settings/components/sections/GeneralSettings.jsx:225
 msgid "Thousand Separator"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:241
+#: src/settings/components/sections/GeneralSettings.jsx:243
 msgid "Decimal Separator"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:259
+#: src/settings/components/sections/GeneralSettings.jsx:261
 msgid "Number of Decimals"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:302
+#: src/settings/components/sections/GeneralSettings.jsx:304
 msgid "Additional Options"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:305
+#: src/settings/components/sections/GeneralSettings.jsx:307
 msgid "Extra configuration options for your food menu."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:309
+#: src/settings/components/sections/GeneralSettings.jsx:311
 msgid "Enable Preloader"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:320
+#: src/settings/components/sections/GeneralSettings.jsx:322
 msgid "Primary Color"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:322
+#: src/settings/components/sections/GeneralSettings.jsx:324
 msgid "Main accent color for the dashboard (buttons, active states, links)."
+msgstr ""
+
+#: src/settings/components/sections/GeneralSettings.jsx:334
+msgid "Company Logo"
+msgstr ""
+
+#: src/settings/components/sections/GeneralSettings.jsx:336
+msgid "Upload a custom logo used across the plugin (front-end dashboard sidebar, etc.). If not set, the default plugin icon will be used."
+msgstr ""
+
+#: src/settings/components/sections/GeneralSettings.jsx:342
+msgid "Upload Logo"
+msgstr ""
+
+#: src/settings/components/sections/GeneralSettings.jsx:347
+msgid "Company Logo Height"
+msgstr ""
+
+#: src/settings/components/sections/GeneralSettings.jsx:349
+msgid "Set the height of the logo in pixels. Range: 20–100."
 msgstr ""
 
 #: src/settings/components/sections/InventorySettings.jsx:21
@@ -5560,12 +5571,40 @@ msgstr ""
 msgid "Delivery Driver Slip"
 msgstr ""
 
-#: src/settings/components/sections/PosPrintingSettings.jsx:73
+#: src/settings/components/sections/PosPrintingSettings.jsx:69
+msgid "Receipt Slip"
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:74
 msgid "Slip Footer Text"
 msgstr ""
 
-#: src/settings/components/sections/PosPrintingSettings.jsx:89
+#: src/settings/components/sections/PosPrintingSettings.jsx:90
 msgid "Thank you for your order!"
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:96
+msgid "Store Phone"
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:98
+msgid "Telephone number shown on the Receipt slip."
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:112
+msgid "Store Address"
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:114
+msgid "Physical address shown on the Receipt slip. Leave empty to use the WooCommerce store address."
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:128
+msgid "Manual tip line on receipt"
+msgstr ""
+
+#: src/settings/components/sections/PosPrintingSettings.jsx:130
+msgid "When an order has no tip, print blank dotted lines for Tip and Total on the Receipt slip so customers can add a tip and final amount by hand."
 msgstr ""
 
 #: src/settings/components/sections/ProductAddons.jsx:17

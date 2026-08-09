@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Black Friday Notice Class.
  *
@@ -114,7 +115,7 @@ class BlackFriday {
 
                 <div class="notice notice-info is-dismissible" data-rtfmdismissable="rtfm_ny_2023" style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
                     <img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TLPFoodMenu()->assets_url() ) . 'images/foodmenu.png'; ?>" width="74px" height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
-                    <h3 style="margin:0;"><?php echo sprintf( '%s Black Friday - Up to <span style="color:#e60000;font-weight: 700;" class="red-color">%s</span> Sale 2025!!', esc_html( $plugin_name ), $discount ); ?></h3>
+                    <h3 style="margin:0;"><?php echo sprintf( '%s Black Friday - Up to <span style="color:#e60000;font-weight: 700;" class="red-color">%s</span> Sale 2025!!', esc_html( $plugin_name ), esc_html( $discount ) ); ?></h3>
                     <p style="margin:0 0 2px;"><?php echo sprintf( '🚀 Exciting News: %s Black Friday sale is now live!', esc_html( $plugin_name ) ); ?>
                         Get the plugin today and enjoy discounts up to <b> 40%.</b>
                     </p>

@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Helpers class.
  *
@@ -596,6 +597,106 @@ class Fns {
 		}
 
 		return $terms;
+	}
+
+	/**
+	 * Get ordered category term IDs for an Isotope layout, matching the exact
+	 * order the filter-bar buttons render in (menu order via the `order`/`_order`
+	 * term meta, same query the buttons use).
+	 *
+	 * @param string $taxonomy   Category taxonomy ('product_cat' or 'food-menu-cat').
+	 * @param array  $cats       Selected category IDs to restrict to (empty = all).
+	 * @param bool   $hide_empty Whether to exclude empty categories.
+	 *
+	 * @return int[] Ordered term IDs.
+	 */
+	public static function get_isotope_ordered_term_ids( $taxonomy, array $cats = [], $hide_empty = false ) {
+		$meta_key = ( 'product_cat' === $taxonomy ) ? 'order' : '_order';
+
+		$args = [
+			'taxonomy'   => $taxonomy,
+			'hide_empty' => (bool) $hide_empty,
+			'orderby'    => 'meta_value_num',
+			'order'      => 'ASC',
+			'fields'     => 'ids',
+			//phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+			'meta_query' => [
+				'relation' => 'OR',
+				[
+					'key'     => $meta_key,
+					'compare' => 'NOT EXISTS',
+				],
+				[
+					'key'  => $meta_key,
+					'type' => 'NUMERIC',
+				],
+			],
+		];
+
+		if ( ! empty( $cats ) ) {
+			$args['include'] = array_map( 'intval', (array) $cats );
+		}
+
+		$terms = get_terms( $args );
+
+		return ( is_array( $terms ) && empty( $terms['errors'] ) ) ? array_map( 'intval', $terms ) : [];
+	}
+
+	/**
+	 * Reorder a list of posts so they are grouped by the given ordered category
+	 * term IDs. Each post is placed under the first ordered term it belongs to
+	 * (so an item in multiple categories appears once, in its first category's
+	 * group). Order within a group is preserved (stable), so the active "Order By"
+	 * still applies inside each category. Posts matching none of the terms keep
+	 * their original order and go last.
+	 *
+	 * Uses get_the_terms() which reads the object-term cache primed by WP_Query,
+	 * so this adds no extra per-post DB queries.
+	 *
+	 * @param array  $posts            Array of WP_Post objects (e.g. $query->posts).
+	 * @param int[]  $ordered_term_ids Ordered category term IDs.
+	 * @param string $taxonomy         Category taxonomy.
+	 *
+	 * @return array Reordered posts.
+	 */
+	public static function group_posts_by_term_order( array $posts, array $ordered_term_ids, $taxonomy ) {
+		if ( empty( $posts ) || empty( $ordered_term_ids ) ) {
+			return $posts;
+		}
+
+		$ordered_term_ids = array_map( 'intval', $ordered_term_ids );
+		$buckets          = array_fill_keys( $ordered_term_ids, [] );
+		$leftover         = [];
+
+		foreach ( $posts as $post ) {
+			$terms    = get_the_terms( $post->ID, $taxonomy );
+			$term_ids = ( $terms && ! is_wp_error( $terms ) ) ? array_map( 'intval', wp_list_pluck( $terms, 'term_id' ) ) : [];
+
+			$placed = false;
+			foreach ( $ordered_term_ids as $tid ) {
+				if ( in_array( $tid, $term_ids, true ) ) {
+					$buckets[ $tid ][] = $post;
+					$placed            = true;
+					break;
+				}
+			}
+
+			if ( ! $placed ) {
+				$leftover[] = $post;
+			}
+		}
+
+		$result = [];
+		foreach ( $buckets as $group ) {
+			foreach ( $group as $post ) {
+				$result[] = $post;
+			}
+		}
+		foreach ( $leftover as $post ) {
+			$result[] = $post;
+		}
+
+		return $result;
 	}
 
 	/**
@@ -1812,7 +1913,7 @@ class Fns {
 
 	public static function is_black_friday_active() {
 		// Black Friday valid between November 10 – Jan 5
-		$currentYear = date( 'Y' );
+		$currentYear = gmdate( 'Y' );
 		$now         = current_time( 'timestamp', true );
 		$start       = strtotime( "{$currentYear}-11-10" );
 		$end         = strtotime( ( $currentYear + 1 ) . '-01-06' );
@@ -2357,7 +2458,7 @@ class Fns {
     </tr>
     <tr>
       <td style="vertical-align: top;padding: 20px; text-align: center; font-size: 12px; color: #888888;">
-        &copy; ' . date( 'Y' ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '. All rights reserved.
+        &copy; ' . gmdate( 'Y' ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '. All rights reserved.
       </td>
     </tr>
   </table>

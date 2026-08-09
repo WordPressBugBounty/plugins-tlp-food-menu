@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Frontend Shortcode Class.
  *
@@ -112,6 +113,15 @@ class Shortcode {
 		$isCarousel = preg_match( '/carousel/', $layout );
 		$isCat      = preg_match( '/grid-by-cat/', $layout );
 
+		// "Group items by category" (Isotope "Show All" ordering). When enabled we
+		// force the Even grid style, because Masonry positions items absolutely by
+		// height and would break the category grouping order.
+		$groupByCat = $isIsotope && ! empty( $scMeta['fmp_isotope_group_by_cat'][0] );
+		if ( $groupByCat ) {
+			$gridType          = 'even';
+			$metas['gridType'] = 'even';
+		}
+
 		$layout_type   = $metas['layout_type'];
 		$wrapper_class = "fm-$layout_type-layout-wrap";
 
@@ -175,6 +185,21 @@ class Shortcode {
 			$html .= '</div>';
 		} else {
 			$fmpQuery = new WP_Query( $args );
+
+			// Group Isotope items by category display order (matches the filter-bar order).
+			if ( $groupByCat && ! empty( $fmpQuery->posts ) ) {
+				$source         = ! empty( $scMeta['fmp_source'][0] ) ? $scMeta['fmp_source'][0] : 'food-menu';
+				$groupTaxonomy  = ( 'product' === $source ) ? 'product_cat' : TLPFoodMenu()->taxonomies['category'];
+				$groupCats      = isset( $scMeta['fmp_categories'] ) ? array_filter( (array) $scMeta['fmp_categories'] ) : [];
+				$groupHideEmpty = ! empty( $scMeta['fmp_isotope_cat_hide_empty'][0] );
+
+				$orderedTermIds = Fns::get_isotope_ordered_term_ids( $groupTaxonomy, $groupCats, $groupHideEmpty );
+
+				if ( ! empty( $orderedTermIds ) ) {
+					$fmpQuery->posts      = Fns::group_posts_by_term_order( $fmpQuery->posts, $orderedTermIds, $groupTaxonomy );
+					$fmpQuery->post_count = count( $fmpQuery->posts );
+				}
+			}
 
 			if ( $fmpQuery->have_posts() ) {
 				$html .= '<div data-title="' . esc_html__( 'Loading ...', 'tlp-food-menu' ) . '" class="' . esc_attr( $rowClass ) . '">';

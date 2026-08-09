@@ -1,4 +1,5 @@
 <?php
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals -- Established plugin: public namespace, hook names, functions and theme-overridable template variables must stay unchanged for backward compatibility.
 /**
  * Main initialization class.
  *
@@ -169,6 +170,7 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		 */
 		public function initialize() {
 			\do_action( 'rtfm_init' );
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only debug bypass flag; no form data processed.
 			if ( isset( $_GET['rtcl-debug-on'] ) ) {
 				return;
 			}
@@ -190,7 +192,9 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 
 			unload_textdomain( 'tlp-food-menu' );
 			load_textdomain( 'tlp-food-menu', WP_LANG_DIR . '/tlp-food-menu/tlp-food-menu-' . $locale . '.mo' );
-			load_plugin_textdomain( 'tlp-food-menu', false, TLP_FOOD_MENU_LANGUAGE_PATH );
+			// Manually load bundled/standard translations (replaces the discouraged load_plugin_textdomain()).
+			load_textdomain( 'tlp-food-menu', WP_LANG_DIR . '/plugins/tlp-food-menu-' . $locale . '.mo' );
+			load_textdomain( 'tlp-food-menu', WP_PLUGIN_DIR . '/' . TLP_FOOD_MENU_LANGUAGE_PATH . '/tlp-food-menu-' . $locale . '.mo' );
 		}
 
 		/**

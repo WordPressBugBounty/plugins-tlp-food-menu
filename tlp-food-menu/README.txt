@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 6.0.1
+Stable tag: 6.0.2
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -258,10 +258,11 @@ Major update. Table Reservation, Tips, Special Menu, and Product Discount are no
 
 == Changelog ==
 
-= 6.0.1 ( Jul 15, 2026 ) =
-Fixed: On widgets page WC_Cart not found for mini-cart
-Updated: Settings and a few CSS updated
-Added: Company logo option added in Settings
+= 6.0.2 ( Aug 09, 2026 ) =
+Security: Hardened the reservation status-change AJAX action to prevent unauthorized access. Requires authentication and reservation edit permission. Reported by Vaibhav Narkhede via WPScan (Automattic).
+Fixed: Mini-cart "WC_Cart not found" notice on the Widgets screen.
+Added: Company logo option in Settings.
+Updated: Settings UI and minor CSS refinements.
 
 = 6.0.0 ( Jun 24, 2026 ) =
 * New: React-based settings panel with a redesigned interface.
