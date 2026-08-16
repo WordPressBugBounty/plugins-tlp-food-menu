@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 6.0.2
+Stable tag: 6.0.3
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -257,6 +257,9 @@ If you like Food Menu, consider our other WordPress plugins:
 Major update. Table Reservation, Tips, Special Menu, and Product Discount are now free, plus a new React settings panel and a new Pro operations suite (QR ordering, kitchen monitor, POS printing, SMS/WhatsApp, inventory, and more). Back up before updating.
 
 == Changelog ==
+
+= 6.0.3 =
+Fixed: Mini cart and floating location button were displayed on the front-end when Food Menu Type was set to Food Menu Post Type.
 
 = 6.0.2 ( Aug 09, 2026 ) =
 Security: Hardened the reservation status-change AJAX action to prevent unauthorized access. Requires authentication and reservation edit permission. Reported by Vaibhav Narkhede via WPScan (Automattic).

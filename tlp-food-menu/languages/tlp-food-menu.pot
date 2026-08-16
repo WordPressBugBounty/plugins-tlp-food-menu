@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: tlp-food-menu 6.0.2\n"
+"Project-Id-Version: tlp-food-menu 6.0.3\n"
 "Report-Msgid-Bugs-To: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-09T07:15:01+00:00\n"
+"POT-Creation-Date: 2026-08-16T07:33:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: tlp-food-menu\n"
@@ -40,7 +40,7 @@ msgid "https://radiustheme.com/"
 msgstr ""
 
 #: app/Blocks/CheckoutLocation.php:98
-#: app/Controllers/Frontend/FoodLocation.php:116
+#: app/Controllers/Frontend/FoodLocation.php:123
 #: src/js/checkout-location/index.js:30
 msgid "Food Order Location"
 msgstr ""
@@ -144,8 +144,8 @@ msgid "No posts found."
 msgstr ""
 
 #: app/Controllers/Admin/Ajax/Preview.php:378
-#: app/Controllers/Admin/Ajax/Settings.php:141
-#: app/Controllers/Admin/Ajax/Settings.php:176
+#: app/Controllers/Admin/Ajax/Settings.php:143
+#: app/Controllers/Admin/Ajax/Settings.php:178
 msgid "Security Error !!"
 msgstr ""
 
@@ -154,8 +154,8 @@ msgstr ""
 msgid "No categories found"
 msgstr ""
 
-#: app/Controllers/Admin/Ajax/Settings.php:138
-#: app/Controllers/Admin/Ajax/Settings.php:236
+#: app/Controllers/Admin/Ajax/Settings.php:140
+#: app/Controllers/Admin/Ajax/Settings.php:238
 msgid "Settings successfully updated"
 msgstr ""
 
@@ -187,8 +187,8 @@ msgid "Update Location"
 msgstr ""
 
 #: app/Controllers/Admin/Metabox/OrderInfoMetabox.php:120
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:185
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:249
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:187
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:232
 msgid "— None —"
 msgstr ""
 
@@ -472,21 +472,21 @@ msgid "Isotope Filters Layouts"
 msgstr ""
 
 #. translators: %s: comma-separated list of removed product names
-#: app/Controllers/Frontend/FoodLocation.php:257
+#: app/Controllers/Frontend/FoodLocation.php:264
 #, php-format
 msgid "The following items were removed from your cart because they are not available at your selected location: %s"
 msgstr ""
 
-#: app/Controllers/Frontend/FoodLocation.php:299
+#: app/Controllers/Frontend/FoodLocation.php:306
 #: app/Helpers/Options.php:2557
 msgid "Select Location"
 msgstr ""
 
-#: app/Controllers/Frontend/FoodLocation.php:319
+#: app/Controllers/Frontend/FoodLocation.php:326
 msgid "Save"
 msgstr ""
 
-#: app/Controllers/Frontend/FoodLocation.php:320
+#: app/Controllers/Frontend/FoodLocation.php:327
 msgid "Save Your Preferred Location"
 msgstr ""
 
@@ -687,17 +687,17 @@ msgstr ""
 msgid "Please select thme"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:168
+#: app/Controllers/MiniCart/MiniCart.php:170
 #: app/Controllers/MiniCart/MiniCartHooks.php:125
 msgid "Item"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:168
+#: app/Controllers/MiniCart/MiniCart.php:170
 #: app/Controllers/MiniCart/MiniCartHooks.php:125
 msgid "Items"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCart.php:222
+#: app/Controllers/MiniCart/MiniCart.php:224
 msgid "Loadding..."
 msgstr ""
 
@@ -1926,7 +1926,7 @@ msgstr ""
 
 #: app/Helpers/Fns.php:2110
 #: src/admin-panel/components/dashboard/FoodOrders.jsx:10
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:26
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:28
 msgid "Completed"
 msgstr ""
 
@@ -2068,7 +2068,7 @@ msgstr ""
 #: app/Helpers/Options.php:214
 #: app/Helpers/Options.php:2417
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:12
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:141
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:143
 #: src/settings/components/sections/OrderStatusesSettings.jsx:14
 #: src/settings/components/sections/OrderStatusesSettings.jsx:21
 #: src/settings/utils.js:100
@@ -2100,7 +2100,7 @@ msgstr ""
 #: app/Helpers/Options.php:760
 #: app/Helpers/Options.php:2601
 #: src/settings/components/sections/FrontendDashboardSettings.jsx:88
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:136
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:138
 msgid "Enable"
 msgstr ""
 
@@ -2686,9 +2686,7 @@ msgstr ""
 #: app/Helpers/Options.php:2412
 #: resources/settings.php:112
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:7
-#: src/settings/components/sections/PickupDeliverySettings.jsx:436
-#: src/settings/utils.js:152
-#: src/settings/utils.js:305
+#: src/settings/components/sections/PickupDeliverySettings.jsx:657
 msgid "Pickup & Delivery"
 msgstr ""
 
@@ -3887,6 +3885,7 @@ msgid "Remove this item"
 msgstr ""
 
 #: templates/mini-cart/mini-cart.php:96
+#: src/settings/components/ui/AudioUploader.jsx:85
 msgid "Remove"
 msgstr ""
 
@@ -4287,63 +4286,63 @@ msgstr ""
 msgid "Show Your Location"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:143
-msgid "Show Pickup & Delivery"
+#: src/settings/components/sections/CheckoutSettings.jsx:144
+msgid "Show Pickup, Delivery & Dine In"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:145
-msgid "Requires Pickup & Delivery to be enabled."
+#: src/settings/components/sections/CheckoutSettings.jsx:146
+msgid "Requires Pickup, Delivery or Dine In to be enabled."
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:164
+#: src/settings/components/sections/CheckoutSettings.jsx:165
 msgid "Show Tips Field"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:166
+#: src/settings/components/sections/CheckoutSettings.jsx:167
 msgid "Requires Tips to be enabled."
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:181
+#: src/settings/components/sections/CheckoutSettings.jsx:182
 msgid "Show Order Notes"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:199
+#: src/settings/components/sections/CheckoutSettings.jsx:200
 msgid "Show Shipping Address"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:201
+#: src/settings/components/sections/CheckoutSettings.jsx:202
 msgid "Show 'Ship to a different address' section."
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:221
+#: src/settings/components/sections/CheckoutSettings.jsx:222
 msgid "Checkout Heading"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:229
+#: src/settings/components/sections/CheckoutSettings.jsx:230
 msgid "Checkout"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:242
+#: src/settings/components/sections/CheckoutSettings.jsx:243
 msgid "Place Order Button Text"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:250
+#: src/settings/components/sections/CheckoutSettings.jsx:251
 msgid "Place Order"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:269
+#: src/settings/components/sections/CheckoutSettings.jsx:270
 msgid "Checkout Form Fields"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:272
+#: src/settings/components/sections/CheckoutSettings.jsx:273
 msgid "Applies to both billing and shipping address fields."
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:344
+#: src/settings/components/sections/CheckoutSettings.jsx:345
 msgid "Placeholder"
 msgstr ""
 
-#: src/settings/components/sections/CheckoutSettings.jsx:367
+#: src/settings/components/sections/CheckoutSettings.jsx:368
 #: src/settings/components/sections/OrderCustomFieldSettings.jsx:203
 msgid "Required"
 msgstr ""
@@ -4814,168 +4813,289 @@ msgstr ""
 msgid "Number of orders to display per page in the inventory dashboard."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:11
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:13
 msgid "Order Received"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:12
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:14
 msgid "A new order lands on the monitor — kitchen staff acknowledges it."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:16
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:122
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:18
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:124
 msgid "Prepping"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:17
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:19
 msgid "The kitchen has started preparing the order."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:21
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:122
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:23
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:124
 msgid "Ready"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:22
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:24
 msgid "Food is ready to be picked up or served to the customer."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:27
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:29
 msgid "Order handed off — auto-hidden from the active monitor view."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:34
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:52
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:36
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:54
 #: src/settings/utils.js:222
 #: src/settings/utils.js:337
 msgid "Kitchen Monitor"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:55
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:57
 msgid "A live kitchen display page for monitoring and managing incoming orders in real-time."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:59
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:61
 msgid "Enable Kitchen Monitor"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:81
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:83
 msgid "How the Kitchen Monitor works"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:84
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:86
 msgid "Orders flow through these stages on the kitchen display. Map each stage to a WooCommerce order status in the settings below — staff updates the status from the monitor as the order progresses."
 msgstr ""
 
 #. translators: %d: step number
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:98
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:100
 #, js-format
 msgid "Step %d"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:119
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:121
 msgid "Tip:"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:119
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:121
 msgid "Add steps 1–3 to"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:119
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:151
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:121
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:153
 msgid "Statuses to Display"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:119
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:121
 msgid "below, and pick step 4 as the"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:119
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:170
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:121
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:172
 msgid "Complete Order Status"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:119
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:121
 msgid "Completed orders are hidden from the active view but stay accessible through the status filter dropdown on the monitor."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:122
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:124
 msgid "Note:"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:122
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:124
 msgid "Stages like"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:122
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:124
 msgid "and"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:122
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:124
 msgid "aren't WooCommerce defaults."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:125
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:127
 msgid "Create them under"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:130
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:132
 msgid "Order Statuses"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:132
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:134
 msgid ", then return here to map them."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:143
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:145
 msgid "first to define your own stages."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:153
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:155
 msgid "Select which order statuses should appear on the kitchen monitor. Only these statuses will be shown as filter tabs and status change buttons. If empty, all statuses will be shown."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:165
-#: src/settings/components/sections/PickupDeliverySettings.jsx:174
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:167
+#: src/settings/components/sections/PickupDeliverySettings.jsx:194
 msgid "Search statuses..."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:172
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:174
 msgid "Orders with this status are considered complete and are hidden from the kitchen monitor by default. Staff can reveal them using the 'Show Completed' toggle on the monitor."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:195
-msgid "Default Sound Notification"
-msgstr ""
-
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:197
-msgid "Play a sound when new orders arrive. Kitchen staff can also toggle this on the monitor page."
-msgstr ""
-
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:215
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:198
 msgid "Pause Message"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:217
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:200
 msgid "Message displayed on checkout when orders are paused by kitchen staff."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:222
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:205
 msgid "We are currently not taking any orders. Please try again later."
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:234
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:217
 msgid "Extra Column"
 msgstr ""
 
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:236
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:219
 msgid "Choose any Order Custom Field (e.g. Table, Room, Floor) to display as an extra column in the kitchen monitor list. The column header will use the field's own label. Manage the available fields under Order Extra Fields."
 msgstr ""
 
 #. translators: %d: field number
-#: src/settings/components/sections/KitchenMonitorSettings.jsx:252
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:235
 #, js-format
 msgid "Field %d"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:249
+msgid "Sound Control"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:252
+msgid "A busy, noisy kitchen can miss a short chime. Upload your own alert and choose how long it keeps ringing. The alarm stops as soon as staff press Stop Alarm or change any order's status."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:258
+msgid "One tap is needed after the page loads"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:261
+msgid "Browsers block all sound until someone interacts with the page — the same rule that stops videos playing with sound on their own. It cannot be switched off from WordPress. After the Kitchen Monitor loads, the first tap anywhere on the screen arms the alert; it then rings on its own for every order until the page is reloaded."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:264
+msgid "For a permanent kitchen tablet:"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:265
+msgid "open the monitor once at the start of service, tap the screen, and leave it open — set the device to never sleep. To remove the tap entirely, run the browser with autoplay allowed (Chrome: the --autoplay-policy=no-user-gesture-required switch, or a kiosk browser app with an \"allow autoplay\" option)."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:270
+msgid "Default Sound Notification"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:272
+msgid "Play a sound when new orders arrive. Kitchen staff can also toggle this on the monitor page."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:292
+msgid "Allow Staff to Control Sound"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:294
+msgid "Show the Sound On/Off button on the Kitchen Monitor. Turn this off to hide it — the sound then follows the setting above and staff cannot mute an alert that exists so orders are not missed."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:309
+msgid "Alert Sound"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:311
+msgid "Use the built-in chime, or upload your own file."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:319
+msgid "Built-in chime (default)"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:320
+msgid "Custom uploaded sound"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:326
+msgid "Custom Sound File"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:328
+msgid "MP3, WAV or OGG. A long alert works best — it keeps ringing until someone accepts the order. If no file is selected, the built-in chime is used."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:339
+msgid "Repeat"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:341
+msgid "How long the alert keeps sounding for each new order."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:349
+msgid "Play once (default)"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:350
+msgid "Repeat a set number of times"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:351
+msgid "Keep ringing until an order is accepted"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:357
+msgid "Number of Repeats"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:359
+msgid "How many times the sound plays. Range: 1–100."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:367
+msgid "times"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:374
+msgid "Gap Between Repeats"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:376
+msgid "Seconds of silence between each play. Set 0 for a continuous loop."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:384
+msgid "seconds"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:391
+msgid "Stop Ringing After"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:393
+msgid "Safety limit in minutes, so a forgotten tablet does not ring all night. Set 0 to ring until an order is accepted, however long that takes."
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:401
+#: src/settings/components/sections/ReservationSettings.jsx:182
+msgid "minutes"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:407
+msgid "Volume"
+msgstr ""
+
+#: src/settings/components/sections/KitchenMonitorSettings.jsx:409
+msgid "Alert volume as a percentage. The tablet's own volume still applies on top of this."
 msgstr ""
 
 #: src/settings/components/sections/LicenseSettings.jsx:54
@@ -5367,11 +5487,11 @@ msgid "60 Minutes"
 msgstr ""
 
 #: src/settings/components/sections/PickupDeliverySettings.jsx:27
-msgid "Pickup and Delivery Settings"
+msgid "Pickup, Delivery & Dine In Settings"
 msgstr ""
 
 #: src/settings/components/sections/PickupDeliverySettings.jsx:30
-msgid "Configure Pickup and Delivery options and scheduling."
+msgid "Configure Pickup, Delivery and Dine In options and scheduling."
 msgstr ""
 
 #: src/settings/components/sections/PickupDeliverySettings.jsx:44
@@ -5434,113 +5554,199 @@ msgstr ""
 msgid "Set the default delivery order limit per time slot. Set to 0 for unlimited. You can override this per day in the Weekly Schedule below."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:162
+#: src/settings/components/sections/PickupDeliverySettings.jsx:163
+msgid "Max Orders Per Dine In Slot"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:165
+msgid "Set the default dine in order limit per time slot. Set to 0 for unlimited. You can override this per day in the Weekly Schedule below."
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:182
 msgid "Statuses That Count Toward Limits"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:163
+#: src/settings/components/sections/PickupDeliverySettings.jsx:183
 msgid "Select which order statuses count against slot limits. If none selected, defaults to Processing, On Hold, and Completed."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:192
+#: src/settings/components/sections/PickupDeliverySettings.jsx:212
 msgid "Pickup Settings"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:195
+#: src/settings/components/sections/PickupDeliverySettings.jsx:215
 msgid "Configure pickup options and scheduling."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:198
+#: src/settings/components/sections/PickupDeliverySettings.jsx:218
 msgid "Enable Pickup"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:211
+#: src/settings/components/sections/PickupDeliverySettings.jsx:231
 msgid "Enable Pickup Time"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:213
-#: src/settings/components/sections/PickupDeliverySettings.jsx:338
+#: src/settings/components/sections/PickupDeliverySettings.jsx:233
+#: src/settings/components/sections/PickupDeliverySettings.jsx:358
+#: src/settings/components/sections/PickupDeliverySettings.jsx:548
 msgid "When disabled, customers will only see the date picker. Enable to also show time slot selection at checkout."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:228
+#: src/settings/components/sections/PickupDeliverySettings.jsx:248
 msgid "Pickup Message"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:230
+#: src/settings/components/sections/PickupDeliverySettings.jsx:250
 msgid "Message shown to customers for pickup orders."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:240
+#: src/settings/components/sections/PickupDeliverySettings.jsx:260
 msgid "Your order will be ready for pickup"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:247
+#: src/settings/components/sections/PickupDeliverySettings.jsx:267
 msgid "Pickup Time Interval"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:273
+#: src/settings/components/sections/PickupDeliverySettings.jsx:293
 msgid "Pickup Weekly Schedule"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:274
+#: src/settings/components/sections/PickupDeliverySettings.jsx:294
 msgid "Set your pickup availability for each day."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:296
+#: src/settings/components/sections/PickupDeliverySettings.jsx:316
 msgid "Overwrite by Delivery schedule"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:316
+#: src/settings/components/sections/PickupDeliverySettings.jsx:336
 msgid "Delivery Settings"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:319
+#: src/settings/components/sections/PickupDeliverySettings.jsx:339
 msgid "Configure delivery options and scheduling."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:323
+#: src/settings/components/sections/PickupDeliverySettings.jsx:343
 msgid "Enable Delivery"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:336
+#: src/settings/components/sections/PickupDeliverySettings.jsx:356
 msgid "Enable Delivery Time"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:353
+#: src/settings/components/sections/PickupDeliverySettings.jsx:373
 msgid "Delivery Message"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:355
+#: src/settings/components/sections/PickupDeliverySettings.jsx:375
 msgid "Message shown to customers for delivery orders."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:365
+#: src/settings/components/sections/PickupDeliverySettings.jsx:385
 msgid "Your order will be delivered"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:372
+#: src/settings/components/sections/PickupDeliverySettings.jsx:392
 msgid "Delivery Time Interval"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:398
+#: src/settings/components/sections/PickupDeliverySettings.jsx:418
 msgid "Delivery Weekly Schedule"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:399
+#: src/settings/components/sections/PickupDeliverySettings.jsx:419
 msgid "Set your delivery availability for each day."
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:421
+#: src/settings/components/sections/PickupDeliverySettings.jsx:441
+#: src/settings/components/sections/PickupDeliverySettings.jsx:643
 msgid "Overwrite by Pickup schedule"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:445
+#: src/settings/components/sections/PickupDeliverySettings.jsx:478
+msgid "e.g. Table 5"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:487
+msgid "All locations"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:500
+msgid "Remove table"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:513
+msgid "Add table"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:526
+msgid "Dine In Settings"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:529
+msgid "Configure dine in options, tables and scheduling."
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:533
+msgid "Enable Dine In"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:546
+msgid "Enable Dine In Time"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:560
+msgid "Dine In Message"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:562
+msgid "Message shown to customers for dine in orders."
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:572
+msgid "Your table will be ready"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:577
+msgid "Tables"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:578
+msgid "Tables customers can choose at checkout. Leave the list empty to show a free-text table number field instead."
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:584
+msgid "Require Table Selection"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:586
+msgid "When enabled, customers must choose a table before placing a dine in order."
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:600
+msgid "Dine In Time Interval"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:623
+msgid "Dine In Weekly Schedule"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:624
+msgid "Set your dine in availability for each day."
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:666
+msgid "Delivery"
+msgstr ""
+
+#: src/settings/components/sections/PickupDeliverySettings.jsx:667
 msgid "Pickup"
 msgstr ""
 
-#: src/settings/components/sections/PickupDeliverySettings.jsx:446
-msgid "Delivery"
+#: src/settings/components/sections/PickupDeliverySettings.jsx:668
+msgid "Dine In"
 msgstr ""
 
 #: src/settings/components/sections/PosPrintingSettings.jsx:21
@@ -5672,10 +5878,6 @@ msgstr ""
 
 #: src/settings/components/sections/ReservationSettings.jsx:168
 msgid "Time slot interval in minutes."
-msgstr ""
-
-#: src/settings/components/sections/ReservationSettings.jsx:182
-msgid "minutes"
 msgstr ""
 
 #: src/settings/components/sections/ReservationSettings.jsx:187
@@ -6127,6 +6329,26 @@ msgstr ""
 msgid "Default message for WooCommerce core status changes. Custom order statuses use their own WhatsApp template. Leave empty to use default."
 msgstr ""
 
+#: src/settings/components/ui/AudioUploader.jsx:8
+msgid "Upload Sound"
+msgstr ""
+
+#: src/settings/components/ui/AudioUploader.jsx:19
+msgid "Select"
+msgstr ""
+
+#: src/settings/components/ui/AudioUploader.jsx:68
+msgid "Change Sound"
+msgstr ""
+
+#: src/settings/components/ui/AudioUploader.jsx:78
+msgid "Stop"
+msgstr ""
+
+#: src/settings/components/ui/AudioUploader.jsx:78
+msgid "Preview"
+msgstr ""
+
 #: src/settings/components/ui/ColorPicker.jsx:72
 msgid "Pick color"
 msgstr ""
@@ -6190,6 +6412,11 @@ msgstr ""
 
 #: src/settings/utils.js:138
 msgid "Checkout Settings"
+msgstr ""
+
+#: src/settings/utils.js:152
+#: src/settings/utils.js:305
+msgid "Pickup, Delivery & Dine In"
 msgstr ""
 
 #: src/settings/utils.js:158
@@ -6287,7 +6514,7 @@ msgid "Customize the checkout page layout and visible sections."
 msgstr ""
 
 #: src/settings/utils.js:306
-msgid "Configure pickup and delivery options, time slots and scheduling."
+msgid "Configure pickup, delivery and dine in options, time slots and scheduling."
 msgstr ""
 
 #: src/settings/utils.js:310

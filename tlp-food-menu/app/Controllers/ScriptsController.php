@@ -275,6 +275,28 @@ class ScriptsController {
 
 			$current_user = wp_get_current_user();
 
+			// Food locations for settings that can be scoped per branch (e.g. the
+			// Dine In table list). The taxonomy is only registered when the
+			// multi-location option is on, so guard before querying.
+			$food_locations = [];
+			if ( taxonomy_exists( 'tpl-food-location' ) ) {
+				$location_terms = get_terms(
+					[
+						'taxonomy'   => 'tpl-food-location',
+						'hide_empty' => false,
+					]
+				);
+
+				if ( ! is_wp_error( $location_terms ) ) {
+					foreach ( $location_terms as $location_term ) {
+						$food_locations[] = [
+							'value' => $location_term->term_id,
+							'label' => $location_term->name,
+						];
+					}
+				}
+			}
+
 			wp_localize_script(
 				'fm-admin-settings',
 				'fmpSettings',
@@ -295,6 +317,7 @@ class ScriptsController {
 					'timeFormat'           => get_option( 'time_format', 'g:i a' ),
 					'slotCountingStatuses' => $slot_status_options,
 					'allStatuses'          => $all_statuses,
+					'foodLocations'        => $food_locations,
 					'availableRoles'       => $available_roles,
 					'siteUrl'              => esc_url( home_url() ),
 					'adminEmail'           => sanitize_email( get_option( 'admin_email', '' ) ),

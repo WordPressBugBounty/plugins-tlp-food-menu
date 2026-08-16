@@ -51,6 +51,13 @@ class FoodLocation {
 			return;
 		}
 
+		// Ordering-only feature — same gate as Tip / Special Menu / Discount.
+		// On the Food Menu Post Type there is no cart/checkout to filter, so
+		// neither the popup nor the floating button should render.
+		if ( 'online_ordering' !== ( $this->settings['fm_food_menu_type'] ?? 'food_menu_post' ) ) {
+			return;
+		}
+
 		add_filter( 'rt_fm_sc_query_args', [ $this, 'filterByLocation' ], 10, 2 );
 		add_action( 'woocommerce_product_query', [ $this, 'filterShopByLocation' ] );
 

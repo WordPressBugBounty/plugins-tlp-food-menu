@@ -123,7 +123,9 @@ class Settings {
 			$preserve_keys = [
 				'new_fmp_pickup_weekly_schedule',
 				'new_fmp_delivery_weekly_schedule',
+				'new_fmp_dinein_weekly_schedule',
 				'new_fmp_resi_weekly_schedule',
+				'fmp_dinein_tables',
 			];
 
 			foreach ( $preserve_keys as $pkey ) {

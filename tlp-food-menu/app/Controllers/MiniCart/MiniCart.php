@@ -35,7 +35,9 @@ class MiniCart {
     public function init() {
         $this->options    = Fns::get_settings_option();
         $enable_mini_cart = $this->options['enable_mini_cart'] ?? 'on';
-        if ( TLPFoodMenu()->isWcActive() && ! empty( $enable_mini_cart ) && 'on' == $enable_mini_cart ) {
+        // Ordering-only feature — same gate as Tip / Special Menu / Discount.
+        $fm_type = $this->options['fm_food_menu_type'] ?? 'food_menu_post';
+        if ( TLPFoodMenu()->isWcActive() && 'online_ordering' === $fm_type && ! empty( $enable_mini_cart ) && 'on' == $enable_mini_cart ) {
             MiniCartHooks::get_instance();
             add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_public_scripts' ], 99 );
             add_action( 'wp_footer', [ $this, 'render' ] );
