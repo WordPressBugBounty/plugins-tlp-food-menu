@@ -16,6 +16,61 @@ defined( 'ABSPATH' ) || exit();
 class MiniCartFns {
 
 	/**
+	 * Image shown in the mini cart when the cart is empty.
+	 *
+	 * Falls back to the image shipped with the plugin, so the mini cart looks the
+	 * same as it always has until someone actually uploads a replacement.
+	 *
+	 * Three stored shapes are accepted, because the setting predates the React
+	 * settings panel and live sites hold all of them:
+	 *  - array  `[ 'id' => 12, 'url' => …, 'full' => … ]` — what the panel saves now
+	 *  - string `'{"source":"…"}'`                        — the legacy JSON payload
+	 *  - string `'https://…'`                             — a bare URL
+	 *
+	 * @return string Image URL.
+	 */
+	public static function get_empty_cart_image_url() {
+		$settings = get_option( TLPFoodMenu()->options['settings'], [] );
+		$default  = TLPFoodMenu()->assets_url() . 'images/empty-cart.jpg';
+		$value    = $settings['mini_cart_empty_image'] ?? '';
+
+		if ( empty( $value ) ) {
+			return $default;
+		}
+
+		if ( is_array( $value ) ) {
+			// Prefer the attachment id — it survives a site URL change, which a
+			// stored URL does not.
+			if ( ! empty( $value['id'] ) ) {
+				$src = wp_get_attachment_image_url( (int) $value['id'], 'full' );
+
+				if ( $src ) {
+					return $src;
+				}
+			}
+
+			$url = $value['full'] ?? ( $value['url'] ?? '' );
+
+			return $url ? $url : $default;
+		}
+
+		if ( is_string( $value ) ) {
+			$decoded = json_decode( stripslashes( $value ), true );
+
+			if ( is_array( $decoded ) && ! empty( $decoded['source'] ) ) {
+				return $decoded['source'];
+			}
+
+			// A bare URL, not JSON.
+			if ( filter_var( $value, FILTER_VALIDATE_URL ) ) {
+				return $value;
+			}
+		}
+
+		return $default;
+	}
+
+	/**
 	 * @return array
 	 */
 	public static function settings_field() {

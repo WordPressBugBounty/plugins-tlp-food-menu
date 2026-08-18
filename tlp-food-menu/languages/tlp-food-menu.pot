@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: tlp-food-menu 6.0.3\n"
+"Project-Id-Version: tlp-food-menu 6.0.4\n"
 "Report-Msgid-Bugs-To: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-16T07:33:26+00:00\n"
+"POT-Creation-Date: 2026-08-18T10:22:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: tlp-food-menu\n"
@@ -701,206 +701,207 @@ msgstr ""
 msgid "Loadding..."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:30
-#: src/settings/components/sections/MiniCartSettings.jsx:44
+#: app/Controllers/MiniCart/MiniCartFns.php:85
+#: src/settings/components/sections/MiniCartSettings.jsx:45
 msgid "The mini-cart is intentionally hidden on the cart and checkout pages."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:33
+#: app/Controllers/MiniCart/MiniCartFns.php:88
 msgid "Enable Mini Cart?"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:35
+#: app/Controllers/MiniCart/MiniCartFns.php:90
 msgid "Switch on to enable mini cart."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:40
+#: app/Controllers/MiniCart/MiniCartFns.php:95
 msgid "Cart Drawer Settings"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:49
-#: src/settings/components/sections/MiniCartSettings.jsx:63
+#: app/Controllers/MiniCart/MiniCartFns.php:104
+#: src/settings/components/sections/MiniCartSettings.jsx:64
 msgid "Drawer Style"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:51
+#: app/Controllers/MiniCart/MiniCartFns.php:106
 msgid "Style - 01"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:52
+#: app/Controllers/MiniCart/MiniCartFns.php:107
 msgid "Style - 02"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:53
+#: app/Controllers/MiniCart/MiniCartFns.php:108
 msgid "Style - 03"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:62
-#: src/settings/components/sections/MiniCartSettings.jsx:84
+#: app/Controllers/MiniCart/MiniCartFns.php:117
+#: src/settings/components/sections/MiniCartSettings.jsx:85
 msgid "Drawer Opening Behavior"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:64
+#: app/Controllers/MiniCart/MiniCartFns.php:119
 msgid "Open each time after add to the cart"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:65
+#: app/Controllers/MiniCart/MiniCartFns.php:120
 msgid "Open when floating button is clicked"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:73
+#: app/Controllers/MiniCart/MiniCartFns.php:128
 msgid "Mini Cart Position "
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:74
+#: app/Controllers/MiniCart/MiniCartFns.php:129
 msgid "You can manage mini_cart position."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:76
+#: app/Controllers/MiniCart/MiniCartFns.php:131
 msgid "left Center"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:77
+#: app/Controllers/MiniCart/MiniCartFns.php:132
 msgid "left Bottom"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:78
-#: src/settings/components/sections/MiniCartSettings.jsx:123
+#: app/Controllers/MiniCart/MiniCartFns.php:133
+#: src/settings/components/sections/MiniCartSettings.jsx:124
 msgid "Right Center"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:79
+#: app/Controllers/MiniCart/MiniCartFns.php:134
 #: app/Helpers/Options.php:262
 #: src/settings/components/sections/FoodLocationSettings.jsx:96
-#: src/settings/components/sections/MiniCartSettings.jsx:125
+#: src/settings/components/sections/MiniCartSettings.jsx:126
 msgid "Right Bottom"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:86
+#: app/Controllers/MiniCart/MiniCartFns.php:141
 msgid "Price extra field Visibility"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:87
+#: app/Controllers/MiniCart/MiniCartFns.php:142
 msgid "Enable to showing all cost (Shipping, Tax etc) in price table. Otherwise only Subtotal will show."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:94
-#: src/settings/components/sections/MiniCartSettings.jsx:151
+#: app/Controllers/MiniCart/MiniCartFns.php:149
+#: src/settings/components/sections/MiniCartSettings.jsx:152
 msgid "Coupon Form Visibility"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:95
+#: app/Controllers/MiniCart/MiniCartFns.php:150
 msgid "You may show / hide coupon input box on the mini-cart footer area"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:102
-#: src/settings/components/sections/MiniCartSettings.jsx:169
+#: app/Controllers/MiniCart/MiniCartFns.php:157
+#: src/settings/components/sections/MiniCartSettings.jsx:170
 msgid "Empty Cart Message"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:103
+#: app/Controllers/MiniCart/MiniCartFns.php:158
 msgid "Enter empty cart message. E.g: No products in the cart"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:104
+#: app/Controllers/MiniCart/MiniCartFns.php:159
+#: templates/mini-cart/mini-cart.php:117
 msgid "No products in the cart."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:110
-#: src/settings/components/sections/MiniCartSettings.jsx:188
+#: app/Controllers/MiniCart/MiniCartFns.php:165
+#: src/settings/components/sections/MiniCartSettings.jsx:189
 msgid "Shop Button Text"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:111
+#: app/Controllers/MiniCart/MiniCartFns.php:166
 msgid "Change Go Shopping Button text"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:112
-#: src/settings/components/sections/MiniCartSettings.jsx:202
+#: app/Controllers/MiniCart/MiniCartFns.php:167
+#: src/settings/components/sections/MiniCartSettings.jsx:203
 msgid "Go Shopping"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:118
+#: app/Controllers/MiniCart/MiniCartFns.php:173
 msgid "Float Button Settings"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:126
-#: src/settings/components/sections/MiniCartSettings.jsx:207
+#: app/Controllers/MiniCart/MiniCartFns.php:181
+#: src/settings/components/sections/MiniCartSettings.jsx:222
 msgid "Float Button Style"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:128
+#: app/Controllers/MiniCart/MiniCartFns.php:183
 msgid "Style # 01"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:129
+#: app/Controllers/MiniCart/MiniCartFns.php:184
 msgid "Style # 02"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:130
+#: app/Controllers/MiniCart/MiniCartFns.php:185
 msgid "Style # 03"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:131
+#: app/Controllers/MiniCart/MiniCartFns.php:186
 msgid "Style # 04"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:138
+#: app/Controllers/MiniCart/MiniCartFns.php:193
 msgid "Others Settings"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:143
-#: src/settings/components/sections/MiniCartSettings.jsx:229
+#: app/Controllers/MiniCart/MiniCartFns.php:198
+#: src/settings/components/sections/MiniCartSettings.jsx:244
 msgid "Overlay Visibility"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:144
+#: app/Controllers/MiniCart/MiniCartFns.php:199
 msgid "Enable this option to show the overlay"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:151
-#: src/settings/components/sections/MiniCartSettings.jsx:248
+#: app/Controllers/MiniCart/MiniCartFns.php:206
+#: src/settings/components/sections/MiniCartSettings.jsx:263
 msgid "Show On Mobile"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:152
+#: app/Controllers/MiniCart/MiniCartFns.php:207
 msgid "Enable this option to Show On Mobile."
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:159
-#: src/settings/components/sections/MiniCartSettings.jsx:266
+#: app/Controllers/MiniCart/MiniCartFns.php:214
+#: src/settings/components/sections/MiniCartSettings.jsx:281
 msgid "Custom Class to Open Mini Cart"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:160
-#: src/settings/components/sections/MiniCartSettings.jsx:268
+#: app/Controllers/MiniCart/MiniCartFns.php:215
+#: src/settings/components/sections/MiniCartSettings.jsx:283
 msgid "If you would like to open the mini-cart by custom button on click just add the class name with comma separator. E.g: .icon-area-content a, span.cart-btn"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:164
+#: app/Controllers/MiniCart/MiniCartFns.php:219
 msgid "Floating Button Style"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:169
+#: app/Controllers/MiniCart/MiniCartFns.php:224
 #: app/Controllers/SpecialMenu/SpecialMenuFns.php:141
 #: src/settings/components/sections/SpecialMenuSettings.jsx:378
 msgid "Button Background"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:176
+#: app/Controllers/MiniCart/MiniCartFns.php:231
 msgid "Button Background - Hover"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:185
+#: app/Controllers/MiniCart/MiniCartFns.php:240
 msgid "If you need you can enter float button width"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:186
-#: src/settings/components/sections/MiniCartSettings.jsx:344
+#: app/Controllers/MiniCart/MiniCartFns.php:241
+#: src/settings/components/sections/MiniCartSettings.jsx:359
 msgid "Float Button Min Width"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:194
+#: app/Controllers/MiniCart/MiniCartFns.php:249
 #: app/Helpers/Options.php:655
 #: app/Widgets/Elementor/Sections/Style.php:237
 #: app/Widgets/Elementor/Sections/Style.php:484
@@ -908,11 +909,11 @@ msgstr ""
 #: app/Widgets/Elementor/Sections/Style.php:822
 #: app/Widgets/Elementor/Sections/Style.php:1247
 #: app/Widgets/Elementor/Sections/Style.php:1363
-#: src/settings/components/sections/MiniCartSettings.jsx:366
+#: src/settings/components/sections/MiniCartSettings.jsx:381
 msgid "Border Radius"
 msgstr ""
 
-#: app/Controllers/MiniCart/MiniCartFns.php:195
+#: app/Controllers/MiniCart/MiniCartFns.php:250
 msgid "Enter Border Radius. Ex. 10px | 5px 5px 5px 5px | 0 5px 5px 0"
 msgstr ""
 
@@ -2034,7 +2035,7 @@ msgid "After each change, please re-save your permalinks (Go to Dashboard > Sett
 msgstr ""
 
 #: app/Helpers/Options.php:164
-#: src/settings/components/sections/GeneralSettings.jsx:189
+#: src/settings/components/sections/GeneralSettings.jsx:176
 msgid "Currency"
 msgstr ""
 
@@ -2045,7 +2046,7 @@ msgid "Select one"
 msgstr ""
 
 #: app/Helpers/Options.php:172
-#: src/settings/components/sections/GeneralSettings.jsx:206
+#: src/settings/components/sections/GeneralSettings.jsx:193
 msgid "Currency Position"
 msgstr ""
 
@@ -2150,7 +2151,7 @@ msgstr ""
 
 #: app/Helpers/Options.php:264
 #: src/settings/components/sections/FoodLocationSettings.jsx:95
-#: src/settings/components/sections/MiniCartSettings.jsx:124
+#: src/settings/components/sections/MiniCartSettings.jsx:125
 msgid "Left Bottom"
 msgstr ""
 
@@ -2163,7 +2164,7 @@ msgid "Enable separate menus, opening hours, and reservation capacities for diff
 msgstr ""
 
 #: app/Helpers/Options.php:282
-#: src/settings/components/sections/GeneralSettings.jsx:284
+#: src/settings/components/sections/GeneralSettings.jsx:271
 msgid "Hide Trailing Zeroes"
 msgstr ""
 
@@ -2698,7 +2699,7 @@ msgstr ""
 
 #: app/Helpers/Options.php:2414
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:9
-#: src/settings/components/sections/DashboardInventorySettings.jsx:43
+#: src/settings/components/sections/DashboardInventorySettings.jsx:51
 #: src/settings/components/sections/InventorySettings.jsx:18
 msgid "Inventory Management"
 msgstr ""
@@ -2826,6 +2827,7 @@ msgid "Pro"
 msgstr ""
 
 #: app/Models/Fields.php:788
+#: src/settings/components/sections/MiniCartSettings.jsx:216
 msgid "Upload Image"
 msgstr ""
 
@@ -3821,7 +3823,7 @@ msgid "Detail page settings"
 msgstr ""
 
 #: resources/settings.php:44
-#: src/settings/components/sections/MiniCartSettings.jsx:31
+#: src/settings/components/sections/MiniCartSettings.jsx:32
 #: src/settings/utils.js:124
 #: src/settings/utils.js:293
 msgid "Mini Cart"
@@ -3889,25 +3891,20 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:126
-#: src/settings/components/ui/AsyncSelect.jsx:224
-msgid "Loading..."
-msgstr ""
-
-#: templates/mini-cart/mini-cart.php:159
+#: templates/mini-cart/mini-cart.php:150
 msgid "Click Here"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:160
+#: templates/mini-cart/mini-cart.php:151
 msgid "Apply Coupon"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:169
+#: templates/mini-cart/mini-cart.php:160
 msgid "Apply"
 msgstr ""
 
-#: templates/mini-cart/mini-cart.php:181
-#: templates/mini-cart/mini-cart.php:182
+#: templates/mini-cart/mini-cart.php:172
+#: templates/mini-cart/mini-cart.php:173
 msgid "Subtotal"
 msgstr ""
 
@@ -4379,27 +4376,47 @@ msgstr ""
 msgid "Assign dashboard access per user. Select a user and configure which menus they can access. Administrator always has full access."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:46
+#: src/settings/components/sections/DashboardInventorySettings.jsx:54
 msgid "Track stock levels, waste, and inventory logs from the front-end dashboard."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:51
+#: src/settings/components/sections/DashboardInventorySettings.jsx:59
 #: src/settings/components/sections/InventorySettings.jsx:29
 msgid "Enable Inventory Management"
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:53
+#: src/settings/components/sections/DashboardInventorySettings.jsx:61
 msgid "Enable inventory tracking, waste logging, and stock reports."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:69
+#: src/settings/components/sections/DashboardInventorySettings.jsx:77
 #: src/settings/components/sections/InventorySettings.jsx:51
 msgid "Low Stock Threshold"
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:71
+#: src/settings/components/sections/DashboardInventorySettings.jsx:79
 #: src/settings/components/sections/InventorySettings.jsx:53
 msgid "Products with stock below this quantity will be marked as 'Low Stock'."
+msgstr ""
+
+#: src/settings/components/sections/DashboardInventorySettings.jsx:108
+msgid "Sales Reports"
+msgstr ""
+
+#: src/settings/components/sections/DashboardInventorySettings.jsx:111
+msgid "Controls which orders the Sales & Profit, Waste Cost and Stock Turnover reports treat as sold."
+msgstr ""
+
+#: src/settings/components/sections/DashboardInventorySettings.jsx:116
+msgid "Statuses That Count As Sales"
+msgstr ""
+
+#: src/settings/components/sections/DashboardInventorySettings.jsx:118
+msgid "Orders in any other status are left out of the reports entirely. Leave this empty to use the default — Processing, On hold, Completed, plus your enabled custom statuses. If your reported revenue looks far too low, the most likely cause is that your orders finish in a status that is not selected here."
+msgstr ""
+
+#: src/settings/components/sections/DashboardInventorySettings.jsx:130
+msgid "Default (Processing, On hold, Completed + custom)"
 msgstr ""
 
 #: src/settings/components/sections/DashboardOrderSettings.jsx:25
@@ -4422,7 +4439,7 @@ msgid "Exclude Product Types"
 msgstr ""
 
 #: src/settings/components/sections/DashboardOrderSettings.jsx:63
-msgid "Orders containing products of the selected types will be excluded from the dashboard, including the order list, kitchen monitor, and product browser."
+msgid "Orders containing products of the selected types will be excluded from the dashboard, including the order list, kitchen monitor, and product browser. Reports and inventory figures leave these products out too — in an order that mixes them with food, only the food is reported."
 msgstr ""
 
 #: src/settings/components/sections/DashboardOrderSettings.jsx:78
@@ -4705,83 +4722,79 @@ msgstr ""
 msgid "This field is required, max 20 characters, no uppercase or spaces. After changes, re-save permalinks (Dashboard → Settings → Permalinks → Save)."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:160
-msgid "Enable AJAX Add to Cart"
-msgstr ""
-
-#: src/settings/components/sections/GeneralSettings.jsx:182
+#: src/settings/components/sections/GeneralSettings.jsx:169
 msgid "Currency Settings"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:185
+#: src/settings/components/sections/GeneralSettings.jsx:172
 msgid "Configure currency display options."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:200
+#: src/settings/components/sections/GeneralSettings.jsx:187
 msgid "Select currency..."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:201
+#: src/settings/components/sections/GeneralSettings.jsx:188
 msgid "Search currencies..."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:217
+#: src/settings/components/sections/GeneralSettings.jsx:204
 msgid "Left ($99)"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:218
+#: src/settings/components/sections/GeneralSettings.jsx:205
 msgid "Right (99$)"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:225
+#: src/settings/components/sections/GeneralSettings.jsx:212
 msgid "Thousand Separator"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:243
+#: src/settings/components/sections/GeneralSettings.jsx:230
 msgid "Decimal Separator"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:261
+#: src/settings/components/sections/GeneralSettings.jsx:248
 msgid "Number of Decimals"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:304
+#: src/settings/components/sections/GeneralSettings.jsx:291
 msgid "Additional Options"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:307
+#: src/settings/components/sections/GeneralSettings.jsx:294
 msgid "Extra configuration options for your food menu."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:311
+#: src/settings/components/sections/GeneralSettings.jsx:298
 msgid "Enable Preloader"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:322
+#: src/settings/components/sections/GeneralSettings.jsx:309
 msgid "Primary Color"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:324
+#: src/settings/components/sections/GeneralSettings.jsx:311
 msgid "Main accent color for the dashboard (buttons, active states, links)."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:334
+#: src/settings/components/sections/GeneralSettings.jsx:321
 msgid "Company Logo"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:336
+#: src/settings/components/sections/GeneralSettings.jsx:323
 msgid "Upload a custom logo used across the plugin (front-end dashboard sidebar, etc.). If not set, the default plugin icon will be used."
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:342
+#: src/settings/components/sections/GeneralSettings.jsx:329
 msgid "Upload Logo"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:347
+#: src/settings/components/sections/GeneralSettings.jsx:334
 msgid "Company Logo Height"
 msgstr ""
 
-#: src/settings/components/sections/GeneralSettings.jsx:349
+#: src/settings/components/sections/GeneralSettings.jsx:336
 msgid "Set the height of the logo in pixels. Range: 20–100."
 msgstr ""
 
@@ -5167,98 +5180,106 @@ msgid "contact support"
 msgstr ""
 
 #. translators: %s: page title
-#: src/settings/components/sections/MiniCartSettings.jsx:15
+#: src/settings/components/sections/MiniCartSettings.jsx:16
 #, js-format
 msgid "Page: %s"
 msgstr ""
 
 #. translators: %s: post type name
-#: src/settings/components/sections/MiniCartSettings.jsx:19
+#: src/settings/components/sections/MiniCartSettings.jsx:20
 #, js-format
 msgid "Post Type: %s (archive, single & taxonomy)"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:34
+#: src/settings/components/sections/MiniCartSettings.jsx:35
 msgid "Configure the floating mini cart behavior and appearance."
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:48
+#: src/settings/components/sections/MiniCartSettings.jsx:49
 msgid "Enable Mini Cart"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:77
-#: src/settings/components/sections/MiniCartSettings.jsx:221
+#: src/settings/components/sections/MiniCartSettings.jsx:78
+#: src/settings/components/sections/MiniCartSettings.jsx:236
 msgid "Style 1"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:78
-#: src/settings/components/sections/MiniCartSettings.jsx:222
+#: src/settings/components/sections/MiniCartSettings.jsx:79
+#: src/settings/components/sections/MiniCartSettings.jsx:237
 msgid "Style 2"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:79
-#: src/settings/components/sections/MiniCartSettings.jsx:223
+#: src/settings/components/sections/MiniCartSettings.jsx:80
+#: src/settings/components/sections/MiniCartSettings.jsx:238
 msgid "Style 3"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:99
+#: src/settings/components/sections/MiniCartSettings.jsx:100
 msgid "Automatically Open After Adding to Cart"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:102
+#: src/settings/components/sections/MiniCartSettings.jsx:103
 msgid "Open Manually on Click"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:108
+#: src/settings/components/sections/MiniCartSettings.jsx:109
 msgid "Mini Cart Position"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:122
+#: src/settings/components/sections/MiniCartSettings.jsx:123
 msgid "Left Center"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:130
+#: src/settings/components/sections/MiniCartSettings.jsx:131
 msgid "Price Extra Field Visibility"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:183
+#: src/settings/components/sections/MiniCartSettings.jsx:184
 msgid "Your cart is empty"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:224
+#: src/settings/components/sections/MiniCartSettings.jsx:208
+msgid "No Product Found Image"
+msgstr ""
+
+#: src/settings/components/sections/MiniCartSettings.jsx:210
+msgid "Image shown in the mini cart while it is empty. Leave it empty to keep the default image."
+msgstr ""
+
+#: src/settings/components/sections/MiniCartSettings.jsx:239
 msgid "Style 4"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:286
+#: src/settings/components/sections/MiniCartSettings.jsx:301
 #: src/settings/components/sections/SpecialMenuSettings.jsx:230
 msgid "Exclude Pages"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:288
+#: src/settings/components/sections/MiniCartSettings.jsx:303
 msgid "Hide the mini-cart on selected pages. Choosing a Post Type will hide it on that post type's archive, single, and taxonomy pages."
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:297
+#: src/settings/components/sections/MiniCartSettings.jsx:312
 msgid "Select pages or post types..."
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:298
+#: src/settings/components/sections/MiniCartSettings.jsx:313
 msgid "Search pages or post types..."
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:311
+#: src/settings/components/sections/MiniCartSettings.jsx:326
 msgid "Appearance"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:314
+#: src/settings/components/sections/MiniCartSettings.jsx:329
 msgid "Customize the mini cart colors and dimensions."
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:318
+#: src/settings/components/sections/MiniCartSettings.jsx:333
 msgid "Float Button Background"
 msgstr ""
 
-#: src/settings/components/sections/MiniCartSettings.jsx:331
+#: src/settings/components/sections/MiniCartSettings.jsx:346
 msgid "Float Button Background Hover"
 msgstr ""
 
@@ -6327,6 +6348,10 @@ msgstr ""
 
 #: src/settings/components/sections/WhatsAppNotificationSettings.jsx:262
 msgid "Default message for WooCommerce core status changes. Custom order statuses use their own WhatsApp template. Leave empty to use default."
+msgstr ""
+
+#: src/settings/components/ui/AsyncSelect.jsx:224
+msgid "Loading..."
 msgstr ""
 
 #: src/settings/components/ui/AudioUploader.jsx:8

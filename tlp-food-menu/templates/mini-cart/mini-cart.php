@@ -112,18 +112,9 @@ $style       = $settings['mini_cart_drawer_style'] ?? 'style1';
 else :
 	?>
 	<ul class='woocommerce-mini-cart cart_list product_list_widget empty-cart'>
-		<?php
-		$default_image_path = TLPFoodMenu()->assets_url() . 'images/empty-cart.jpg';
-
-		if ( ! empty( $settings['mini_cart_empty_image'] ) ) {
-			$loading_json    = json_decode( stripslashes( $settings['mini_cart_empty_image'] ), true );
-			$loading_img_src = $loading_json['source'] ?? $default_image_path;
-		} else {
-			$loading_img_src = $default_image_path;
-		}
-		?>
+		<?php $loading_img_src = \RT\FoodMenu\Controllers\MiniCart\MiniCartFns::get_empty_cart_image_url(); ?>
 		<li class="woocommerce-mini-cart__empty-message">
-			<img class="empty-cart" width="100" height="100" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr__( 'Loading...', 'tlp-food-menu' ); ?>">
+			<img class="empty-cart" width="100" height="100" src="<?php echo esc_url( $loading_img_src ); ?>" alt="<?php echo esc_attr( $settings['mini_cart_empty_text'] ?? __( 'No products in the cart.', 'tlp-food-menu' ) ); ?>">
 			<?php if ( ! empty( $settings['mini_cart_empty_text'] ) ) : ?>
 				<span class="fmp-empty-cart-text"><?php echo esc_html( $settings['mini_cart_empty_text'] ); ?></span>
 			<?php endif; ?>

@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 6.0.3
+Stable tag: 6.0.4
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -258,7 +258,12 @@ Major update. Table Reservation, Tips, Special Menu, and Product Discount are no
 
 == Changelog ==
 
-= 6.0.3 =
+= 6.0.4 ( Aug 18, 2026 ) =
+New: Upload your own "No Product Found" image for the empty mini cart
+Improved: AJAX add to cart now works for every product type, without a page reload
+Removed: "Enable AJAX Add to Cart" setting — AJAX is always on now
+
+= 6.0.3 ( Aug 16, 2026 ) =
 Fixed: Mini cart and floating location button were displayed on the front-end when Food Menu Type was set to Food Menu Post Type.
 
 = 6.0.2 ( Aug 09, 2026 ) =
