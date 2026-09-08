@@ -161,6 +161,12 @@ if ( ! class_exists( TLPFoodMenu::class ) ) {
 		private function init_hooks() {
 			add_action( 'plugins_loaded', [ $this, 'on_plugins_loaded' ], - 1 );
 			add_action( 'init', [ $this, 'initialize' ], 0 );
+
+			// One-time seeding of the default Food Menu Type on a brand-new install.
+			// Hooked here rather than on activation so it cannot be missed by an
+			// install that was activated before this code shipped; it self-disables
+			// after the first admin page load.
+			add_action( 'admin_init', [ Helpers\Install::class, 'maybe_seed_menu_type' ] );
 		}
 
 		/**

@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: tlp-food-menu 6.0.4\n"
+"Project-Id-Version: tlp-food-menu 6.0.5\n"
 "Report-Msgid-Bugs-To: RadiusTheme <support@radiustheme.com>\n"
 "Last-Translator: RadiusTheme <support@radiustheme.com>\n"
 "Language-Team: RadiusTheme <support@radiustheme.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-18T10:22:32+00:00\n"
+"POT-Creation-Date: 2026-09-07T11:35:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: tlp-food-menu\n"
@@ -222,7 +222,7 @@ msgstr ""
 #: app/Controllers/Admin/Metabox/ShortcodeMeta.php:427
 #: app/Helpers/Fns.php:1377
 #: resources/help.php:469
-#: src/settings/App.jsx:847
+#: src/settings/App.jsx:848
 msgid "Documentation"
 msgstr ""
 
@@ -325,8 +325,8 @@ msgstr ""
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:6
 #: src/settings/components/sections/ProductAddons.jsx:14
 #: src/settings/components/sections/ProductAddons.jsx:25
-#: src/settings/utils.js:60
-#: src/settings/utils.js:265
+#: src/settings/utils.js:61
+#: src/settings/utils.js:272
 msgid "Product Addons"
 msgstr ""
 
@@ -340,8 +340,8 @@ msgstr ""
 #: app/Controllers/Admin/Settings.php:175
 #: src/settings/components/sections/QrTableOrderingSettings.jsx:16
 #: src/settings/components/sections/QrTableOrderingSettings.jsx:24
-#: src/settings/utils.js:68
-#: src/settings/utils.js:261
+#: src/settings/utils.js:69
+#: src/settings/utils.js:268
 msgid "QR Table Ordering"
 msgstr ""
 
@@ -351,8 +351,8 @@ msgstr ""
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:13
 #: src/settings/components/sections/TimedProductsSettings.jsx:13
 #: src/settings/components/sections/TimedProductsSettings.jsx:22
-#: src/settings/utils.js:76
-#: src/settings/utils.js:269
+#: src/settings/utils.js:77
+#: src/settings/utils.js:276
 msgid "Timed Products"
 msgstr ""
 
@@ -365,9 +365,9 @@ msgstr ""
 
 #: app/Controllers/Admin/Settings.php:201
 #: app/Controllers/Admin/Settings.php:228
-#: src/settings/App.jsx:263
-#: src/settings/App.jsx:296
-#: src/settings/App.jsx:347
+#: src/settings/App.jsx:264
+#: src/settings/App.jsx:297
+#: src/settings/App.jsx:348
 msgid "Settings"
 msgstr ""
 
@@ -399,8 +399,8 @@ msgstr ""
 
 #: app/Controllers/Discount/Discount.php:368
 #: app/Controllers/Discount/Discount.php:470
-#: src/settings/utils.js:163
-#: src/settings/utils.js:313
+#: src/settings/utils.js:164
+#: src/settings/utils.js:320
 msgid "Discount"
 msgstr ""
 
@@ -436,9 +436,9 @@ msgstr ""
 #: src/js/tlp-food-menu-blocks.js:7
 #: src/js/tlp-food-menu-blocks.js:12
 #: src/js/tlp-food-menu-blocks.js:71
-#: src/settings/App.jsx:263
-#: src/settings/App.jsx:344
-#: src/settings/App.jsx:365
+#: src/settings/App.jsx:264
+#: src/settings/App.jsx:345
+#: src/settings/App.jsx:366
 msgid "Food Menu"
 msgstr ""
 
@@ -1107,8 +1107,8 @@ msgstr ""
 
 #: app/Controllers/PostTypesController.php:287
 #: src/settings/components/sections/FoodLocationSettings.jsx:14
-#: src/settings/utils.js:50
-#: src/settings/utils.js:257
+#: src/settings/utils.js:51
+#: src/settings/utils.js:264
 msgid "Food Location"
 msgstr ""
 
@@ -2072,8 +2072,8 @@ msgstr ""
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:143
 #: src/settings/components/sections/OrderStatusesSettings.jsx:14
 #: src/settings/components/sections/OrderStatusesSettings.jsx:21
-#: src/settings/utils.js:100
-#: src/settings/utils.js:285
+#: src/settings/utils.js:101
+#: src/settings/utils.js:292
 msgid "Custom Order Statuses"
 msgstr ""
 
@@ -2699,7 +2699,7 @@ msgstr ""
 
 #: app/Helpers/Options.php:2414
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:9
-#: src/settings/components/sections/DashboardInventorySettings.jsx:51
+#: src/settings/components/sections/DashboardInventorySettings.jsx:43
 #: src/settings/components/sections/InventorySettings.jsx:18
 msgid "Inventory Management"
 msgstr ""
@@ -2712,8 +2712,8 @@ msgstr ""
 #: app/Helpers/Options.php:2416
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:11
 #: src/settings/components/sections/PosPrintingSettings.jsx:18
-#: src/settings/utils.js:176
-#: src/settings/utils.js:321
+#: src/settings/utils.js:177
+#: src/settings/utils.js:328
 msgid "POS Printing"
 msgstr ""
 
@@ -2746,14 +2746,14 @@ msgstr ""
 #: app/Helpers/Options.php:2440
 #: resources/settings.php:108
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:34
-#: src/settings/App.jsx:1182
+#: src/settings/App.jsx:1191
 msgid "Pro Features"
 msgstr ""
 
 #: app/Helpers/Options.php:2445
 #: resources/settings.php:127
 #: src/admin-panel/components/dashboard/ProFeatures.jsx:63
-#: src/settings/App.jsx:1204
+#: src/settings/App.jsx:1213
 msgid "Get The Deal!"
 msgstr ""
 
@@ -3410,7 +3410,7 @@ msgstr ""
 #: app/Widgets/Elementor/Sections/Style.php:179
 #: app/Widgets/Elementor/Sections/Style.php:762
 #: app/Widgets/Elementor/Sections/Style.php:1091
-#: src/settings/App.jsx:765
+#: src/settings/App.jsx:766
 msgid "Active"
 msgstr ""
 
@@ -3666,7 +3666,7 @@ msgstr ""
 
 #: resources/help.php:527
 #: resources/help.php:616
-#: src/settings/App.jsx:730
+#: src/settings/App.jsx:731
 msgid "Upgrade to Pro"
 msgstr ""
 
@@ -3813,8 +3813,8 @@ msgstr ""
 #: resources/settings.php:32
 #: src/settings/components/sections/GeneralSettings.jsx:41
 #: src/settings/components/sections/ReservationSettings.jsx:539
-#: src/settings/utils.js:35
-#: src/settings/utils.js:204
+#: src/settings/utils.js:36
+#: src/settings/utils.js:205
 msgid "General"
 msgstr ""
 
@@ -3824,8 +3824,8 @@ msgstr ""
 
 #: resources/settings.php:44
 #: src/settings/components/sections/MiniCartSettings.jsx:32
-#: src/settings/utils.js:124
-#: src/settings/utils.js:293
+#: src/settings/utils.js:125
+#: src/settings/utils.js:300
 msgid "Mini Cart"
 msgstr ""
 
@@ -3834,7 +3834,7 @@ msgid "Frontend Order and Inventory"
 msgstr ""
 
 #: resources/settings.php:95
-#: src/settings/App.jsx:319
+#: src/settings/App.jsx:320
 msgid "Save Changes"
 msgstr ""
 
@@ -4049,7 +4049,7 @@ msgid "Admin Page"
 msgstr ""
 
 #: src/admin-panel/components/dashboard/Header.jsx:167
-#: src/settings/components/ui/AsyncSelect.jsx:205
+#: src/settings/components/ui/AsyncSelect.jsx:248
 #: src/settings/components/ui/SearchableSelect.jsx:221
 msgid "No results found"
 msgstr ""
@@ -4131,76 +4131,76 @@ msgstr ""
 msgid "Please select a shortcode from block settings"
 msgstr ""
 
-#: src/settings/App.jsx:236
+#: src/settings/App.jsx:237
 msgid "Failed to save settings"
 msgstr ""
 
-#: src/settings/App.jsx:238
+#: src/settings/App.jsx:239
 msgid "Settings saved successfully"
 msgstr ""
 
-#: src/settings/App.jsx:254
+#: src/settings/App.jsx:255
 msgid "An error occurred while saving"
 msgstr ""
 
-#: src/settings/App.jsx:319
+#: src/settings/App.jsx:320
 msgid "Saving..."
 msgstr ""
 
-#: src/settings/App.jsx:355
 #: src/settings/App.jsx:356
+#: src/settings/App.jsx:357
 msgid "Collapse sidebar"
 msgstr ""
 
-#: src/settings/App.jsx:372
 #: src/settings/App.jsx:373
+#: src/settings/App.jsx:374
 msgid "Expand sidebar"
 msgstr ""
 
-#: src/settings/App.jsx:399
+#: src/settings/App.jsx:400
 msgid "Search settings..."
 msgstr ""
 
-#: src/settings/App.jsx:410
+#: src/settings/App.jsx:411
 msgid "No settings found"
 msgstr ""
 
-#: src/settings/App.jsx:500
-#: src/settings/App.jsx:565
-#: src/settings/App.jsx:646
+#: src/settings/App.jsx:501
+#: src/settings/App.jsx:566
+#: src/settings/App.jsx:647
 msgid "Requires WooCommerce"
 msgstr ""
 
-#: src/settings/App.jsx:733
+#: src/settings/App.jsx:734
 msgid "Unlock all features"
 msgstr ""
 
-#: src/settings/App.jsx:761
+#: src/settings/App.jsx:762
 msgid "Pro Plan"
 msgstr ""
 
-#: src/settings/App.jsx:791
+#: src/settings/App.jsx:792
 #: src/settings/components/sections/LicenseSettings.jsx:182
 msgid "Activate License"
 msgstr ""
 
-#: src/settings/App.jsx:795
+#: src/settings/App.jsx:796
 msgid "Inactive"
 msgstr ""
 
-#: src/settings/App.jsx:806
+#: src/settings/App.jsx:807
 msgid "Activate"
 msgstr ""
 
-#: src/settings/App.jsx:857
+#: src/settings/App.jsx:858
 msgid "Support"
 msgstr ""
 
-#: src/settings/App.jsx:1175
+#: src/settings/App.jsx:1184
 msgid "Food Menu Pro"
 msgstr ""
 
-#: src/settings/App.jsx:1233
+#: src/settings/App.jsx:1242
 msgid "Refreshing page to enable all features properly..."
 msgstr ""
 
@@ -4246,8 +4246,8 @@ msgstr ""
 
 #: src/settings/components/sections/CheckoutSettings.jsx:22
 #: src/settings/components/sections/CheckoutSettings.jsx:54
-#: src/settings/utils.js:146
-#: src/settings/utils.js:301
+#: src/settings/utils.js:147
+#: src/settings/utils.js:308
 msgid "Custom Checkout"
 msgstr ""
 
@@ -4344,85 +4344,89 @@ msgstr ""
 msgid "Required"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:107
+#: src/settings/components/sections/CustomRoleSettings.jsx:139
 msgid "Assign dashboard access per user. Select a user and toggle which menus they can see. Administrator always has full access."
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:159
+#: src/settings/components/sections/CustomRoleSettings.jsx:176
+msgid "No user selected"
+msgstr ""
+
+#: src/settings/components/sections/CustomRoleSettings.jsx:185
+msgid "Invalid user"
+msgstr ""
+
+#: src/settings/components/sections/CustomRoleSettings.jsx:211
+msgid "menus"
+msgstr ""
+
+#: src/settings/components/sections/CustomRoleSettings.jsx:216
+msgid "All"
+msgstr ""
+
+#: src/settings/components/sections/CustomRoleSettings.jsx:231
+msgid "Collapse"
+msgstr ""
+
+#: src/settings/components/sections/CustomRoleSettings.jsx:232
+msgid "Expand"
+msgstr ""
+
+#: src/settings/components/sections/CustomRoleSettings.jsx:260
 msgid "Location Access"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:186
+#: src/settings/components/sections/CustomRoleSettings.jsx:287
 msgid "Can manage orders from all locations"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:195
+#: src/settings/components/sections/CustomRoleSettings.jsx:296
 msgid "Assigned locations"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:225
+#: src/settings/components/sections/CustomRoleSettings.jsx:326
 msgid "Menu Access"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:330
+#: src/settings/components/sections/CustomRoleSettings.jsx:433
 msgid "Add User"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:348
+#: src/settings/components/sections/CustomRoleSettings.jsx:451
 msgid "User Permissions"
 msgstr ""
 
-#: src/settings/components/sections/CustomRoleSettings.jsx:351
+#: src/settings/components/sections/CustomRoleSettings.jsx:454
 msgid "Assign dashboard access per user. Select a user and configure which menus they can access. Administrator always has full access."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:54
+#: src/settings/components/sections/DashboardInventorySettings.jsx:46
 msgid "Track stock levels, waste, and inventory logs from the front-end dashboard."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:59
+#: src/settings/components/sections/DashboardInventorySettings.jsx:51
 #: src/settings/components/sections/InventorySettings.jsx:29
 msgid "Enable Inventory Management"
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:61
+#: src/settings/components/sections/DashboardInventorySettings.jsx:53
 msgid "Enable inventory tracking, waste logging, and stock reports."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:77
+#: src/settings/components/sections/DashboardInventorySettings.jsx:69
 #: src/settings/components/sections/InventorySettings.jsx:51
 msgid "Low Stock Threshold"
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:79
+#: src/settings/components/sections/DashboardInventorySettings.jsx:71
 #: src/settings/components/sections/InventorySettings.jsx:53
 msgid "Products with stock below this quantity will be marked as 'Low Stock'."
 msgstr ""
 
-#: src/settings/components/sections/DashboardInventorySettings.jsx:108
-msgid "Sales Reports"
-msgstr ""
-
-#: src/settings/components/sections/DashboardInventorySettings.jsx:111
-msgid "Controls which orders the Sales & Profit, Waste Cost and Stock Turnover reports treat as sold."
-msgstr ""
-
-#: src/settings/components/sections/DashboardInventorySettings.jsx:116
-msgid "Statuses That Count As Sales"
-msgstr ""
-
-#: src/settings/components/sections/DashboardInventorySettings.jsx:118
-msgid "Orders in any other status are left out of the reports entirely. Leave this empty to use the default — Processing, On hold, Completed, plus your enabled custom statuses. If your reported revenue looks far too low, the most likely cause is that your orders finish in a status that is not selected here."
-msgstr ""
-
-#: src/settings/components/sections/DashboardInventorySettings.jsx:130
-msgid "Default (Processing, On hold, Completed + custom)"
-msgstr ""
-
 #: src/settings/components/sections/DashboardOrderSettings.jsx:25
 #: src/settings/components/sections/InventorySettings.jsx:83
-#: src/settings/utils.js:210
-#: src/settings/utils.js:329
+#: src/settings/utils.js:211
+#: src/settings/utils.js:336
 msgid "Order Management"
 msgstr ""
 
@@ -4456,6 +4460,59 @@ msgstr ""
 
 #: src/settings/components/sections/DashboardOrderSettings.jsx:100
 msgid "Default: all except terminal statuses..."
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:70
+msgid "Which Orders Count"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:73
+msgid "Controls which orders the Sales & Profit, Waste Cost and Stock Turnover reports treat as sold."
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:81
+msgid "Exclude Order Statuses"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:83
+msgid "Orders in these statuses are left out of every report total. Cancelled, Failed, Refunded and Pending payment are always excluded and cannot be removed — they are never a sale. If you created your own cancellation status under Custom Order Statuses, add it here too, otherwise cancelled orders keep adding to your sales total."
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:96
+msgid "Add another status to exclude…"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:104
+msgid "Statuses That Count As Sales"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:109
+msgid "Orders in any other status are left out of the reports entirely. Leave this empty to use the default — Processing, On hold, Completed, plus your enabled custom statuses. If your reported revenue looks far too low, the most likely cause is that your orders finish in a status that is not selected here."
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:121
+msgid "Default (Processing, On hold, Completed + custom)"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:132
+msgid "Report Defaults"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:135
+msgid "Applied when a report is opened before any date range has been picked."
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:143
+msgid "Default Report Period"
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:145
+msgid "How many days back the reports cover on first load. Leave at 30 unless your kitchen reviews a longer period."
+msgstr ""
+
+#: src/settings/components/sections/DashboardReportSettings.jsx:166
+#: src/settings/components/sections/PickupDeliverySettings.jsx:99
+msgid "days"
 msgstr ""
 
 #: src/settings/components/sections/DetailPageSettings.jsx:23
@@ -4624,8 +4681,8 @@ msgid "Floating Button Position"
 msgstr ""
 
 #: src/settings/components/sections/FrontendDashboardSettings.jsx:21
-#: src/settings/utils.js:196
-#: src/settings/utils.js:325
+#: src/settings/utils.js:197
+#: src/settings/utils.js:332
 msgid "Front-End Dashboard"
 msgstr ""
 
@@ -4858,8 +4915,8 @@ msgstr ""
 
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:36
 #: src/settings/components/sections/KitchenMonitorSettings.jsx:54
-#: src/settings/utils.js:222
-#: src/settings/utils.js:337
+#: src/settings/utils.js:229
+#: src/settings/utils.js:348
 msgid "Kitchen Monitor"
 msgstr ""
 
@@ -5284,8 +5341,8 @@ msgid "Float Button Background Hover"
 msgstr ""
 
 #: src/settings/components/sections/OrderBumpsSettings.jsx:21
-#: src/settings/utils.js:130
-#: src/settings/utils.js:297
+#: src/settings/utils.js:131
+#: src/settings/utils.js:304
 msgid "Order Bumps"
 msgstr ""
 
@@ -5422,8 +5479,8 @@ msgid "Create custom status"
 msgstr ""
 
 #: src/settings/components/sections/OrderTimelineSettings.jsx:13
-#: src/settings/utils.js:108
-#: src/settings/utils.js:289
+#: src/settings/utils.js:109
+#: src/settings/utils.js:296
 msgid "Order Timeline / Tracking"
 msgstr ""
 
@@ -5537,10 +5594,6 @@ msgstr ""
 
 #: src/settings/components/sections/PickupDeliverySettings.jsx:85
 msgid "Maximum number of days customers can schedule orders in advance. The checkout calendar will only allow selecting dates within this range. Set to 0 for no limit."
-msgstr ""
-
-#: src/settings/components/sections/PickupDeliverySettings.jsx:99
-msgid "days"
 msgstr ""
 
 #: src/settings/components/sections/PickupDeliverySettings.jsx:105
@@ -5835,11 +5888,19 @@ msgid "When an order has no tip, print blank dotted lines for Tip and Total on t
 msgstr ""
 
 #: src/settings/components/sections/ProductAddons.jsx:17
-#: src/settings/utils.js:266
+#: src/settings/utils.js:273
 msgid "Add extra options like toppings, sides, or special requests to your menu items."
 msgstr ""
 
-#: src/settings/components/sections/ProductAddons.jsx:49
+#: src/settings/components/sections/ProductAddons.jsx:44
+msgid "Show \"Free\" Badge"
+msgstr ""
+
+#: src/settings/components/sections/ProductAddons.jsx:46
+msgid "Show a \"Free\" badge next to addon options that have no price. Each addon group can override this from its own \"Free\" Badge setting."
+msgstr ""
+
+#: src/settings/components/sections/ProductAddons.jsx:75
 msgid "Add Product Addons (Extra Options)"
 msgstr ""
 
@@ -5881,7 +5942,7 @@ msgid "Copied"
 msgstr ""
 
 #: src/settings/components/sections/ReservationSettings.jsx:84
-#: src/settings/utils.js:249
+#: src/settings/utils.js:256
 msgid "General Settings"
 msgstr ""
 
@@ -6350,7 +6411,11 @@ msgstr ""
 msgid "Default message for WooCommerce core status changes. Custom order statuses use their own WhatsApp template. Leave empty to use default."
 msgstr ""
 
-#: src/settings/components/ui/AsyncSelect.jsx:224
+#: src/settings/components/ui/AsyncSelect.jsx:17
+msgid "Not found"
+msgstr ""
+
+#: src/settings/components/ui/AsyncSelect.jsx:267
 msgid "Loading..."
 msgstr ""
 
@@ -6382,6 +6447,10 @@ msgstr ""
 msgid "Clear color"
 msgstr ""
 
+#: src/settings/components/ui/MultiSelect.jsx:73
+msgid "Always excluded — these statuses are never a sale"
+msgstr ""
+
 #: src/settings/components/ui/NumberInput.jsx:50
 msgid "Decrease"
 msgstr ""
@@ -6394,190 +6463,199 @@ msgstr ""
 msgid "Clear all"
 msgstr ""
 
-#: src/settings/utils.js:38
-#: src/settings/utils.js:46
-#: src/settings/utils.js:54
+#: src/settings/utils.js:39
+#: src/settings/utils.js:47
+#: src/settings/utils.js:55
 msgid "Getting Started"
 msgstr ""
 
-#: src/settings/utils.js:42
-#: src/settings/utils.js:253
+#: src/settings/utils.js:43
+#: src/settings/utils.js:260
 msgid "Detail Page"
 msgstr ""
 
-#: src/settings/utils.js:64
-#: src/settings/utils.js:72
-#: src/settings/utils.js:80
-#: src/settings/utils.js:87
-#: src/settings/utils.js:94
+#: src/settings/utils.js:65
+#: src/settings/utils.js:73
+#: src/settings/utils.js:81
+#: src/settings/utils.js:88
+#: src/settings/utils.js:95
 msgid "Ordering"
 msgstr ""
 
-#: src/settings/utils.js:84
-#: src/settings/utils.js:277
+#: src/settings/utils.js:85
+#: src/settings/utils.js:284
 msgid "Reservation"
 msgstr ""
 
-#: src/settings/utils.js:91
-#: src/settings/utils.js:281
+#: src/settings/utils.js:92
+#: src/settings/utils.js:288
 msgid "Special Menu Popup"
 msgstr ""
 
-#: src/settings/utils.js:104
-#: src/settings/utils.js:112
-#: src/settings/utils.js:120
-#: src/settings/utils.js:142
-#: src/settings/utils.js:180
+#: src/settings/utils.js:105
+#: src/settings/utils.js:113
+#: src/settings/utils.js:121
+#: src/settings/utils.js:143
+#: src/settings/utils.js:181
 msgid "Order Flow"
 msgstr ""
 
-#: src/settings/utils.js:116
+#: src/settings/utils.js:117
 msgid "Cart Settings"
 msgstr ""
 
-#: src/settings/utils.js:138
+#: src/settings/utils.js:139
 msgid "Checkout Settings"
 msgstr ""
 
-#: src/settings/utils.js:152
-#: src/settings/utils.js:305
+#: src/settings/utils.js:153
+#: src/settings/utils.js:312
 msgid "Pickup, Delivery & Dine In"
 msgstr ""
 
-#: src/settings/utils.js:158
-#: src/settings/utils.js:309
+#: src/settings/utils.js:159
+#: src/settings/utils.js:316
 msgid "Tips"
 msgstr ""
 
-#: src/settings/utils.js:168
-#: src/settings/utils.js:317
+#: src/settings/utils.js:169
+#: src/settings/utils.js:324
 msgid "Checkout Extra Fields"
 msgstr ""
 
-#: src/settings/utils.js:186
-#: src/settings/utils.js:273
+#: src/settings/utils.js:187
+#: src/settings/utils.js:280
 msgid "SMS & WhatsApp"
 msgstr ""
 
-#: src/settings/utils.js:190
+#: src/settings/utils.js:191
 msgid "Communication"
 msgstr ""
 
-#: src/settings/utils.js:200
+#: src/settings/utils.js:201
 msgid "Staff & Dashboard"
 msgstr ""
 
-#: src/settings/utils.js:216
-#: src/settings/utils.js:333
+#: src/settings/utils.js:217
+#: src/settings/utils.js:340
 msgid "Inventory"
 msgstr ""
 
-#: src/settings/utils.js:228
-#: src/settings/utils.js:341
+#: src/settings/utils.js:223
+#: src/settings/utils.js:344
+msgid "Report"
+msgstr ""
+
+#: src/settings/utils.js:235
+#: src/settings/utils.js:352
 msgid "Role Manager"
 msgstr ""
 
-#: src/settings/utils.js:238
-#: src/settings/utils.js:345
+#: src/settings/utils.js:245
+#: src/settings/utils.js:356
 msgid "License"
 msgstr ""
 
-#: src/settings/utils.js:241
+#: src/settings/utils.js:248
 msgid "System"
 msgstr ""
 
-#: src/settings/utils.js:250
+#: src/settings/utils.js:257
 msgid "Configure the foundational preferences for your restaurant — branding, currency, language and operating hours used across every module."
 msgstr ""
 
-#: src/settings/utils.js:254
+#: src/settings/utils.js:261
 msgid "Customize the single product detail page layout and visibility of each section."
 msgstr ""
 
-#: src/settings/utils.js:258
+#: src/settings/utils.js:265
 msgid "Manage food location settings including multi-location branch support."
 msgstr ""
 
-#: src/settings/utils.js:262
+#: src/settings/utils.js:269
 msgid "Set up QR code-based dine-in table ordering for your restaurant."
 msgstr ""
 
-#: src/settings/utils.js:270
+#: src/settings/utils.js:277
 msgid "Control product availability based on time schedules."
 msgstr ""
 
-#: src/settings/utils.js:274
+#: src/settings/utils.js:281
 msgid "Configure SMS and WhatsApp notifications for order updates."
 msgstr ""
 
-#: src/settings/utils.js:278
+#: src/settings/utils.js:285
 msgid "Manage table reservations, capacity, scheduling and email notifications."
 msgstr ""
 
-#: src/settings/utils.js:282
+#: src/settings/utils.js:289
 msgid "Create time-limited special menu offers with a customizable popup."
 msgstr ""
 
-#: src/settings/utils.js:286
+#: src/settings/utils.js:293
 msgid "Define custom WooCommerce order status workflow steps with email notifications."
 msgstr ""
 
-#: src/settings/utils.js:290
+#: src/settings/utils.js:297
 msgid "Track every status change and share live tracking links with customers via SMS or WhatsApp."
 msgstr ""
 
-#: src/settings/utils.js:294
+#: src/settings/utils.js:301
 msgid "Configure the floating mini-cart drawer style, behavior and appearance."
 msgstr ""
 
-#: src/settings/utils.js:298
+#: src/settings/utils.js:305
 msgid "Set up product recommendations displayed in the mini-cart to increase order value."
 msgstr ""
 
-#: src/settings/utils.js:302
+#: src/settings/utils.js:309
 msgid "Customize the checkout page layout and visible sections."
 msgstr ""
 
-#: src/settings/utils.js:306
+#: src/settings/utils.js:313
 msgid "Configure pickup, delivery and dine in options, time slots and scheduling."
 msgstr ""
 
-#: src/settings/utils.js:310
+#: src/settings/utils.js:317
 msgid "Enable and configure tip/gratuity options for your customers."
 msgstr ""
 
-#: src/settings/utils.js:314
+#: src/settings/utils.js:321
 msgid "Set up automatic discounts based on order total or product selection."
 msgstr ""
 
-#: src/settings/utils.js:318
+#: src/settings/utils.js:325
 msgid "Add custom fields to the checkout form for additional order information."
 msgstr ""
 
-#: src/settings/utils.js:322
+#: src/settings/utils.js:329
 msgid "Configure receipt printing for order confirmation, kitchen and delivery slips."
 msgstr ""
 
-#: src/settings/utils.js:326
+#: src/settings/utils.js:333
 msgid "Configure the staff-facing dashboard page, logo and auto-refresh settings."
 msgstr ""
 
-#: src/settings/utils.js:330
+#: src/settings/utils.js:337
 msgid "Configure order display settings for the front-end dashboard."
 msgstr ""
 
-#: src/settings/utils.js:334
+#: src/settings/utils.js:341
 msgid "Manage inventory tracking, low stock thresholds and waste reasons."
 msgstr ""
 
-#: src/settings/utils.js:338
+#: src/settings/utils.js:345
+msgid "Choose which order statuses the dashboard reports count as sales, and the period they open on."
+msgstr ""
+
+#: src/settings/utils.js:349
 msgid "Set up real-time kitchen order display with sound notifications."
 msgstr ""
 
-#: src/settings/utils.js:342
+#: src/settings/utils.js:353
 msgid "Create custom staff roles with specific permissions and menu access."
 msgstr ""
 
-#: src/settings/utils.js:346
+#: src/settings/utils.js:357
 msgid "Manage your Food Menu Pro license activation and status."
 msgstr ""

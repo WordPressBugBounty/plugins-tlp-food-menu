@@ -3,8 +3,8 @@ Contributors: techlabpro1, mamunnu
 Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
-Tested up to: 7.0
-Stable tag: 6.0.4
+Tested up to: 7.1
+Stable tag: 6.0.5
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -257,6 +257,10 @@ If you like Food Menu, consider our other WordPress plugins:
 Major update. Table Reservation, Tips, Special Menu, and Product Discount are now free, plus a new React settings panel and a new Pro operations suite (QR ordering, kitchen monitor, POS printing, SMS/WhatsApp, inventory, and more). Back up before updating.
 
 == Changelog ==
+
+= 6.0.5 ( Sep 7, 2026 ) =
+New: Report settings page under Front-End Dashboard for dashboard report options
+Improved: New installs default to Online Ordering when WooCommerce is already active
 
 = 6.0.4 ( Aug 18, 2026 ) =
 New: Upload your own "No Product Found" image for the empty mini cart

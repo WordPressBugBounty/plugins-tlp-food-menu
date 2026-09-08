@@ -143,11 +143,12 @@ class Review {
 			$remind_me    = add_query_arg( $args + [ 'rtfm_remind_me' => '1' ], self::current_admin_url() );
 			$rated        = add_query_arg( $args + [ 'rtfm_rated' => '1' ], self::current_admin_url() );
 			$reviewurl    = 'https://wordpress.org/support/plugin/tlp-food-menu/reviews/#new-post';
+			$logo         = TLPFoodMenu()->assets_url() . 'images/icon-128x128.svg';
 
 			printf(
 				'<div class="notice rtfm-review-notice">
 					<div class="rtfm-review-notice__icon">
-						<span class="rtfm-review-notice__icon-mark">🍽️</span>
+						<img class="rtfm-review-notice__icon-mark" src="%s" width="52" height="52" alt="Food Menu for WooCommerce" />
 					</div>
 					<div class="rtfm-review-notice__body">
 						<div class="rtfm-review-notice__stars">★★★★★</div>
@@ -161,6 +162,7 @@ class Review {
 						</div>
 					</div>
 				</div>',
+				esc_url( $logo ),
 				esc_url( $reviewurl ),
 				esc_url( $rated ),
 				esc_url( $remind_me ),
@@ -188,16 +190,11 @@ class Review {
 					flex: 0 0 auto;
 				}
 				.rtfm-review-notice__icon-mark {
-					display: flex;
-					align-items: center;
-					justify-content: center;
+					display: block;
 					width: 52px;
 					height: 52px;
 					border-radius: 12px;
-					background: linear-gradient(135deg, #6d4bff 0%, #8b5cf6 100%);
-					font-size: 26px;
-					line-height: 1;
-					box-shadow: 0 6px 14px rgba(93, 61, 253, 0.28);
+					box-shadow: 0 6px 14px rgba(16, 24, 40, 0.18);
 				}
 				.rtfm-review-notice__body {
 					flex: 1 1 auto;
