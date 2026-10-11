@@ -165,10 +165,10 @@ class MiniCartHooks {
 		if ( ! wp_verify_nonce( Fns::getNonce(), Fns::nonceText() ) ) {
 			wp_send_json_error();
 		}
-		$param = ! empty( $_POST['param'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['param'] ) ) : [];
+		$param = ! empty( $_POST['param'] ) && is_array( $_POST['param'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['param'] ) ) : [];
 
 		if ( isset( $param['cartItemKey'] ) && isset( $param['quantity'] ) ) {
-			WC()->cart->set_quantity( $param['cartItemKey'], $param['quantity'] );
+			WC()->cart->set_quantity( $param['cartItemKey'], wc_stock_amount( $param['quantity'] ) );
 		}
 
 		$htmlData = Fns::render( 'mini-cart/mini-cart', [], true );

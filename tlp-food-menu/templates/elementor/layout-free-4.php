@@ -73,7 +73,7 @@ $class   .= ' fmp-item-' . $pID;
 			if ( ! $link ) {
 				$html .= '<h3>' . get_the_title() . '</h3>';
 			} else {
-				$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $pID ) . '" href="' . get_permalink() . '"  target="' . esc_attr( $target ) . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
+				$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $pID ) . '" href="' . esc_url( get_permalink() ) . '"  target="' . esc_attr( $target ) . '" title="' . esc_attr( get_the_title() ) . '">' . get_the_title() . '</a></h3>';
 			}
 
 			if ( in_array( 'price', $items, true ) ) {

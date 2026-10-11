@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 6.0.5
+Stable tag: 6.0.6
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -216,6 +216,10 @@ Yes. Food Menu is translation ready with POT files included. Use Loco Translate 
 
 The free version includes Grid, List, Slider, and Isotope Filter layouts. Food Menu Pro adds 20+ more layouts with category-based designs and specialized WooCommerce display styles.
 
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the Food Menu – Restaurant Menu & Online Ordering for WooCommerce plugin through the [Patchstack Vulnerability Disclosure  Program](https://patchstack.com/database/vdp/9e5fc081-b0b3-4a5f-878b-c0069fa0fa3b). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 == 🛠 Support and Documentation ==
 
 Need help? Access comprehensive resources:
@@ -257,6 +261,11 @@ If you like Food Menu, consider our other WordPress plugins:
 Major update. Table Reservation, Tips, Special Menu, and Product Discount are now free, plus a new React settings panel and a new Pro operations suite (QR ordering, kitchen monitor, POS printing, SMS/WhatsApp, inventory, and more). Back up before updating.
 
 == Changelog ==
+
+= 6.0.6 ( Oct 11, 2026 ) =
+Security: Fixed reflected XSS on the reservation page via the message URL parameter
+Security: Escaped food titles and links in menu layouts to prevent stored XSS
+Security: Added permission checks when saving shortcode, food and reservation details
 
 = 6.0.5 ( Sep 7, 2026 ) =
 New: Report settings page under Front-End Dashboard for dashboard report options

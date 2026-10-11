@@ -436,7 +436,7 @@ class DashboardApi {
 				$reservations[]    = [
 					'id'            => $post_id,
 					'customer_name' => get_post_meta( $post_id, '_fmp_customer_name', true ) ?: $post->post_title,
-					'booked_seats'  => join( '<br>', FnsPro::get_booked_seats_info( $post_id ) ),
+					'booked_seats'  => method_exists( FnsPro::class, 'get_booked_seats_info' ) ? wp_kses_post( join( '<br>', (array) FnsPro::get_booked_seats_info( $post_id ) ) ) : '',
 					'time'          => $booking_start_time . ' - ' . $booking_end_time,
 					'date'          => date_i18n( get_option( 'date_format' ), strtotime( $booking_date ) ),
 				];

@@ -77,7 +77,7 @@ class ShortcodeSource {
 
 		if ( ! empty( $terms ) ) {
 			foreach ( $terms as $term ) {
-				$catList .= "<option value='{$term->term_id}'>{$term->name}</option>";
+				$catList .= "<option value='" . absint( $term->term_id ) . "'>" . esc_html( $term->name ) . '</option>';
 			}
 		}
 

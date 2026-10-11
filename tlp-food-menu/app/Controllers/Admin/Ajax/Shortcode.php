@@ -60,7 +60,7 @@ class Shortcode {
 
 			while ( $scQ->have_posts() ) {
 				$scQ->the_post();
-				$html .= "<option value='" . get_the_ID() . "'>" . get_the_title() . '</option>';
+				$html .= "<option value='" . absint( get_the_ID() ) . "'>" . esc_html( get_the_title() ) . '</option>';
 			}
 
 			$html .= '</select>';

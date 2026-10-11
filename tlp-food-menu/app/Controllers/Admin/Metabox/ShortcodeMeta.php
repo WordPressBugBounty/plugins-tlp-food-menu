@@ -168,6 +168,10 @@ class ShortcodeMeta {
 			return $post_id;
 		}
 
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return $post_id;
+		}
+
 		$mates = Fns::fmpScMetaFields();
 		$mates = apply_filters( 'rtfm_sc_meta_fields', $mates );
 
@@ -392,7 +396,7 @@ class ShortcodeMeta {
 		$html .= Fns::renderView( 'metabox.styling', $post, true );
 		$html .= '</div>';
 
-		$html .= sprintf( '<input type="hidden" id="_rtfm_last_active_tab" name="_rtfm_last_active_tab" value="%s"/>', $last_tab );
+		$html .= sprintf( '<input type="hidden" id="_rtfm_last_active_tab" name="_rtfm_last_active_tab" value="%s"/>', esc_attr( $last_tab ) );
 		$html .= '</div>';
 
 		Fns::print_html( $html, true );

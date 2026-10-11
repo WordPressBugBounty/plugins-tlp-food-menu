@@ -72,7 +72,7 @@ $popup = $fmp_el_popup == 'yes' ? 'fmp-popup' : 'fmp-link';
                 if( !$detail_link ){
                     $html .= $image;
                 } else{
-                    $html .= '<a data-id="' . esc_attr( $pID ) . '" class="'.esc_attr( $popup ).'" href="' . get_permalink() . '" target="' . esc_attr( $target ) . '">'.$image.'</a>';
+                    $html .= '<a data-id="' . esc_attr( $pID ) . '" class="'.esc_attr( $popup ).'" href="' . esc_url( get_permalink() ) . '" target="' . esc_attr( $target ) . '">'.$image.'</a>';
                 }
                 $html .= '</div>';
             }
@@ -85,7 +85,7 @@ $popup = $fmp_el_popup == 'yes' ? 'fmp-popup' : 'fmp-link';
 			if ( ! $detail_link ) {
 				$html .= '<h3>' . esc_html( $title ) . '</h3>';
 			} else {
-				$html .= '<h3><a data-id="' . esc_attr( $pID ) . '" class="'.esc_attr( $popup ).'" href="' . get_permalink() . '"  target="' . esc_attr( $target ) . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
+				$html .= '<h3><a data-id="' . esc_attr( $pID ) . '" class="'.esc_attr( $popup ).'" href="' . esc_url( get_permalink() ) . '"  target="' . esc_attr( $target ) . '" title="' . esc_attr( get_the_title() ) . '">' . get_the_title() . '</a></h3>';
 			}
 		}
 

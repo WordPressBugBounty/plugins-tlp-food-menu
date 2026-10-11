@@ -161,6 +161,10 @@ class ReservationMeta {
 			return $post_id;
 		}
 
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return $post_id;
+		}
+
 		$fields = Options::reservationMetaField();
 
 		foreach ( $fields as $metaKey => $field ) {

@@ -45,12 +45,12 @@ get_header();
 					$html .= '<div class="fmp-food-item food-menu">';
 
 					$html .= '<div class="fmp-image-wrap ' . $thumbClass . '">';
-					$html .= '<a href="' . get_permalink() . '" title="' . get_the_title() . '">';
+					$html .= '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
 
 					if ( has_post_thumbnail() ) {
 						$html .= get_the_post_thumbnail( get_the_ID(), 'medium' );
 					} else {
-						$html .= "<img src='" . TLPFoodMenu()->assets_url() . 'images/demo-100x100.png' . "' alt='" . get_the_title() . "' />";
+						$html .= "<img src='" . esc_url( TLPFoodMenu()->assets_url() . 'images/demo-100x100.png' ) . "' alt='" . esc_attr( get_the_title() ) . "' />";
 					}
 
 					$html .= '</a>';
@@ -58,7 +58,7 @@ get_header();
 
 					$html .= '<div class="fmp-content-wrap">';
 					$html .= '<div class="fmp-title">';
-					$html .= '<h3><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
+					$html .= '<h3><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">' . get_the_title() . '</a></h3>';
 					$html .= '<span class="price">' . $gTotal . '</span>';
 					$html .= '</div>';
 					$html .= '<div class="fmp-body">';

@@ -70,9 +70,9 @@ $wooClass = 'product' === $source ? ' woo-template' : null;
 
 		if ( in_array( 'title', $items, true ) ) {
 			if ( ! $link ) {
-				$html .= '<h3>' . get_the_title() . '</h3>';
+				$html .= '<h3>' . wp_kses_post( get_the_title() ) . '</h3>';
 			} else {
-				$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $pID ) . '" href="' . get_permalink() . '"  target="' . esc_attr( $target ) . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
+				$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $pID ) . '" href="' . esc_url( get_permalink() ) . '"  target="' . esc_attr( $target ) . '" title="' . esc_attr( get_the_title() ) . '">' . wp_kses_post( get_the_title() ) . '</a></h3>';
 			}
 		}
 
@@ -84,7 +84,7 @@ $wooClass = 'product' === $source ? ' woo-template' : null;
 		$html .= '<div class="fmp-body">';
 
 		if ( in_array( 'excerpt', $items, true ) ) {
-			$html .= '<p>' . $excerpt . '</p>';
+			$html .= '<p>' . wp_kses_post( $excerpt ) . '</p>';
 		}
 
 		$html .= '</div>';

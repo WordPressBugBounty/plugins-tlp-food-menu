@@ -82,7 +82,7 @@ while ( $gridQuery->have_posts() ) {
 		if ( ! $link ) {
 			$html .= '<h3 class="no-link">' . get_the_title() . '</h3>';
 		} else {
-			$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $id ) . '" href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></h3>';
+			$html .= '<h3><a class="' . esc_attr( $anchorClass ) . '" data-id="' . esc_attr( $id ) . '" href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">' . get_the_title() . '</a></h3>';
 		}
 	}
 
@@ -107,7 +107,7 @@ while ( $gridQuery->have_posts() ) {
 	$html .= '<div class="fmp-footer' . $wooClass . '">';
 
 	if ( in_array( 'read_more', $items, true ) && $link ) {
-		$html .= '<a href="' . get_permalink() . '" data-id="' . esc_attr( $id ) . '" class="' . esc_attr( $anchorClass ) . ' fmp-btn-read-more type-1">' . esc_html( $read_more ) . '</a>';
+		$html .= '<a href="' . esc_url( get_permalink() ) . '" data-id="' . esc_attr( $id ) . '" class="' . esc_attr( $anchorClass ) . ' fmp-btn-read-more type-1">' . esc_html( $read_more ) . '</a>';
 	}
 
 	if ( 'product' === $source ) {

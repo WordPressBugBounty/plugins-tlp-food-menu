@@ -109,6 +109,10 @@ class PostMeta {
 			return;
 		}
 
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+
 		$meta['_regular_price'] = ( isset( $_POST['_regular_price'] ) ? sprintf(
 			'%.2f',
 			floatval( sanitize_text_field( wp_unslash( $_POST['_regular_price'] ) ) )
