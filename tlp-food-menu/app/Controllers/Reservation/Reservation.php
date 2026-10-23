@@ -42,6 +42,7 @@ class Reservation {
 
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_assets' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_enqueue_assets' ] );
+		add_filter( 'do_shortcode_tag', [ $this, 'enqueue_for_shortcode' ], 10, 2 );
 
 		add_action( 'wp_ajax_booking_seat_capacity', [ $this, 'booking_seat_capacity' ] );
 		add_action( 'wp_ajax_nopriv_booking_seat_capacity', [ $this, 'booking_seat_capacity' ] );
@@ -58,12 +59,66 @@ class Reservation {
 	}
 
 	/**
-	 * Frontend enqueue.
+	 * Shortcodes that render a reservation form (the visual-table one is Pro's).
+	 *
+	 * @var string[]
+	 */
+	const FORM_SHORTCODES = [ 'fm_reservation_form', 'fm_visual_table_reservation_form' ];
+
+	/**
+	 * Frontend enqueue — only on pages that show a reservation form.
+	 *
+	 * Loading the reservation script site-wide exposed its URL handling on every
+	 * page, so it is enqueued here only when the current post's content holds a
+	 * reservation shortcode. Forms placed anywhere else (page builders, widgets)
+	 * are covered by enqueue_for_shortcode(). The `fmp_reservation_enqueue_assets`
+	 * filter can force loading for forms rendered without a shortcode.
 	 *
 	 * @return void
 	 */
 	public function frontend_enqueue_assets() {
-		if ( 'on' !== ( $this->options['fmp_food_reservation_status'] ?? '' ) ) {
+		$has_form = false;
+		$post     = is_singular() ? get_post() : null;
+
+		if ( $post && ! empty( $post->post_content ) ) {
+			foreach ( self::FORM_SHORTCODES as $tag ) {
+				if ( has_shortcode( $post->post_content, $tag ) ) {
+					$has_form = true;
+					break;
+				}
+			}
+		}
+
+		if ( apply_filters( 'fmp_reservation_enqueue_assets', $has_form ) ) {
+			$this->enqueue_form_assets();
+		}
+	}
+
+	/**
+	 * Enqueue the form assets when a reservation shortcode is rendered.
+	 *
+	 * Scripts load in the footer, so enqueuing while the content renders works.
+	 *
+	 * @param string $output Shortcode output.
+	 * @param string $tag    Shortcode tag.
+	 *
+	 * @return string
+	 */
+	public function enqueue_for_shortcode( $output, $tag ) {
+		if ( ! is_admin() && in_array( $tag, self::FORM_SHORTCODES, true ) ) {
+			$this->enqueue_form_assets();
+		}
+
+		return $output;
+	}
+
+	/**
+	 * Enqueue + localize the reservation form assets (once per request).
+	 *
+	 * @return void
+	 */
+	public function enqueue_form_assets() {
+		if ( 'on' !== ( $this->options['fmp_food_reservation_status'] ?? '' ) || wp_script_is( 'fmp-reservation', 'enqueued' ) ) {
 			return;
 		}
 

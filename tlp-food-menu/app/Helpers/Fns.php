@@ -2347,7 +2347,8 @@ class Fns {
 			$message .= " - Booking ID: $booking_id";
 		}
 
-		return $message;
+		// Shown as HTML in the frontend confirmation popup — keep it to safe markup.
+		return wp_kses_post( $message );
 	}
 
 	/**

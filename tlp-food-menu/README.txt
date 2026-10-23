@@ -263,6 +263,8 @@ Major update. Table Reservation, Tips, Special Menu, and Product Discount are no
 == Changelog ==
 
 = 6.0.6 ( Oct 11, 2026 ) =
+Security: Reservation scripts now load only on pages with a reservation form
+Security: Reservation confirmation messages are now filtered for unsafe HTML
 Security: Fixed reflected XSS on the reservation page via the message URL parameter
 Security: Escaped food titles and links in menu layouts to prevent stored XSS
 Security: Added permission checks when saving shortcode, food and reservation details

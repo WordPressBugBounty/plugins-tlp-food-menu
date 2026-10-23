@@ -135,7 +135,7 @@ class ReservationSubmit {
 		if ( ! empty( $state['error'] ) ) {
 			wp_send_json_error( [
 				'status_code' => 400,
-				'message'     => $state['message'] ?? esc_html__( 'Reservation could not be completed.', 'tlp-food-menu' ),
+				'message'     => wp_kses_post( $state['message'] ?? esc_html__( 'Reservation could not be completed.', 'tlp-food-menu' ) ),
 			] );
 		}
 
