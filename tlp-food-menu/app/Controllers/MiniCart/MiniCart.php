@@ -56,13 +56,11 @@ class MiniCart {
         $nonce                     = wp_create_nonce( Fns::nonceText() );
 
         // woocommerce js file.
+        // Do not wipe WC's sessionStorage fragments here: without them every page
+        // view fires an uncached get_refreshed_fragments request. WC's own cart
+        // hash check already refreshes them whenever the cart changes.
         wp_enqueue_script( 'wc-cart-fragments' );
 
-        // Wipe WC's cached mini-cart fragments before the wc-cart-fragments
-        // script reads them, so the page always uses the freshly server-rendered
-        // mini-cart HTML and never a stale copy from sessionStorage.
-        $clear_fragments_js = "(function(){try{var keys=[];for(var i=0;i<sessionStorage.length;i++){var k=sessionStorage.key(i);if(k&&(k.indexOf('wc_fragments_')===0||k==='wc_cart_hash'||k==='wc_cart_created')){keys.push(k);}}keys.forEach(function(k){sessionStorage.removeItem(k);});}catch(e){}})();";
-        wp_add_inline_script( 'wc-cart-fragments', $clear_fragments_js, 'before' );
         // mini cart js.
         wp_enqueue_script( 'fm-ajax-minicart' );
         wp_localize_script(

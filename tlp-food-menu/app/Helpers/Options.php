@@ -31,8 +31,8 @@ class Options {
 			],
 			'fmp_mobile_item_fields' => [
 				'type'        => 'checkbox',
-				'label'       => esc_html__( 'Hide Fields on Mobile Devices', 'tlp-food-menu' ),
-				'description' => esc_html__( 'Select which of the above selected fields should be hidden on mobile devices.', 'tlp-food-menu' ),
+				'label'       => esc_html__( 'Show Fields on Mobile Devices', 'tlp-food-menu' ),
+				'description' => esc_html__( 'Select which of the above selected fields should be shown on mobile devices. Unchecked fields are hidden.', 'tlp-food-menu' ),
 				'multiple'    => true,
 				'alignment'   => 'vertical',
 				'default'     => array_keys( self::fmpMobileItemFields() ),
