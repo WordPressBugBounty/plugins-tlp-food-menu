@@ -51,6 +51,7 @@ class AjaxController extends Controller {
 	private function admin_ajax() {
 		$this->ajax[] = AdminAjax\Preview::class;
 		$this->ajax[] = AdminAjax\Settings::class;
+		$this->ajax[] = AdminAjax\SettingsTransfer::class;
 		$this->ajax[] = AdminAjax\ShortcodeSource::class;
 		$this->ajax[] = AdminAjax\Shortcode::class;
 

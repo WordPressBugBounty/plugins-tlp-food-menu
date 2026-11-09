@@ -1926,6 +1926,9 @@ input:where([type='file']):focus {
 .\!pr-8 {
   padding-right: 2rem !important;
 }
+.pl-0 {
+  padding-left: 0px;
+}
 .pl-3 {
   padding-left: 0.75rem;
 }
@@ -5695,6 +5698,9 @@ input:where([type='file']):focus {
 }
 .\!pr-8 {
   padding-right: 2rem !important;
+}
+.pl-0 {
+  padding-left: 0px;
 }
 .pl-3 {
   padding-left: 0.75rem;

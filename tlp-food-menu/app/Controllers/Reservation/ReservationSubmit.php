@@ -78,6 +78,13 @@ class ReservationSubmit {
 	 * @return void
 	 */
 	public function make_reservation() {
+		if ( $this->rate_limited( 'book' ) ) {
+			wp_send_json_error( [
+				'status_code' => 429,
+				'message'     => esc_html__( 'Too many reservations from your network. Please try again later.', 'tlp-food-menu' ),
+			] );
+		}
+
 		$fmp_resi_default_status = ! empty( $this->options['fmp_resi_default_status'] ) ? $this->options['fmp_resi_default_status'] : 'confirmed';
 		$form_data               = filter_input_array( INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS );
 
@@ -88,7 +95,7 @@ class ReservationSubmit {
 		$resi_date       = ! empty( $form_data['fmp_date'] ) ? sanitize_text_field( $form_data['fmp_date'] ) : '';
 		$resi_start_time = ! empty( $form_data['fmp_start_time'] ) ? sanitize_text_field( $form_data['fmp_start_time'] ) : '';
 		$resi_end_time   = ! empty( $form_data['fmp_end_time'] ) ? sanitize_text_field( $form_data['fmp_end_time'] ) : '';
-		$resi_guest_no   = ! empty( $form_data['fmp_guest_nub'] ) ? sanitize_text_field( $form_data['fmp_guest_nub'] ) : '';
+		$resi_guest_no   = ! empty( $form_data['fmp_guest_nub'] ) ? (int) $form_data['fmp_guest_nub'] : 0;
 		$resi_phone      = ! empty( $form_data['fmp_phone'] ) ? preg_replace( '/[^0-9+-]/', '', sanitize_text_field( $form_data['fmp_phone'] ) ) : '';
 		$resi_location   = ! empty( $form_data['fmp_location_id'] ) ? absint( $form_data['fmp_location_id'] ) : 0;
 
@@ -179,6 +186,14 @@ class ReservationSubmit {
 			] );
 		}
 
+		// (int), not absint(): a negative count must be rejected, not silently flipped positive.
+		if ( $resi_guest_no < 1 ) {
+			wp_send_json_error( [
+				'status_code' => 400,
+				'message'     => esc_html__( 'Please enter a valid number of guests.', 'tlp-food-menu' ),
+			] );
+		}
+
 		if ( ! $skip_seat_check ) {
 			$capacity_check = Reservation::get_instance()->resi_capacity_status(
 				$resi_date,
@@ -196,8 +211,21 @@ class ReservationSubmit {
 			}
 
 			$available_seats = isset( $capacity_check['capacity'] ) ? (int) $capacity_check['capacity'] : 0;
+			$max_guests      = isset( $capacity_check['max_capacity'] ) ? (int) $capacity_check['max_capacity'] : $available_seats;
 
-			if ( (int) $resi_guest_no > $available_seats ) {
+			// The form's guest dropdown is capped client-side only — enforce the Max Guest setting here too.
+			if ( $max_guests < $available_seats && $resi_guest_no > $max_guests ) {
+				wp_send_json_error( [
+					'status_code' => 400,
+					'message'     => sprintf(
+						/* translators: %d: maximum guests per reservation */
+						esc_html__( 'A reservation can be for at most %d guest(s).', 'tlp-food-menu' ),
+						$max_guests
+					),
+				] );
+			}
+
+			if ( $resi_guest_no > $available_seats ) {
 				wp_send_json_error( [
 					'status_code' => 400,
 					'message'     => sprintf(
@@ -236,6 +264,8 @@ class ReservationSubmit {
 			update_post_meta( $post_id, $key, $value );
 		}
 
+		$this->rate_hit( 'book' );
+
 		if ( 'confirmed' === $meta_data['fmp_resi_meta_status'] ) {
 			$message = Fns::get_reservation_message( $this->options, 'confirm', $booking_id );
 		} else {
@@ -261,6 +291,13 @@ class ReservationSubmit {
 	 * @return void
 	 */
 	public function cancel_reservation() {
+		if ( $this->rate_limited( 'cancel' ) ) {
+			wp_send_json_error( [
+				'status_code' => 429,
+				'message'     => [ esc_html__( 'Too many attempts. Please try again later.', 'tlp-food-menu' ) ],
+			] );
+		}
+
 		$form_data        = filter_input_array( INPUT_POST, FILTER_SANITIZE_SPECIAL_CHARS );
 		$booking_id       = ! empty( $form_data['fmp_booking_id'] ) ? sanitize_text_field( $form_data['fmp_booking_id'] ) : '';
 		$cancel_email_raw = ! empty( $form_data['fmp_cancel_email'] ) ? sanitize_text_field( $form_data['fmp_cancel_email'] ) : '';
@@ -310,7 +347,19 @@ class ReservationSubmit {
 			],
 		] );
 
+		// The phone must match too — booking IDs are sequential, so ID + email alone is guessable.
+		// Compared as digits only, so "+1 555-0100" and "15550100" match. Old bookings without a phone keep working.
+		if ( $booking_post && ! is_wp_error( $booking_post ) ) {
+			$saved_phone = preg_replace( '/\D/', '', (string) get_post_meta( $booking_post[0]->ID, 'fmp_resi_meta_phone', true ) );
+
+			if ( '' !== $saved_phone && preg_replace( '/\D/', '', $cancel_phone ) !== $saved_phone ) {
+				$booking_post = [];
+			}
+		}
+
 		if ( ! $booking_post || is_wp_error( $booking_post ) ) {
+			$this->rate_hit( 'cancel' );
+
 			wp_send_json_error( [
 				'status_code' => 401,
 				'message'     => [ esc_html__( 'No reservation found please provide the details', 'tlp-food-menu' ) ],
@@ -326,5 +375,57 @@ class ReservationSubmit {
 			'status_code' => 200,
 			'message'     => [ esc_html__( 'Your request for cancellation has been processed successfully.', 'tlp-food-menu' ) ],
 		] );
+	}
+
+	/**
+	 * Per-IP limits for the public form: completed bookings and failed cancel lookups.
+	 * Generous, since visitors behind one proxy/CDN can share an IP. Filter to 0 to disable.
+	 *
+	 * @param string $type book|cancel.
+	 * @return int Max hits per window.
+	 */
+	private function rate_limit_max( $type ) {
+		return (int) apply_filters( 'fmp_reservation_rate_limit', 10, $type );
+	}
+
+	/**
+	 * Transient key for the current visitor.
+	 *
+	 * @param string $type book|cancel.
+	 * @return string
+	 */
+	private function rate_key( $type ) {
+		$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+
+		return 'fmp_resi_rl_' . $type . '_' . md5( $ip );
+	}
+
+	/**
+	 * Whether the visitor has used up this window.
+	 *
+	 * @param string $type book|cancel.
+	 * @return bool
+	 */
+	private function rate_limited( $type ) {
+		$max = $this->rate_limit_max( $type );
+
+		return $max > 0 && (int) get_transient( $this->rate_key( $type ) ) >= $max;
+	}
+
+	/**
+	 * Count one hit; each hit extends the 10-minute window.
+	 *
+	 * @param string $type book|cancel.
+	 * @return void
+	 */
+	private function rate_hit( $type ) {
+		if ( $this->rate_limit_max( $type ) <= 0 ) {
+			return;
+		}
+
+		$key = $this->rate_key( $type );
+		$hit = (int) get_transient( $key );
+
+		set_transient( $key, $hit + 1, 10 * MINUTE_IN_SECONDS );
 	}
 }

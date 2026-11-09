@@ -109,6 +109,9 @@ class Shortcode {
 			$layout = 'layout-free';
 		}
 
+		// Category layouts render from $metas['layout'] — keep it the validated value.
+		$metas['layout'] = $layout;
+
 		$isIsotope  = preg_match( '/isotope/', $layout );
 		$isCarousel = preg_match( '/carousel/', $layout );
 		$isCat      = preg_match( '/grid-by-cat/', $layout );

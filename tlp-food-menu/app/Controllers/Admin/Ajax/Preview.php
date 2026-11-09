@@ -139,6 +139,11 @@ class Preview {
 
 			$cOpt = ! empty( $_REQUEST['fmp_carousel_options'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_REQUEST['fmp_carousel_options'] ) ) : [];
 
+			// Whitelist the layout before anything uses it — it becomes a template path.
+			if ( ! in_array( $metas['layout'], array_keys( Options::scLayouts() ), true ) ) {
+				$metas['layout'] = 'layout-free';
+			}
+
 			$arg = $this->argBuilder( $scID, $metas, $cOpt );
 
 			$layout     = $metas['layout'];
@@ -946,6 +951,10 @@ class Preview {
 				$css .= '}';
 			}
 		}
+
+		// Style values come from shortcode meta — never let one close the <style> tag.
+		$open = "<style type='text/css' media='all'>";
+		$css  = $open . str_replace( '<', '', substr( $css, strlen( $open ) ) );
 
 		$css .= '</style>';
 

@@ -237,6 +237,10 @@ class ReservationTableList {
 		$id       = ! empty( $_GET['post_id'] ) ? absint( $_GET['post_id'] ) : 0;
 		$resi_arr = Fns::reservation_fields_array();
 
+		if ( ! $id || 'fmp_reservation' !== get_post_type( $id ) || ! current_user_can( 'edit_post', $id ) ) {
+			return false;
+		}
+
 		Fns::print_html( $this->generate_reservation_details_html( $id, $resi_arr ) );
 	}
 

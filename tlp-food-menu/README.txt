@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 6.0.7
+Stable tag: 6.0.8
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -261,6 +261,13 @@ If you like Food Menu, consider our other WordPress plugins:
 Major update. Table Reservation, Tips, Special Menu, and Product Discount are now free, plus a new React settings panel and a new Pro operations suite (QR ordering, kitchen monitor, POS printing, SMS/WhatsApp, inventory, and more). Back up before updating.
 
 == Changelog ==
+
+= 6.0.8 ( Nov 9, 2026) =
+New: Import food items from CSV with column mapping, and export them to CSV
+New: Export and import plugin settings from Settings → Import / Export
+Security: Shortcode preview and template loader can no longer load files outside templates
+Security: Reservations now enforce guest limits, phone-verified cancellation and rate limiting
+Security: Stronger CSV formula protection and extra permission checks on reservations and migration
 
 = 6.0.7 ( Oct 25, 2026 ) =
 Fixed: Mobile field setting was mislabeled "Hide", making food items appear empty on phones

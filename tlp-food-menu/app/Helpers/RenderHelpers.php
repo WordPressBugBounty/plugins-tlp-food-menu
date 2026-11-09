@@ -1067,6 +1067,10 @@ class RenderHelpers {
 			$css .= '}';
 		}
 
+		// Style values come from shortcode meta — never let one close the <style> tag.
+		$open = "<style type='text/css' media='all'>";
+		$css  = $open . str_replace( '<', '', substr( $css, strlen( $open ) ) );
+
 		ob_start();
 		do_action( 'fmp_sc_custom_css', $ID, $scMeta );
 		$css .= ob_get_clean();

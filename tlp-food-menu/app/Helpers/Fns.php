@@ -104,9 +104,14 @@ class Fns {
 	 * @return string|void
 	 */
 	public static function render( $template_name, $args = [], $return = false ) {
+		// Template names are relative paths inside the plugin/theme — never let one climb out.
+		if ( ! is_string( $template_name ) || false !== strpos( $template_name, '..' ) || false !== strpos( $template_name, "\0" ) ) {
+			return $return ? '' : null;
+		}
 
 		if ( ! empty( $args ) && is_array( $args ) ) {
-			extract( $args );
+			// EXTR_SKIP: an arg must never overwrite $template_name / $return (args can carry request data).
+			extract( $args, EXTR_SKIP ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		}
 
 		$template = [

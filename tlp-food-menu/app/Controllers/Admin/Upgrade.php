@@ -35,7 +35,7 @@ class Upgrade {
 		);
 
 		$nonce = ! empty( $_GET['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ) : null;
-		if ( isset( $_GET['migrate'] ) && wp_verify_nonce( $nonce, Fns::nonceText() ) ) {
+		if ( isset( $_GET['migrate'] ) && current_user_can( 'manage_options' ) && wp_verify_nonce( $nonce, Fns::nonceText() ) ) {
 			$this->migrateData();
 		}
 

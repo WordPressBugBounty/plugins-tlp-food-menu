@@ -67,6 +67,7 @@ class AdminController extends Controller {
 		$this->admin[] = Admin\Settings::class;
 		$this->admin[] = Admin\AdminColumns::class;
 		$this->admin[] = Admin\ShortcodeButton::class;
+		$this->admin[] = Admin\ImportExport::class;
 
 		return $this;
 	}

@@ -307,7 +307,7 @@ class Reservation {
 				$response['message'] = esc_html__( 'Fully booked. Try another time.', 'tlp-food-menu' );
 			}
 
-			$available_capacity = absint( $seat_capacity - $reserved_seats );
+			$available_capacity = max( 0, $seat_capacity - $reserved_seats );
 			$max_guest_capacity = $max_guest_global > 0 ? absint( $max_guest_global ) : $available_capacity;
 
 			$response['capacity']     = $available_capacity;
@@ -397,7 +397,8 @@ class Reservation {
 			$saved_end_time   = Fns::parse_time_to_seconds( $saved_end_raw ?: '11:30 PM' );
 
 			if ( $this->should_calculate_seats( $saved_start_time, $saved_end_time, $req_start, $req_end ) ) {
-				$total_seat += (int) get_post_meta( $reservation, 'fmp_resi_meta_seat', true );
+				// max(): a negative seat count stored by an older version must not free up seats.
+				$total_seat += max( 0, (int) get_post_meta( $reservation, 'fmp_resi_meta_seat', true ) );
 
 				$this->merge_meta_ids( $reservation, 'fmp_resi_meta_booked_ids', $date_booked_ids );
 				$this->merge_meta_ids( $reservation, 'fmp_resi_meta_booked_table_ids', $date_booked_table_ids );

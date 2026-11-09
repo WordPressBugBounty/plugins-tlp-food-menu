@@ -575,6 +575,13 @@ class ScriptsController {
 				'footer' => true,
 			];
 			$this->scripts[] = [
+				'handle' => 'fm-import-export',
+				'src'    => esc_url( TLPFoodMenu()->assets_url() ) . 'js/import-export.min.js',
+				'deps'   => [ 'jquery' ],
+				'footer' => true,
+			];
+
+			$this->scripts[] = [
 				'handle' => 'fm-admin-global',
 				'src'    => esc_url( TLPFoodMenu()->assets_url() ) . 'js/admin-global.min.js',
 				'deps'   => [ 'jquery' ],
