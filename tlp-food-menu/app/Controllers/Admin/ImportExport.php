@@ -184,7 +184,7 @@ class ImportExport {
 	 * Importable / exportable fields.
 	 *
 	 * Each field: label, type (post|meta|taxonomy|image|images|custom), key,
-	 * optional format (text|html|price|int|status), options (allowed values),
+	 * optional format (text|html|price|int|status|date|options), options (allowed values),
 	 * aliases (header names auto-mapped to it), export_cb / import_cb for `custom`.
 	 *
 	 * @return array
@@ -235,6 +235,13 @@ class ImportExport {
 				'format'  => 'status',
 				'aliases' => [ 'status', 'post status', 'published' ],
 			],
+			'date'        => [
+				'label'   => esc_html__( 'Date', 'tlp-food-menu' ),
+				'type'    => 'post',
+				'key'     => 'post_date',
+				'format'  => 'date',
+				'aliases' => [ 'date', 'post date', 'publish date', 'published date', 'date published', 'created', 'date created', 'created at' ],
+			],
 			'menu_order'  => [
 				'label'   => esc_html__( 'Menu Order', 'tlp-food-menu' ),
 				'type'    => 'post',
@@ -248,6 +255,12 @@ class ImportExport {
 				'key'     => '_regular_price',
 				'format'  => 'price',
 				'aliases' => [ 'price', 'regular price', 'cost', 'amount' ],
+			],
+			'price_label' => [
+				'label'   => esc_html__( 'Price Label', 'tlp-food-menu' ),
+				'type'    => 'meta',
+				'key'     => Fns::PRICE_LABEL_META,
+				'aliases' => [ 'price label', 'price text', 'price note', 'prices', 'sizes' ],
 			],
 			'categories'  => [
 				'label'   => esc_html__( 'Categories', 'tlp-food-menu' ),
@@ -397,7 +410,7 @@ class ImportExport {
 						<tbody></tbody>
 					</table>
 					<p class="description">
-						<?php esc_html_e( 'Multiple categories or images: separate with commas. Sub-categories: "Parent > Child". Images: full URLs or Media Library IDs.', 'tlp-food-menu' ); ?>
+						<?php esc_html_e( 'Multiple categories or images: separate with commas. Sub-categories: "Parent > Child". Images: full URLs or Media Library IDs. Price ranges or size prices ("12.00-14.50", "Small 5.95 | Large 6.50") are kept as the Price Label.', 'tlp-food-menu' ); ?>
 					</p>
 					<p>
 						<button type="button" class="button" id="fm-ie-back"><?php esc_html_e( 'Back', 'tlp-food-menu' ); ?></button>
@@ -1050,6 +1063,16 @@ class ImportExport {
 			return new \WP_Error( 'no_title', __( 'Title is empty.', 'tlp-food-menu' ) );
 		}
 
+		// A price range or size prices ("12.00-14.50", "Small 5.95 | Large 6.50")
+		// is kept as the Price Label; its first number becomes the Regular Price.
+		if ( isset( $data['price'] ) && '' !== $data['price'] && null === $this->format_value( $data['price'], $fields['price'] ) ) {
+			if ( empty( $data['price_label'] ) && isset( $fields['price_label'] ) ) {
+				$data['price_label'] = $data['price'];
+			}
+
+			$data['price'] = preg_match( '/\d+(?:[.,]\d+)?/', $data['price'], $match ) ? $match[0] : '';
+		}
+
 		$postarr = [];
 
 		foreach ( $data as $key => $value ) {
@@ -1062,6 +1085,12 @@ class ImportExport {
 			if ( null !== $value ) {
 				$postarr[ $fields[ $key ]['key'] ] = $value;
 			}
+		}
+
+		if ( isset( $postarr['post_date'] ) ) {
+			$postarr['post_date_gmt'] = get_gmt_from_date( $postarr['post_date'] );
+			// Without it WordPress ignores a new date on drafts when updating.
+			$postarr['edit_date'] = true;
 		}
 
 		if ( $existing_id ) {
@@ -1140,7 +1169,23 @@ class ImportExport {
 
 				$value = str_replace( ',', '', $value );
 
-				return is_numeric( $value ) ? Fns::format_decimal( $value ) : null;
+				// Two decimals, as the edit screen saves it ("13" → "13.00").
+				return is_numeric( $value ) ? sprintf( '%.2f', (float) $value ) : null;
+
+			case 'date':
+				// Any format strtotime() reads, in the site's timezone. Bare
+				// numbers are refused: "2025" would parse as 20:25 today.
+				if ( ctype_digit( $value ) ) {
+					return null;
+				}
+
+				try {
+					$date = new \DateTimeImmutable( $value, wp_timezone() );
+				} catch ( \Exception $e ) {
+					return null;
+				}
+
+				return $date->format( 'Y-m-d H:i:s' );
 
 			case 'status':
 				$value = strtolower( $value );

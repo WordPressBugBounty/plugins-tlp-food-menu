@@ -37,12 +37,26 @@ class FilterHooks {
 		add_filter( 'rtfm_add_to_cart_btn', [ $this, 'cartBtn' ], 10, 7 );
 		add_filter( 'body_class', [ $this,'add_custom_body_class' ] );
 		add_filter( 'rtfm_add_stock_btn', [ $this, 'stockBtn' ], 10, 2 );
+		add_filter( 'rtfm_food_price_modifier', [ $this, 'price_label' ], 20, 2 );
 
 		// pro featured
 		add_filter( 'tlp_el_end_of_columns_section', [ $this, 'layoutControls' ]);
 		add_filter( 'tlp_el_pro_switcher', [ $this, 'el_pro_SetttingsControls' ]);
 		add_filter( 'tlp_el_image_animation', [ $this, 'image_animation' ], 10, 2 );
 
+	}
+
+	/**
+	 * Show the item's Price Label, when set, instead of its price (Free and Pro layouts).
+	 *
+	 * @param string $price Price HTML.
+	 * @param int    $post_id Post ID.
+	 * @return string
+	 */
+	public function price_label( $price, $post_id ) {
+		$label = \RT\FoodMenu\Helpers\Fns::get_price_label( $post_id );
+
+		return '' !== $label ? '<span class="fm-price-label">' . esc_html( $label ) . '</span>' : $price;
 	}
 
 	public function get_image_sizes( $imgSize ) {

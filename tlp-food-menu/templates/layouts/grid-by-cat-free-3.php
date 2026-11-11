@@ -26,6 +26,7 @@ $html .= '<div class="fmp-row' . $gridType . '">';
 while ( $gridQuery->have_posts() ) {
 	$gridQuery->the_post();
 	$id          = get_the_ID();
+	$pLink       = get_the_permalink();
 	$image       = Fns::getFeatureImage( $id, $imgSize );
 	$excerpt     = RenderHelpers::getExcerpt( get_the_excerpt(), $excerpt_limit, $after_short_desc );
 	$add_to_cart = null;
@@ -45,7 +46,7 @@ while ( $gridQuery->have_posts() ) {
 				ob_start();
 
 				woocommerce_template_loop_add_to_cart();
-				$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $id, $pType, $add_to_cart_text, $items, $anchorClass );
+				$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $id, $pType, $add_to_cart_text ?? null, $items, $anchorClass );
 
 				ob_end_clean();
 			}

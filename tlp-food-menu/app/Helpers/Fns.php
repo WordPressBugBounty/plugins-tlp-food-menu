@@ -24,6 +24,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Fns {
 
 	/**
+	 * Post meta holding the optional price text shown instead of the price.
+	 */
+	const PRICE_LABEL_META = '_tlp_fm_price_label';
+
+	/**
 	 * Classes instatiation.
 	 *
 	 * @param array $classes Classes to init.
@@ -112,6 +117,12 @@ class Fns {
 		if ( ! empty( $args ) && is_array( $args ) ) {
 			// EXTR_SKIP: an arg must never overwrite $template_name / $return (args can carry request data).
 			extract( $args, EXTR_SKIP ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
+
+			// EXTR_SKIP also skips an `args` key, because `$args` is this method's own parameter.
+			// Templates (category layouts) expect `$args` to be that key — the query args — as before.
+			if ( array_key_exists( 'args', $args ) ) {
+				$args = $args['args'];
+			}
 		}
 
 		$template = [
@@ -986,6 +997,20 @@ class Fns {
 		}
 
 		return $regular_price;
+	}
+
+	/**
+	 * Price label ("12.00-14.50", "Small 5.95 | Large 6.50") of a food item.
+	 *
+	 * @param int $post_id Post ID.
+	 * @return string Empty when not set.
+	 */
+	public static function get_price_label( $post_id ) {
+		if ( ! $post_id || TLPFoodMenu()->post_type !== get_post_type( $post_id ) ) {
+			return '';
+		}
+
+		return (string) get_post_meta( $post_id, self::PRICE_LABEL_META, true );
 	}
 
 	/**
@@ -1917,21 +1942,40 @@ class Fns {
 	}
 
 	public static function is_black_friday_active() {
-		// Black Friday valid between November 10 – Jan 5
-		$currentYear = gmdate( 'Y' );
-		$now         = current_time( 'timestamp', true );
-		$start       = strtotime( "{$currentYear}-11-10" );
-		$end         = strtotime( ( $currentYear + 1 ) . '-01-06' );
+		// Black Friday valid between November 10 – Jan 5.
+		$now   = time();
+		$year  = self::black_friday_season_year();
+		$start = strtotime( "{$year}-11-10" );
+		$end   = strtotime( ( $year + 1 ) . '-01-06' );
 
-		$is_active = $now >= $start && $now <= $end;
+		$is_active = $now >= $start && $now < $end;
 
-		// If dismissed manually, consider inactive
-		if ( get_option( 'rtfm_ny_2025' ) == '1' ) {
+		// If dismissed manually this season, consider inactive.
+		if ( '1' === (string) get_option( self::black_friday_dismiss_key() ) ) {
 			$is_active = false;
 		}
 
 		return $is_active;
+	}
 
+	/**
+	 * Year the current Black Friday season started in (January belongs to the previous year's season).
+	 *
+	 * @return int
+	 */
+	public static function black_friday_season_year() {
+		$year = (int) gmdate( 'Y' );
+
+		return 1 === (int) gmdate( 'n' ) ? $year - 1 : $year;
+	}
+
+	/**
+	 * Option name that stores the Black Friday notice dismissal for the current season.
+	 *
+	 * @return string
+	 */
+	public static function black_friday_dismiss_key() {
+		return 'rtfm_dismiss_bf_notice_' . self::black_friday_season_year();
 	}
 
 	public static function is_inventory_activate() {

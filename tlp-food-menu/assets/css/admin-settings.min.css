@@ -2026,6 +2026,9 @@ input:where([type='file']):focus {
 .max-w-\[450px\] {
   max-width: 450px;
 }
+.max-w-\[8rem\] {
+  max-width: 8rem;
+}
 .max-w-full {
   max-width: 100%;
 }
@@ -2969,6 +2972,9 @@ input:where([type='file']):focus {
 .text-ink-900 {
   --tw-text-opacity: 1;
   color: rgb(11 11 15 / var(--tw-text-opacity, 1));
+}
+.text-muted {
+  color: hsl(var(--muted));
 }
 .text-primary {
   color: hsl(var(--primary));

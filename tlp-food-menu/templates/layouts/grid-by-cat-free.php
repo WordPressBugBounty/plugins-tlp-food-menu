@@ -52,7 +52,7 @@ while ( $gridQuery->have_posts() ) {
 				ob_start();
 
 				woocommerce_template_loop_add_to_cart();
-				$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $id, $pType, $add_to_cart_text, $items, $anchorClass );
+				$add_to_cart .= apply_filters( 'rtfm_add_to_cart_btn', ob_get_contents(), $pLink, $id, $pType, $add_to_cart_text ?? null, $items, $anchorClass );
 				ob_end_clean();
 			}
 		}

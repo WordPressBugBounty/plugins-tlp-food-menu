@@ -8,6 +8,8 @@
 
 namespace RT\FoodMenu\Controllers\Admin\Notices;
 
+use RT\FoodMenu\Helpers\Fns;
+
 // Do not allow directly accessing this file.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'This script cannot be accessed directly.' );
@@ -26,10 +28,7 @@ class BlackFriday {
 	 */
 	protected function init() {
 //		$this->remove_admin_notice();
-		$current      = time();
-		$black_friday = mktime( 0, 0, 0, 11, 13, 2025 ) <= $current && $current <= mktime( 0, 0, 0, 1, 15, 2026 );
-
-		if ( ! $black_friday ) {
+		if ( ! Fns::is_black_friday_active() ) {
 			return;
 		}
 
@@ -83,12 +82,11 @@ class BlackFriday {
 	 * @return void|string
 	 */
 	public function bf_notice() {
-		if ( get_option( 'rtfm_ny_2025' ) != '1' ) {
-			if ( ! isset( $GLOBALS['rt_ny_2025_notice'] ) ) {
-				$GLOBALS['rt_ny_2025_notice'] = 'rtfm_ny_2025';
-				self::notice();
-			}
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
 		}
+
+		self::notice();
 	}
 
 	/**
@@ -99,56 +97,58 @@ class BlackFriday {
 	private static function notice() {
 
 		add_action(
-			'admin_enqueue_scripts',
-			function () {
-				wp_enqueue_script( 'jquery' );
-			}
-		);
-
-		add_action(
 			'admin_notices',
 			function () {
 				$plugin_name   = 'Food Menu Pro';
-				$discount      = '40%';
 				$download_link = 'https://www.radiustheme.com/downloads/food-menu-pro-wordpress/?utm_source=Food_menu_dashboard&utm_medium=side_banner&utm_campaign=free';
 				?>
-
-                <div class="notice notice-info is-dismissible" data-rtfmdismissable="rtfm_ny_2023" style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
-                    <img alt="<?php echo esc_attr( $plugin_name ); ?>" src="<?php echo esc_url( TLPFoodMenu()->assets_url() ) . 'images/foodmenu.png'; ?>" width="74px" height="74px" style="grid-row: 1 / 4; align-self: center;justify-self: center"/>
-                    <h3 style="margin:0;"><?php echo sprintf( '%s Black Friday - Up to <span style="color:#e60000;font-weight: 700;" class="red-color">%s</span> Sale 2025!!', esc_html( $plugin_name ), esc_html( $discount ) ); ?></h3>
-                    <p style="margin:0 0 2px;"><?php echo sprintf( '🚀 Exciting News: %s Black Friday sale is now live!', esc_html( $plugin_name ) ); ?>
-                        Get the plugin today and enjoy discounts up to <b> 40%.</b>
-                    </p>
-                    <p style="margin:0;">
-                        <a class="button button-primary" href="<?php echo esc_url( $download_link ); ?>" target="_blank">Buy Now</a>
-                        <a class="button button-dismiss" href="#">Dismiss</a>
-                    </p>
-                </div>
-
+				<style>
+					.rtfm-black-friday-notice.notice { position: relative; margin: 5px 0 15px; padding: 0 !important; border: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 2px rgba(16, 24, 40, .06), 0 4px 12px rgba(16, 24, 40, .06); }
+					.rtfm-black-friday-notice .notice-dismiss { top: 50%; right: 8px; transform: translateY(-50%); width: 28px; height: 28px; padding: 0; border-radius: 50%; background: rgba(255, 255, 255, .95); justify-content: center; align-items: center; }
+					.rtfm-black-friday-notice .notice-dismiss:before { color: #1d2327; }
+					.rtfm-black-friday-notice .notice-dismiss:hover:before,
+					.rtfm-black-friday-notice .notice-dismiss:focus:before { color: #d63638; }
+				</style>
+				<div class="notice notice-info is-dismissible rtfm-black-friday-notice">
+					<a href="<?php echo esc_url( $download_link ); ?>" style="display: block" target="_blank">
+						<img alt="<?php echo esc_attr( $plugin_name . ' Black Friday Sale' ); ?>"
+							style="width: 100%;display: block;min-height: 30px;object-fit: cover"
+							src="<?php echo esc_url( TLPFoodMenu()->assets_url() . 'images/admin/black-friday-banner.webp' ); ?>"/>
+					</a>
+				</div>
 				<?php
-			}
+			},
+			1
 		);
 
 		add_action(
 			'admin_footer',
 			function () {
 				?>
-				<script type="text/javascript">
-					(function ($) {
-						$(function () {
-							setTimeout(function () {
-								$('div[data-rtfmdismissable] .notice-dismiss, div[data-rtfmdismissable] .button-dismiss')
-									.on('click', function (e) {
-										e.preventDefault();
-										$.post(ajaxurl, {
-											'action': 'rtfm_dismiss_admin_notice',
-											'nonce': <?php echo wp_json_encode( wp_create_nonce( 'rtfm-dismissible-notice' ) ); ?>
-										});
-										$(e.target).closest('.is-dismissible').remove();
-									});
-							}, 1000);
+				<script>
+					document.addEventListener('click', function (e) {
+						const button = e.target.closest('.rtfm-black-friday-notice .notice-dismiss');
+						if (!button || typeof ajaxurl === 'undefined') {
+							return;
+						}
+						e.preventDefault();
+
+						fetch(ajaxurl, {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+							},
+							body: new URLSearchParams({
+								'action': 'rtfm_dismiss_admin_notice',
+								'nonce': <?php echo wp_json_encode( wp_create_nonce( 'rtfm-dismissible-notice' ) ); ?>
+							}),
 						});
-					})(jQuery);
+
+						const notice = button.closest('.rtfm-black-friday-notice');
+						if (notice) {
+							notice.remove();
+						}
+					});
 				</script>
 				<?php
 			}
@@ -159,7 +159,11 @@ class BlackFriday {
 			function () {
 				check_ajax_referer( 'rtfm-dismissible-notice', 'nonce' );
 
-				update_option( 'rtfm_ny_2025', '1' );
+				if ( ! current_user_can( 'manage_options' ) ) {
+					wp_die( '', '', 403 );
+				}
+
+				update_option( Fns::black_friday_dismiss_key(), '1', false );
 				wp_die();
 			}
 		);

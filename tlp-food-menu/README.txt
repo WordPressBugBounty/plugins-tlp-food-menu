@@ -4,7 +4,7 @@ Donate link:
 Tags: food menu, food ordering, restaurant menu, restaurant, food delivery
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 6.0.8
+Stable tag: 6.0.9
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -262,7 +262,15 @@ Major update. Table Reservation, Tips, Special Menu, and Product Discount are no
 
 == Changelog ==
 
-= 6.0.8 ( Nov 9, 2026) =
+= 6.0.9 ( Nov 11, 2026 ) =
+New: Price Label field to show price ranges or size prices instead of the price
+New: CSV import and export now include the food item's date
+Improved: Importing a price range or size prices keeps the text as Price Label
+Fixed: Imported prices dropped trailing zeros, e.g. 13.00 showed as 13
+Fixed: Category layouts showed a fatal error on the page since 6.0.8
+Fixed: PHP warning "Undefined variable $pLink" on category layouts with WooCommerce products
+
+= 6.0.8 ( Nov 9, 2026 ) =
 New: Import food items from CSV with column mapping, and export them to CSV
 New: Export and import plugin settings from Settings → Import / Export
 Security: Shortcode preview and template loader can no longer load files outside templates
